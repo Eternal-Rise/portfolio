@@ -1,0 +1,32 @@
+{
+  "name": "portfolio_junior",
+  "version": "1.0.0",
+  "description": "Junior Templates",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eternal-Rise/Portfolio_Junior.git"
+  },
+  "author": "Salyk Bogdan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eternal-Rise/Portfolio_Junior/issues"
+  },
+  "homepage": "https://github.com/Eternal-Rise/Portfolio_Junior#readme",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-jshint": "^2.1.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.1",
+    "jshint": "^2.9.6"
+  },
+  "keywords": []
+}
