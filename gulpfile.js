@@ -18,7 +18,7 @@ gulp.task('lint', function() {
 });
 
 gulp.task('sass', function() {
-  return gulp.src('src/index/scss/**/*.sass')
+  return gulp.src('src/**/*.sass')
     .pipe(sass({
       outputStyle: 'expanded'
     }))
@@ -31,11 +31,11 @@ gulp.task('sass', function() {
       cascade: false,
       grid: true
     }))
-    .pipe(gulp.dest('dist/css'));
+    .pipe(gulp.dest('dist/'))
 });
 
 gulp.task('pug', function() {
-  return gulp.src('src/index/pug/**/*.pug')
+  return gulp.src('src/**/*.pug')
   .pipe(pug({
     pretty: true
   }))
