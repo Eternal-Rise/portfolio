@@ -28,5 +28,6 @@
     "gulp-uglify": "^3.0.1",
     "jshint": "^2.9.6"
   },
-  "keywords": []
+  "keywords": [],
+  "dependencies": {}
 }

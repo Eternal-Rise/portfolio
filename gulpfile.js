@@ -18,7 +18,7 @@ gulp.task('lint', function() {
 });
 
 gulp.task('sass', function() {
-  return gulp.src('src/scss/index/**/*.sass')
+  return gulp.src('src/index/scss/**/*.sass')
     .pipe(sass({
       outputStyle: 'expanded'
     }))
@@ -27,7 +27,7 @@ gulp.task('sass', function() {
       this.end()
     })
     .pipe(autoprefixer({
-      browsers: ['last 4 versions'],
+      browsers: ['last 2 versions'],
       cascade: false,
       grid: true
     }))
@@ -35,7 +35,7 @@ gulp.task('sass', function() {
 });
 
 gulp.task('pug', function() {
-  return gulp.src('src/pug/index/**/*.pug')
+  return gulp.src('src/index/pug/**/*.pug')
   .pipe(pug({
     pretty: true
   }))
@@ -47,8 +47,8 @@ gulp.task('pug', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch('src/pug/**/*', gulp.series('pug'));
-  gulp.watch('src/sass/**/*', gulp.series('sass'));
+  gulp.watch('src/**/*.pug', gulp.series('pug'));
+  gulp.watch('src/**/*.sass', gulp.series('sass'));
 });
 
 gulp.task('default', gulp.series('watch'));
