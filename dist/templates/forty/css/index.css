@@ -1,3 +1,81 @@
-h1 {
-  background-color: #000;
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-top: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.transition, header .logo, header .logo strong, header nav #button-menu {
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #242943;
+  color: #fff;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+}
+
+header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  background-color: #2a2f4a;
+  font-size: .8em;
+  font-weight: 400;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+}
+
+header .logo {
+  -ms-grid-column-align: start;
+  justify-self: start;
+  padding: 1.5em 2.5em;
+}
+
+header .logo:hover {
+  color: #80ecfd;
+}
+
+header .logo:hover strong {
+  background-color: #80ecfd;
+}
+
+header .logo strong {
+  margin-right: 0.4em;
+  padding: .2em .2em .2em .4em;
+  background-color: #fff;
+  color: #2a2f4a;
+  font-weight: 400;
+}
+
+header nav {
+  text-align: right;
+}
+
+header nav #button-menu {
+  display: inline-block;
+  padding: 1.5em 2.5em;
+}
+
+header nav #button-menu::after {
+  display: inline-block;
+  margin-left: 1.5em;
+  content: '\f0c9';
+  font-family: "Font Awesome 5 Free";
+  font-weight: bold;
+  -webkit-transform: scale3d(2, 1.2, 1);
+  transform: scale3d(2, 1.2, 1);
+}
+
+header nav #button-menu:hover {
+  color: #80ecfd;
+  cursor: pointer;
 }

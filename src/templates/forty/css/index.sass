@@ -1,2 +1,74 @@
-h1
-  background-color: #000
+$color: ('main': #fff, 'secondary': #242943, third: #2a2f4a, 'highlight': #80ecfd)
+$font: "Source Sans Pro", Helvetica, sans-serif
+
+*
+  box-sizing: border-box
+  margin-top: 0
+
+a
+  color: inherit
+  text-decoration: none
+
+.transition
+  transition: .4s
+
+body
+  margin: 0
+  padding: 0
+  background-color: map-get($color, 'secondary')
+  color: map-get($color, 'main')
+  font-family: $font
+
+
+header
+  display: grid
+  grid-template-columns: 1fr 1fr
+
+  background-color: map-get($color, 'third')
+  font-size: .8em
+  font-weight: 400
+  letter-spacing: .25em
+  text-transform: uppercase
+
+  .logo
+    justify-self: start
+    padding: 1.5em 2.5em
+
+    @extend .transition
+
+    &:hover
+      color: map-get($color, 'highlight')
+
+      strong
+        background-color: map-get($color, 'highlight')
+
+    strong
+      margin-right: 0.4em
+      padding: .2em .2em .2em .4em
+      background-color: map-get($color, 'main')
+      color: map-get($color, 'third')
+      font-weight: 400
+      
+      @extend .transition
+
+  nav
+    text-align: right
+
+    #button-menu
+      display: inline-block
+      padding: 1.5em 2.5em
+      
+      @extend .transition
+
+      &::after
+        display: inline-block
+        margin-left: 1.5em
+        content: '\f0c9'
+        font-family: "Font Awesome 5 Free"
+        font-weight: bold
+        transform: scale3d(2, 1.2, 1)
+
+      &:hover
+        color: map-get($color, 'highlight')
+        cursor: pointer
+
