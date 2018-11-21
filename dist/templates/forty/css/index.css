@@ -33,6 +33,10 @@ a {
   box-shadow: inset 0 0 0 2px #80ecfd;
 }
 
+.button.fit {
+  width: 100%;
+}
+
 .primary {
   background-color: #fff;
   -webkit-box-shadow: none;
@@ -43,10 +47,6 @@ a {
 .primary:hover {
   background-color: #80ecfd;
   color: #242943 !important;
-}
-
-.fit {
-  width: 100%;
 }
 
 header {
@@ -149,4 +149,8 @@ body {
   background-color: #242943;
   color: #fff;
   font-family: "Source Sans Pro", Helvetica, sans-serif;
+}
+
+.icon::before {
+  font-family: "Font Awesome 5 Free";
 }

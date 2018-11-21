@@ -11,6 +11,9 @@
     @extend .hover
     box-shadow: inset 0 0 0 2px map-get($color, 'highlight')
 
+  &.fit
+    width: 100%
+
 .primary
   background-color: map-get($color, 'main')
   box-shadow: none
@@ -19,6 +22,3 @@
   &:hover
     background-color: map-get($color, 'highlight')
     color: map-get($color, 'secondary') !important
-
-.fit
-  width: 100%
