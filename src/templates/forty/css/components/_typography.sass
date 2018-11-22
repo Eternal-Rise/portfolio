@@ -1,0 +1,55 @@
+body, input, select, textarea
+  color: map-get($color, 'main')
+  font-family: $font
+  font-size: 11pt
+  line-height: 1.65
+
+  @media screen and (min-width: 361px)
+    font-size: 12pt
+  @media screen and (min-width: 1281px)
+    font-size: 14pt
+  @media screen and (min-width: 1681px)
+    font-size: 17pt
+  
+  
+h1, h2, h3, h4, h5, h6
+  color: map-get($color, 'main')
+  font-weight: 600
+  line-height: inherit
+  margin: 0 0 1em 0
+
+h1
+  display: inline-block
+  font-size: 2em
+
+  &::after
+    content: ''
+    background-color: map-get($color, 'main')
+    display: block
+    height: 2px
+    margin: 0.325em 0 0.5em 0    
+    width: calc(100% + 0.5em)
+
+  @media screen and (min-width: 481px)
+    font-size: 2.5em
+
+h2 
+  font-size: 1.5em
+
+  @media screen and (min-width: 481px)
+    font-size: 1.75em
+
+h3
+  font-size: 1.25em
+
+  @media screen and (min-width: 481px)
+    font-size: 1.35em
+
+h4
+  font-size: 1.1em
+
+h5
+  font-size: 0.9em
+
+h6
+  font-size: 0.7em
