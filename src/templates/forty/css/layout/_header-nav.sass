@@ -1,15 +1,13 @@
 .header-main
-  display: grid
-  grid-template-columns: 1fr 1fr
+  display: flex
 
   background-color: map-get($color, 'third')
   font-size: .8em
-  font-weight: 400
+  font-weight: 600
   letter-spacing: .25em
   text-transform: uppercase
 
   .logo
-    justify-self: start
     padding: 1.5em 2.5em
 
     @extend .transition
@@ -25,12 +23,11 @@
       padding: .2em .2em .2em .4em
       background-color: map-get($color, 'main')
       color: map-get($color, 'third')
-      font-weight: 400
       
       @extend .transition
 
   nav
-    text-align: right
+    margin-left: auto
 
     #button-menu
       display: inline-block

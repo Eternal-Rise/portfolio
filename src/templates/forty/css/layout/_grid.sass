@@ -1,0 +1,32 @@
+.grid
+  display: grid
+  grid-template-columns: repeat(12, 1fr)
+
+
+.header-main
+  grid-column: 1 / -1
+
+.container
+  grid-column: 2 / span 10
+  padding: 4em 0 2em 0
+
+  .text
+    @extend .grid
+
+    grid-gap: 0 1em
+
+    .fit
+      grid-column: 1 / -1
+
+    .half
+      @extend .fit
+
+      @media screen and (min-width: 740px)
+        grid-column: span 6
+    
+    .third
+      @extend .fit
+
+      @media screen and (min-width: 980px)
+        grid-column: span 4
+

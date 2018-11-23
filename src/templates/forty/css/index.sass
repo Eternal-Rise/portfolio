@@ -5,9 +5,22 @@ $font: "Source Sans Pro", Helvetica, sans-serif
   box-sizing: border-box
   margin-top: 0
 
+body
+  margin: 0
+  padding: 0
+  background-color: map-get($color, 'secondary')
+
 a
   color: inherit
   text-decoration: none
+
+hr
+  border: 0
+  border-bottom: solid 1px rgba(map-get($color, 'main'), .1)
+  margin: 2em 0
+
+  &.major
+    margin: 3em 0
 
 .hover
   color: map-get($color, 'highlight')
@@ -15,7 +28,6 @@ a
 
 .transition
   transition: .4s
-
 
 // Components
 @import 'components/buttons'
@@ -28,21 +40,7 @@ a
 // Layout
 @import 'layout/footer'
 @import 'layout/form'
+@import 'layout/grid'
 @import 'layout/header-nav'
 @import 'layout/nav-overlay'
-
-body
-  margin: 0
-  padding: 0
-  background-color: map-get($color, 'secondary')
-  color: map-get($color, 'main')
-  font-family: $font
-
-.container
-    padding: 4em 0 2em 0
-    margin: 0 auto
-    max-width: 65em
-
-
-
 

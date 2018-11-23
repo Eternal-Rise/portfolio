@@ -4,9 +4,25 @@
   margin-top: 0;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #242943;
+}
+
 a {
   color: inherit;
   text-decoration: none;
+}
+
+hr {
+  border: 0;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+  margin: 2em 0;
+}
+
+hr.major {
+  margin: 3em 0;
 }
 
 .hover, .button:hover, .header-main .logo:hover, .header-main nav #button-menu:hover, .nav-overlay-icon i:hover, .nav-overlay nav ul.links a:hover {
@@ -33,7 +49,7 @@ a {
   box-shadow: inset 0 0 0 2px #80ecfd;
 }
 
-.button.fit {
+.button.fit, .container .text .button.half, .container .text .button.third {
   width: 100%;
 }
 
@@ -84,6 +100,8 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   display: inline-block;
   font-size: 2em;
+  margin-bottom: 0;
+  text-transform: capitalize;
 }
 
 h1::after {
@@ -103,6 +121,7 @@ h1::after {
 
 h2 {
   font-size: 1.5em;
+  text-transform: capitalize;
 }
 
 @media screen and (min-width: 481px) {
@@ -133,21 +152,62 @@ h6 {
   font-size: 0.7em;
 }
 
-.header-main {
+p {
+  margin-bottom: 2em;
+}
+
+.grid, .container .text {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
+  -ms-grid-columns: (1fr)[12];
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.header-main {
+  grid-column: 1 / -1;
+}
+
+.container {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 10;
+  grid-column: 2 / span 10;
+  padding: 4em 0 2em 0;
+}
+
+.container .text {
+  grid-gap: 0 1em;
+}
+
+.container .text .fit, .container .text .half, .container .text .third {
+  grid-column: 1 / -1;
+}
+
+@media screen and (min-width: 740px) {
+  .container .text .half {
+    -ms-grid-column-span: 6;
+    grid-column: span 6;
+  }
+}
+
+@media screen and (min-width: 980px) {
+  .container .text .third {
+    -ms-grid-column-span: 4;
+    grid-column: span 4;
+  }
+}
+
+.header-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   background-color: #2a2f4a;
   font-size: .8em;
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: .25em;
   text-transform: uppercase;
 }
 
 .header-main .logo {
-  -ms-grid-column-align: start;
-  justify-self: start;
   padding: 1.5em 2.5em;
 }
 
@@ -160,11 +220,10 @@ h6 {
   padding: .2em .2em .2em .4em;
   background-color: #fff;
   color: #2a2f4a;
-  font-weight: 400;
 }
 
 .header-main nav {
-  text-align: right;
+  margin-left: auto;
 }
 
 .header-main nav #button-menu {
@@ -225,18 +284,4 @@ h6 {
 
 .nav-overlay nav ul.links a {
   display: block;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #242943;
-  color: #fff;
-  font-family: "Source Sans Pro", Helvetica, sans-serif;
-}
-
-.container {
-  padding: 4em 0 2em 0;
-  margin: 0 auto;
-  max-width: 65em;
 }

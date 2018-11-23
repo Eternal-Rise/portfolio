@@ -21,6 +21,8 @@ h1, h2, h3, h4, h5, h6
 h1
   display: inline-block
   font-size: 2em
+  margin-bottom: 0
+  text-transform: capitalize
 
   &::after
     content: ''
@@ -35,6 +37,7 @@ h1
 
 h2 
   font-size: 1.5em
+  text-transform: capitalize
 
   @media screen and (min-width: 481px)
     font-size: 1.75em
@@ -53,3 +56,6 @@ h5
 
 h6
   font-size: 0.7em
+
+p
+  margin-bottom: 2em
