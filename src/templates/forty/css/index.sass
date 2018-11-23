@@ -13,6 +13,9 @@ body
 a
   color: inherit
   text-decoration: none
+  @extend .hover
+  &.link
+    border-bottom: dotted 1px
 
 hr
   border: 0
@@ -23,11 +26,13 @@ hr
     margin: 3em 0
 
 .hover
-  color: map-get($color, 'highlight')
-  cursor: pointer
+  transition: .4s
+
+  &:hover
+    color: map-get($color, 'highlight')
+    cursor: pointer
 
 .transition
-  transition: .4s
 
 // Components
 @import 'components/buttons'

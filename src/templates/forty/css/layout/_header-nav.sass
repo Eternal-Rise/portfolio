@@ -1,5 +1,8 @@
 .header-main
   display: flex
+  position: fixed
+  top: 0
+  width: 100%
 
   background-color: map-get($color, 'third')
   font-size: .8em
@@ -10,11 +13,9 @@
   .logo
     padding: 1.5em 2.5em
 
-    @extend .transition
+    @extend .hover
 
     &:hover
-      @extend .hover
-
       strong
         background-color: map-get($color, 'highlight')
 
@@ -24,7 +25,7 @@
       background-color: map-get($color, 'main')
       color: map-get($color, 'third')
       
-      @extend .transition
+      @extend .hover
 
   nav
     margin-left: auto
@@ -33,7 +34,7 @@
       display: inline-block
       padding: 1.5em 2.5em
       
-      @extend .transition
+      @extend .hover
 
       &::after
         display: inline-block
@@ -42,6 +43,3 @@
         font-family: "Font Awesome 5 Free"
         font-weight: bold
         transform: scale3d(2, 1.2, 1)
-
-      &:hover
-        @extend .hover
