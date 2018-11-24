@@ -1,5 +1,26 @@
-$color: ('main': #fff, 'secondary': #242943, third: #2a2f4a, 'highlight': #80ecfd)
-$font: "Source Sans Pro", Helvetica, sans-serif
+// $color: ('main': #fff, 'secondary': #242943, third: #2a2f4a, 'highlight': #80ecfd)
+// $font: "Source Sans Pro", Helvetica, sans-serif
+
+
+// Base
+@import base/reset
+@import base/vars
+
+// Components
+@import components/buttons
+@import components/form
+@import components/lists
+@import components/pagination
+@import components/tables
+@import components/typography
+
+// Layout
+@import layout/footer
+@import layout/form
+@import layout/grid
+@import layout/header-nav
+@import layout/nav-overlay
+
 
 *
   box-sizing: border-box
@@ -8,44 +29,19 @@ $font: "Source Sans Pro", Helvetica, sans-serif
 body
   margin: 0
   padding: 0
-  background-color: map-get($color, 'secondary')
+  background-color: map-get($palette, 'bg')
 
 a
   color: inherit
   text-decoration: none
   @extend .hover
+
   &.link
     border-bottom: dotted 1px
-
-hr
-  border: 0
-  border-bottom: solid 1px rgba(map-get($color, 'main'), .1)
-  margin: 2em 0
-
-  &.major
-    margin: 3em 0
 
 .hover
   transition: .4s
 
   &:hover
-    color: map-get($color, 'highlight')
+    color: map-get($palette, 'highlight')
     cursor: pointer
-
-.transition
-
-// Components
-@import 'components/buttons'
-@import 'components/form'
-@import 'components/lists'
-@import 'components/pagination'
-@import 'components/tables'
-@import 'components/typography'
-
-// Layout
-@import 'layout/footer'
-@import 'layout/form'
-@import 'layout/grid'
-@import 'layout/header-nav'
-@import 'layout/nav-overlay'
-

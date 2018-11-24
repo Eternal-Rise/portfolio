@@ -4,9 +4,9 @@
   top: 0
   width: 100%
 
-  background-color: map-get($color, 'third')
+  background-color: map-get($palette, 'bg-alt')
   font-size: .8em
-  font-weight: 600
+  font-weight:  map-get($font, 'weight-bold')
   letter-spacing: .25em
   text-transform: uppercase
 
@@ -17,13 +17,13 @@
 
     &:hover
       strong
-        background-color: map-get($color, 'highlight')
+        background-color: map-get($palette, 'highlight')
 
     strong
       margin-right: 0.4em
       padding: .2em .2em .2em .4em
-      background-color: map-get($color, 'main')
-      color: map-get($color, 'third')
+      background-color: map-get($palette, 'fg')
+      color: map-get($palette, 'bg-alt')
       
       @extend .hover
 

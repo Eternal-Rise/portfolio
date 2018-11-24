@@ -10,7 +10,7 @@
   grid-template-rows: auto 1fr
   padding: 1.5em 2.5em
 
-  background-color: rgba(map-get($color, 'secondary'),.9)
+  background-color: rgba(map-get($palette, 'bg'),.9)
   font-size: 0.8em
   text-transform: uppercase
 
@@ -27,14 +27,14 @@
 
     ul
       padding: 0
-      letter-spacing: 0.25em
+      letter-spacing: map-get($font, 'letter-spacing-alt')
       line-height: 4em
       list-style-type: none
       text-align: center
 
       &.links
         li:not(:last-child)
-          border-bottom: 1px solid rgba(map-get($color, 'main'), .1)
+          border-bottom: 1px solid map-get($palette, 'border')
 
         a
           display: block

@@ -18,7 +18,7 @@ gulp.task('lint', function() {
 });
 
 gulp.task('sass', function() {
-  return gulp.src('src/**/*.sass')
+  return gulp.src('src/**/*.+(sass|scss)')
     .pipe(sass({
       outputStyle: 'expanded'
     }))
