@@ -3,32 +3,14 @@
 
 
 // Base
+@import base/vars.scss
 @import base/reset
-@import base/vars
-
-// Components
-@import components/buttons
-@import components/form
-@import components/lists
-@import components/pagination
-@import components/tables
-@import components/typography
-
-// Layout
-@import layout/footer
-@import layout/form
-@import layout/grid
-@import layout/header-nav
-@import layout/nav-overlay
-
 
 *
   box-sizing: border-box
   margin-top: 0
 
 body
-  margin: 0
-  padding: 0
   background-color: map-get($palette, 'bg')
 
 a
@@ -45,3 +27,18 @@ a
   &:hover
     color: map-get($palette, 'highlight')
     cursor: pointer
+
+// Components
+@import components/buttons
+@import components/form
+@import components/lists
+@import components/pagination
+@import components/tables
+@import components/typography
+
+// Layout
+@import layout/footer
+@import layout/form
+@import layout/grid
+@import layout/header-nav
+@import layout/nav-overlay

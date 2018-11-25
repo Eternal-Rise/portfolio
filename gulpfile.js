@@ -48,7 +48,7 @@ gulp.task('pug', function() {
 
 gulp.task('watch', function() {
   gulp.watch('src/**/*.pug', gulp.series('pug'));
-  gulp.watch('src/**/*.sass', gulp.series('sass'));
+  gulp.watch('src/**/*.+(sass|scss)', gulp.series('sass'));
 });
 
 gulp.task('default', gulp.series('watch'));

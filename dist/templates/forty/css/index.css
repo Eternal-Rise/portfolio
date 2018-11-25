@@ -1,3 +1,82 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+ * v2.0 | 20110126
+ * License: none (public domain) */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a,
+abbr, acronym, address, big, cite, code, del,
+dfn, em, img, ins, kbd, q, s, samp, small, strike,
+strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label,
+legend, table, caption, tbody, tfoot, thead,
+tr, th, td, article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, menu,
+nav, output, ruby, section, summary, time, mark,
+audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-top: 0;
+}
+
+body {
+  background-color: #242943;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a.link {
+  border-bottom: dotted 1px;
+}
+
+.hover, a, .header-main .logo, .header-main .logo strong, .header-main nav #button-menu, .nav-overlay-icon i {
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.hover:hover, a:hover, .header-main .logo:hover, .header-main .logo strong:hover, .header-main nav #button-menu:hover, .nav-overlay-icon i:hover {
+  color: #9bf1ff;
+  cursor: pointer;
+}
+
 input[type="submit"],
 input[type="reset"],
 input[type="button"],
@@ -58,35 +137,11 @@ button.icon:before,
   margin-right: 0.5em;
 }
 
-input[type="submit"].fit, .container .text input.half[type="submit"], .container .elements input.half[type="submit"], .container .lists input.half[type="submit"], .container .text input.third[type="submit"], .container .elements input.third[type="submit"], .container .lists input.third[type="submit"],
+input[type="submit"].fit,
 input[type="reset"].fit,
-.container .text input.half[type="reset"],
-.container .elements input.half[type="reset"],
-.container .lists input.half[type="reset"],
-.container .text input.third[type="reset"],
-.container .elements input.third[type="reset"],
-.container .lists input.third[type="reset"],
 input[type="button"].fit,
-.container .text input.half[type="button"],
-.container .elements input.half[type="button"],
-.container .lists input.half[type="button"],
-.container .text input.third[type="button"],
-.container .elements input.third[type="button"],
-.container .lists input.third[type="button"],
 button.fit,
-.container .text button.half,
-.container .elements button.half,
-.container .lists button.half,
-.container .text button.third,
-.container .elements button.third,
-.container .lists button.third,
-.button.fit,
-.container .text .button.half,
-.container .elements .button.half,
-.container .lists .button.half,
-.container .text .button.third,
-.container .elements .button.third,
-.container .lists .button.third {
+.button.fit {
   width: 100%;
 }
 
@@ -222,8 +277,8 @@ button.disabled,
 button:disabled,
 .button.disabled,
 .button:disabled {
-  cursor: default;
   opacity: 0.25;
+  pointer-events: none;
 }
 
 ol {
@@ -246,19 +301,32 @@ ul li {
   padding-left: 0.5em;
 }
 
-ul.alt {
+ul.alt, ul.actions {
   list-style: none;
   padding-left: 0;
 }
 
-ul.alt li {
+ul.alt li, ul.actions li {
   border-top: solid 1px rgba(212, 212, 255, 0.1);
   padding: 0.5em 0;
 }
 
-ul.alt li:first-child {
+ul.alt li:first-child, ul.actions li:first-child {
   border-top: 0;
   padding-top: 0;
+}
+
+ul.actions {
+  margin-bottom: 1.33333em;
+}
+
+ul.actions li {
+  border: none;
+}
+
+ul.actions.line li {
+  display: inline-block;
+  margin: 0 1em 0 0;
 }
 
 dl {
@@ -386,9 +454,11 @@ blockquote {
 
 code {
   background: #2a2f4a;
+  font-family: "Courier New", monospace;
   font-size: 0.9em;
   margin: 0 0.25em;
   padding: 0.25em 0.65em;
+  white-space: nowrap;
 }
 
 pre {
@@ -413,7 +483,7 @@ hr.major {
   margin: 3em 0;
 }
 
-.grid, .container .text, .container .elements, .container .lists {
+.grid, .container .text, .container .elements, .container .lists, .container .buttons {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[12];
@@ -427,25 +497,32 @@ hr.major {
   padding: 8em 0 2em 0;
 }
 
-.container .text, .container .elements, .container .lists {
+.container .text, .container .elements, .container .lists, .container .buttons {
   grid-gap: 0 1em;
 }
 
-.container .text .fit, .container .text .half, .container .text .third, .container .elements .fit, .container .elements .half, .container .elements .third, .container .lists .fit, .container .lists .half, .container .lists .third {
+.container .fill, .container .half, .container .third, .container .fourth {
   grid-column: 1 / -1;
 }
 
 @media screen and (min-width: 740px) {
-  .container .text .half, .container .elements .half, .container .lists .half {
+  .container .half {
     -ms-grid-column-span: 6;
     grid-column: span 6;
   }
 }
 
 @media screen and (min-width: 980px) {
-  .container .text .third, .container .elements .third, .container .lists .third {
+  .container .third {
     -ms-grid-column-span: 4;
     grid-column: span 4;
+  }
+}
+
+@media screen and (min-width: 980px) {
+  .container .fourth {
+    -ms-grid-column-span: 3;
+    grid-column: span 3;
   }
 }
 
@@ -540,35 +617,4 @@ hr.major {
 
 .nav-overlay nav ul.links a {
   display: block;
-}
-
-* {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  margin-top: 0;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #242943;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-a.link {
-  border-bottom: dotted 1px;
-}
-
-.hover, .header-main .logo, .header-main .logo strong, .header-main nav #button-menu, .nav-overlay-icon i, a {
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.hover:hover, .header-main .logo:hover, .header-main .logo strong:hover, .header-main nav #button-menu:hover, .nav-overlay-icon i:hover, a:hover {
-  color: #9bf1ff;
-  cursor: pointer;
 }

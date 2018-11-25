@@ -26,9 +26,19 @@ ul
       &:first-child 
         border-top: 0
         padding-top: 0
-      
-    
-  
+
+  &.actions
+    @extend .alt
+    margin-bottom: (map-get($size, 'element-margin') / 1.5)
+
+    li
+      border: none
+
+    &.line
+      li
+        display: inline-block
+        margin: 0 (map-get($size, 'element-margin') * 0.5) 0 0
+
 
 dl 
   margin: 0 0 map-get($size, 'element-margin') 0
