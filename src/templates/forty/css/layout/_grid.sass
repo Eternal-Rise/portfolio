@@ -5,6 +5,8 @@
 .container
   grid-column: 2 / span 10
   padding: 8em 0 2em 0
+  margin: auto
+  max-width: 65em
 
   .text, .elements, .lists, .buttons
     @extend .grid
@@ -14,21 +16,106 @@
   .fill
     grid-column: 1 / -1
 
-  .half
-    @extend .fill
+    &-xs
+      @media screen and (min-width: 361px)
+        grid-column: 1 / -1
+    &-sm
+      @media screen and (min-width: 481px)
+        grid-column: 1 / -1
+    &-md
+      @media screen and (min-width: 737px)
+        grid-column: 1 / -1
+    &-lg
+      @media screen and (min-width: 981px)
+        grid-column: 1 / -1
+    &-xl
+      @media screen and (min-width: 1281px)
+        grid-column: 1 / -1
+    &-xxl
+      @media screen and (min-width: 1681px)
+        grid-column: 1 / -1
 
-    @media screen and (min-width: 740px)
-      grid-column: span 6
+  .half
+    grid-column: span 6
+
+    &-xs
+      grid-column: 1 / -1
+      @media screen and (min-width: 361px)
+        grid-column: span 6
+    &-sm
+      grid-column: 1 / -1
+      @media screen and (min-width: 481px)
+        grid-column: span 6
+    &-md
+      grid-column: 1 / -1
+      @media screen and (min-width: 737px)
+        grid-column: span 6
+    &-lg
+      grid-column: 1 / -1
+      @media screen and (min-width: 981px)
+        grid-column: span 6
+    &-xl
+      grid-column: 1 / -1
+      @media screen and (min-width: 1281px)
+        grid-column: span 6
+    &-xxl
+      grid-column: 1 / -1
+      @media screen and (min-width: 1681px)
+        grid-column: span 6
   
   .third
-    @extend .fill
+    grid-column: span 4
 
-    @media screen and (min-width: 980px)
-      grid-column: span 4
+    &-xs
+      grid-column: 1 / -1
+      @media screen and (min-width: 361px)
+        grid-column: span 4
+    &-sm
+      grid-column: 1 / -1
+      @media screen and (min-width: 481px)
+        grid-column: span 4
+    &-md
+      grid-column: 1 / -1
+      @media screen and (min-width: 737px)
+        grid-column: span 4
+    &-lg
+      grid-column: 1 / -1
+      @media screen and (min-width: 981px)
+        grid-column: span 4
+    &-xl
+      grid-column: 1 / -1
+      @media screen and (min-width: 1281px)
+        grid-column: span 4
+    &-xxl
+      grid-column: 1 / -1
+      @media screen and (min-width: 1681px)
+        grid-column: span 4
 
   .fourth
-    @extend .fill
+    grid-column: span 3
 
-    @media screen and (min-width: 980px)
-      grid-column: span 3
+    &-xs
+      grid-column: 1 / -1
+      @media screen and (min-width: 361px)
+        grid-column: span 3
+    &-sm
+      grid-column: 1 / -1
+      @media screen and (min-width: 481px)
+        grid-column: span 3
+    &-md
+      grid-column: 1 / -1
+      @media screen and (min-width: 737px)
+        grid-column: span 3
+    &-lg
+      grid-column: 1 / -1
+      @media screen and (min-width: 981px)
+        grid-column: span 3
+    &-xl
+      grid-column: 1 / -1
+      @media screen and (min-width: 1281px)
+        grid-column: span 3
+    &-xxl
+      grid-column: 1 / -1
+      @media screen and (min-width: 1681px)
+        grid-column: span 3
 
