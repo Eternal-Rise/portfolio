@@ -155,11 +155,20 @@ button:active,
   color: #53e3fb;
 }
 
+input[type="submit"].icon,
+input[type="reset"].icon,
+input[type="button"].icon,
+button.icon,
+.button.icon {
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+}
+
 input[type="submit"].icon:before,
 input[type="reset"].icon:before,
 input[type="button"].icon:before,
 button.icon:before,
 .button.icon:before {
+  font-family: "Font Awesome 5 Free";
   margin-right: 0.5em;
 }
 

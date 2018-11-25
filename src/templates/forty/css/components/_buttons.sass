@@ -31,8 +31,10 @@ button,
     box-shadow: inset 0 0 0 2px desaturate(darken(map-get($palette, 'highlight'), 15), 5)
     color: desaturate(darken(map-get($palette, 'highlight'), 15), 5)
   
-  &.icon 
+  &.icon
+    font-family: map-get($font, 'family')
     &:before 
+      font-family: "Font Awesome 5 Free"
       margin-right: 0.5em
 
   &.fit 
