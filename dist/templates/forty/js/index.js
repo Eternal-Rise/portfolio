@@ -4,7 +4,8 @@ window.addEventListener('load', () => {
   let menuHide = document.getElementById('button-menu-close');
   let navOverlay = document.querySelector('.nav-overlay');
 
-  menuShow.addEventListener('click', (e) => {
+  menuShow.addEventListener('click', (e) => {    
+    navOverlay.classList.remove('hide');
     navOverlay.classList.add('show');
   });
 
@@ -19,9 +20,5 @@ window.addEventListener('load', () => {
   function hideMenu() {
     navOverlay.classList.remove('show');
     navOverlay.classList.add('hide');
-
-    setTimeout( () => {
-      navOverlay.classList.remove('hide');
-    }, 600);
   }
 });
