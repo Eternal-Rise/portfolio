@@ -1,5 +1,5 @@
 .nav-overlay
-  position: absolute
+  position: fixed
   top: 0
   right: 0
   bottom: 0
@@ -8,33 +8,48 @@
 
   display: none
   grid-template-rows: auto 1fr
-  padding: 1.5em 2.5em
 
   background-color: rgba(map-get($palette, 'bg'),.9)
-  font-size: 0.8em
   text-transform: uppercase
+
+  &.show
+    display: grid
+    animation: show-menu .6s forwards
+
+  &.hide
+    display: grid
+    animation: hide-menu .6s forwards
 
   &-icon
     text-align: right
 
     i
+      padding: .5em 1em
       @extend .hover
 
   nav
     align-self: center
     justify-self: center
-    width: 24em
+    width: 18em
 
     ul
-      padding: 0
       letter-spacing: map-get($font, 'letter-spacing-alt')
-      line-height: 4em
-      list-style-type: none
       text-align: center
 
-      &.links
-        li:not(:last-child)
-          border-bottom: 1px solid map-get($palette, 'border')
+      a:not(.button)
+        display: block
+        font-weight: map-get($font, 'weight-bold')
+        font-size: 0.8em
+        height: 3em
+        line-height: 3em
 
-        a
-          display: block
+@keyframes show-menu
+  from
+    opacity: 0
+  to
+    opacity: 1
+@keyframes hide-menu
+  from
+    opacity: 1
+  to
+    opacity: 0

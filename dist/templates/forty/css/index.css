@@ -63,6 +63,14 @@ a {
   text-decoration: none;
 }
 
+a.active {
+  color: #9bf1ff;
+}
+
+a.active:hover {
+  cursor: default;
+}
+
 a.link {
   border-bottom: dotted 1px;
 }
@@ -789,7 +797,13 @@ hr.major {
 }
 
 .header-main .logo {
-  padding: 1.5em 2.5em;
+  padding: 1em 1.5em;
+}
+
+@media screen and (min-width: 481px) {
+  .header-main .logo {
+    padding: 1.5em 2.5em;
+  }
 }
 
 .header-main .logo:hover strong {
@@ -803,13 +817,23 @@ hr.major {
   color: #2a2f4a;
 }
 
+.header-main .logo span {
+  display: none;
+}
+
+@media screen and (min-width: 481px) {
+  .header-main .logo span {
+    display: inline;
+  }
+}
+
 .header-main nav {
   margin-left: auto;
 }
 
 .header-main nav #button-menu {
   display: inline-block;
-  padding: 1.5em 2.5em;
+  padding: 1em 1.5em;
 }
 
 .header-main nav #button-menu::after {
@@ -822,8 +846,14 @@ hr.major {
   transform: scale3d(2, 1.2, 1);
 }
 
+@media screen and (min-width: 481px) {
+  .header-main nav #button-menu {
+    padding: 1.5em 2.5em;
+  }
+}
+
 .nav-overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
@@ -832,14 +862,30 @@ hr.major {
   display: none;
   -ms-grid-rows: auto 1fr;
   grid-template-rows: auto 1fr;
-  padding: 1.5em 2.5em;
   background-color: rgba(36, 41, 67, 0.9);
-  font-size: 0.8em;
   text-transform: uppercase;
+}
+
+.nav-overlay.show {
+  display: -ms-grid;
+  display: grid;
+  -webkit-animation: show-menu .6s forwards;
+  animation: show-menu .6s forwards;
+}
+
+.nav-overlay.hide {
+  display: -ms-grid;
+  display: grid;
+  -webkit-animation: hide-menu .6s forwards;
+  animation: hide-menu .6s forwards;
 }
 
 .nav-overlay-icon {
   text-align: right;
+}
+
+.nav-overlay-icon i {
+  padding: .5em 1em;
 }
 
 .nav-overlay nav {
@@ -848,21 +894,54 @@ hr.major {
   align-self: center;
   -ms-grid-column-align: center;
   justify-self: center;
-  width: 24em;
+  width: 18em;
 }
 
 .nav-overlay nav ul {
-  padding: 0;
   letter-spacing: 0.25em;
-  line-height: 4em;
-  list-style-type: none;
   text-align: center;
 }
 
-.nav-overlay nav ul.links li:not(:last-child) {
-  border-bottom: 1px solid rgba(212, 212, 255, 0.1);
+.nav-overlay nav ul a:not(.button) {
+  display: block;
+  font-weight: 600;
+  font-size: 0.8em;
+  height: 3em;
+  line-height: 3em;
 }
 
-.nav-overlay nav ul.links a {
-  display: block;
+@-webkit-keyframes show-menu {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes show-menu {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes hide-menu {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes hide-menu {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }

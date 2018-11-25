@@ -18,6 +18,12 @@ a
   text-decoration: none
   @extend .hover
 
+  &.active
+    color: map-get($palette, 'highlight')
+
+    &:hover
+      cursor: default
+
   &.link
     border-bottom: dotted 1px
   

@@ -11,7 +11,10 @@
   text-transform: uppercase
 
   .logo
-    padding: 1.5em 2.5em
+    padding: 1em 1.5em
+
+    @media screen and (min-width: 481px)
+        padding: 1.5em 2.5em
 
     @extend .hover
 
@@ -27,12 +30,18 @@
       
       @extend .hover
 
+    span
+      display: none
+
+      @media screen and (min-width: 481px)
+        display: inline
+
   nav
     margin-left: auto
 
     #button-menu
       display: inline-block
-      padding: 1.5em 2.5em
+      padding: 1em 1.5em
       
       @extend .hover
 
@@ -43,3 +52,6 @@
         font-family: "Font Awesome 5 Free"
         font-weight: bold
         transform: scale3d(2, 1.2, 1)
+
+      @media screen and (min-width: 481px)
+        padding: 1.5em 2.5em

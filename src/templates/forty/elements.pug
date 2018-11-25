@@ -19,9 +19,9 @@ html(lang="en")
     .grid#elements
       .nav-overlay
         .nav-overlay-icon
-          i.fas.fa-times.fa-2x
+          i#button-menu-close.fas.fa-times.fa-2x
         nav
-          ul.links
+          ul.alt
             li
               a(href="index.html") home
             li
@@ -29,9 +29,9 @@ html(lang="en")
             li
               a(href="generic.html") generic
             li
-              a elements
+              a.active elements
           
-          ul.buttons
+          ul.actions
             li
               a.button.primary.fit get started
             li
@@ -40,7 +40,7 @@ html(lang="en")
       header.header-main
         a.logo(href="index.html")
           strong forty
-          |by html5 up
+          span  by html5 up
         nav
           a#button-menu menu
 
@@ -58,7 +58,7 @@ html(lang="en")
           arcu metus praesent turpis eu ac lacinia nunc ac commodo gravida 
           adipiscing eget accumsan ac nunc adipiscing adipiscing.
         
-        section.text
+        article.text
           section.text-block.half-md
             h3 Sem turpis amet semper
             p.
@@ -279,4 +279,6 @@ html(lang="en")
 
 
         .span(style="height: 600px")
+
+    script(src="js/index.js")
 

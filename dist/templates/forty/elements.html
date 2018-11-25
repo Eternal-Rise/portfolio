@@ -11,21 +11,21 @@
   <body>
     <div class="grid" id="elements">
       <div class="nav-overlay">
-        <div class="nav-overlay-icon"><i class="fas fa-times fa-2x"></i></div>
+        <div class="nav-overlay-icon"><i class="fas fa-times fa-2x" id="button-menu-close"></i></div>
         <nav>
-          <ul class="links">
+          <ul class="alt">
             <li><a href="index.html">home</a></li>
             <li><a href="landing.html">landing</a></li>
             <li><a href="generic.html">generic</a></li>
-            <li><a>elements</a></li>
+            <li><a class="active">elements</a></li>
           </ul>
-          <ul class="buttons">
+          <ul class="actions">
             <li><a class="button primary fit">get started</a></li>
             <li><a class="button fit">log in</a></li>
           </ul>
         </nav>
       </div>
-      <header class="header-main"><a class="logo" href="index.html"><strong>forty</strong>by html5 up</a>
+      <header class="header-main"><a class="logo" href="index.html"><strong>forty</strong><span> by html5 up</span></a>
         <nav><a id="button-menu">menu</a></nav>
       </header>
       <div class="container">
@@ -43,7 +43,7 @@
           adipiscing eget accumsan ac nunc adipiscing adipiscing.
           
         </p>
-        <section class="text">
+        <article class="text">
           <section class="text-block half-md">
             <h3>Sem turpis amet semper</h3>
             <p>
@@ -103,7 +103,7 @@
               
             </p>
           </section>
-        </section>
+        </article>
         <hr class="major"/>
         <h2>elements</h2>
         <section class="elements">
@@ -237,5 +237,6 @@
         <div class="span" style="height: 600px"></div>
       </div>
     </div>
+    <script src="js/index.js"></script>
   </body>
 </html>
