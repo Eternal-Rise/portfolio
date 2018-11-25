@@ -355,6 +355,66 @@ ul.actions.line li {
   margin: 0 1em 0 0;
 }
 
+ul.pagination {
+  cursor: default;
+  list-style: none;
+  padding-left: 0;
+}
+
+ul.pagination li {
+  display: inline-block;
+  padding-left: 0;
+  vertical-align: middle;
+}
+
+ul.pagination li:nth-child(n+2):nth-last-child(n+2) {
+  display: none;
+}
+
+ul.pagination li:first-child {
+  padding-right: 0;
+}
+
+ul.pagination li > .page {
+  border-bottom: 0;
+  display: inline-block;
+  font-size: 0.8em;
+  font-weight: 600;
+  height: 1.5em;
+  line-height: 1.5em;
+  margin: 0 .125em;
+  min-width: 1.5em;
+  padding: 0 0.5em;
+  text-align: center;
+}
+
+ul.pagination li > .page.active {
+  background-color: #ffffff;
+  color: #242943;
+}
+
+ul.pagination li > .page.active:hover {
+  background-color: #9bf1ff;
+  color: #242943 !important;
+}
+
+ul.pagination li > .page.active:active {
+  background-color: #53e3fb;
+}
+
+ul.pagination li:last-child {
+  padding-left: 0.75em;
+}
+
+@media screen and (min-width: 481px) {
+  ul.pagination li:nth-child(n+2):nth-last-child(n+2) {
+    display: inline-block;
+  }
+  ul.pagination li:first-child {
+    padding-right: .75em;
+  }
+}
+
 dl {
   margin: 0 0 2em 0;
 }
@@ -367,6 +427,69 @@ dl dt {
 
 dl dd {
   margin-left: 2em;
+}
+
+table {
+  margin: 0 0 2em 0;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  width: 100%;
+}
+
+table tbody tr {
+  border: solid 1px rgba(212, 212, 255, 0.1);
+  border-left: 0;
+  border-right: 0;
+}
+
+table tbody tr:nth-child(2n + 1) {
+  background-color: rgba(212, 212, 255, 0.035);
+}
+
+table td {
+  padding: 0.75em 0.75em;
+}
+
+table th {
+  color: #ffffff;
+  font-size: 0.9em;
+  font-weight: 600;
+  padding: 0 0.75em 0.75em 0.75em;
+  text-align: left;
+}
+
+table thead {
+  border-bottom: solid 2px rgba(212, 212, 255, 0.1);
+}
+
+table tfoot {
+  border-top: solid 2px rgba(212, 212, 255, 0.1);
+}
+
+table.alt {
+  border-collapse: separate;
+}
+
+table.alt tbody tr td {
+  border: solid 1px rgba(212, 212, 255, 0.1);
+  border-left-width: 0;
+  border-top-width: 0;
+}
+
+table.alt tbody tr td:first-child {
+  border-left-width: 1px;
+}
+
+table.alt tbody tr:first-child td {
+  border-top-width: 1px;
+}
+
+table.alt thead {
+  border-bottom: 0;
+}
+
+table.alt tfoot {
+  border-top: 0;
 }
 
 body, input, select, textarea {
@@ -472,7 +595,7 @@ sup {
 }
 
 blockquote {
-  border-left: solid 4px #2a2f4a;
+  border-left: solid 4px rgba(212, 212, 255, 0.1);
   font-style: italic;
   margin: 0 0 2em 0;
   padding: 0.5em 0 0.5em 2em;
