@@ -111,7 +111,7 @@ html(lang="en")
 
       h2 elements
 
-      section.elements.grid.gap
+      section.elements.grid.gap-lg
         .c-6-lg
           h3 Text
 
@@ -366,9 +366,9 @@ html(lang="en")
                 td(colspan="2")
                 td 129.95
 
-        .c-6-lg
+        .c-6-lg          
+            h3 Buttons
             section.buttons.grid.gap
-              h3.c-12 Buttons
               
               ul.actions.line.c-12
                 li
@@ -414,6 +414,60 @@ html(lang="en")
                   a.button.primary.disabled primary
                 li
                   a.button.disabled default
+
+            h3 Form
+
+            //- form.grid.gap.gap-r
+              input#demo-name.c-6-lg(
+                type="text", name="demo-name", placeholder="name" required
+                )
+
+              input#demo-name.c-6-lg(
+                type="email", name="demo-email", placeholder="email" required
+                )
+
+              select#demo-category.c-12(name='demo-category')
+                option(value='') - Category -
+                option(value='1') Manufacturing
+                option(value='1') Shipping
+                option(value='1') Administration
+                option(value='1') Human Resources
+
+              input#demo-priority-low(
+                type='radio', name='demo-priority', checked=''
+                )
+              label.c-4-md(for='demo-priority-low') Low
+
+              input#demo-priority-normal(
+                type='radio', name='demo-priority'
+                )
+              label.c-4-md(for='demo-priority-normal') Normal
+
+              input#demo-priority-high(
+                type='radio', name='demo-priority'
+                )
+              label.c-4-md(for='demo-priority-high') High
+
+              input#demo-copy(type='checkbox', name='demo-copy')
+              label.c-6-md(for='demo-copy') Email me a copy
+
+              input#demo-human(
+                type='checkbox', name='demo-human', checked=''
+                )
+              label.c-6-md(for='demo-human') I am a human
+
+              textarea#demo-message.c-12(
+                name='demo-message', 
+                placeholder='Enter your message', 
+                rows='6'
+                required
+                )
+
+              ul.actions.line.c-12
+                li
+                  input.primary(type='submit', value='Send Message')
+                li
+                  input(type='reset', value='Reset')
 
 
 
