@@ -9,6 +9,12 @@
   font-weight:  map-get($font, 'weight-bold')
   letter-spacing: .25em
   text-transform: uppercase
+  z-index: 10
+
+  &.hide
+    animation: hide-menu .6s forwards
+  &.show
+    animation: show-menu .6s forwards
 
   .logo
     padding: 1em 1.5em
