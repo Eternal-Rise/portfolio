@@ -299,7 +299,7 @@ html(lang="en")
           h3 table
 
           h4 Default
-
+          
           table
             thead
               tr
@@ -366,7 +366,7 @@ html(lang="en")
                 td(colspan="2")
                 td 129.95
 
-        .c-6-lg          
+        .c-6-lg
             h3 Buttons
             section.buttons.grid.gap
               
@@ -417,7 +417,7 @@ html(lang="en")
 
             h3 Form
 
-            //- form.grid.gap.gap-r
+            form.grid.gap.gap-r(method="post" action="#")
               input#demo-name.c-6-lg(
                 type="text", name="demo-name", placeholder="name" required
                 )
@@ -460,6 +460,7 @@ html(lang="en")
                 name='demo-message', 
                 placeholder='Enter your message', 
                 rows='6'
+                minlength="100"
                 required
                 )
 

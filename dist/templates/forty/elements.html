@@ -333,7 +333,7 @@
             </tfoot>
           </table>
         </div>
-        <div class="c-6-lg">         
+        <div class="c-6-lg">
           <h3>Buttons</h3>
           <section class="buttons grid gap">
             <ul class="actions line c-12">
@@ -368,6 +368,36 @@
             </ul>
           </section>
           <h3>Form</h3>
+          <form class="grid gap gap-r" method="post" action="#">
+            <input class="c-6-lg" id="demo-name" type="text" name="demo-name" placeholder="name" required="required"/>
+            <input class="c-6-lg" id="demo-name" type="email" name="demo-email" placeholder="email" required="required"/>
+            <select class="c-12" id="demo-category" name="demo-category">
+              <option value="">- Category -</option>
+              <option value="1">Manufacturing</option>
+              <option value="1">Shipping</option>
+              <option value="1">Administration</option>
+              <option value="1">Human Resources</option>
+            </select>
+            <input id="demo-priority-low" type="radio" name="demo-priority" checked=""/>
+            <label class="c-4-md" for="demo-priority-low">Low</label>
+            <input id="demo-priority-normal" type="radio" name="demo-priority"/>
+            <label class="c-4-md" for="demo-priority-normal">Normal</label>
+            <input id="demo-priority-high" type="radio" name="demo-priority"/>
+            <label class="c-4-md" for="demo-priority-high">High</label>
+            <input id="demo-copy" type="checkbox" name="demo-copy"/>
+            <label class="c-6-md" for="demo-copy">Email me a copy</label>
+            <input id="demo-human" type="checkbox" name="demo-human" checked=""/>
+            <label class="c-6-md" for="demo-human">I am a human</label>
+            <textarea class="c-12" id="demo-message" name="demo-message" placeholder="Enter your message" rows="6" minlength="100" required="required"></textarea>
+            <ul class="actions line c-12">
+              <li>
+                <input class="primary" type="submit" value="Send Message"/>
+              </li>
+              <li>
+                <input type="reset" value="Reset"/>
+              </li>
+            </ul>
+          </form>
         </div>
       </section>
       <div class="span" style="height: 600px"></div>

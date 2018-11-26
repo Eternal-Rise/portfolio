@@ -586,7 +586,6 @@ dl dd {
 
 table {
   margin: 0 0 2em 0;
-  -webkit-overflow-scrolling: touch;
   overflow-x: auto;
   width: 100%;
 }
@@ -798,7 +797,13 @@ hr.major {
 }
 
 .gap-lg {
-  grid-column-gap: 2.5em;
+  grid-column-gap: 1em;
+}
+
+@media screen and (min-width: 737px) {
+  .gap-lg {
+    grid-column-gap: 2.5em;
+  }
 }
 
 .gap-r {
@@ -806,7 +811,13 @@ hr.major {
 }
 
 .gap-r-lg {
-  grid-row-gap: 2.5em;
+  grid-row-gap: 1em;
+}
+
+@media screen and (min-width: 737px) {
+  .gap-r-lg {
+    grid-row-gap: 2.5em;
+  }
 }
 
 .inner {
