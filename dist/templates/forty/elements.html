@@ -370,7 +370,7 @@
           <h3>Form</h3>
           <form class="grid gap gap-r" method="post" action="#">
             <input class="c-6-lg" id="demo-name" type="text" name="demo-name" placeholder="name" required="required"/>
-            <input class="c-6-lg" id="demo-name" type="email" name="demo-email" placeholder="email" required="required"/>
+            <input class="c-6-lg" id="demo-email" type="email" name="demo-email" placeholder="email" required="required"/>
             <select class="c-12" id="demo-category" name="demo-category">
               <option value="">- Category -</option>
               <option value="1">Manufacturing</option>
@@ -455,8 +455,45 @@ print 'It took ' + i + ' iterations to sort the deck.';
 </code></pre>
         </div>
       </section>
-      <div class="span" style="height: 600px"></div>
     </div>
+    <section class="contact">
+      <div class="inner grid">
+        <form class="c-7-lg grid gap gap-r" method="post" action="#">
+          <div class="c-6-md">
+            <label for="name">Name</label>
+            <input id="name" type="text" name="name" required="required"/>
+          </div>
+          <div class="c-6-md">
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" required="required"/>
+          </div>
+          <div class="c-12">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" minlength="100" required="required"></textarea>
+          </div>
+          <ul class="actions line c-12">
+            <li>
+              <input class="primary" type="submit" value="Send Message"/>
+            </li>
+            <li>
+              <input type="reset" value="Clear"/>
+            </li>
+          </ul>
+        </form>
+        <div class="c-5-lg">
+          <div class="contact-method"><span class="icon alt fas fa-envelope"></span>
+            <h3>Email</h3><a class="link" href="mailto:information@untitled.tld">information@untitled.tld</a>
+          </div>
+          <div class="contact-method"><span class="icon alt fas fa-phone"></span>
+            <h3>Phone</h3><a href="tel:(000) 000-0000">(000) 000-0000</a>
+          </div>
+          <div class="contact-method"><span class="icon alt fas fa-home"></span>
+            <h3>Address</h3><span>1234 Somewhere Road #5432<br/>Nashville, TN 00000<br/>United States of America</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="span" style="height: 600px"></div>
     <script src="js/index.js"></script>
   </body>
 </html>

@@ -312,6 +312,7 @@ label {
   font-size: 0.8em;
   font-weight: 600;
   letter-spacing: 0.25em;
+  margin: 0 0 1em 0;
   text-transform: uppercase;
 }
 
@@ -443,6 +444,19 @@ input[type="radio"] + label:before {
   border-radius: 100%;
 }
 
+.icon {
+  border-radius: 50%;
+}
+
+.icon.alt, ul.icon.actions {
+  background-color: #ffffff;
+  color: #242943;
+  height: 2em;
+  width: 2em;
+  line-height: 2em;
+  text-align: center;
+}
+
 img {
   border: none;
   display: inline-block;
@@ -485,20 +499,7 @@ a.link {
   border-bottom: dotted 1px;
 }
 
-a.icon {
-  border-radius: 50%;
-}
-
-a.alt {
-  background-color: #ffffff;
-  color: #242943;
-  height: 2em;
-  width: 2em;
-  line-height: 2em;
-  text-align: center;
-}
-
-a.alt:hover {
+a.icon:hover {
   background-color: #9bf1ff;
   color: #242943;
 }
@@ -824,6 +825,76 @@ hr {
 
 hr.major {
   margin: 3em 0;
+}
+
+.contact {
+  border-bottom: solid 1px rgba(212, 212, 255, 0.1);
+  border-top: solid 1px rgba(212, 212, 255, 0.1);
+  overflow: hidden;
+}
+
+.contact .inner {
+  padding: 0;
+}
+
+.contact form {
+  border-right: 0;
+  margin-bottom: 0;
+  padding: 2em 0;
+}
+
+@media screen and (min-width: 981px) {
+  .contact form {
+    border-right: solid 1px rgba(212, 212, 255, 0.1);
+    padding: 4em 3em;
+    padding-left: 0;
+  }
+}
+
+.contact-method {
+  padding: 2em 0;
+  padding-left: 3em;
+  position: relative;
+}
+
+.contact-method::before {
+  border-top: 1px solid rgba(212, 212, 255, 0.1);
+  content: '';
+  margin-left: -6em;
+  position: absolute;
+  top: 0;
+  width: calc(100vw + 6em);
+}
+
+.contact-method .icon {
+  position: absolute;
+  left: 0;
+  top: 2em;
+}
+
+@media screen and (min-width: 481px) {
+  .contact-method {
+    padding: 3em;
+    padding-right: 0;
+  }
+  .contact-method .icon {
+    top: 3em;
+  }
+}
+
+@media screen and (min-width: 981px) {
+  .contact-method {
+    padding-left: 5.6em;
+  }
+  .contact-method::before {
+    margin-left: -5.6em;
+  }
+  .contact-method:first-child::before {
+    border-top: 0;
+  }
+  .contact-method .icon {
+    left: 2.5em;
+  }
 }
 
 .grid {
