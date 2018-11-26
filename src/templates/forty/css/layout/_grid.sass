@@ -2,120 +2,51 @@
   display: grid
   grid-template-columns: repeat(12, 1fr)
 
-.container
-  grid-column: 2 / span 10
+.gap
+  grid-gap: 0 1em
+
+.inner
   padding: 8em 0 2em 0
   margin: auto
-  max-width: 65em
+  max-width: 65em    
 
-  .text, .elements, .lists, .buttons
-    @extend .grid
+@for $i from 12 to 0
+  .c-#{$i}
+    grid-column: span $i
 
-    grid-gap: 0 1em
+// to fill row, when width is smaller xs, sm, md...
+@for $i from 11 to 0
+  .c-#{$i}-xs, .c-#{$i}-sm, .c-#{$i}-md, .c-#{$i}-lg,
+  .c-#{$i}-xl, .c-#{$i}-xxl
+    @extend .c-12
 
-  .fill
-    grid-column: 1 / -1
+@media screen and (min-width: 361px)
+  @for $i from 12 to 0
+    .c-#{$i}-xs
+      grid-column: span $i
 
-    &-xs
-      @media screen and (min-width: 361px)
-        grid-column: 1 / -1
-    &-sm
-      @media screen and (min-width: 481px)
-        grid-column: 1 / -1
-    &-md
-      @media screen and (min-width: 737px)
-        grid-column: 1 / -1
-    &-lg
-      @media screen and (min-width: 981px)
-        grid-column: 1 / -1
-    &-xl
-      @media screen and (min-width: 1281px)
-        grid-column: 1 / -1
-    &-xxl
-      @media screen and (min-width: 1681px)
-        grid-column: 1 / -1
+@media screen and (min-width: 481px)
+  @for $i from 12 to 0
+    .c-#{$i}-sm
+      grid-column: span $i
 
-  .half
-    grid-column: span 6
+@media screen and (min-width: 737px)
+  @for $i from 12 to 0
+    .c-#{$i}-md
+      grid-column: span $i
 
-    &-xs
-      grid-column: 1 / -1
-      @media screen and (min-width: 361px)
-        grid-column: span 6
-    &-sm
-      grid-column: 1 / -1
-      @media screen and (min-width: 481px)
-        grid-column: span 6
-    &-md
-      grid-column: 1 / -1
-      @media screen and (min-width: 737px)
-        grid-column: span 6
-    &-lg
-      grid-column: 1 / -1
-      @media screen and (min-width: 981px)
-        grid-column: span 6
-    &-xl
-      grid-column: 1 / -1
-      @media screen and (min-width: 1281px)
-        grid-column: span 6
-    &-xxl
-      grid-column: 1 / -1
-      @media screen and (min-width: 1681px)
-        grid-column: span 6
-  
-  .third
-    grid-column: span 4
+@media screen and (min-width: 981px)
+  @for $i from 12 to 0
+    .c-#{$i}-lg
+      grid-column: span $i
 
-    &-xs
-      grid-column: 1 / -1
-      @media screen and (min-width: 361px)
-        grid-column: span 4
-    &-sm
-      grid-column: 1 / -1
-      @media screen and (min-width: 481px)
-        grid-column: span 4
-    &-md
-      grid-column: 1 / -1
-      @media screen and (min-width: 737px)
-        grid-column: span 4
-    &-lg
-      grid-column: 1 / -1
-      @media screen and (min-width: 981px)
-        grid-column: span 4
-    &-xl
-      grid-column: 1 / -1
-      @media screen and (min-width: 1281px)
-        grid-column: span 4
-    &-xxl
-      grid-column: 1 / -1
-      @media screen and (min-width: 1681px)
-        grid-column: span 4
+@media screen and (min-width: 1281px)
+  @for $i from 12 to 0
+    .c-#{$i}-xl
+      grid-column: span $i
 
-  .fourth
-    grid-column: span 3
-
-    &-xs
-      grid-column: 1 / -1
-      @media screen and (min-width: 361px)
-        grid-column: span 3
-    &-sm
-      grid-column: 1 / -1
-      @media screen and (min-width: 481px)
-        grid-column: span 3
-    &-md
-      grid-column: 1 / -1
-      @media screen and (min-width: 737px)
-        grid-column: span 3
-    &-lg
-      grid-column: 1 / -1
-      @media screen and (min-width: 981px)
-        grid-column: span 3
-    &-xl
-      grid-column: 1 / -1
-      @media screen and (min-width: 1281px)
-        grid-column: span 3
-    &-xxl
-      grid-column: 1 / -1
-      @media screen and (min-width: 1681px)
-        grid-column: span 3
+@media screen and (min-width: 1681px)
+  @for $i from 12 to 0
+    .c-#{$i}-xxl
+      grid-column: span $i
 
