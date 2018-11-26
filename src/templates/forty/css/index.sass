@@ -13,35 +13,6 @@
 body
   background-color: map-get($palette, 'bg')
 
-a
-  color: inherit
-  text-decoration: none
-  @extend .hover
-
-  &.active
-    color: map-get($palette, 'highlight')
-
-    &:hover
-      cursor: default
-
-  &.link
-    border-bottom: dotted 1px
-  
-  &.icon
-    border-radius: 50%
-
-  &.alt
-    background-color: map-get($palette, 'fg')
-    color: map-get($palette, 'bg')
-    height: 2em
-    width: 2em
-    line-height: 2em
-    text-align: center
-
-    &:hover
-      background-color: map-get($palette, 'highlight')
-      color: map-get($palette, 'bg')
-
 .hover
   transition: .4s
 
@@ -51,7 +22,10 @@ a
 
 // Components
 @import components/buttons
+@import components/box
 @import components/form
+@import components/image
+@import components/links
 @import components/lists
 @import components/tables
 @import components/typography

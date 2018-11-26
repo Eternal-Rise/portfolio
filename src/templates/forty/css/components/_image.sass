@@ -1,0 +1,20 @@
+img
+  border: none
+  display: inline-block
+  vertical-align: baseline
+  width: 100%
+
+  &.left
+    float: left
+    margin: .5em 1.2em .5em 0
+    max-width: 30%
+
+  &.right
+    float: right
+    margin: .5em 0 .5em 1.2em
+    max-width: 30%
+
+  &.fit
+    display: block
+    margin: 0 0 map-get($size, 'element-margin') 0
+    width: 100%
