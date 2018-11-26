@@ -1,0 +1,29 @@
+footer
+  &.inner
+    padding: 2em 0
+
+  .copyright 
+    font-size: 0.8em
+    list-style: none
+    padding-left: 0
+
+    li 
+      display: block
+      border-left: 0
+      margin-left: 0
+      padding-left: 0
+      line-height: inherit
+
+    @media screen and (min-width: 481px)
+      li 
+        border-left: solid 1px map-get($palette, 'border')
+        color: map-get($palette, 'fg-light')
+        display: inline-block
+        line-height: 1
+        margin-left: 1em
+        padding-left: 1em
+        
+        &:first-child 
+          border-left: 0
+          margin-left: 0
+          padding-left: 0
