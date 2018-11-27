@@ -41,4 +41,22 @@ window.addEventListener('load', () => {
     let scroll = window.pageYOffset;
     banner.style.backgroundPosition = `center ${scroll / 8}px`
   })
+
+  // Scroll to tiles
+  let btnScroll = document.getElementById('scroll');
+
+  btnScroll.addEventListener('click', () => {
+    
+    let target = document.querySelector('.tiles');
+    let offset = target.getBoundingClientRect().top;
+    let headerNavHeight = parseInt(window
+      .getComputedStyle(headerNav,null)
+      .getPropertyValue("height"));
+
+    window.scroll({
+      top: offset - headerNavHeight,
+      left: 0,
+      behavior: 'smooth'
+    });
+  });
 });

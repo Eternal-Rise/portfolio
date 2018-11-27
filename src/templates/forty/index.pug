@@ -43,15 +43,69 @@ html(lang="en")
         a#button-menu menu
 
     #blur
-      header.banner
+      header.banner.main
         .inner
           h1.major Hi, my name is Forty
-          .grid.gap.gap-r
+          .grid.gap
             p.c-5-md.
-              A responsive site template designed by html5 up and
+              A responsive site template designed 
+              by html5 up and
               released under the craetive commons.
 
-            a.button.next.scroll get started
+            a.c-7-md.button.next#scroll get started
+
+      article.tiles.grid
+        section.banner.c-6-sm.c-5-lg
+          .inner
+            h2.major.unfit Aliquam
+            p ipsum dolor sit amet
+            a(href="landing.html")
+
+        section.banner.c-6-sm.c-7-lg
+          .inner
+            h2.major.unfit Tempus
+            p Feugiat amet tempus
+            a(href="landing.html")
+
+        section.banner.c-6-sm.c-7-lg
+          .inner
+            h2.major.unfit Magna
+            p lorem etial nullam
+            a(href="landing.html")
+
+        section.banner.c-6-sm.c-5-lg
+          .inner
+            h2.major.unfit ipsum
+            p nisl sed aliquam
+            a(href="landing.html")
+
+        section.banner.c-6-sm.c-5-lg
+          .inner
+            h2.major.unfit consequat
+            p ipsum dolor sit amet
+            a(href="landing.html")
+
+        section.banner.c-6-sm.c-7-lg
+          .inner
+            h2.major.unfit Etiam
+            p eugiat amet tempus
+            a(href="landing.html")
+
+      section.alt-bg
+        .inner
+          h2.major.unfit Massa libero
+          p.
+            Nullam et orci eu lorem consequat tincidunt vivamus et sagittis 
+            libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. 
+            Pellentesque condimentum sem. In efficitur ligula tate urna. 
+            Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. 
+            Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis 
+            libero. Mauris aliquet magna magna sed nunc rhoncus amet 
+            pharetra et feugiat tempus.
+
+          ul.actions.line
+            li
+              a.button.next(href="landing.html") get started
 
       include components/_contact.pug
 

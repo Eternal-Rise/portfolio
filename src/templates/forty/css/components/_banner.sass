@@ -1,23 +1,14 @@
 .banner
   display: flex
-  align-items: center
-
-  background-image: url(../img/banner.jpg)
+  align-items: center  
   background-size: cover
-  background-attachment: fixed
   background-position: center
   background-repeat: no-repeat
-
-  height: 60vh
   position: relative
-  top: 3.75em
-  margin-bottom: 3.75em
-  
-  max-height: 32em
-  min-height: 22em
 
-  .inner
-    z-index: 1
+  height: 30vh
+  max-height: 30em
+  min-height: 20em
 
   &::before
     content: ''
@@ -30,3 +21,32 @@
 
     background-color: map-get($palette, 'bg')
     opacity: .75
+    transition: .4s
+
+  &.main
+    background-image: url(../img/banner.jpg)
+    background-attachment: fixed
+
+    height: 75em
+    top: 3.75em
+    margin-bottom: 3.75em
+    
+    max-height: 35em
+    min-height: 25em
+
+    h1
+      @media screen and (min-width: 981px)
+        font-size: 3.25em
+
+  .button
+    justify-self: start
+
+  .inner
+    padding: 0
+    z-index: 1
+
+  p
+    font-size: .7em
+    font-weight: map-get($font, 'weight-bold')
+    letter-spacing: map-get($font, 'letter-spacing-alt')
+    text-transform: uppercase
