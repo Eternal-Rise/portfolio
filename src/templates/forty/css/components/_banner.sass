@@ -1,0 +1,32 @@
+.banner
+  display: flex
+  align-items: center
+
+  background-image: url(../img/banner.jpg)
+  background-size: cover
+  background-attachment: fixed
+  background-position: center
+  background-repeat: no-repeat
+
+  height: 60vh
+  position: relative
+  top: 3.75em
+  margin-bottom: 3.75em
+  
+  max-height: 32em
+  min-height: 22em
+
+  .inner
+    z-index: 1
+
+  &::before
+    content: ''
+    display: block
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+
+    background-color: map-get($palette, 'bg')
+    opacity: .75

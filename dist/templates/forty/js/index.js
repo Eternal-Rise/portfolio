@@ -1,9 +1,10 @@
 window.addEventListener('load', () => {
 
+// Show/hide navigation
   let menuShow = document.getElementById('button-menu');
   let menuHide = document.getElementById('button-menu-close');
   let navOverlay = document.querySelector('.nav-overlay');
-  let headerNav = document.querySelector('.header-main');
+  let headerNav = document.querySelector('.header-bar');
   let blur = document.getElementById('blur');
 
   menuShow.addEventListener('click', (e) => {
@@ -31,4 +32,13 @@ window.addEventListener('load', () => {
     blur.classList.remove('on')
     blur.classList.add('off')
   }
+
+
+  // Parallax under banner
+  let banner = document.querySelector('.banner');
+
+  window.addEventListener('scroll', () => {
+    let scroll = window.pageYOffset;
+    banner.style.backgroundPosition = `center ${scroll / 8}px`
+  })
 });

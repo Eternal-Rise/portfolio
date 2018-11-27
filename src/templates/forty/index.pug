@@ -3,6 +3,58 @@ html(lang="en")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
+    link(
+      rel='stylesheet'
+      href='https://use.fontawesome.com/releases/v5.2.0/css/all.css'
+      integrity='sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ'
+      crossorigin='anonymous'
+      )
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic")
+    link(rel="stylesheet" href="css/index.css")
+
     title Forty
   body
-    a(href="elements.html") elements
+    .nav-overlay
+      .nav-overlay-icon
+        i#button-menu-close.fas.fa-times.fa-2x
+      nav
+        ul.alt
+          li
+            a.active home
+          li
+            a(href="landing.html") landing
+          li
+            a(href="generic.html") generic
+          li
+            a(href="elements.html") elements
+    
+        ul.actions
+          li
+            a.button.primary.fit get started
+          li
+            a.button.fit log in
+
+    header.header-bar
+      a.logo(href="index.html")
+        strong forty
+        span  by html5 up
+      nav
+        a#button-menu menu
+
+    #blur
+      header.banner
+        .inner
+          h1.major Hi, my name is Forty
+          .grid.gap.gap-r
+            p.c-5-md.
+              A responsive site template designed by html5 up and
+              released under the craetive commons.
+
+            a.button.next.scroll get started
+
+      include components/_contact.pug
+
+      include components/_footer.pug
+
+    script(src="js/index.js")

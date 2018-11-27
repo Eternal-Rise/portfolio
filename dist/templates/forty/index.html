@@ -3,7 +3,95 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic"/>
+    <link rel="stylesheet" href="css/index.css"/>
     <title>Forty</title>
   </head>
-  <body><a href="elements.html">elements</a></body>
+  <body>
+    <div class="nav-overlay">
+      <div class="nav-overlay-icon"><i class="fas fa-times fa-2x" id="button-menu-close"></i></div>
+      <nav>
+        <ul class="alt">
+          <li><a class="active">home</a></li>
+          <li><a href="landing.html">landing</a></li>
+          <li><a href="generic.html">generic</a></li>
+          <li><a href="elements.html">elements</a></li>
+        </ul>
+        <ul class="actions">
+          <li><a class="button primary fit">get started</a></li>
+          <li><a class="button fit">log in</a></li>
+        </ul>
+      </nav>
+    </div>
+    <header class="header-bar"><a class="logo" href="index.html"><strong>forty</strong><span> by html5 up</span></a>
+      <nav><a id="button-menu">menu</a></nav>
+    </header>
+    <div id="blur">
+      <header class="banner">
+        <div class="inner">
+          <h1 class="major">Hi, my name is Forty</h1>
+          <div class="grid gap gap-r">
+            <p class="c-5-md">
+              A responsive site template designed by html5 up and
+              released under the craetive commons.
+              
+            </p><a class="button next scroll">get started</a>
+          </div>
+        </div>
+      </header>
+      <section class="contact">
+        <div class="inner grid">
+          <form class="c-7-lg grid gap gap-r" method="post" action="#">
+            <div class="c-6-md">
+              <label for="name">Name</label>
+              <input id="name" type="text" name="name" required="required"/>
+            </div>
+            <div class="c-6-md">
+              <label for="email">Email</label>
+              <input id="email" type="email" name="email" required="required"/>
+            </div>
+            <div class="c-12">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" minlength="100" required="required"></textarea>
+            </div>
+            <ul class="actions line c-12">
+              <li>
+                <input class="primary" type="submit" value="Send Message"/>
+              </li>
+              <li>
+                <input type="reset" value="Clear"/>
+              </li>
+            </ul>
+          </form>
+          <div class="c-5-lg">
+            <div class="contact-method"><span class="icon alt fas fa-envelope"></span>
+              <h3>Email</h3><a class="link" href="mailto:information@untitled.tld">information@untitled.tld</a>
+            </div>
+            <div class="contact-method"><span class="icon alt fas fa-phone"></span>
+              <h3>Phone</h3><a href="tel:(000) 000-0000">(000) 000-0000</a>
+            </div>
+            <div class="contact-method"><span class="icon alt fas fa-home"></span>
+              <h3>Address</h3><span>1234 Somewhere Road #5432<br/>Nashville, TN 00000<br/>United States of America</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="inner">
+        <ul class="actions line">
+          <li><a class="icon alt fab fa-twitter"></a></li>
+          <li><a class="icon alt fab fa-facebook-f"></a></li>
+          <li><a class="icon alt fab fa-instagram"></a></li>
+          <li><a class="icon alt fab fa-github"></a></li>
+          <li><a class="icon alt fab fa-linkedin-in"></a></li>
+        </ul>
+        <ul class="copyright">
+          <li>© Untitled</li>
+          <li>Design: <a class="link" href="https://html5up.net">HTML5 UP</a></li>
+          <li>Demo Images: <a class="link" href="https://unsplash.com/">Unsplash</a></li>
+        </ul>
+      </footer>
+    </div>
+    <script src="js/index.js"></script>
+  </body>
 </html>

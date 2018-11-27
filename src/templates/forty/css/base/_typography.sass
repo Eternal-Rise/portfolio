@@ -19,18 +19,26 @@ h1, h2, h3, h4, h5, h6
   margin: 0 0 1em 0
   text-transform: capitalize
 
-h1
-  display: inline-block
-  font-size: 2em
-  margin-bottom: 0
+  &.major
+    margin-bottom: 0
 
-  &::after
-    content: ''
-    background-color: map-get($palette, 'fg')
-    display: block
-    height: 2px
-    margin: 0.325em 0 0.5em 0    
-    width: calc(100% + 0.5em)
+    &::after
+      content: ''
+      background-color: map-get($palette, 'fg')
+      display: block
+      height: 2px
+      margin: 0.325em 0 1em 0    
+      width: 100%
+
+    &.unfit
+      display: inline-block
+
+      &::after
+        width: calc(100% + 0.5em)
+
+
+h1
+  font-size: 2em
 
   @media screen and (min-width: 481px)
     font-size: 2.5em

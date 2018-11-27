@@ -15,7 +15,6 @@ html(lang="en")
     
     title Elements
   body
-
     .nav-overlay
       .nav-overlay-icon
         i#button-menu-close.fas.fa-times.fa-2x
@@ -29,14 +28,14 @@ html(lang="en")
             a(href="generic.html") generic
           li
             a.active elements
-        
+    
         ul.actions
           li
             a.button.primary.fit get started
           li
             a.button.fit log in
 
-    header.header-main
+    header.header-bar
       a.logo(href="index.html")
         strong forty
         span  by html5 up
@@ -46,7 +45,7 @@ html(lang="en")
     #blur
       .inner
         header
-          h1 Elements
+          h1.major.unfit Elements
         
         h2 sample content
         p.
@@ -548,82 +547,9 @@ html(lang="en")
 
                   print 'It took ' + i + ' iterations to sort the deck.';
 
-      section.contact
-        .inner.grid
-          form.c-7-lg.grid.gap.gap-r(method="post" action="#")
+      include components/_contact.pug
 
-            .c-6-md
-              label(for="name") Name
-              input#name(
-                type="text", name="name" required
-                )
-
-            .c-6-md
-              label(for="email") Email
-              input#email(
-                type="email", name="email" required
-                )
-
-            .c-12
-              label(for="message") Message
-              textarea#message(
-                name='message'
-                rows='6'
-                minlength="100"
-                required
-                )
-
-            ul.actions.line.c-12
-              li
-                input.primary(type='submit', value='Send Message')
-              li
-                input(type='reset', value='Clear')
-
-          .c-5-lg
-            .contact-method
-              span.icon.alt.fas.fa-envelope
-              h3 Email
-              a.link(href="mailto:information@untitled.tld")
-                | information@untitled.tld
-
-            .contact-method
-              span.icon.alt.fas.fa-phone
-              h3 Phone
-              a(href="tel:(000) 000-0000") (000) 000-0000
-
-            .contact-method
-              span.icon.alt.fas.fa-home
-              h3 Address
-              span
-                | 1234 Somewhere Road #5432
-                br
-                | Nashville, TN 00000
-                br
-                | United States of America
-
-      footer.inner
-        ul.actions.line
-          li
-            a.icon.alt.fab.fa-twitter
-          li
-            a.icon.alt.fab.fa-facebook-f
-          li
-            a.icon.alt.fab.fa-instagram
-          li
-            a.icon.alt.fab.fa-github
-          li
-            a.icon.alt.fab.fa-linkedin-in
-
-        ul.copyright
-          li © Untitled
-
-          li
-            | Design: 
-            a.link(href="https://html5up.net") HTML5 UP
-
-          li
-            | Demo Images: 
-            a.link(href="https://unsplash.com/") Unsplash
-
+      include components/_footer.pug
+      
     script(src="js/index.js")
 
