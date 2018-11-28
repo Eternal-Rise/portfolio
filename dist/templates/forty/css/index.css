@@ -251,6 +251,10 @@ body {
 
 .banner#index {
   background-image: url(../img/banner.jpg);
+  background-size: 110%;
+  height: 75vh;
+  max-height: 50em;
+  min-height: 30em;
 }
 
 .banner#index::before {
@@ -259,22 +263,13 @@ body {
 
 .banner#landing {
   background-image: url(../img/pic07.jpg);
+  height: 60vh;
+  max-height: 32em;
+  min-height: 22em;
 }
 
 .banner#landing::before {
   background-color: #8d82c4;
-}
-
-.banner.main {
-  height: 75em;
-  max-height: 35em;
-  min-height: 25em;
-}
-
-@media screen and (min-width: 981px) {
-  .banner.main h1 {
-    font-size: 3.25em;
-  }
 }
 
 .banner .button {
@@ -288,6 +283,12 @@ body {
 
 .banner .major::after {
   margin: 0.325em 0 .5em;
+}
+
+@media screen and (min-width: 981px) {
+  .banner h1 {
+    font-size: 3.25em;
+  }
 }
 
 .banner p.alt {
@@ -1661,6 +1662,8 @@ footer .copyright li {
   grid-template-rows: auto 1fr;
   background-color: rgba(36, 41, 67, 0.9);
   text-transform: uppercase;
+  overflow: auto;
+  background-attachment: fixed;
 }
 
 .nav-overlay.show {

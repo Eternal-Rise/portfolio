@@ -20,35 +20,35 @@
 
   &#index
     background-image: url(../img/banner.jpg)
+    background-size: 110%
+    height: 75vh
+    max-height: 50em
+    min-height: 30em
+
     &::before
       background-color: map-get($palette, 'bg')
 
   &#landing
     background-image: url(../img/pic07.jpg)
-    // background-size: 150%
+    height: 60vh
+    max-height: 32em
+    min-height: 22em
+
     &::before
       background-color: map-get($palette, 'accent2')
-
-
-
-  &.main
-    height: 75em    
-    max-height: 35em
-    min-height: 25em
-
-    h1
-      @media screen and (min-width: 981px)
-        font-size: 3.25em
 
   .button
     justify-self: start
 
   .inner
-    // padding: 0
     z-index: 1  
     
   .major::after
     margin: 0.325em 0 .5em
+
+  h1
+    @media screen and (min-width: 981px)
+      font-size: 3.25em
 
   p.alt
     font-size: .7em
