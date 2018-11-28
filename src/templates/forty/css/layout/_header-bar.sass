@@ -1,15 +1,22 @@
 .header-bar
   display: flex
-  position: fixed
-  top: 0
   width: 100%
+  position: absolute
+  top: 0
 
-  background-color: map-get($palette, 'bg-alt')
+  background-color: transparent
   font-size: .8em
   font-weight:  map-get($font, 'weight-bold')
   letter-spacing: .25em
   text-transform: uppercase
+  transition: .2s
   z-index: 10
+
+  &.fixed
+    position: fixed
+    top: 0
+    background-color: map-get($palette, 'bg-alt')
+    
 
   &.hide
     animation: hide-menu .6s forwards

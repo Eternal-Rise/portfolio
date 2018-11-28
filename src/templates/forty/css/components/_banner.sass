@@ -2,13 +2,9 @@
   display: flex
   align-items: center  
   background-size: cover
-  background-position: center
+  background-position: center 0 
   background-repeat: no-repeat
   position: relative
-
-  height: 30vh
-  max-height: 30em
-  min-height: 20em
 
   &::before
     content: ''
@@ -19,18 +15,24 @@
     bottom: 0
     left: 0
 
-    background-color: map-get($palette, 'bg')
     opacity: .75
     transition: .4s
 
-  &.main
+  &#index
     background-image: url(../img/banner.jpg)
-    background-attachment: fixed
+    &::before
+      background-color: map-get($palette, 'bg')
 
-    height: 75em
-    top: 3.75em
-    margin-bottom: 3.75em
-    
+  &#landing
+    background-image: url(../img/pic07.jpg)
+    // background-size: 150%
+    &::before
+      background-color: map-get($palette, 'accent2')
+
+
+
+  &.main
+    height: 75em    
     max-height: 35em
     min-height: 25em
 
@@ -42,10 +44,13 @@
     justify-self: start
 
   .inner
-    padding: 0
-    z-index: 1
+    // padding: 0
+    z-index: 1  
+    
+  .major::after
+    margin: 0.325em 0 .5em
 
-  p
+  p.alt
     font-size: .7em
     font-weight: map-get($font, 'weight-bold')
     letter-spacing: map-get($font, 'letter-spacing-alt')
