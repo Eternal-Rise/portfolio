@@ -31,9 +31,9 @@ html(lang="en")
     
         ul.actions
           li
-            a.button.primary.fit get started
+            button.primary.fit get started
           li
-            a.button.fit log in
+            button.fit log in
 
     header.header-bar.fixed
       a.logo(href="index.html")
@@ -57,8 +57,8 @@ html(lang="en")
           arcu metus praesent turpis eu ac lacinia nunc ac commodo gravida 
           adipiscing eget accumsan ac nunc adipiscing adipiscing.
         
-        article.text.grid.gap
-          section.text-block.c-6-md
+        .grid.gap
+          section.c-6-md
             h3 Sem turpis amet semper
             p.
               Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida 
@@ -69,7 +69,7 @@ html(lang="en")
               Semper adipiscing varius montes viverra nibh in adipiscing 
               blandit tempus accumsan.
 
-          section.text-block.c-6-md
+          section.c-6-md
             h3 Magna odio tempus commodo
             p.
               In arcu accumsan arcu adipiscing accumsan orci ac. 
@@ -80,7 +80,7 @@ html(lang="en")
               adipiscing nascetur lacus ac interdum morbi accumsan vis mi 
               accumsan ac praesent.
 
-          section.text-block.c-4-lg
+          section.c-4-lg
             h3 Interdum sapien gravida
             p.
               Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida 
@@ -89,7 +89,7 @@ html(lang="en")
               accumsan varius montes viverra nibh in adipiscing blandit 
               tempus accumsan
 
-          section.text-block.c-4-lg
+          section.c-4-lg
             h3 Faucibus consequat lorem
             p.
               Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida 
@@ -98,7 +98,7 @@ html(lang="en")
               accumsan varius montes viverra nibh in adipiscing blandit 
               tempus accumsan
 
-          section.text-block.c-4-lg
+          section.c-4-lg
             h3 Accumsan montes viverra
             p.
               Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida 
@@ -111,7 +111,7 @@ html(lang="en")
 
         h2 elements
 
-        section.elements.grid.gap-lg
+        section.grid.gap-lg
           .c-6-lg
             h3 Text
 
@@ -152,7 +152,7 @@ html(lang="en")
 
             h3 lists
 
-            section.lists.grid.gap
+            section.grid.gap
               .c-6-sm
                 h4 Unordered
 
@@ -181,17 +181,17 @@ html(lang="en")
 
                 ul.actions.line
                   li
-                    a.fab.fa-twitter
+                    a.icon.fab.fa-twitter
                   li
-                    a.fab.fa-facebook-f
+                    a.icon.fab.fa-facebook-f
                   li
-                    a.fab.fa-instagram
+                    a.icon.fab.fa-instagram
                   li
-                    a.fab.fa-github
+                    a.icon.fab.fa-github
                   li
-                    a.fab.fa-dribbble
+                    a.icon.fab.fa-dribbble
                   li
-                    a.fab.fa-tumblr
+                    a.icon.fab.fa-tumblr
 
                 ul.actions.line
                   li
@@ -226,50 +226,50 @@ html(lang="en")
                   iaculis volutpat ac adipiscing accumsan eu faucibus. 
                   Integer ac pellentesque praesent. Lorem ipsum dolor.
 
-            section.buttons.grid.gap
+            section.grid.gap
               h3.c-12 Actions
 
               ul.actions.line.c-12
                 li
-                  a.button.primary Default
+                  button.primary Default
                 li
-                  a.button Default
+                  button Default
 
               ul.actions.line.c-12
                 li
-                  a.button.primary.small small
+                  button.primary.small small
                 li
-                  a.button.small small
+                  button.small small
 
               ul.actions.c-6-xs
                 li
-                  a.button.primary Default
+                  button.primary Default
                 li
-                  a.button Default
+                  button Default
 
               ul.actions.c-6-xs
                 li
-                  a.button.primary.small small
+                  button.primary.small small
                 li
-                  a.button.small small
+                  button.small small
                   
               ul.actions.c-6-xs
                 li
-                  a.button.primary.fit Default
+                  button.primary.fit Default
                 li
-                  a.button.fit Default
+                  button.fit Default
 
               ul.actions.c-6-xs
                 li
-                  a.button.primary.fit.small small
+                  button.primary.fit.small small
                 li
-                  a.button.fit.small small
+                  button.fit.small small
 
             h3 Pagination
 
             ul.pagination
               li
-                a.button.small.disabled prev
+                button.small.disabled prev
               li
                 a.page.active 1
               li
@@ -277,7 +277,7 @@ html(lang="en")
               li
                 a.page 3
               li
-                span ...
+                span . . .
               li
                 a.page 8
               li
@@ -285,7 +285,7 @@ html(lang="en")
               li
                 a.page 10
               li
-                a.button.small next
+                button.small next
 
             h3 bockquote
             blockquote.
@@ -300,120 +300,122 @@ html(lang="en")
 
             h4 Default
             
-            table
-              thead
-                tr
-                  td Name
-                  td Description
-                  td Price
-              tbody
-                tr
-                  td Item 1
-                  td Ante turpis integer aliquet porttitor.
-                  td 29.99
-                tr
-                  td Item 2
-                  td Vis ac commodo adipiscing arcu aliquet.
-                  td 19.99
-                tr
-                  td Item 3
-                  td Morbi faucibus arcu accumsan lorem.
-                  td 29.99
-                tr
-                  td Item 4
-                  td Vitae integer tempus condimentum.
-                  td 19.99
-                tr
-                  td Item 5
-                  td Ante turpis integer aliquet porttitor.
-                  td 29.99
-              tfoot
-                tr
-                  td(colspan="2")
-                  td 129.95
+            .table-wrapper
+              table
+                thead
+                  tr
+                    td Name
+                    td Description
+                    td Price
+                tbody
+                  tr
+                    td Item 1
+                    td Ante turpis integer aliquet porttitor.
+                    td 29.99
+                  tr
+                    td Item 2
+                    td Vis ac commodo adipiscing arcu aliquet.
+                    td 19.99
+                  tr
+                    td Item 3
+                    td Morbi faucibus arcu accumsan lorem.
+                    td 29.99
+                  tr
+                    td Item 4
+                    td Vitae integer tempus condimentum.
+                    td 19.99
+                  tr
+                    td Item 5
+                    td Ante turpis integer aliquet porttitor.
+                    td 29.99
+                tfoot
+                  tr
+                    td(colspan="2")
+                    td 129.95
 
             h4 alternate
 
-            table.alt
-              thead
-                tr
-                  td Name
-                  td Description
-                  td Price
-              tbody
-                tr
-                  td Item 1
-                  td Ante turpis integer aliquet porttitor.
-                  td 29.99
-                tr
-                  td Item 2
-                  td Vis ac commodo adipiscing arcu aliquet.
-                  td 19.99
-                tr
-                  td Item 3
-                  td Morbi faucibus arcu accumsan lorem.
-                  td 29.99
-                tr
-                  td Item 4
-                  td Vitae integer tempus condimentum.
-                  td 19.99
-                tr
-                  td Item 5
-                  td Ante turpis integer aliquet porttitor.
-                  td 29.99
-              tfoot
-                tr
-                  td(colspan="2")
-                  td 129.95
+            .table-wrapper
+              table.alt
+                thead
+                  tr
+                    td Name
+                    td Description
+                    td Price
+                tbody
+                  tr
+                    td Item 1
+                    td Ante turpis integer aliquet porttitor.
+                    td 29.99
+                  tr
+                    td Item 2
+                    td Vis ac commodo adipiscing arcu aliquet.
+                    td 19.99
+                  tr
+                    td Item 3
+                    td Morbi faucibus arcu accumsan lorem.
+                    td 29.99
+                  tr
+                    td Item 4
+                    td Vitae integer tempus condimentum.
+                    td 19.99
+                  tr
+                    td Item 5
+                    td Ante turpis integer aliquet porttitor.
+                    td 29.99
+                tfoot
+                  tr
+                    td(colspan="2")
+                    td 129.95
 
           .c-6-lg
-              h3 Buttons
-              section.buttons.grid.gap
+              section.grid.gap
+                h3.c-12 Buttons
                 
                 ul.actions.line.c-12
                   li
-                    a.button.primary Primary
+                    button.primary Primary
                   li
-                    a.button Default
+                    button Default
 
                 ul.actions.c-6-xs
                   li
-                    a.button.large large
+                    button.large large
                   li
-                    a.button Default
+                    button Default
                   li
-                    a.button.small small
+                    button.small small
                 ul.actions.c-6-xs
                   li
-                    a.button.large.primary large
+                    button.large.primary large
                   li
-                    a.button.primary Primary
+                    button.primary Primary
                   li
-                    a.button.primary.small small
+                    button.primary.small small
 
                 ul.actions.c-6-xs
                   li
-                    a.button.primary.fit fit
+                    button.primary.fit fit
                   li
-                    a.button.primary.fit.small fit + small
+                    button.primary.fit.small fit + small
                     
                 ul.actions.c-6-xs
                   li
-                    a.button.fit fit
+                    button.fit fit
                   li
-                    a.button.fit.small fit + small
+                    button.fit.small fit + small
 
                 ul.actions.line.c-12
                   li
-                    a.button.primary.icon.fas.fa-search icon
+                    button.primary.icon.fas.fa-search icon
                   li
-                    a.button.icon.fas.fa-download icon
+                    button.icon.fas.fa-download icon
 
                 ul.actions.line.c-12
                   li
-                    a.button.primary.disabled primary
+                    button.primary.disabled primary
                   li
-                    a.button.disabled default
+                    button.disabled default
 
               h3 Form
 
@@ -459,7 +461,6 @@ html(lang="en")
                 textarea#demo-message.c-12(
                   name='demo-message', 
                   placeholder='Enter your message', 
-                  rows='6'
                   minlength="100"
                   required
                   )

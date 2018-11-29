@@ -5,7 +5,6 @@ ol
 
   li 
     padding-left: 0.25em
-  
 
 ul 
   list-style: disc
@@ -14,7 +13,7 @@ ul
 
   li 
     padding-left: 0.5em
-  
+
   &.alt 
     list-style: none
     padding-left: 0
@@ -28,20 +27,16 @@ ul
         padding-top: 0
 
   &.actions
-    @extend .alt
-    
+    @extend .alt    
     margin-bottom: map-get($size, 'element-margin')
 
     li
       border: none
 
     &.line
-      // To prevent linebreak
-      display: flex
       li
         display: inline-block
         margin: 0 (map-get($size, 'element-margin') * 0.5) 0 0
-        padding: 0
 
 ul.pagination 
   cursor: default
@@ -55,6 +50,10 @@ ul.pagination
 
     &:nth-child(n+2):nth-last-child(n+2) 
       display: none
+
+    @media screen and (min-width: 481px)
+      &:nth-child(n+2):nth-last-child(n+2) 
+        display: inline-block
 
     &:first-child 
       padding-right: 0
@@ -71,30 +70,19 @@ ul.pagination
       padding: 0 0.5em
       text-align: center
 
-      &.active 
+      &:hover 
         background-color: map-get($palette, 'fg')
         color: map-get($palette, 'bg')
 
-        &:hover 
-          background-color: map-get($palette, 'highlight')
-          color: map-get($palette, 'bg') !important
+      &.active 
+        background-color: map-get($palette, 'highlight')
+        color: map-get($palette, 'bg')
 
-        &:active 
-          background-color: desaturate(darken(map-get($palette, 'highlight'), 15), 5)
-
-    // &:first-child 
-    // 	padding-right: 0.75em
+    &:first-child 
+    	padding-right: 0.75em
 
     &:last-child 
       padding-left: 0.75em
-
-    @media screen and (min-width: 481px)
-      &:nth-child(n+2):nth-last-child(n+2) 
-        display: inline-block
-
-      &:first-child 
-        padding-right: .75em
-
 
 dl 
   margin: 0 0 map-get($size, 'element-margin') 0

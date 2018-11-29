@@ -14,8 +14,9 @@
 body
   background-color: map-get($palette, 'bg')
 
+// Extending class
 .hover
-  transition: .4s
+  transition: background-color .4s, box-shadow .4s, color .4s
 
   &:hover
     color: map-get($palette, 'highlight')

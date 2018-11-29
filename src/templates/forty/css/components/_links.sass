@@ -13,6 +13,13 @@ a
     border-bottom: dotted 1px
   
   &.icon
-    &:hover
-      background-color: map-get($palette, 'highlight')
-      color: map-get($palette, 'bg')
+    // :not([class="button"])
+    &:active
+      color: desaturate(darken(map-get($palette, 'highlight'), 15), 5)
+
+    &.alt
+      &:hover
+        background-color: map-get($palette, 'highlight')
+        color: map-get($palette, 'bg')
+      &:active
+        background-color: desaturate(darken(map-get($palette, 'highlight'), 15), 5)

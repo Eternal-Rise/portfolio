@@ -1,15 +1,15 @@
 body, input, select, textarea
   color: map-get($palette, 'fg')
   font-family: map-get($font, 'family')
-  font-size: 11pt
+  font-size: 14px
   line-height: 1.65
 
   @media screen and (min-width: 361px)
-    font-size: 12pt
+    font-size: 16px
   @media screen and (min-width: 1281px)
-    font-size: 14pt
+    font-size: 18px
   @media screen and (min-width: 1681px)
-    font-size: 17pt
+    font-size: 22px
   
   
 h1, h2, h3, h4, h5, h6
@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5, h6
       background-color: map-get($palette, 'fg')
       display: block
       height: 2px
-      margin: 0.325em 0 1em
+      margin: 0 0 1em
       width: 100%
 
     &.unfit
@@ -90,7 +90,6 @@ code
   font-size: 0.9em
   margin: 0 0.25em
   padding: 0.25em 0.65em
-  // white-space: nowrap
 
 pre
   font-size: 0.9em
