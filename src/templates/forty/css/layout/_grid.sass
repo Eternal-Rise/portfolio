@@ -1,0 +1,74 @@
+.grid
+  display: grid
+  grid-template-columns: repeat(12, 1fr)
+
+.gap
+  grid-column-gap: 1em
+
+  &-lg
+    grid-column-gap: 1em
+
+    @media screen and (min-width: 737px)
+      grid-column-gap: 2.5em
+
+  &-r
+    grid-row-gap: 1em
+
+    &-lg
+      grid-row-gap: 1em
+
+      @media screen and (min-width: 737px)
+        grid-row-gap: 2.5em
+
+.inner
+  padding: 4em 0 2em 0
+  margin: 0 auto
+  max-width: 65em
+  width: calc(100% - 3em)
+
+  &.main
+    padding: 8em 0 2em 0
+
+  @media screen and (min-width: 737px)
+    width: calc(100% - 6em)
+
+@for $i from 12 to 0
+  .c-#{$i}
+    grid-column: span $i
+
+// to fill row, when width is smaller than xs, sm, md...
+@for $i from 11 to 0
+  .c-#{$i}-xs, .c-#{$i}-sm, .c-#{$i}-md, .c-#{$i}-lg,
+  .c-#{$i}-xl, .c-#{$i}-xxl
+    @extend .c-12
+
+@media screen and (min-width: 361px)
+  @for $i from 12 to 0
+    .c-#{$i}-xs
+      grid-column: span $i
+
+@media screen and (min-width: 481px)
+  @for $i from 12 to 0
+    .c-#{$i}-sm
+      grid-column: span $i
+
+@media screen and (min-width: 737px)
+  @for $i from 12 to 0
+    .c-#{$i}-md
+      grid-column: span $i
+
+@media screen and (min-width: 981px)
+  @for $i from 12 to 0
+    .c-#{$i}-lg
+      grid-column: span $i
+
+@media screen and (min-width: 1281px)
+  @for $i from 12 to 0
+    .c-#{$i}-xl
+      grid-column: span $i
+
+@media screen and (min-width: 1681px)
+  @for $i from 12 to 0
+    .c-#{$i}-xxl
+      grid-column: span $i
+

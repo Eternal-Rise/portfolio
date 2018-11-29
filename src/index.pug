@@ -9,37 +9,23 @@ html(lang='en')
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Merriweather|Merriweather+Sans")
     link(rel='stylesheet', href='css/index.css')
 
-    title Bogdan Salyuk
+    title Bogdan Saliuk
 
   body
-
     .container
-    
       nav
         ul
           li
-            a(href="index.html") home
+            a.active home
           li
-            a.active my work
+            a(href="work.html") my work
 
-     
-      main.work
-        .template        
-          ='\n'
-          a(class="template-link" href="templates/forty/index.html")
-            ='\n'
-            img(src="img/templates/forty.png", alt="template")
+      main
+        h1
+          |Bogdan 
+          span Saliuk
 
-            .template-link-layout
-              h3 Forty
-              i.far.fa-eye.fa-3x
-          ='\n'
-          a(
-            class="template-link-github"
-            href="https://github.com/Eternal-Rise/Portfolio_Junior/tree/master/dist/templates/forty"
-            title="View source code"
-            )
-            i.fab.fa-github.fa-lg
+        h2 Front-end developer
 
       footer
         ='\n'

@@ -1,0 +1,81 @@
+.nav-overlay
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  z-index: 10
+
+  display: none
+  grid-template-rows: auto 1fr
+
+  background-color: rgba(map-get($palette, 'bg'),.9)
+  text-transform: uppercase
+  overflow: auto
+
+  &.show
+    display: grid
+    animation: show-menu .6s forwards
+
+  &.hide
+    display: grid
+    animation: hide-menu .6s forwards
+
+  @keyframes show-menu
+    from
+      opacity: 0
+      z-index: -1
+    to
+      opacity: 1
+      z-index: 10
+
+  @keyframes hide-menu
+    from
+      opacity: 1
+      z-index: 10
+    to
+      opacity: 0
+      z-index: -1
+
+  &-icon
+    text-align: right
+
+    #button-menu-close
+      padding: .5em 1em
+      @extend .hover
+
+  nav
+    align-self: center
+    justify-self: center
+    width: 18em
+    z-index: 100
+
+    ul
+      letter-spacing: map-get($font, 'letter-spacing-alt')
+      text-align: center
+
+      a:not(.button)
+        display: block
+        font-weight: map-get($font, 'weight-bold')
+        font-size: 0.8em
+        height: 3em
+        line-height: 3em
+
+#wrapper
+  &.on
+    animation: blur-on .2s ease-in-out forwards
+
+  &.off
+    animation: blur-off .2s ease-in-out forwards
+
+@keyframes blur-on
+  from
+    filter: blur(0)
+  to
+    filter: blur(.25em)
+
+@keyframes blur-off
+  from
+    filter: blur(.25em)
+  to
+    filter: blur(0)

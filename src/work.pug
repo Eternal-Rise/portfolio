@@ -12,20 +12,34 @@ html(lang='en')
     title Bogdan Salyuk
 
   body
+
     .container
+    
       nav
         ul
           li
-            a.active home
+            a(href="index.html") home
           li
-            a(href="work.html") my work
+            a.active my work
 
-      main
-        h1
-          |Bogdan 
-          span Salyuk
+     
+      main.work
+        .template        
+          ='\n'
+          a(class="template-link" href="templates/forty/index.html")
+            ='\n'
+            img(src="img/templates/forty.jpg", alt="template")
 
-        h2 Front-end developer
+            .template-link-layout
+              h3 Forty
+              i.far.fa-eye.fa-3x
+          ='\n'
+          a(
+            class="template-link-github"
+            href="https://github.com/Eternal-Rise/Portfolio_Junior/tree/master/dist/templates/forty"
+            title="View source code"
+            )
+            i.fab.fa-github.fa-lg
 
       footer
         ='\n'
