@@ -12,6 +12,15 @@
   transition: .2s
   z-index: 10
 
+  &.opacity
+    opacity: 0
+
+    @keyframes opacity
+      from
+        opacity: 0
+      to
+        opacity: 1
+
   &.fixed
     position: fixed
     top: 0

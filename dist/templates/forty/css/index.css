@@ -257,6 +257,7 @@ body {
 
 .banner#index::before {
   background-color: #242943;
+  opacity: 1;
 }
 
 .banner#landing {
@@ -268,6 +269,7 @@ body {
 
 .banner#landing::before {
   background-color: #8d82c4;
+  opacity: 1;
 }
 
 .banner button, .banner .button {
@@ -277,6 +279,44 @@ body {
 
 .banner .inner {
   z-index: 1;
+}
+
+.banner#index .inner, .banner#landing .inner {
+  opacity: 0;
+  -webkit-transform: translateX(-1em);
+  transform: translateX(-1em);
+}
+
+@-webkit-keyframes entrance {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-1em);
+    transform: translateX(-1em);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes entrance {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-1em);
+    transform: translateX(-1em);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.banner#index.opacity::before, .banner#landing.opacity::before {
+  opacity: .75;
+  -webkit-transition: 8s;
+  transition: 8s;
 }
 
 .banner .major::after {
@@ -1555,6 +1595,28 @@ footer ul.copyright li {
   -webkit-transition: .2s;
   transition: .2s;
   z-index: 10;
+}
+
+.header-bar.opacity {
+  opacity: 0;
+}
+
+@-webkit-keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .header-bar.fixed {

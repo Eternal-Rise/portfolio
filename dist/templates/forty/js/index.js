@@ -88,6 +88,15 @@ window.addEventListener('load', () => {
           });
         });
       }
-    }
-  });
-  
+
+    // header animation
+    let wrapper = document.getElementById('index') || document.getElementById('landing');
+    wrapper.classList.add('opacity');
+
+    let header = wrapper.children[0];
+    header.style.animation = 'entrance 1.5s ease-in forwards';
+
+    headerNav.style.animation = 'opacity 1.5s ease-in .5s forwards';
+
+  }
+});
