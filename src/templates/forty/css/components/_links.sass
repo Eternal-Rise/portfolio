@@ -1,6 +1,7 @@
 a
   color: inherit
   text-decoration: none
+  outline: none
   @extend .hover
 
   &.active
@@ -22,3 +23,5 @@ a
         color: map-get($palette, 'bg')
       &:active
         background-color: desaturate(darken(map-get($palette, 'highlight'), 15), 5)
+        color: map-get($palette, 'bg')
+    

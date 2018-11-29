@@ -21,10 +21,14 @@ button,
   text-align: center
   text-decoration: none
   text-transform: uppercase
+  // outline: none
 
   transition: background-color .4s, box-shadow .4s, color .4s
   user-select: none
   white-space: nowrap
+
+  &::-moz-focus-inner
+    border: 0
 
   &:hover
     box-shadow: inset 0 0 0 2px map-get($palette, 'highlight')
