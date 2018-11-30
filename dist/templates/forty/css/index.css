@@ -369,6 +369,14 @@ button,
   white-space: nowrap;
 }
 
+input[type="submit"]::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+button::-moz-focus-inner,
+.button::-moz-focus-inner {
+  border: 0;
+}
+
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover,
@@ -589,6 +597,7 @@ textarea {
   border: none;
   border-radius: 0;
   color: inherit;
+  outline: none;
   text-decoration: none;
   -webkit-transition: background-color 0.2s, background-image 0.2s, -webkit-box-shadow 0.2s;
   transition: background-color 0.2s, background-image 0.2s, -webkit-box-shadow 0.2s;
@@ -734,6 +743,7 @@ img.fit {
 a {
   color: inherit;
   text-decoration: none;
+  outline: none;
 }
 
 a.active {
@@ -759,6 +769,7 @@ a.icon.alt:hover {
 
 a.icon.alt:active {
   background-color: #53e3fb;
+  color: #242943;
 }
 
 ol {
