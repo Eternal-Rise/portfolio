@@ -1637,13 +1637,13 @@ footer ul.copyright li {
 }
 
 .header-bar.hide {
-  -webkit-animation: hide-menu .6s forwards;
-  animation: hide-menu .6s forwards;
+  -webkit-animation: hide-menu .6s forwards !important;
+  animation: hide-menu .6s forwards !important;
 }
 
 .header-bar.show {
-  -webkit-animation: show-menu .6s forwards;
-  animation: show-menu .6s forwards;
+  -webkit-animation: show-menu .6s forwards !important;
+  animation: show-menu .6s forwards !important;
 }
 
 .header-bar .logo {
