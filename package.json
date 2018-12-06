@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Eternal-Rise/Portfolio_Junior.git"
+    "url": "git+https://github.com/Eternal-Rise/Portfolio.git"
   },
   "author": "Salyk Bogdan",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Eternal-Rise/Portfolio_Junior/issues"
+    "url": "https://github.com/Eternal-Rise/Portfolio/issues"
   },
-  "homepage": "https://github.com/Eternal-Rise/Portfolio_Junior#readme",
+  "homepage": "https://github.com/Eternal-Rise/Portfolio#readme",
   "devDependencies": {
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",

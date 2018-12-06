@@ -63,6 +63,9 @@ window.addEventListener('load', () => {
       .getPropertyValue("height"));
 
     function headerScroll() {
+      if (navOverlay.classList.contains('show')) {
+        return;
+      }
       if (window.pageYOffset > headerNavHeight) {
         headerNav.style.transform = 'translateY(-100%)';
         headerNav.style.webkitTransform = 'translateY(-100%)';
