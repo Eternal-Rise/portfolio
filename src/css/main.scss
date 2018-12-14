@@ -1,0 +1,160 @@
+@import 'config';
+@import 'menu';
+
+* {
+  box-sizing: border-box;
+  margin-top: 0;
+}
+
+body {
+  background: url(../img/background.jpg);
+  background-attachment: fixed;
+  background-position: 50% center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: set-text-color($primary-color);
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+}
+
+// Headings
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+
+  &.lg-heading {
+    font-size: 6rem;
+  }
+
+  &.sm-heading {
+    margin-bottom: 1.5rem;
+    padding: 0.2rem 1rem;
+    background: rgba(lighten($primary-color, 2), 0.5);
+  }
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.text-secondary {
+  color: $secondary-color;
+}
+
+.slide {
+  display: grid;
+  align-items: center;
+  grid-template-rows: 1fr 64px;
+  padding: 4em;
+  height: 100vh;
+
+  p {
+    font-size: 1.5em;
+  }
+
+  &#work {
+    align-items: normal;
+  }
+
+  .icons {
+
+    a {
+      padding: 0.4rem;
+
+      &:hover {
+        color: $secondary-color;
+        @include easeOut();
+      }
+    }
+  }
+
+  .scroll {
+    display: block;
+    align-self: end;
+    animation: bounce 2s ease-in-out infinite;
+    border-radius: 50%;
+    background-image: url("data:image/svg+xml;charset=utf-8, <svg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='-275 398.7 44.2 44.2'><path fill='#fff' d='M-275 420.8c0-12.2 9.9-22.1 22.1-22.1s22.1 9.9 22.1 22.1c0 12.2-9.9 22.1-22.1 22.1s-22.1-9.9-22.1-22.1zm42.7 0c0-11.4-9.2-20.6-20.6-20.6-11.4 0-20.6 9.2-20.6 20.6 0 11.4 9.2 20.6 20.6 20.6 11.4 0 20.6-9.3 20.6-20.6zM-260.6 418c0-.2.1-.4.2-.5.3-.3.8-.3 1.1 0l6.8 6.8 6.8-6.8c.3-.3.8-.3 1.1 0 .3.3.3.8 0 1.1l-7.3 7.3c-.3.3-.8.3-1.1 0l-7.3-7.3c-.3-.2-.3-.4-.3-.6z'></path></svg>");
+    background-repeat: no-repeat;
+    cursor: pointer;
+    justify-self: center;
+    transition: .2s;
+    width: 48px;
+    height: 48px;
+    transform: rotate(60deg);
+
+    &:hover {
+      box-shadow: inset 0 0 1em $secondary-color;
+    }
+    &:active {
+      box-shadow: inset 0 0 2em $secondary-color;
+    }
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-15px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-15px);
+  }
+}
+
+// Work/Projects
+.projects {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(3, 1fr);
+
+  img {
+    width: 100%;
+    border: 3px #fff solid;
+
+    &:hover {
+      opacity: 0.5;
+      border-color: $secondary-color;
+      @include easeOut;
+    }
+  }
+}
+
+// Button Styles
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+  &:hover {
+    background: $secondary-color;
+    color: set-text-color($secondary-color);
+  }
+}
+
+.btn-dark {
+  @extend .btn;
+  background: darken($primary-color, 50);
+  color: #fff;
+}
+
+.btn-light {
+  @extend .btn;
+  background: lighten($primary-color, 50);
+  color: #333;
+}
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: darken($primary-color, 10);
+  color: set-text-color($primary-color);
+  height: 60px;
+}
+
+@import 'mobile';

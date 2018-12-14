@@ -1,40 +1,60 @@
 doctype html
 html(lang='en')
   head
-
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
-
-    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.2.0/css/all.css', integrity='sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ', crossorigin='anonymous')
-    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Merriweather|Merriweather+Sans")
-    link(rel='stylesheet', href='css/index.css')
-
+    link(
+      rel='stylesheet'
+      href='https://use.fontawesome.com/releases/v5.2.0/css/all.css'
+      integrity='sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ'
+      crossorigin='anonymous'
+    )
+    link(rel='stylesheet', href='css/main.css')
     title Bogdan Saliuk
-
   body
-    .container
-      nav
-        ul
-          li
-            a.active home
-          li
-            a(href="work.html") my work
+    section.slide#home
+      .container
+        h1.lg-heading
+          | Bogdan 
+          span.text-secondary Saliuk
+        h2.sm-heading
+          | Front-end Developer
 
-      main
-        h1
-          |Bogdan 
-          span Saliuk
+        .icons
+          a(href='https://t.me/Eternal_Rise')
+            i.fab.fa-telegram-plane.fa-2x
+          a(href='https://github.com/Eternal-Rise')
+            i.fab.fa-github.fa-2x
 
-        h2 Front-end developer
+      a.scroll
 
-      footer
-        ='\n'
-        a(href="https://github.com/Eternal-Rise")
-          i.fab.fa-github.fa-2x
-        ='\n'
-        a(href='https://t.me/Eternal_Rise')
-          i.fab.fa-telegram-plane.fa-2x
-        ='\n'
-        a(href="tel:+380663378649") +380663378649
-        ='\n'
-        a(href="mailto:my_dawn@ukr.net") my_dawn@ukr.net
+    section.slide#about
+      .container
+        h1.lg-heading
+          | About 
+          span.text-secondary Me
+        h2.sm-heading
+          | 22 years old, smart and handsome
+        p.
+          I just want to eat.
+      
+      a.scroll
+
+    section.slide#work
+      .container
+        h1.lg-heading
+          | My 
+          span.text-secondary Work
+
+        .projects
+          .item
+            a(href='https://eternal-rise.github.io/html5up_forty/index.html')
+              img(src='img/templates/forty.jpg', alt='template')
+            a.btn-light(href='https://eternal-rise.github.io/html5up_forty/index.html')
+              i.fas.fa-eye
+              |  Forty
+            a.btn-dark(href='https://github.com/Eternal-Rise/html5up_forty')
+              i.fab.fa-github
+              |  Github
+
+    script(src='js/main.js')
