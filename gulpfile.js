@@ -3,7 +3,7 @@ var gulp = require('gulp');
 
 // Include Plugins
 var autoprefixer = require('gulp-autoprefixer');
-// var concat = require('gulp-concat');
+var concat = require('gulp-concat');
 var jshint = require('gulp-jshint');
 // var map = require('gulp-sourcemaps');
 var pug = require('gulp-pug');
@@ -12,13 +12,19 @@ var sass = require('gulp-sass');
 // var uglify = require('gulp-uglify');
 
 gulp.task('lint', function() {
-  return gulp.src('dist/js/*.js')
+  return gulp.src(['dist/js/*.js', 'src/components/**/*.js'])
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });
 
+gulp.task('concat', function() {
+  return gulp.src('src/components/**/*.js')
+    .pipe(concat('index.js'))
+    .pipe(gulp.dest('dist/js/'));
+});
+
 gulp.task('sass', function() {
-  return gulp.src('src/**/*.+(sass|scss)')
+  return gulp.src(['src/**/*.+(sass|scss)', '!src/components'])
     .pipe(sass({
       outputStyle: 'expanded'
     }))
@@ -35,7 +41,7 @@ gulp.task('sass', function() {
 });
 
 gulp.task('pug', function() {
-  return gulp.src(['src/**/*.pug', '!src/**/_*.pug'])
+  return gulp.src(['src/**/*.pug', '!src/components'])
   .pipe(pug({
     pretty: true
   }))
@@ -49,6 +55,7 @@ gulp.task('pug', function() {
 gulp.task('watch', function() {
   gulp.watch('src/**/*.pug', gulp.series('pug'));
   gulp.watch('src/**/*.+(sass|scss)', gulp.series('sass'));
+  gulp.watch('src/components/**/*.js', gulp.series('concat'));
 });
 
 gulp.task('default', gulp.series('watch'));
