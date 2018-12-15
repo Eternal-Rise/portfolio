@@ -15,7 +15,7 @@ body {
   color: set-text-color($primary-color);
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 // Headings
@@ -27,6 +27,11 @@ h3 {
 
   &.lg-heading {
     font-size: 6rem;
+    margin-bottom: 1rem;
+
+    @include mediaMd {
+      font-size: 4em;
+    }
   }
 
   &.sm-heading {
@@ -51,6 +56,10 @@ a {
   grid-template-rows: 1fr 64px;
   padding: 0 4em 2em;
   height: 100vh;
+
+  @include mediaMd {
+    padding: 0 2em 2em;
+  }
 
   p {
     font-size: 1.5em;
