@@ -2,7 +2,6 @@ window.addEventListener('load', () => {
 
   const scroll = document.getElementsByClassName('scroll');
   const slide = document.querySelector('.slide');
-  console.log(window.screen.height)
   
   for (let i = 0; i < scroll.length; i++) {
 
