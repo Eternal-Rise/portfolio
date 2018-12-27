@@ -7,14 +7,23 @@
 
 body {
   margin: 0;
-  background: url(../img/background.jpg);
-  background-attachment: fixed;
-  background-position: 50% center;
-  background-repeat: no-repeat;
-  background-size: cover;
   color: set-text-color($primary-color);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.2;
+
+  &::before {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url(../img/background.jpg);
+    background-position: 50% center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 
 // Headings
@@ -50,6 +59,9 @@ a {
 }
 
 .slide {
+  // to be over background
+  position: relative;
+
   display: grid;
   align-items: center;
   grid-template-rows: 1fr 64px;
