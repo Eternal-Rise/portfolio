@@ -1,5 +1,4 @@
 @import 'config';
-@import 'menu';
 
 * {
   box-sizing: border-box;
@@ -7,13 +6,13 @@
 }
 
 body {
+  margin: 0;
   background: url(../img/background.jpg);
   background-attachment: fixed;
   background-position: 50% center;
   background-repeat: no-repeat;
   background-size: cover;
   color: set-text-color($primary-color);
-  margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.2;
 }
@@ -63,10 +62,6 @@ a {
 
   p {
     font-size: 1.5em;
-  }
-
-  &#work {
-    align-items: normal;
   }
 
   .icons {
@@ -164,14 +159,6 @@ a {
   @extend .btn;
   background: lighten($primary-color, 50);
   color: #333;
-}
-
-#main-footer {
-  text-align: center;
-  padding: 1rem;
-  background: darken($primary-color, 10);
-  color: set-text-color($primary-color);
-  height: 60px;
 }
 
 @import 'mobile';
