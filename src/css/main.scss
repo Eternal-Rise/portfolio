@@ -123,6 +123,24 @@ a {
   }
 }
 
+// skills
+
+.skills {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  font-size: 4em;
+
+  i {
+    padding: 0 .5em;
+    text-shadow: 1px 1px 5px $primary-color;
+
+    &:not(:last-child) {
+      border-right: 2px solid $secondary-color;
+    }
+  }
+}
+
 // Work/Projects
 .projects {
   display: grid;
