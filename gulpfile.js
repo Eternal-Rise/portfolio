@@ -1,15 +1,15 @@
 // Include gulp
-var gulp = require('gulp');
+const gulp = require('gulp');
 
 // Include Plugins
-var autoprefixer = require('gulp-autoprefixer');
-var concat = require('gulp-concat');
-var jshint = require('gulp-jshint');
-// var map = require('gulp-sourcemaps');
-var pug = require('gulp-pug');
-// var rename = require('gulp-rename');
-var sass = require('gulp-sass');
-// var uglify = require('gulp-uglify');
+const autoprefixer = require('gulp-autoprefixer');
+const concat = require('gulp-concat');
+const jshint = require('gulp-jshint');
+// const map = require('gulp-sourcemaps');
+const pug = require('gulp-pug');
+// const rename = require('gulp-rename');
+const sass = require('gulp-sass');
+// const uglify = require('gulp-uglify');
 
 gulp.task('lint', function() {
   return gulp.src(['dist/js/*.js', 'src/components/**/*.js'])
@@ -24,14 +24,14 @@ gulp.task('concat', function() {
 });
 
 gulp.task('sass', function() {
-  return gulp.src(['src/**/*.+(sass|scss)', '!src/components'])
-    .pipe(sass({
+  return gulp.src(['src/**/*.+(sass|scss)'])
+    .pipe(
+      sass({
       outputStyle: 'expanded'
-    }))
-    .on('error', function(err) {
-      console.log(err);
-      this.end()
-    })
+      })
+      .on('error', function(error) {
+        done(error)})
+    )
     .pipe(autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false,

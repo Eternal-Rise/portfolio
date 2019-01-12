@@ -159,25 +159,24 @@ a {
 }
 
 .skills {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: end;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: .1em;
   font-size: 4em;
 }
 
 .skills i {
-  padding: 0 .5em;
+  padding: 15%;
   text-shadow: 1px 1px 5px #444;
+  text-align: center;
+  border: 1px solid #eece1a;
+  -webkit-transition: .2s;
+  transition: .2s;
 }
 
-.skills i:not(:last-child) {
-  border-right: 2px solid #eece1a;
+.skills i:hover {
+  -webkit-box-shadow: inset 0 0 0.5em #eece1a;
+  box-shadow: inset 0 0 0.5em #eece1a;
 }
 
 .projects {
@@ -236,6 +235,10 @@ a {
     -ms-grid-columns: (1fr)[4];
     grid-template-columns: repeat(4, 1fr);
   }
+  .skills {
+    -ms-grid-columns: (1fr)[6];
+    grid-template-columns: repeat(6, 1fr);
+  }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
@@ -243,12 +246,20 @@ a {
     -ms-grid-columns: (1fr)[3];
     grid-template-columns: repeat(3, 1fr);
   }
+  .skills {
+    -ms-grid-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .projects {
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
+  }
+  .skills {
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 

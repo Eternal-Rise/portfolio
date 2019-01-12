@@ -3,6 +3,10 @@
   .projects {
     grid-template-columns: repeat(4, 1fr);
   }
+
+  .skills {
+    grid-template-columns: repeat(6, 1fr);
+  }
 }
 
 // Desktops & Laptops
@@ -10,12 +14,20 @@
   .projects {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .skills {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 // Tablets & Small Laptops
 @include mediaMd {
   .projects {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skills {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
