@@ -24,7 +24,7 @@ gulp.task('concat', function() {
 });
 
 gulp.task('sass', function() {
-  return gulp.src(['src/**/*.+(sass|scss)'])
+  return gulp.src(['src/styles/**/*.+(sass|scss)'])
     .pipe(
       sass({
       outputStyle: 'expanded'
@@ -37,7 +37,7 @@ gulp.task('sass', function() {
       cascade: false,
       grid: true
     }))
-    .pipe(gulp.dest('dist/'))
+    .pipe(gulp.dest('dist/css/'))
 });
 
 gulp.task('pug', function() {
@@ -54,7 +54,7 @@ gulp.task('pug', function() {
 
 gulp.task('watch', function() {
   gulp.watch('src/**/*.pug', gulp.series('pug'));
-  gulp.watch('src/**/*.+(sass|scss)', gulp.series('sass'));
+  gulp.watch('src/styles/**/*.+(sass|scss)', gulp.series('sass'));
   gulp.watch('src/components/**/*.js', gulp.series('concat'));
 });
 

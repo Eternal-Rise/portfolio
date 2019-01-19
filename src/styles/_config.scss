@@ -1,0 +1,19 @@
+// Palette
+
+$c-main: #fff;
+$c-secondary: #444;
+$c-accent1: #eece1a;
+
+// breakpoints
+$xs: 344px;
+$sm: 464px;
+$md: 624px;
+$lg: 944px;
+$xl: 1264px;
+$xxl: 1664px;
+$xxxl: 1944px;
+
+@mixin bp($point) {
+  @media screen and (min-width: $point) { @content; }
+}
+

@@ -1,13 +1,8 @@
 @import 'config';
 
-* {
-  box-sizing: border-box;
-  margin-top: 0;
-}
-
 body {
   margin: 0;
-  color: set-text-color($primary-color);
+  color: $c-main;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.2;
 
@@ -34,56 +29,60 @@ h3 {
   font-weight: 400;
 
   &.lg-heading {
-    font-size: 6rem;
+    font-size: 4rem;
     margin-bottom: 1rem;
 
-    @include mediaMd {
-      font-size: 4em;
+    @include bp($md) {
+      font-size: 6rem;
     }
   }
 
   &.sm-heading {
     margin-bottom: 1.5rem;
     padding: 0.2rem 1rem;
-    background: rgba(lighten($primary-color, 2), 0.5);
+    background: rgba(lighten($c-secondary, 2), 0.5);
   }
 }
 
 a {
-  color: #fff;
+  color: $c-main;
   text-decoration: none;
 }
 
+p {
+  font-size: 1.5em;
+}
+
 .text-secondary {
-  color: $secondary-color;
+  color: $c-accent1;
 }
 
 .slide {
   // to be over background
   position: relative;
 
+  box-sizing: border-box;
   display: grid;
   align-items: center;
   grid-template-rows: 1fr 64px;
-  padding: 0 4em 2em;
+
+  padding: 0 2rem 2rem;
   min-height: 100vh;
+  margin: auto;
+  max-width: 1200px;
 
-  @include mediaMd {
-    padding: 0 2em 2em;
-  }
-
-  p {
-    font-size: 1.5em;
+  @include bp($md) {
+    padding: 2rem 4rem 2rem;
   }
 
   .icons {
 
-    a {
+    &__link {
       padding: 0.4rem;
-      @include easeOut;
+      transition: .25s;
 
       &:hover {
-        color: $secondary-color;
+        color: $c-accent1;
       }
     }
   }
@@ -98,16 +97,16 @@ a {
   background-repeat: no-repeat;
   cursor: pointer;
   justify-self: center;
-  transition: .2s;
+  transition: .25s;
   width: 48px;
   height: 48px;
   transform: rotate(60deg);
 
   &:hover {
-    box-shadow: inset 0 0 1em $secondary-color;
+    box-shadow: inset 0 0 1em $c-accent1;
   }
   &:active {
-    box-shadow: inset 0 0 2em $secondary-color;
+    box-shadow: inset 0 0 2em $c-accent1;
   }
 }
 
@@ -131,15 +130,27 @@ a {
   
   font-size: 4em;
 
+  @include bp($sm) {
+    grid-template-columns: 1fr 1fr
+  }
+
+  @include bp($md) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @include bp($xl) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
   i {
     padding: 15%;
-    text-shadow: 1px 1px 5px $primary-color;
+    text-shadow: 1px 1px 5px $c-secondary;
     text-align: center;
-    border: 1px solid $secondary-color;
-    transition: .2s;
+    border: 1px solid $c-accent1;
+    transition: .25s;
 
     &:hover {
-      box-shadow: inset 0 0 .5em $secondary-color;
+      box-shadow: inset 0 0 .5em $c-accent1;
     }
   }
 }
@@ -148,21 +159,29 @@ a {
 .projects {
   display: grid;
   gap: 0.7rem;
-  grid-template-columns: repeat(3, 1fr);
 
-  img {
+  @include bp($sm) {
+    grid-template-columns: 1fr 1fr
+  }
+
+  @include bp($lg) {
+    grid-template-columns: repeat(4, 1fr)
+  }
+
+  &__img {
+    box-sizing: border-box;
     width: 100%;
-    border: 3px #fff solid;
-    @include easeOut;
+    border: 3px $c-main solid;
+    transition: .25s;
 
     &:hover {
-      border-color: $secondary-color;
+      border-color: $c-accent1;
     }
   }
     
   .item {
     opacity: .8;
-    @include easeOut;
+    transition: .25s;
     
     &:hover {
       opacity: 1;
@@ -176,22 +195,18 @@ a {
   padding: 0.5rem 1rem;
   border: 0;
   margin-bottom: 0.3rem;
+  
+  background: darken($c-secondary, 50);
+  color: $c-main;
+  transition: .25s;
+
   &:hover {
-    background: $secondary-color;
-    color: set-text-color($secondary-color);
+    background: $c-accent1;
+    color: $c-secondary;
+  }
+
+  &_light {
+    background: lighten($c-secondary, 50);
+    color: $c-secondary;
   }
 }
-
-.btn-dark {
-  @extend .btn;
-  background: darken($primary-color, 50);
-  color: #fff;
-}
-
-.btn-light {
-  @extend .btn;
-  background: lighten($primary-color, 50);
-  color: #333;
-}
-
-@import 'mobile';
