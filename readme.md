@@ -1,4 +1,3 @@
-Gulp sass/pug for newbie
+# Gulp sass/pug for newbie
 
-About Atomic staff
-http://atomicdesign.bradfrost.com/
+About Atomic staff - http://atomicdesign.bradfrost.com/
