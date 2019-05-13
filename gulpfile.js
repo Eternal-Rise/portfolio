@@ -3,7 +3,6 @@ const gulp = require('gulp');
 
 // Include Plugins
 const autoprefixer = require('gulp-autoprefixer');
-const clean = require('gulp-clean');
 const concat = require('gulp-concat');
 const pug = require('gulp-pug');
 const sass = require('gulp-sass');
@@ -11,15 +10,8 @@ const sass = require('gulp-sass');
 // Include live-reload
 const browserSync = require('browser-sync').create();
 
-gulp.task('clean', () => {
-  return gulp.src(
-    ['dist/*.html', 'dist/css', 'dist/js'],
-    {read: false})
-      .pipe(clean());
-});
-
 gulp.task('pug', () => {
-  return gulp.src('src/pages/*.pug')
+  return gulp.src('src/*.pug')
     .pipe(pug({pretty: true}))
     .pipe(gulp.dest('dist/'));
 });
