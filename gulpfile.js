@@ -41,7 +41,12 @@ gulp.task('serve', () => {
       server: "./dist"
   });
 
-  gulp.watch(["dist/*.html", 'dist/img/*.*']).on('change', browserSync.reload);
+  gulp.watch([
+    "dist/*.html",
+    'dist/img/*.*',
+    'dist/js/*.js'
+  ])
+  .on('change', browserSync.reload);
 });
 
 gulp.task('watch', () => {
