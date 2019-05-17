@@ -1,2 +1,6 @@
 dist
 node_modules
+*.zip
+*.rar
+*.psd
+*.txt

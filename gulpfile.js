@@ -11,13 +11,13 @@ const sass = require('gulp-sass');
 const browserSync = require('browser-sync').create();
 
 gulp.task('pug', () => {
-  return gulp.src('src/*.pug')
+  return gulp.src('src/**/*.pug')
     .pipe(pug({pretty: true}))
-    .pipe(gulp.dest('dist/'));
+    .pipe(gulp.dest('dist/'))
 });
 
 gulp.task('sass', () => {
-  return gulp.src('src/styles/**/*.+(sass|scss)')
+  return gulp.src('src/**/*.+(sass|scss)')
     .pipe(sass({
       outputStyle: 'expanded'
     }))
@@ -25,14 +25,18 @@ gulp.task('sass', () => {
       browsers: ['last 15 versions'],
       cascade: false
     }))
-    .pipe(gulp.dest('dist/css'))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest('dist/'))
+    .pipe(browserSync.stream())
 })
 
 gulp.task('concat', () => {
-  return gulp.src('src/**/*.js')
+  return gulp.src('src/blocks/**/*.js')
     .pipe(concat('index.js'))
-    .pipe(gulp.dest('dist/js/'));
+    .pipe(gulp.dest('dist/js/'))
+
+    && gulp.src('src/templates/template/blocks/**/*.js')
+    .pipe(concat('index.js'))
+    .pipe(gulp.dest('dist/templates/template/js/'));
 });
 
 gulp.task('serve', () => {
@@ -42,9 +46,11 @@ gulp.task('serve', () => {
   });
 
   gulp.watch([
-    "dist/*.html",
+    "dist/**/*.html",
     'dist/img/*.*',
-    'dist/js/*.js'
+    'dist/templates/**/img/*.*',
+    'dist/js/*.js',
+    'dist/templates/**/js/*.js'
   ])
   .on('change', browserSync.reload);
 });
