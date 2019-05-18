@@ -10,16 +10,47 @@ html(lang="en")
     title Tinyone
   body
     header.hero
-      .inner
-        .wrapper.hero__wrapper
-          a.logo(href="/templates/Tinyone/index-1.html")
-            img.logo__img(src="img/logo.png", alt="logo")
-            | tinyone
-          nav.nav
-            ul.nav__list
-              li.nav__item
-                a.nav__link(href="%23") Features
-              li.nav__item
-                a.nav__link(href="%23") Support
-              li.nav__item
-                a.nav__link(href="%23") Blog
+      .inner.hero__inner
+        nav.nav
+          a.logo(href="/templates/Tinyone/index-1.html") tinyone
+
+          ul.nav__list
+            li.nav__item
+              a.nav__link(href="%23") Features
+            li.nav__item
+              a.nav__link(href="%23") Support
+            li.nav__item
+              a.nav__link(href="%23") Blog
+
+        .about
+          .about__text
+            h1.title Inspire your inspiration
+            h2.subtitle.
+             Simple to use your app, products showcase and your inspiration
+
+            p.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+              Praesent vitae eros eget tellus tristique bibendum. 
+              Donec rutrum sed sem quis venenatis. Proin viverra risus a eros 
+              volutpat tempor. In quis arcu et eros porta lobortis sit
+
+            ul.app
+              li.app__item
+                a.app__link._apple(href="%23")
+              li.app__item
+                a.app__link._android(href="%23")
+              li.app__item
+                a.app__link._windows(href="%23")
+
+          
+          .about__preview
+            .ipad
+              .ipad__screen
+                .logo._accent.ipad__logo tinyone
+
+              .ipad__controls
+                .ipad__controls-btn
+                .ipad__controls-btn
+
+
+          
