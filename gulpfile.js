@@ -11,13 +11,13 @@ const sass = require('gulp-sass');
 const browserSync = require('browser-sync').create();
 
 gulp.task('pug', () => {
-  return gulp.src('src/**/*.pug')
+  return gulp.src(['src/**/*.pug', '!src/**/blocks/**/*.pug'])
     .pipe(pug({pretty: true}))
     .pipe(gulp.dest('dist/'))
 });
 
 gulp.task('sass', () => {
-  return gulp.src('src/**/*.+(sass|scss)')
+  return gulp.src(['src/**/*.+(sass|scss)', '!src/**/blocks/**/*.+(sass|scss)'])
     .pipe(sass({
       outputStyle: 'expanded'
     }))
