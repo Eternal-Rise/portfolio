@@ -1,0 +1,20 @@
+.about {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+
+  &__text {
+    margin-bottom: 4.5rem;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  &__preview {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+    width: 100%;
+  }
+}

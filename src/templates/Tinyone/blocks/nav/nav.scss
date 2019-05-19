@@ -1,0 +1,24 @@
+.nav {
+  align-items: flex-end;
+  display: flex;
+  padding-top: 60px;
+
+  &__list {
+    margin-left: auto;
+  }
+
+  &__item {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 4rem;
+    }
+  }
+
+  &__link {
+    color: $main;
+    font-size: 1.5em;
+    font-weight: $fw-b;
+    text-decoration: none;
+  }
+}

@@ -8,9 +8,13 @@ $xl: 1200px;
 $xxl: 1600px;
 
 // pallete
-$accent: #fcdb00;
-$main: #111;
-$alt: #fff;
+$accent: rgb(252,219,0);
+$main: rgb(17,17,17);
+$alt: rgb(255,255,255);
+
+// to preserve convertion into hex
+$main-svg: #{'rgb(17,17,17)'};
+$alt-svg: #{'rgb(255,255,255)'};
 
 // font
 $ff: 'PT Sans', sans-serif;

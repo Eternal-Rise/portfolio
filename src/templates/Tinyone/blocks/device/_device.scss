@@ -1,0 +1,44 @@
+.device {
+  box-sizing: border-box;
+  align-items: center;
+  display: flex;
+  margin-right: 2.5rem;
+  padding: 3rem 1rem;
+  height: 80%;
+  width: 100%;
+  max-width: 315px;
+
+  background-color: $alt;
+  border-radius: 1.5rem;
+
+  // for controls
+  position: relative;
+  
+  &__screen {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: $main;
+  }
+
+  &__controls {
+    position: absolute;
+    right: -2px;
+    top: 15%;
+  }
+  
+  &__controls-btn {
+    width: 2px;
+    height: 36px;
+    margin-bottom: 5px;
+
+    background-color: $alt;
+  }
+
+  &__logo {
+    margin-bottom: 2rem;
+    pointer-events: none;
+  }
+}

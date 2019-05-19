@@ -1,0 +1,12 @@
+.hero {
+  height: 100vh;
+  max-height: 700px;
+  background-color: $accent;
+  color: $main;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+}
