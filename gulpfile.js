@@ -42,7 +42,8 @@ gulp.task('concat', () => {
 gulp.task('serve', () => {
 
   browserSync.init({
-      server: "./dist"
+      server: "./dist",
+      scrollRestoreTechnique: 'cookie'
   });
 
   gulp.watch([
