@@ -1,11 +1,12 @@
-@import 'vars';
-@import 'mixins';
+@import "vars";
+@import "mixins";
 
-@import 'base';
-@import '../blocks/lists/app';
+@import "base";
+@import "../blocks/lists/app";
 
-@import '../blocks/about/about';
-@import '../blocks/device/device';
-@import '../blocks/hero/hero';
-@import '../blocks/logo/logo';
-@import '../blocks/nav/nav';
+@import "../blocks/about/about";
+@import "../blocks/device/device";
+@import "../blocks/hero/hero";
+@import "../blocks/features/features";
+@import "../blocks/logo/logo";
+@import "../blocks/nav/nav";
