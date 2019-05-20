@@ -1,13 +1,14 @@
 .hero {
+  box-sizing: border-box;
   height: 100vh;
-  max-height: 700px;
+  max-height: 740px;
   background-color: $accent;
   color: $main;
+  padding: 3.5rem 0;
 
   &__inner {
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding-top: 60px;
   }
 }
