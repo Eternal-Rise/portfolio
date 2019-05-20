@@ -15,9 +15,16 @@
   }
 
   &__link {
+    border-bottom: 1px solid transparent;
     color: $main;
     font-size: 1.5em;
     font-weight: $fw-b;
     text-decoration: none;
+    transition: $dur;
+
+    &:hover {
+      color: $alt;
+      border-bottom: 1px solid $alt;
+    }
   }
 }
