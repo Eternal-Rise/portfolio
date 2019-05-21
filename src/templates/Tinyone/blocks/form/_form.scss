@@ -1,0 +1,45 @@
+.form {
+  margin: auto;
+  max-width: 725px;
+  text-align: center;
+
+  &__title {
+    margin-bottom: .5rem;
+  }
+
+  &__subtitle {
+    font-size: 1.22em;
+    margin-bottom: 2.5rem;
+  }
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__input {
+    box-sizing: border-box;
+    margin-right: 1rem;
+    padding: 1rem 1.2rem;
+    width: 80%;
+    border: none;
+    border-radius: .3rem;
+    font-family: $ff;
+    font-size: 1em;
+    outline: none;
+
+    &::placeholder {
+      color: $text-alt;
+    }
+  }
+
+  &__submit {
+    flex: 1;
+    border: none;
+    border-radius: .3rem;
+    background-color: $accent;
+    font-size: .95em;
+    font-weight: $fw-b;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+}

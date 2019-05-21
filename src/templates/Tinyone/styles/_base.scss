@@ -17,6 +17,10 @@ p {
 
 .title {
   font-size: 2em;
+
+  &._accent {
+    color: $accent;
+  }
 }
 
 .subtitle {
