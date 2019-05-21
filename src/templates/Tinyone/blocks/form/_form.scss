@@ -41,6 +41,11 @@
     font-size: .95em;
     font-weight: $fw-b;
     text-transform: uppercase;
+    transition: $dur;
     cursor: pointer;
+
+    &:hover {
+      background-color: $alt;
+    }
   }
 }
