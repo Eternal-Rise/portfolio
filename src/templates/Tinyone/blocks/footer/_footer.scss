@@ -1,17 +1,32 @@
 .footer {
-  padding: 5.5rem 0 7rem;
+  padding: 5.5rem 0 3rem;
   background-color: $main;
 
   &__wrapper {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    margin-top: 7rem;
+    margin-top: 3rem;
     max-width: 860px;
+
+    @include bp($md) {
+      padding: 5.5rem 0 7rem;
+    }
   }
 
   &__list {
     color: $text-alt;
-    max-width: 200px;
+    width: 50%;
+    margin-bottom: 1rem;
+
+    @include bp($md) {
+      width: initial;
+      max-width: 200px;
+    }
+
+    &:first-child {
+      width: 100%;
+    }
   }
 
   &__list-item {

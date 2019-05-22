@@ -1,8 +1,22 @@
 .features {
-  padding: 7rem 0 5rem;
+  padding: 4rem 0 1rem;
   text-align: center;
   background-color: $alt;
   color: $main;
+
+  @include bp($md) {
+    padding: 7rem 0 5rem;
+  }
+
+  &__subtitle {
+    margin: auto;
+    max-width: $md;
+    font-size: 1.2em;
+
+    @include bp($md) {
+      font-size: 1.4em;
+    }
+  }
 
   &__grid {
     display: flex;
@@ -16,13 +30,17 @@
     align-items: flex-start;
     display: flex;
     width: calc(33.33% - 1rem);
-    min-width: 290px;
+    min-width: 268px;
     margin-right: 1rem;
-    margin-bottom: 4.5rem;
+    margin-bottom: 3rem;
+
+    @include bp($md) {
+      margin-bottom: 4.5rem;
+    }
   }
 
-  &__icon {
-    margin-right: 2rem;
+  &__item-icon {
+    margin-right: 1rem;
     padding-top: .25rem;
     width: 3rem;
     height: 2.5rem;
@@ -55,7 +73,7 @@
     } 
   }
 
-  &__description {
+  &__item-description {
     margin: 0;
     color: $text-alt;
   }

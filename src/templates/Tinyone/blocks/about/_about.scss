@@ -11,10 +11,14 @@
   }
 
   &__preview {
-    align-items: center;
-    display: flex;
-    justify-content: flex-end;
-    height: 100%;
-    width: 100%;
+    display: none;
+
+    @include bp($md) {
+      align-items: center;
+      display: flex;
+      justify-content: flex-end;
+      height: 100%;
+      width: 100%;
+    }
   }
 }

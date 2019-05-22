@@ -1,0 +1,121 @@
+.nav {
+  align-items: center;
+  display: flex;
+  padding: 1rem .2rem 1rem 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+
+  background-color: $accent;
+  
+  @include bp($md) {
+    align-items: flex-end;
+    padding: 0;
+    position: static;
+    background-color: transparent;
+  }
+
+  &__list {
+    // display: none;
+    box-sizing: border-box;
+    margin-left: auto;
+    padding: 2rem 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    background-color: $alt;
+    transition: transform $dur, box-shadow $dur;
+    transform: translateY(-100%);
+
+    @include bp($md) {
+      padding: 0;
+      position: static;
+      width: initial;
+      transform: none;
+      background-color: transparent;
+      box-shadow: none;
+    }
+  }
+
+  &__item {
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    @include bp($md) {
+      display: inline-block;
+
+      &:not(:last-child) {
+        margin-bottom: 0;
+        margin-right: 4rem;
+      }
+    }
+  }
+
+  &__link {
+    border-bottom: 1px solid transparent;
+    color: $main;
+    font-size: 1.5em;
+    font-weight: $fw-b;
+    text-decoration: none;
+    transition: $dur;
+
+    &:hover {
+      color: $alt;
+      border-bottom: 1px solid $alt;
+    }
+  }
+
+  &__btn {
+    display: block;
+    cursor: pointer;
+    margin-left: auto;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 400ms;
+    user-select: none;
+    width: 3rem;
+
+    // to be over .nav__list
+    z-index: 1;
+
+    @include bp($md) {
+      display: none;
+    }
+
+    &._active {
+      transform: rotate(45deg);
+
+      + .nav__list {
+        transform: translateY(0);
+        box-shadow: 0 .5rem 1rem -.5rem;
+      }
+    }
+  }
+
+  &__btn-bar {
+    fill:none;
+    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+    stroke:#000;
+    stroke-width:5.5;
+    stroke-linecap:round;
+
+    &._top {
+      stroke-dasharray: 40 121;
+    }
+
+    &._bottom {
+      stroke-dasharray: 40 121;
+    }
+
+    ._active &  {
+      &._top, &._bottom {
+        stroke-dashoffset: -68px;
+      }
+    }
+  }
+}
