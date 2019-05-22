@@ -19,6 +19,7 @@
     margin-right: 2.5rem;
   }
   
+  // .device
   &__screen {
     align-items: center;
     display: flex;
@@ -28,12 +29,14 @@
     background-color: $main;
   }
 
+  // .device
   &__controls {
     position: absolute;
     right: -2px;
     top: 15%;
   }
   
+  // .device
   &__controls-btn {
     width: 2px;
     height: 36px;
@@ -42,6 +45,7 @@
     background-color: $alt;
   }
 
+  // .device
   &__logo {
     margin-bottom: 2rem;
     pointer-events: none;

@@ -8,15 +8,18 @@
     margin-bottom: 5rem;
   }
 
+  // .form
   &__title {
     margin-bottom: .5rem;
   }
 
+  // .form
   &__subtitle {
     font-size: 1.22em;
     margin-bottom: 2.5rem;
   }
 
+  // .form
   &__wrapper {
 
     @include bp($sm) {
@@ -24,6 +27,7 @@
     }
   }
 
+  // .form
   &__input {
     box-sizing: border-box;
     margin-bottom: .5rem;
@@ -47,6 +51,7 @@
     }
   }
 
+  // .form
   &__submit {
     flex: 1;
     padding: 1rem 1.2rem;
