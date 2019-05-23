@@ -7,15 +7,15 @@
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 3rem;
-    max-width: 860px;
+    // max-width: 860px;
 
     @include bp($md) {
-      padding: 5.5rem 0 7rem;
+      padding: 5.1rem 0 4.3rem .8rem;
     }
   }
 
   // .footer
-  &__list {
+  &-list {
     color: $text-alt;
     width: 50%;
     margin-bottom: 1rem;
@@ -23,26 +23,27 @@
     @include bp($md) {
       width: initial;
       max-width: 200px;
+      margin-right: 5.2rem;
     }
 
     &:first-child {
       width: 100%;
     }
-  }
 
-  // .footer
-  &__list-item {
-    margin-bottom: .25rem;
-  }
-
-  // .footer
-  &__list-link {
-    color: inherit;
-    text-decoration: none;
-    transition: $dur;
-
-    &:hover {
-      color: $alt;
+    // .footer-list
+    &__item {
+      margin-bottom: .25rem;
+    }
+  
+    // .footer-list
+    &__link {
+      color: inherit;
+      text-decoration: none;
+      transition: $dur;
+  
+      &:hover {
+        color: $alt;
+      }
     }
   }
 }

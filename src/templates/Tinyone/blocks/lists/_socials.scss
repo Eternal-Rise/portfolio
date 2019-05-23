@@ -1,10 +1,14 @@
 .socials {
-  margin: auto;
-  width: max-content;
+  display: flex;
+  justify-content: center;
+
+  @include bp($md) {
+    margin-right: 3rem;
+  }
 
   &__item {
     display: inline-block;
-    margin: 0 .9rem;
+    margin: 0 1rem;
   }
 
   &__link {
@@ -13,7 +17,7 @@
     height: 2.3rem;
 
     background-color: $accent;
-    border-radius: .3rem;
+    border-radius: .4rem;
     background-repeat: no-repeat;
     transition: $dur;
 

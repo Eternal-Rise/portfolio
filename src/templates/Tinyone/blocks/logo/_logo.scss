@@ -6,8 +6,15 @@
   text-decoration: none;
   user-select: none;
 
+  // to align with menu btn
+  margin-bottom: .5rem;
+  
   padding-left: 3.745rem;
   position: relative;
+
+  @include bp($md) {
+    margin-bottom: 0;
+  }
 
   &::before {
     content: '';

@@ -1,64 +1,45 @@
 section.features
   .inner.features__inner
-    h2.title Tinyone features
+    h2.title.features__title Tinyone features
     h3.subtitle.features__subtitle.
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
       Praesent vitae eros eget tellus tristique bibendum. 
       Donec rutrum sed sem quis venenatis.
 
     .features__grid
-      .features__item
-        .col
-          .features__item-icon._tablet
+
+      -
+        let titles = [
+          'Fully Responsive',
+          'Fully Layered PSD',
+          'Font Awesome Icons',
+          'HTML3 &amp; CSS3',
+          'Email Template',
+          'Free to download'
+        ];
+
+        let desriptions = [
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum.',
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum.',
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum.',
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum.',
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum.',
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum.'
+        ];
         
-        .features__item-about
-          h2.features__item-subtitle Fully responsive
-          p.features__item-description.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Praesent vitae eros eget tellus tristique bibendum.
-      
-      .features__item
-        .col
-          .features__item-icon._layers
-          
-        .features__item-about
-          h2.features__item-subtitle Fully layered PSD
-          p.features__item-description.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Praesent vitae eros eget tellus tristique bibendum.
-      
-      .features__item
-        .col
-          .features__item-icon._folder
-        .features__item-about
-          h2.features__item-subtitle Font Awesome icons
-          p.features__item-description.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Praesent vitae eros eget tellus tristique bibendum.
-      
-      .features__item
-        .col
-          .features__item-icon._code
-        .features__item-about
-          h2.features__item-subtitle HTML3 &amp; CSS3
-          p.features__item-description.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Praesent vitae eros eget tellus tristique bibendum.
-      
-      .features__item
-        .col
-          .features__item-icon._envelope
-        .features__item-about
-          h2.features__item-subtitle Email template
-          p.features__item-description.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Praesent vitae eros eget tellus tristique bibendum.
-      
-      .features__item
-        .col
-          .features__item-icon._bookmark
-        .features__item-about
-          h2.features__item-subtitle Free to download
-          p.features__item-description.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Praesent vitae eros eget tellus tristique bibendum.
+        let icons = [
+          '_tablet',
+          '_layers',
+          '_folder',
+          '_code',
+          '_envelope',
+          '_bookmark'
+        ]
+
+      each title, i in titles
+        .features__item
+          .col
+            .features__item-icon(class=icons[i])
+          .features__item-about
+            h2.features__item-subtitle !{title}
+            p.features__item-description= desriptions[i]

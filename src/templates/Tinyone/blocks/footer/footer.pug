@@ -1,51 +1,45 @@
 footer.footer
 
-  include ../lists/socials
+  include ../lists/+links-list
   .inner
     include ../form/form
 
-    +socials(
-      ['_facebook', '_twitter', '_telegram', '_pinterest'],
-      ['#', '#', '#', '#']
+    +links-list(
+      'socials',
+      ['#', '#', '#', '#'],
+      [],
+      ['_facebook', '_twitter', '_telegram', '_pinterest']
     )
 
     .wrapper.footer__wrapper
-      ul.footer__list
-        li.footer__list-item
+      ul.footer-list
+        li.footer-list__item
           span.uppercase halovietnam ltd
           br
           |66, Dang Van ngu, Dong Da Hanoi, Vietnam
-        li.footer__list-item contact@halovietnam.com
-        li.footer__list-item +844 35149182
+        li.footer-list__item contact@halovietnam.com
+        li.footer-list__item +844 35149182
 
-      ul.footer__list
-        li.footer__list-item
-          a.footer__list-link(href="#") Examples
-        li.footer__list-item
-          a.footer__list-link(href="#") Shop
-        li.footer__list-item
-          a.footer__list-link(href="#") License
+      +links-list(
+        'footer-list',
+        ['#', '#', '#', '#'],
+        ['Examples', 'Shop', 'License']
+      )
 
-      ul.footer__list
-        li.footer__list-item
-          a.footer__list-link(href="#") Contact
-        li.footer__list-item
-          a.footer__list-link(href="#") About
-        li.footer__list-item
-          a.footer__list-link(href="#") Privacy
-        li.footer__list-item
-          a.footer__list-link(href="#") Terms
-      ul.footer__list
-        li.footer__list-item
-          a.footer__list-link(href="#") Download
-        li.footer__list-item
-          a.footer__list-link(href="#") Support
-        li.footer__list-item
-          a.footer__list-link(href="#") Documents
-      ul.footer__list
-        li.footer__list-item
-          a.footer__list-link(href="#") Media
-        li.footer__list-item
-          a.footer__list-link(href="#") Blog
-        li.footer__list-item
-          a.footer__list-link(href="#") Forums
+      +links-list(
+        'footer-list',
+        ['#', '#', '#', '#'],
+        ['Contact', 'About', 'Privacy', 'Terms']
+      )
+
+      +links-list(
+        'footer-list',
+        ['#', '#', '#', '#'],
+        ['Download', 'Support', 'Documents']
+      )
+
+      +links-list(
+        'footer-list',
+        ['#', '#', '#', '#'],
+        ['Media', 'Blog', 'Forums']
+      )

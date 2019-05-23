@@ -3,7 +3,7 @@
   max-height: 642px;
   background-color: $accent;
   color: $main;
-  padding: 5rem 0 1rem;
+  padding: 2rem 0;
 
   @include bp($md) {
     padding: 4rem 0 6.8rem;
@@ -20,9 +20,11 @@
   &__text {
     // pixel-perfext
     margin-left: .55rem;
-
-    margin-top: 4rem;
     max-width: 400px;
+
+    @include bp($md) {
+      margin-top: 4rem;
+    }
   }
 
   &__subtitle {
