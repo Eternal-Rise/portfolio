@@ -1,19 +1,42 @@
 .hero {
   box-sizing: border-box;
-  // min-height: 100vh;
-  max-height: 740px;
+  max-height: 642px;
   background-color: $accent;
   color: $main;
   padding: 5rem 0 1rem;
 
   @include bp($md) {
-    padding: 3.5rem 0;
+    padding: 4rem 0 6.8rem;
     height: 100vh;
   }
 
   &__inner {
+    align-items: flex-start;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     height: 100%;
+  }
+  
+  &__text {
+    // pixel-perfext
+    margin-left: .55rem;
+
+    margin-top: 4rem;
+    max-width: 400px;
+  }
+
+  &__subtitle {
+    max-width: 350px;
+  }
+
+  &__preview {
+    display: none;
+
+    @include bp($md) {
+      display: flex;
+      justify-content: flex-end;
+      height: 100%;
+      width: 50%
+    }
   }
 }

@@ -1,4 +1,27 @@
-header.hero
+//- mixins
+include ../lists/+links-list
+
+.hero
   .inner.hero__inner
-    block nav
-    block about
+
+    .hero__text
+      h2.title Inspire your inspiration
+      h3.subtitle.hero__subtitle.
+        Simple to use for your app, products showcase and your inspiration
+
+      p.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Praesent vitae eros eget tellus tristique bibendum. 
+        Donec rutrum sed sem quis venenatis. Proin viverra risus a eros 
+        volutpat tempor. In quis arcu et eros porta lobortis sit
+
+      +links-list(
+        'app',
+        ['#', '#', '#'],
+        [], 
+        ['_apple', '_android', '_windows']
+      )
+
+    .hero__preview
+      include ../device/device
+

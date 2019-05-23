@@ -2,9 +2,9 @@
   box-sizing: border-box;
   align-items: center;
   display: flex;
-  margin-right: 1rem;
-  padding: 3rem 1rem;
-  height: 80%;
+  // margin-right: 1rem;
+  padding: 2.8rem .8rem 2.65rem;
+  height: 100%;
   width: 100%;
   max-width: 315px;
 
@@ -16,7 +16,7 @@
   position: relative;
 
   @include bp($lg) {
-    margin-right: 2.5rem;
+    margin-right: 2.55rem;
   }
   
   // .device
@@ -47,7 +47,10 @@
 
   // .device
   &__logo {
+    // pixel-perfect
     margin-bottom: 2rem;
+    margin-right: 5px;
+
     pointer-events: none;
   }
 }

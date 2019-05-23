@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background-color: #777;
+  background-color: #666;
   color: #fff;
   font-family: $ff;
   font-size: 16px;
@@ -8,7 +8,7 @@ body {
 
 h1, h2, h3, p {
   margin: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 
 p {
@@ -24,8 +24,9 @@ p {
 }
 
 .subtitle {
-  font-size: 1.4em;
+  font-size: 1.25em;
   font-weight: $fw-r;
+  line-height: 1;
 }
 
 ol, ul {
@@ -46,7 +47,7 @@ ol, ul {
 }
 
 .header {
-  padding: 3.92rem 0 0;
+  padding: 4rem 0 0;
   background-color: $accent;
 
   // for nav
