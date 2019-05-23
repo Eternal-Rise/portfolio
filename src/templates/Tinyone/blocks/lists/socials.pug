@@ -1,9 +1,8 @@
-ul.socials
-  li.socials__item
-    a.socials__link._facebook(href="#")
-  li.socials__item
-    a.socials__link._twitter(href="#")
-  li.socials__item
-    a.socials__link._telegram(href="#")
-  li.socials__item
-    a.socials__link._pinterest(href="#")
+mixin socials(_icons, hrefs, mods=[])
+  ul.socials
+    each icon, i in _icons
+      li.socials__item
+        if mods
+          a.socials__link(class=`${icon}${mods[i] ? ' ' + mods[i] : ''}`, href=hrefs[i])
+        else
+          a.socials__link(class=icon, href=hrefs[i])

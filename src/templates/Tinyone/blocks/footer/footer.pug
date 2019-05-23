@@ -1,7 +1,13 @@
 footer.footer
+
+  include ../lists/socials
   .inner
     include ../form/form
-    include ../lists/socials
+
+    +socials(
+      ['_facebook', '_twitter', '_telegram', '_pinterest'],
+      ['#', '#', '#', '#']
+    )
 
     .wrapper.footer__wrapper
       ul.footer__list

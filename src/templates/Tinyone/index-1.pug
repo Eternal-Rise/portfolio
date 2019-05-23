@@ -6,9 +6,28 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     
     link(href='https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap', rel='stylesheet')
-    link(rel="stylesheet", href="styles/index-1.css")
+    link(rel="stylesheet", href="styles/index.css")
     title Tinyone
   body
-    include blocks/hero/hero
+
+    //- mixins
+    include blocks/logo/+logo
+    include blocks/lists/+links-list
+
+    header.header
+      .inner.header__inner
+        +logo
+        include blocks/buttons/menu/menu
+        include blocks/nav/nav
+        
+
+    .hero
+      .inner.inner__hero
+      
+      
+      block about
+        //- include blocks/about/about
+
+
     include blocks/features/features
     include blocks/footer/footer

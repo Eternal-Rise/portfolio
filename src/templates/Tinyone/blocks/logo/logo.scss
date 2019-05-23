@@ -1,25 +1,24 @@
 .logo {
-  align-items: center;
-  display: flex;
   color: $main;
-  font-size: 1.8em;
+  font-size: 1.85rem;
   font-weight: $fw-b;
+  line-height: 1.2;
   text-decoration: none;
   user-select: none;
 
-  padding-left: 3.8rem;
+  padding-left: 3.745rem;
   position: relative;
 
   &::before {
     content: '';
     display: block;
     position: absolute;
-    left: 0;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2.7rem;
+    height: 2.7rem;
 
-    // to align with text
-    top: .05rem;
+    // pixelperfect
+    top: -3px;
+    left: 6px;
     
     background-image: url('../img/logo.png');
     background-repeat: no-repeat;

@@ -37,10 +37,24 @@ ol, ul {
 .inner {
   box-sizing: border-box;
   margin: auto;
-  max-width: 960px;
+  max-width: 968px;
   padding: 0 1rem;
 }
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.header {
+  padding: 3.92rem 0 0;
+  background-color: $accent;
+
+  // for nav
+  position: relative;
+
+  &__inner {
+    align-items: flex-end;
+    display: flex;
+    justify-content: space-between;
+  }
 }

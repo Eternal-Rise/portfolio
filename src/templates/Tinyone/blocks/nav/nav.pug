@@ -1,15 +1,3 @@
-include ../logo/logo
+include ../lists/+links-list
 
-nav.nav
-  +logo
-
-    
-  include nav__btn
-
-  ul.nav__list
-    li.nav__item
-      a.nav__link(href="#") Features
-    li.nav__item
-      a.nav__link(href="#") Support
-    li.nav__item
-      a.nav__link(href="#") Blog
++links-list('nav', ['#', '#', '#'], ['Features', 'Support', 'Blog'])

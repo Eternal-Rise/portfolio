@@ -1,45 +1,37 @@
 .nav {
-  align-items: center;
-  display: flex;
-  padding: 1rem .2rem 1rem 1rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
+  // padding: 1rem .2rem 1rem 1rem;
+  // position: fixed;
+  // top: 0;
+  // left: 0;
+  // right: 0;
+  // z-index: 10;
 
-  background-color: $accent;
+  // background-color: $accent;
   
+  // @include bp($md) {
+  //   padding: 0;
+  //   position: static;
+  //   background-color: transparent;
+  // }
+  box-sizing: border-box;
+  margin-left: auto;
+  padding: 2rem 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  background-color: $alt;
+  transition: transform $dur, box-shadow $dur;
+  transform: translateY(-100%);
+
   @include bp($md) {
-    align-items: flex-end;
     padding: 0;
     position: static;
+    width: initial;
+    transform: none;
     background-color: transparent;
-  }
-
-  // .nav
-  &__list {
-    // display: none;
-    box-sizing: border-box;
-    margin-left: auto;
-    padding: 2rem 1rem;
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-
-    background-color: $alt;
-    transition: transform $dur, box-shadow $dur;
-    transform: translateY(-100%);
-
-    @include bp($md) {
-      padding: 0;
-      position: static;
-      width: initial;
-      transform: none;
-      background-color: transparent;
-      box-shadow: none;
-    }
+    box-shadow: none;
   }
 
   // .nav
@@ -54,7 +46,7 @@
 
       &:not(:last-child) {
         margin-bottom: 0;
-        margin-right: 4rem;
+        margin-right: 4.4rem;
       }
     }
   }
@@ -63,7 +55,7 @@
   &__link {
     border-bottom: 1px solid transparent;
     color: $main;
-    font-size: 1.5em;
+    font-size: 1.375rem;
     font-weight: $fw-b;
     text-decoration: none;
     transition: $dur;
@@ -94,9 +86,13 @@
     &._active {
       transform: rotate(45deg);
 
-      + .nav__list {
+      + .nav {
         transform: translateY(0);
         box-shadow: 0 .5rem 1rem -.5rem;
+
+        @include bp($md) {
+          box-shadow: none;
+        }
       }
     }
   }
