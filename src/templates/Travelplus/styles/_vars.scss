@@ -1,0 +1,49 @@
+// breakpoints
+$xs: 320px;
+$sm: 460px;
+$xsm: 640px;
+$md: 736px;
+$lg: 960px;
+$xl: 1200px;
+$xxl: 1600px;
+
+// font
+
+// font-family title
+$ff-t: 'Roboto Condensed', arial, sans-serif, verdana;
+
+// font-family regular
+$ff-r: "Open Sans", arial, sans-serif, verdana;
+
+// font-family inputs
+$ff-i: 'Roboto', arial, sans-serif;
+
+// font-family special
+$ff-s: "Noto Sans", arial, sans-serif, verdana;
+
+// font-weight light, regular, bold
+$fw-l: 300;
+$fw-r: 400;
+$fw-b: 700;
+
+// Palette
+$main: #fff;
+$secondary: #f3f3f3;
+$alt: #000;
+$accent: #e74c3c;
+$accent-h: #d04436;
+$accent2: #c72c1c;
+$bg-c: #f1f1f1;
+$accent3: rgb(255, 207, 75);
+$bg-input: rgba(255,255,255,.17);
+$border-input: #dfdfdf;
+$special: rgb(189, 195, 199);
+$svg-special: #{'rgb(189, 195, 199'};
+$svg-alt: #{'rgb(0, 0, 0'};
+$overlay: rgba(23,69,86,.67);
+$overlay-2: rgba(22,35,51,.76);
+$overlay-3: rgba(18,70,82,.68);
+$offers-title: rgb(0, 87, 160);
+
+// transitions
+$dur: .2s;

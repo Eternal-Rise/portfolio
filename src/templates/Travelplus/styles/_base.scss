@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  background-color: #123;
+  color: #fff;
+  font-family: $ff-r;
+}
+
+h1, h2, h3, h4 {
+  font-family: $ff-t;
+  font-weight: $fw-l;
+}
+
+.inner {
+  max-width: 1140px;
+  width: 100%;
+  padding: 0 1rem;
+  margin: auto;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
