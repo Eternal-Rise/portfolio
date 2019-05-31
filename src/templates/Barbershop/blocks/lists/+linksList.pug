@@ -1,0 +1,8 @@
+mixin linksList(prefix, hrefs, titles=[], classes=[])
+  ul(class=`${prefix}`)&attributes(attributes)= name
+    each link, i in hrefs
+      li(class=`${prefix}__item`)
+          a(
+            class=`${prefix}__link${classes[i] ? ' ' + classes[i] : ''}`
+            href=link
+          ) #{`${titles[i] ? titles[i] : ''}`}
