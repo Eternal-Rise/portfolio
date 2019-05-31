@@ -1,6 +1,6 @@
 .workers {
   background-color: $main;
-  padding: 3.3rem 0 1.5rem;
+  padding: 3.3rem 1rem 1.5rem;
 
   &__title {
     @extend .tours__title;
@@ -9,17 +9,31 @@
 
   &__inner {
     display: flex;
-    flex-wrap: wrap;
-    // justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    @include bp($xsm) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
   }
 
   &__item {
     box-sizing: border-box;
-    width: 33.33%;
     margin: 0;
     text-align: center;
-    padding: 0 1.5rem;
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
+
+    @include bp($xsm) {
+      margin-bottom: 5rem;
+      padding: 0 1.5rem;
+      width: 45%;
+    }
+
+    @include bp($lg) {
+      width: 33.33%;
+    }
   }
 
   &__img {

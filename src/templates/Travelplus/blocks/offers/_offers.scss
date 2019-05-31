@@ -4,16 +4,24 @@
 }
 
 .tours {
-  padding: 8.5rem 0 5.3rem;
+  padding: 5rem 0 3rem;
+
+  @include bp($md) {
+    padding: 8.5rem 0 5.3rem;
+  }
 
   &__title {
     font-family: $ff-t;
     margin: 0;
     margin-bottom: .4rem;
-    font-size: 3.25rem;
+    font-size: 2.5rem;
     color: $offers-title;
     font-weight: $fw-b;
     text-align: center;
+
+    @include bp($md) {
+      font-size: 3.25rem;
+    }
 
     &._accent {
       color: $accent;
@@ -23,31 +31,58 @@
 
   &__subtitle {
     margin: 0;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     font-family: $ff-r;
-    font-size: 1.625rem;
+    font-size: 1.25rem;
     text-align: center;
+
+    @include bp($md) {
+      margin-bottom: 4rem;
+      font-size: 1.625rem;
+    }
   }
 
   &__list {
     display: flex;
-    justify-content: space-between;
-    margin: 0;
-    padding: 0 1.8rem;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @include bp($md) {
+      padding: 0 1.8rem;
+    }
+
+    @include bp($xl) {
+      justify-content: space-between;
+    }
   }
 
   &__item {
-    display: inline-block;
-    width: 30.5%;
+    margin: 0 0 2.5rem;
+    width: 100%;
+
+    @include bp($md) {
+      width: 45%;
+      margin: 2rem 1rem;
+    }
+
+    @include bp($xl) {
+      margin: 0;
+      width: 30.5%;
+    }
   }
 
   &__item-title {
     text-align: center;
     font-family: $ff-r;
-    font-size: 1.6rem;
+    font-size: 1.25rem;
     margin: 0;
-    margin-bottom: 1.7rem;
+    margin-bottom: .5rem;
     line-height: 1.47;
+
+    @include bp($md) {
+      font-size: 1.6rem;
+      margin-bottom: 1.7rem;
+    }
 
     &._accent {
       color: $offers-title;
@@ -64,9 +99,12 @@
     display: inline-block;
     width: 100%;
     height: 250px;
-    margin-bottom: 1rem;
     border-radius: 5px;
     object-fit: cover;
+
+    @include bp($xsm) {
+      margin-bottom: 1rem;
+    }
   }
 
   &__price {
@@ -76,21 +114,35 @@
   &__btn {
     margin: 0 auto;
     font-family: $ff-s;
-    font-size: 1.37rem;
+    font-size: 1.15rem;
+
+    @include bp($md) {
+      font-size: 1.37rem;
+    }
   }
 }
 
 .popular {
-  padding: 8.4rem 0 5.3rem;
+  padding: 0 0 3rem;
+  
+  @include bp($md) {
+    padding: 8.4rem 0 5.3rem;
+  }
 
   &__wrap {
 
     &:not(:last-child) {
-      margin-bottom: 5.8rem;
+      margin-bottom: 1rem;
+
+      @include bp($md) {
+        margin-bottom: 5.8rem;
+      }
     }
 
     &._margin {
-      margin-bottom: 3.5rem;
+      @include bp($md) {
+        margin-bottom: 3.5rem;
+      }
     }
   }
 
@@ -99,10 +151,6 @@
     
     &._accent {
       margin-bottom: 2.5rem;
-    }
-
-    &._margin {
-      margin-bottom: 3.6rem;
     }
   }
 
@@ -113,16 +161,10 @@
 
   &__list {
     @extend .tours__list;
-    display: flex;
-    justify-content: space-between;
-    margin: 0;
-    padding: 0 1.8rem;
   }
 
   &__item {
     @extend .tours__item;
-    display: inline-block;
-    width: 30.5%;
   }
 
   &__item-title {

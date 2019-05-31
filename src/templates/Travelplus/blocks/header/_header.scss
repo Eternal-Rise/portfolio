@@ -1,29 +1,49 @@
 .header {
   box-sizing: border-box;
-  height: 100vh;
-  max-height: 752px;
-  padding: 1.3rem 0 5.75rem;
+  padding: 1.3rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
   background-image: linear-gradient($overlay, $overlay), url('../img/bg-header.jpeg');
-  background-position: center 2rem center;
+  background-position: center center;
   background-size: cover;
+
+  @include bp($lg) {
+    height: 100vh;
+    max-height: 752px;
+    padding: 1.3rem 0 5.75rem;
+  }
 
   &__row {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin: 0 3.4rem 0 auto;
-    width: 54%;
+
+    @include bp($xsm) {
+      flex-direction: row;
+    }
+
+    @include bp($lg) {
+      margin: 0 3.4rem 0 auto;
+      width: 54%;
+    }
   }
 
   &__title {
-    font-size: 4.25rem;
+    font-size: 2.25rem;
     font-weight: $fw-l;
     text-align: center;
     margin: 0;
     line-height: 1.4;
+
+    @include bp($sm) {
+      font-size: 3.25rem;
+    }
+
+    @include bp($xsm) {
+      font-size: 4.25rem;
+    }
   }
 }
