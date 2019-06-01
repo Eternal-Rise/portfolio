@@ -1,0 +1,58 @@
+.features {
+  background-color: $secondary;
+  padding: 3rem 0 4rem;
+  color: #696969;
+
+  &__title {
+    margin: 0 0 1rem;
+    text-align: center;
+    font-size: 1.8rem;
+
+    @include bp($md) {
+      margin-bottom: 4.5rem;
+      font-size: 2.58rem;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0;
+  }
+
+  &__item {
+    display: inline-block;
+    margin-bottom: 2rem;
+    width: 100%;
+    text-align: center;
+
+    @include bp($xsm) {
+      width: 50%;
+    }
+
+    @include bp($lg) {
+      width: 25%;
+    }
+  }
+
+  &__img {
+    display: inline-block;
+    width: 100%;
+    max-width: 8rem;
+
+    @include bp($xsm) {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.2em;
+    margin: 0;
+
+    @include bp($md) {
+      font-size: 1.7rem;
+    }
+  }
+}

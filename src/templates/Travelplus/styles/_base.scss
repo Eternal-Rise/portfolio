@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  background-color: #123;
+  color: #fff;
+  font-family: $ff-r;
+}
+
+h1, h2, h3, h4 {
+  font-family: $ff-t;
+  font-weight: $fw-l;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.inner {
+  box-sizing: border-box;
+  max-width: 1140px;
+  width: 100%;
+  padding: 0 1rem;
+  margin: auto;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.btn {
+  display: block;
+  box-sizing: border-box;
+  padding: 1rem 2rem;
+  background-color: $accent;
+  border: none;
+  border-radius: 5px;
+  color: $main;
+  font-family: $ff-s;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: $dur;
+
+  &:hover {
+    background-color: $accent-h;
+  }
+}
+
+.logo {
+  width: 210px;
+}

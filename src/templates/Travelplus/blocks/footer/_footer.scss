@@ -1,0 +1,53 @@
+.footer {
+  padding: 3rem 0;
+  background-color: #f5f5f5;
+  color: $alt;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 960px;
+
+    @include bp($xsm) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    @include bp($xl) {
+      flex-direction: row-reverse;
+      flex-wrap: initial;
+      justify-content: space-between;
+    }
+  }
+
+  &__list {
+    font-size: 1.2rem;
+    margin: 0;
+    margin-bottom: 2rem;
+    padding: 0;
+    list-style-type: none;
+    font-weight: $fw-b;
+
+    @include bp($md) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__item {
+  }
+
+  &__wrap {
+    width: 100%;
+    text-align: center;
+
+    @include bp($xl) {
+      width: initial;
+    }
+  }
+
+  &__logo {
+    // align-self: center;
+  }
+}
