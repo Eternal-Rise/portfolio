@@ -36,7 +36,11 @@ gulp.task('concat', () => {
 
     && gulp.src('src/templates/html5up_forty/**/*.js')
     .pipe(concat('index.js'))
-    .pipe(gulp.dest('dist/templates/html5up_forty/js/'));
+    .pipe(gulp.dest('dist/templates/html5up_forty/js/'))
+
+    && gulp.src('src/templates/html5up_multiverse/**/*.js')
+    .pipe(concat('index.js'))
+    .pipe(gulp.dest('dist/templates/html5up_multiverse/js/'));
 });
 
 gulp.task('serve', () => {

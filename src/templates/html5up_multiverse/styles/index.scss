@@ -1,0 +1,187 @@
+@mixin bp($point) {
+  @media screen and (min-width: $point) { @content; }
+}
+
+$xs: 360px;
+$sm: 480px;
+$md: 736px;
+$lg: 980px;
+$xl: 1280px;
+$xxl: 1680px;
+
+$color-main: #313238;
+$color-second: #fff;
+
+a {
+  color: inherit;
+}
+
+body {
+  background-color: $color-main;
+  color: $color-second;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 0;
+}
+
+.gallery {
+  max-width: 1480px;
+  margin: 0 auto 3em;
+  display: grid;
+  gap: .5em;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 140px;
+  grid-auto-flow: dense;
+
+  @include bp($sm) {    
+    grid-auto-rows: 240px;
+    gap: 1em;
+  }
+
+  @include bp($md) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @include bp($xl) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.item {
+  background-size: cover;
+  background-position: center center;
+  height: 100%;
+  transition: opacity 1s .4s;
+
+  position: relative;
+
+    // &_row x column
+    &_1x2 {
+      grid-area: span 1 / span 2;
+    }
+    &_1x3 {
+      grid-area: span 1 / 2;
+
+      @include bp($md) {
+        grid-area: span 1 / span 3;
+      }
+    }
+    &_2x1 {
+      grid-area: span 2 / span 1;
+    }
+    &_2x2 {
+      grid-area: span 2 / span 2;
+    }
+    &_2x3 {
+      grid-area: span 1 / span 2;
+
+      @include bp($md) {
+        grid-area: span 2 / span 3;
+      }
+    }
+    &_3x1 {
+      grid-area: span 3 / span 1;
+    }
+    &_3x2 {
+      grid-area: span 3 / span 2;
+    }
+    &_3x3 {
+      grid-area: span 2 / span 2;
+
+      @include bp($md) {
+        grid-area: span 3 / span 3;
+      }
+    }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+    
+  &__caption {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0.2em 0.5em;
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  
+    background-color: rgba(0,0,0,.2);
+  }
+}
+
+.hidden {
+  opacity: 0;
+}
+
+footer {
+  box-sizing: border-box;
+  padding: 0 2em;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+  background-color: inherit;
+  box-shadow: inset 0 .1em $color-second;
+
+  @include bp($lg) {    
+    display: flex;
+  }
+
+  p {
+    margin: 1em 0;
+    text-align: center;
+  }
+}
+
+.dropdown {
+  display: none;
+  margin-left: auto;
+  position: relative;
+
+  &:hover {
+    .dropdown__list {
+      display: block;
+    }
+  }
+  
+  @include bp($lg) {    
+    display: block;
+  }
+
+  &__button {
+    color: inherit;
+    border-bottom: 1px dotted $color-second;
+    line-height: 3;
+  }
+
+  &__list {
+    display: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+
+    // to be over footer
+    bottom: 3.25em;
+
+    // To stick to corner
+    right: -2em;
+
+    background-color: $color-main;
+    list-style-type: none;
+  }
+
+  &__item {
+    padding: 0.5em 1em;
+    white-space: nowrap;
+
+    span {
+      display: inline-block;
+      width: 3em;
+      margin-right: 1em;
+      text-align: right;
+    }
+  }
+}
