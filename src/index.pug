@@ -9,12 +9,12 @@ html(lang="en")
   body
     h1.hidden Portfolio
 
-    mixin base()
-      span.portfolio__explanation(title="Toolkit for automating painful or time-consuming tasks") Gulp
+    mixin base(toolkit, preHTML, preCSS)
+      span.portfolio__explanation(title="Toolkit for automating painful or time-consuming tasks")= toolkit
       |, 
-      span.portfolio__explanation(title="HTML preprocessor") Pug
+      span.portfolio__explanation(title="HTML preprocessor")= preHTML
       |, 
-      span.portfolio__explanation(title="CSS preprocessor") SCSS
+      span.portfolio__explanation(title="CSS preprocessor")= preCSS
 
     .container
       table.portfolio
@@ -28,8 +28,15 @@ html(lang="en")
           td.portfolio__td 
             a.portfolio__link(href="templates/Barbershop/index.html") Barbershop
           td.portfolio__td
-            +base()
-            
+            +base('Gulp', 'Pug', 'SCSS')
+          td.portfolio__td ?
+          td.portfolio__td ?
+
+        tr.portfolio__tr
+          td.portfolio__td 
+            a.portfolio__link(href="templates/html5up_forty/index.html") Forty
+          td.portfolio__td
+            +base('Gulp', 'Pug', 'SASS')
           td.portfolio__td ?
           td.portfolio__td ?
 
@@ -37,7 +44,7 @@ html(lang="en")
           td.portfolio__td 
             a.portfolio__link(href="templates/Tinyone/index.html") Tinyone
           td.portfolio__td
-            +base()
+            +base('Gulp', 'Pug', 'SCSS')
           td.portfolio__td ?
           td.portfolio__td ?
 
@@ -45,7 +52,7 @@ html(lang="en")
           td.portfolio__td 
             a.portfolio__link(href="templates/Travelplus/index.html") Travelplus
           td.portfolio__td
-            +base()
+            +base('Gulp', 'Pug', 'SCSS')
           td.portfolio__td ?
           td.portfolio__td ?
 
