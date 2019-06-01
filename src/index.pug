@@ -7,12 +7,49 @@ html(lang="en")
     link(rel="stylesheet", href="styles/index.css")
     title Bogdan Saliuk
   body
-    h1 Portfolio
+    h1.hidden Portfolio
 
-    ul
-      li
-        a.link(href="templates/Barbershop/index.html") Barbershop
-      li
-        a.link(href="templates/Tinyone/index.html") Tinyone
-      li
-        a.link(href="templates/Travelplus/index.html") Travelplus
+    mixin base()
+      span.portfolio__explanation(title="Toolkit for automating painful or time-consuming tasks") Gulp
+      |, 
+      span.portfolio__explanation(title="HTML preprocessor") Pug
+      |, 
+      span.portfolio__explanation(title="CSS preprocessor") SCSS
+
+    .container
+      table.portfolio
+        tr.portfolio__tr._head
+          th.portfolio__th Name / Link
+          th.portfolio__th Technologies
+          th.portfolio__th Support
+          th.portfolio__th GitHub
+
+        tr.portfolio__tr
+          td.portfolio__td 
+            a.portfolio__link(href="templates/Barbershop/index.html") Barbershop
+          td.portfolio__td
+            +base()
+            
+          td.portfolio__td ?
+          td.portfolio__td ?
+
+        tr.portfolio__tr
+          td.portfolio__td 
+            a.portfolio__link(href="templates/Tinyone/index.html") Tinyone
+          td.portfolio__td
+            +base()
+          td.portfolio__td ?
+          td.portfolio__td ?
+
+        tr.portfolio__tr
+          td.portfolio__td 
+            a.portfolio__link(href="templates/Travelplus/index.html") Travelplus
+          td.portfolio__td
+            +base()
+          td.portfolio__td ?
+          td.portfolio__td ?
+
+    .contacts Hire me in 
+      a.contacts__link(href="https://t.me/Eternal_Rise") telegram
+
+

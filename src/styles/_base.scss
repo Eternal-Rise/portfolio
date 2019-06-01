@@ -1,9 +1,63 @@
 body {
-  background-color: #123;
-  color: #fff;
   margin: 0;
+  background-color: $alt;
+  color: $main;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.link {
+a {
   color: inherit;
+}
+
+.contacts {
+  max-width: $xl;
+  margin: auto;
+  text-align: center;
+}
+
+.container {
+  max-width: $xl;
+  margin: auto;
+  padding-top: 2rem;
+  overflow-x: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.portfolio {
+  margin-bottom: 2rem;
+  min-width: $lg;
+  max-width: $xl;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 0 2rem -1rem $main;
+
+  &__th {
+    padding: 1rem;
+    word-wrap: nowrap;
+  }
+
+  &__tr {
+    &:nth-child(even) {
+      background-color: rgba($main, .38);
+    }
+
+    &:nth-child(odd) {
+      background-color: rgba($main, .25);
+    }
+
+    &._head {
+      background-color: $accent;
+    }
+  }
+
+  &__td {
+    padding: .5rem;
+  }
+
+  &__explanation {
+    border-bottom: 1px dotted $main;
+  }
 }
