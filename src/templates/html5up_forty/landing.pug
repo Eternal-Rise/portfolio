@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    
+    link(
+      rel='stylesheet'
+      href='https://use.fontawesome.com/releases/v5.2.0/css/all.css'
+      integrity='sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ'
+      crossorigin='anonymous'
+      )
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic")
+    link(rel="stylesheet" href="styles/index.css")
+    
+    title Elements
+  body
+    .nav-overlay
+      .nav-overlay-icon
+        i#button-menu-close.fas.fa-times.fa-2x
+      nav
+        ul.alt
+          li
+            a(href="index.html") home
+          li
+            a.active landing
+          li
+            a(href="generic.html") generic
+          li
+            a(href="elements.html") elements
+    
+        ul.actions
+          li
+            button.primary.fit get started
+          li
+            button.fit log in
+
+    header.header-bar.opacity
+      a.logo(href="index.html")
+        strong forty
+        span  by html5 up
+      nav
+        a#button-menu menu
+
+    #wrapper
+      header.banner#landing
+        .inner
+          h1.major Landing
+          p.alt
+            |Lorem ipsum dolor sit amet consectetur 
+            br
+            |adipisicing elit. Totam iste facilis numquam.
+
+      section.alt-bg
+        .inner
+          h2.major.unfit Sed amet aliquam
+          p.
+            Nullam et orci eu lorem consequat tincidunt vivamus et sagittis 
+            magna sed nunc rhoncus condimentum sem. In efficitur ligula 
+            tate urna. Maecenas massa vel lacinia pellentesque lorem 
+            ipsum dolor. Nullam et orci eu lorem consequat tincidunt. 
+            Vivamus et sagittis libero. Nullam et orci eu lorem consequat 
+            tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum 
+            sem. In efficitur ligula tate urna.
+
+      .tiles.spotlights
+        .grid
+          .banner
+            a(href="generic.html")
+            img(src="img/pic08.jpg", alt="")
+          
+          section.banner
+            .inner
+              h3.major.unfit Orci maecenas
+              p.
+                Nullam et orci eu lorem consequat tincidunt vivamus et sagittis 
+                magna sed nunc rhoncus condimentum sem. In efficitur ligula tate 
+                urna. Maecenas massa sed magna lacinia magna pellentesque lorem 
+                ipsum dolor. Nullam et orci eu lorem consequat tincidunt. 
+                Vivamus et sagittis tempus.
+
+              ul.actions.line
+                li
+                  a.button(href="generic.html") learn more
+        
+        .grid.alt
+          .banner
+            a(href="generic.html")
+            img(src="img/pic09.jpg", alt="")
+
+          section.alt-bg.banner
+            .inner
+              h3.major.unfit Rhoncus magna
+              p.
+                Nullam et orci eu lorem consequat tincidunt vivamus et sagittis 
+                magna sed nunc rhoncus condimentum sem. In efficitur ligula tate 
+                urna. Maecenas massa sed magna lacinia magna pellentesque lorem 
+                ipsum dolor. Nullam et orci eu lorem consequat tincidunt. 
+                Vivamus et sagittis tempus.
+
+              ul.actions.line
+                li
+                  a.button(href="generic.html") learn more
+
+        .grid
+          .banner
+            a(href="generic.html")
+            img(src="img/pic10.jpg", alt="")
+          
+          section.banner
+            .inner
+              h3.major.unfit Sed nunc ligula
+              p.
+                Nullam et orci eu lorem consequat tincidunt vivamus et sagittis 
+                magna sed nunc rhoncus condimentum sem. In efficitur ligula tate 
+                urna. Maecenas massa sed magna lacinia magna pellentesque lorem 
+                ipsum dolor. Nullam et orci eu lorem consequat tincidunt. 
+                Vivamus et sagittis tempus.
+
+              ul.actions.line
+                li
+                  a.button(href="generic.html") learn more
+
+      section.alt-bg
+        .inner
+          h2.major.unfit Massa libero
+          p.
+            Nullam et orci eu lorem consequat tincidunt vivamus et sagittis 
+            libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. 
+            Pellentesque condimentum sem. In efficitur ligula tate urna. 
+            Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. 
+            Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis 
+            libero. Mauris aliquet magna magna sed nunc rhoncus amet 
+            pharetra et feugiat tempus.
+
+          ul.actions.line
+            li
+              a(href="generic.html").button.next get started
+
+      include blocks/_contact.pug
+
+      include blocks/_footer.pug
+
+    script(src="js/index.js")

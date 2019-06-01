@@ -1,0 +1,97 @@
+ol 
+  list-style: decimal
+  margin: 0 0 map-get($size, 'element-margin') 0
+  padding-left: 1.25em
+
+  li 
+    padding-left: 0.25em
+
+ul 
+  list-style: disc
+  margin: 0 0 map-get($size, 'element-margin') 0
+  padding-left: 1em
+
+  li 
+    padding-left: 0.5em
+
+  &.alt 
+    list-style: none
+    padding-left: 0
+
+    li 
+      border-top: solid 1px map-get($palette, 'border')
+      padding: 0.5em 0
+
+      &:first-child 
+        border-top: 0
+        padding-top: 0
+
+  &.actions
+    @extend .alt    
+    margin-bottom: map-get($size, 'element-margin')
+
+    li
+      border: none
+
+    &.line
+      li
+        display: inline-block
+        margin: 0 (map-get($size, 'element-margin') * 0.5) 0 0
+
+ul.pagination 
+  cursor: default
+  list-style: none
+  padding-left: 0
+
+  li 
+    display: inline-block
+    padding-left: 0
+    vertical-align: middle
+
+    &:nth-child(n+2):nth-last-child(n+2) 
+      display: none
+
+    @media screen and (min-width: 481px)
+      &:nth-child(n+2):nth-last-child(n+2) 
+        display: inline-block
+
+    &:first-child 
+      padding-right: 0
+
+    > .page
+      border-bottom: 0
+      display: inline-block
+      font-size: 0.8em
+      font-weight: map-get($font, 'weight-bold')
+      height: 1.5em
+      line-height: 1.5em
+      margin: 0 .125em
+      min-width: 1.5em
+      padding: 0 0.5em
+      text-align: center
+
+      &:hover 
+        background-color: map-get($palette, 'fg')
+        color: map-get($palette, 'bg')
+
+      &.active 
+        background-color: map-get($palette, 'highlight')
+        color: map-get($palette, 'bg')
+
+    &:first-child 
+    	padding-right: 0.75em
+
+    &:last-child 
+      padding-left: 0.75em
+
+dl 
+  margin: 0 0 map-get($size, 'element-margin') 0
+
+  dt 
+    display: block
+    font-weight: map-get($font, 'weight-bold')
+    margin: 0 0 (map-get($size, 'element-margin') * 0.5) 0
+  
+  dd 
+    margin-left: map-get($size, 'element-margin')
+  
