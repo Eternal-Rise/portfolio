@@ -10,15 +10,13 @@ import yargs from 'yargs';
 // Include plugins
 import autoprefixer from 'gulp-autoprefixer';
 import cssnano from 'cssnano';
+import groupmedia from 'gulp-group-css-media-queries';
 import postcss from 'gulp-postcss';
 import pug from 'gulp-pug';
 import rename from 'gulp-rename';
 import replace from 'gulp-replace';
 import sass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
-
-import mqpacker from "css-mqpacker";
-import sortCSSmq from "sort-css-media-queries";
 
 // Include pluginsfor working with graphics
 import gulpImagemin from 'gulp-imagemin';
@@ -320,6 +318,7 @@ export const scripts = async () => {
 
 const plugins = production ? 
 [
+  groupmedia,
   autoprefixer,
   cssnano({
     preset: [
@@ -329,12 +328,10 @@ const plugins = production ?
           order: 'smacss'}
       }
     ]
-  }),
-  mqpacker({
-    sort: sortCSSmq
   })
 ] :
 [
+  groupmedia,
   autoprefixer, 
   cssnano({
   preset: [
@@ -344,10 +341,7 @@ const plugins = production ?
       cssDeclarationSorter: {
         order: 'smacss'}
     }
-  ]}),
-  mqpacker({
-    sort: sortCSSmq
-  })
+  ]})
 ]
 
 export const styles = () => {
