@@ -4,6 +4,7 @@
 import clean from 'gulp-clean';
 import gulp from 'gulp';
 import gulpIf from 'gulp-if';
+import webpack from 'webpack';
 import webpackStream from 'webpack-stream';
 import yargs from 'yargs';
 
@@ -20,7 +21,6 @@ import sourcemaps from 'gulp-sourcemaps';
 
 // Include pluginsfor working with graphics
 import gulpImagemin from 'gulp-imagemin';
-// import imagemin from 'imagemin';
 import pngquant from 'imagemin-pngquant';
 import zopfli from 'imagemin-zopfli';
 import mozjpeg from 'imagemin-mozjpeg';
@@ -39,8 +39,8 @@ import regeneratorRuntime from 'regenerator-runtime';
 
 const paths = {
   clean: {
-    destDev: './dist/*',
-    destProd: './build/*'
+    destDev: ['./dist/*', '!./dist/**/img'],
+    destProd: ['./build/*', '!./build/**/img']
   },
   favicon: {
     src: './src/img/favicon/favicon.{jpg,jpeg,png,gif}',
@@ -210,11 +210,11 @@ export const graphics = async () => {
     .pipe(gulp.dest(production ? paths.img.destProd : paths.img.destDev));
     
     gulp.src(paths.img.src)
-    .pipe(webp(gulpIf(production, imageminWebp({
+    .pipe(webp(imageminWebp({
       lossless: true,
       quality: 100,
       alphaQuality: 100
-    }))))
+    })))
     .pipe(gulp.dest(production ? paths.img.destProd : paths.img.destDev))
 
     return await console.log('Compressing images...');
