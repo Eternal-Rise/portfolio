@@ -84,18 +84,10 @@ const paths = {
         src: './src/templates/Barbershop/img/favicon/favicon.{jpg,jpeg,png,gif}',
         dest: `${dest}/templates/Barbershop/img/favicons/`
       },
-      img: {
-        src: [
-          './src/**/*.{jpg,jpeg,png,gif,svg}',
-          '!./src/**/svg/*.svg',
-          '!./src/**/favicon.{jpg,jpeg,png,gif}'
-        ],
-        dest: dest,
-        svg: {
-          src: './src/templates/Barbershop/img/svg/*.svg',
-          watch: './src/templates/Barbershop/img/svg/*.svg',
-          dest: `${dest}/templates/Barbershop/img/sprites`
-        }
+      svg: {
+        src: './src/templates/Barbershop/img/svg/*.svg',
+        watch: './src/templates/Barbershop/img/svg/*.svg',
+        dest: `${dest}/templates/Barbershop/img/sprites`
       },
       scripts: {
         src: './src/templates/Barbershop/js/index.js',
@@ -108,18 +100,10 @@ const paths = {
         src: './src/templates/html5up_forty/img/favicon/favicon.{jpg,jpeg,png,gif}',
         dest: `${dest}/templates/html5up_forty/img/favicons/`
       },
-      img: {
-        src: [
-          './src/**/*.{jpg,jpeg,png,gif,svg}',
-          '!./src/**/svg/*.svg',
-          '!./src/**/favicon.{jpg,jpeg,png,gif}'
-        ],
-        dest: dest,
-        svg: {
-          src: './src/templates/html5up_forty/img/svg/*.svg',
-          watch: './src/templates/html5up_forty/img/svg/*.svg',
-          dest: `${dest}/templates/html5up_forty/img/sprites`
-        }
+      svg: {
+        src: './src/templates/html5up_forty/img/svg/*.svg',
+        watch: './src/templates/html5up_forty/img/svg/*.svg',
+        dest: `${dest}/templates/html5up_forty/img/sprites`
       },
       scripts: {
         src: './src/templates/html5up_forty/js/index.js',
@@ -132,18 +116,10 @@ const paths = {
         src: './src/templates/html5up_multiverse/img/favicon/favicon.{jpg,jpeg,png,gif}',
         dest: `${dest}/templates/html5up_multiverse/img/favicons/`
       },
-      img: {
-        src: [
-          './src/**/*.{jpg,jpeg,png,gif,svg}',
-          '!./src/**/svg/*.svg',
-          '!./src/**/favicon.{jpg,jpeg,png,gif}'
-        ],
-        dest: dest,
-        svg: {
-          src: './src/templates/html5up_multiverse/img/svg/*.svg',
-          watch: './src/templates/html5up_multiverse/img/svg/*.svg',
-          dest: `${dest}/templates/html5up_multiverse/img/sprites`
-        }
+      svg: {
+        src: './src/templates/html5up_multiverse/img/svg/*.svg',
+        watch: './src/templates/html5up_multiverse/img/svg/*.svg',
+        dest: `${dest}/templates/html5up_multiverse/img/sprites`
       },
       scripts: {
         src: './src/templates/html5up_multiverse/js/index.js',
@@ -156,18 +132,10 @@ const paths = {
         src: './src/templates/Tinyone/img/favicon/favicon.{jpg,jpeg,png,gif}',
         dest: `${dest}/templates/Tinyone/img/favicons/`
       },
-      img: {
-        src: [
-          './src/**/*.{jpg,jpeg,png,gif,svg}',
-          '!./src/**/svg/*.svg',
-          '!./src/**/favicon.{jpg,jpeg,png,gif}'
-        ],
-        dest: dest,
-        svg: {
-          src: './src/templates/Tinyone/img/svg/*.svg',
-          watch: './src/templates/Tinyone/img/svg/*.svg',
-          dest: `${dest}/templates/Tinyone/img/sprites`
-        }
+      svg: {
+        src: './src/templates/Tinyone/img/svg/*.svg',
+        watch: './src/templates/Tinyone/img/svg/*.svg',
+        dest: `${dest}/templates/Tinyone/img/sprites`
       },
       scripts: {
         src: './src/templates/Tinyone/js/index.js',
@@ -180,18 +148,10 @@ const paths = {
         src: './src/templates/Travelplus/img/favicon/favicon.{jpg,jpeg,png,gif}',
         dest: `${dest}/templates/Travelplus/img/favicons/`
       },
-      img: {
-        src: [
-          './src/**/*.{jpg,jpeg,png,gif,svg}',
-          '!./src/**/svg/*.svg',
-          '!./src/**/favicon.{jpg,jpeg,png,gif}'
-        ],
-        dest: dest,
-        svg: {
-          src: './src/templates/Travelplus/img/svg/*.svg',
-          watch: './src/templates/Travelplus/img/svg/*.svg',
-          dest: `${dest}/templates/Travelplus/img/sprites`
-        }
+      svg: {
+        src: './src/templates/Travelplus/img/svg/*.svg',
+        watch: './src/templates/Travelplus/img/svg/*.svg',
+        dest: `${dest}/templates/Travelplus/img/sprites`
       },
       scripts: {
         src: './src/templates/Travelplus/js/index.js',
@@ -238,173 +198,28 @@ import taskStyles from './tasks/styles';
 import taskSvgsprites from './tasks/svgsprites';
 
 
+export const fonts = () => taskFonts(paths.main.fonts.src, paths.main.fonts.dest);
+export const markup = () => taskMarkup(paths.main.pug.src, paths.main.pug.dest, production);
+export const styles = () => taskStyles(paths.main.sass.src, paths.main.sass.dest, plugins, production);
+export const cleaner = () => taskCleaner(paths.main.clean.dest);
+
+export const favs = async () => {
+  taskFavs(paths.main.favicon.src, paths.main.favicon.dest, paths.templates, favsConfig);
+  return await console.log('Favicons still generating');
+}
 export const graphics = async () => {
-  gulp.src(paths.img.src)
-    .pipe(gulpImagemin([
-      giflossy({
-        optimizationLevel: 3,
-        optimize: 3,
-        lossy: 2
-      }),
-      pngquant({
-        speed: 5,
-        quality: [0.6, 0.8]
-      }),
-      zopfli({
-        more: true
-      }),
-      mozjpeg({
-        progressive: true,
-        quality: 70
-      }),
-      gulpImagemin.svgo({
-        plugins: [
-          { removeViewBox: false },
-          { removeUnusedNS: false },
-          { removeUselessStrokeAndFill: false },
-          { cleanupIDs: false },
-          { removeComments: true },
-          { removeEmptyAttrs: true },
-          { removeEmptyText: true },
-          { collapseGroups: true }
-        ]
-      })
-    ]))
-    .pipe(gulp.dest(production ? paths.img.destProd : paths.img.destDev));
-    
-    gulp.src(paths.img.src)
-    .pipe(webp(imageminWebp({
-      lossless: true,
-      quality: 100,
-      alphaQuality: 100
-    })))
-    .pipe(gulp.dest(production ? paths.img.destProd : paths.img.destDev))
-
-    return await console.log('Compressing images...');
+  taskGraphics(paths.main.img.src, paths.main.img.dest);
+  return await console.log('Compressing graphics...');
 }
-
-
-  // return await console.log('Favicons still generating');
-
-
-export const markup = () => {
-  return gulp.src(paths.pug.src)
-    .pipe(pug({pretty: true}))
-
-    .pipe(gulpIf(production, replace('index.css', 'index.min.css')))
-    .pipe(gulpIf(production, replace('index.js', 'index.min.js')))
-    
-    .pipe(gulp.dest(production ? paths.pug.destProd : paths.pug.destDev));
-}
-
 export const scripts = async () => {
-
-  gulp.src(paths.scripts.src)
-    .pipe(webpackStream(webpackConfig))
-    .pipe(gulpIf(production, rename({suffix: '.min'})))
-    .pipe(gulp.dest(production ? paths.scripts.destProd : paths.scripts.destDev));
-
-  for (let template of paths.templates) {
-    gulp.src(paths.scripts.src)
-      .pipe(webpackStream({
-        mode: production ? 'production' : 'development',
-        optimization: {
-          minimize: production
-        },
-        entry: {
-          index: template.js.src,
-        },
-        output: {
-          filename: '[name].js',
-        },
-      
-        module: {
-          rules: [
-            {
-              test: /\.js$/,
-              exclude: /node_modules/,
-              use: {
-                loader: 'babel-loader',
-                query: {
-                  presets: [
-                    ['@babel/preset-env', { modules: false }]
-                  ]
-                }
-              }
-            }
-          ]
-        },
-      
-        // resolve: {
-        //   alias: {
-        //     '%modules%': path.resolve(__dirname, 'src/blocks')
-        //   }
-        // }
-      }))
-  
-      .pipe(gulpIf(production, rename({suffix: '.min'})))
-      .pipe(gulp.dest(production ? template.js.destProd : template.js.destDev));
-  }
-  return await console.log('magic with js');
+  taskScripts(paths.main.scripts.src, paths.main.scripts.dest, paths.templates, production);
+  return await console.log('magic with js...');
+}
+export const svgsprites = async () => {
+  taskSvgsprites(paths.main.img.svg.src, paths.main.img.svg.dest, paths.templates);
+  return await console.log('building sprites...');
 }
 
-const plugins = production ? 
-[
-  groupmedia,
-  autoprefixer,
-  cssnano({
-    preset: [
-      'default',
-      {
-        cssDeclarationSorter: {
-          order: 'smacss'}
-      }
-    ]
-  })
-] :
-[
-  groupmedia,
-  autoprefixer, 
-  cssnano({
-  preset: [
-    'default',
-    {
-      normalizeWhitespace: false,
-      cssDeclarationSorter: {
-        order: 'smacss'}
-    }
-  ]})
-]
-
-export const styles = () => {
-  return gulp.src(paths.sass.src)
-    .pipe(gulpIf(!production, sourcemaps.init()))
-    .pipe(sass({
-      outputStyle: 'expanded'
-    }))
-    .pipe(postcss(plugins))
-
-    .pipe(gulpIf(production, rename({suffix: '.min'})))
-    .pipe(gulpIf(!production, sourcemaps.write()))
-
-    .pipe(gulp.dest(production ? paths.sass.destProd : paths.sass.destDev))
-    .pipe(browserSync.stream());
-}
-
-export const svgsprites = () => {
-  return gulp.src(paths.img.svg.src)
-    .pipe(svg({
-      shape: {
-        dest: "intermediate-svg"
-      },
-      mode: {
-        stack: {
-          sprite: "../sprite.svg"
-        }
-      }
-    }))
-    .pipe(gulp.dest(production ? paths.img.svg.destProd : paths.img.svg.destDev))
-}
 
 export const serve = () => {
   browserSync.init({
@@ -413,7 +228,6 @@ export const serve = () => {
     scrollRestoreTechnique: 'cookie'
   });
 
-  
   gulp.watch(paths.img.watch, gulp.series(graphics))
     .on('change', browserSync.reload);
   gulp.watch(paths.favicon.watch, gulp.series(favs))

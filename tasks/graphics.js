@@ -12,7 +12,7 @@ import imageminWebp from 'imagemin-webp';
 import webp from 'gulp-webp';
 
 const graphics =  (src, dest) => {
-  gulp.src(paths.img.src)
+  gulp.src(src)
     .pipe(gulpImagemin([
       giflossy({
         optimizationLevel: 3,
@@ -43,15 +43,15 @@ const graphics =  (src, dest) => {
         ]
       })
     ]))
-    .pipe(gulp.dest(production ? paths.img.destProd : paths.img.destDev));
+    .pipe(gulp.dest(dest))
     
-    gulp.src(paths.img.src)
+    && gulp.src(src)
     .pipe(webp(imageminWebp({
       lossless: true,
       quality: 100,
       alphaQuality: 100
     })))
-    .pipe(gulp.dest(production ? paths.img.destProd : paths.img.destDev))
+    .pipe(gulp.dest(dest))
 }
 
 export default graphics;
