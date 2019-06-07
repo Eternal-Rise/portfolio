@@ -5,7 +5,7 @@ import gulp from 'gulp';
 import yargs from 'yargs';
 
 // Include plugins
-import autoprefixer from 'gulp-autoprefixer';
+import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 
 // Include live-reload
@@ -174,7 +174,7 @@ const favsConfig = {
 };
 
 const plugins = [
-  autoprefixer,
+  autoprefixer({grid: false, remove: true}),
   cssnano({
     preset: [
       'default',
@@ -197,28 +197,15 @@ import taskScripts from './tasks/scripts';
 import taskStyles from './tasks/styles';
 import taskSvgsprites from './tasks/svgsprites';
 
-
-export const fonts = () => taskFonts(paths.main.fonts.src, paths.main.fonts.dest);
-export const markup = () => taskMarkup(paths.main.pug.src, paths.main.pug.dest, production);
-export const styles = () => taskStyles(paths.main.sass.src, paths.main.sass.dest, plugins, production);
 export const cleaner = () => taskCleaner(paths.main.clean.dest);
+export const favs = () => taskFavs(paths.main.favicon.src, paths.main.favicon.dest, paths.templates, favsConfig);
+export const fonts = () => taskFonts(paths.main.fonts.src, paths.main.fonts.dest);
+export const graphics = () => taskGraphics(paths.main.img.src, paths.main.img.dest);
+export const markup = () => taskMarkup(paths.main.pug.src, paths.main.pug.dest, production);
+export const scripts = () => taskScripts(paths.main.scripts.src, paths.main.scripts.dest, paths.templates, production);
+export const styles = () => taskStyles(paths.main.sass.src, paths.main.sass.dest, plugins, production);
+export const svgsprites = () => taskSvgsprites(paths.main.img.svg.src, paths.main.img.svg.dest, paths.templates);
 
-export const favs = async () => {
-  taskFavs(paths.main.favicon.src, paths.main.favicon.dest, paths.templates, favsConfig);
-  return await console.log('Favicons still generating');
-}
-export const graphics = async () => {
-  taskGraphics(paths.main.img.src, paths.main.img.dest);
-  return await console.log('Compressing graphics...');
-}
-export const scripts = async () => {
-  taskScripts(paths.main.scripts.src, paths.main.scripts.dest, paths.templates, production);
-  return await console.log('magic with js...');
-}
-export const svgsprites = async () => {
-  taskSvgsprites(paths.main.img.svg.src, paths.main.img.svg.dest, paths.templates);
-  return await console.log('building sprites...');
-}
 
 
 export const serve = () => {

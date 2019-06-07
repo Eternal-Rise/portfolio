@@ -12,46 +12,46 @@ import imageminWebp from 'imagemin-webp';
 import webp from 'gulp-webp';
 
 const graphics =  (src, dest) => {
-  gulp.src(src)
-    .pipe(gulpImagemin([
-      giflossy({
-        optimizationLevel: 3,
-        optimize: 3,
-        lossy: 2
-      }),
-      pngquant({
-        speed: 5,
-        quality: [0.6, 0.8]
-      }),
-      zopfli({
-        more: true
-      }),
-      mozjpeg({
-        progressive: true,
-        quality: 70
-      }),
-      gulpImagemin.svgo({
-        plugins: [
-          { removeViewBox: false },
-          { removeUnusedNS: false },
-          { removeUselessStrokeAndFill: false },
-          { cleanupIDs: false },
-          { removeComments: true },
-          { removeEmptyAttrs: true },
-          { removeEmptyText: true },
-          { collapseGroups: true }
-        ]
-      })
-    ]))
-    .pipe(gulp.dest(dest))
+    return gulp.src(src)
+      .pipe(gulpImagemin([
+        giflossy({
+          optimizationLevel: 3,
+          optimize: 3,
+          lossy: 2
+        }),
+        pngquant({
+          speed: 5,
+          quality: [0.6, 0.8]
+        }),
+        zopfli({
+          more: true
+        }),
+        mozjpeg({
+          progressive: true,
+          quality: 70
+        }),
+        gulpImagemin.svgo({
+          plugins: [
+            { removeViewBox: false },
+            { removeUnusedNS: false },
+            { removeUselessStrokeAndFill: false },
+            { cleanupIDs: false },
+            { removeComments: true },
+            { removeEmptyAttrs: true },
+            { removeEmptyText: true },
+            { collapseGroups: true }
+          ]
+        })
+      ]))
+      .pipe(gulp.dest(dest))
     
     && gulp.src(src)
-    .pipe(webp(imageminWebp({
-      lossless: true,
-      quality: 100,
-      alphaQuality: 100
-    })))
-    .pipe(gulp.dest(dest))
+      .pipe(webp(imageminWebp({
+        lossless: true,
+        quality: 100,
+        alphaQuality: 100
+      })))
+      .pipe(gulp.dest(dest));
 }
 
 export default graphics;
