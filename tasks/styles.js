@@ -25,5 +25,4 @@ const styles = (src, dest, plugins, production) => {
     .pipe(browserSync.stream());
 }
 
-
 export default styles;

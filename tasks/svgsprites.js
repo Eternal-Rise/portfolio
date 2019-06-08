@@ -1,8 +1,9 @@
+'use strict';
+
 import gulp from 'gulp';
 import svg from 'gulp-svg-sprite';
-import { reject } from 'q';
 
-const svgsprites = (src, dest, templates) => {
+const svgsprites = (src, dest) => {
   return gulp.src(src)
     .pipe(svg({
       shape: {
