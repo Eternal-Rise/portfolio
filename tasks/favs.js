@@ -10,11 +10,11 @@ const favs = (src, dest, templates, config) => {
     .pipe(favicons(config))
     .pipe(gulp.dest(dest));
     
-    for (let template of templates) {
-      gulp.src(template.favicon.src)
-      .pipe(favicons(config))
-      .pipe(gulp.dest(template.favicon.dest));
-    }
+    // for (let template of templates) {
+    //   gulp.src(template.favicon.src)
+    //   .pipe(favicons(config))
+    //   .pipe(gulp.dest(template.favicon.dest));
+    // }
 
     resolve(console.log('Generation favicons...'));
   });

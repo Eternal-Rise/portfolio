@@ -12,7 +12,7 @@ import cssnano from 'cssnano';
 import browserSync from 'browser-sync';
 
 // required to async await
-import regeneratorRuntime from 'regenerator-runtime';
+// import regeneratorRuntime from 'regenerator-runtime';
 
 const webpackConfig = require("./webpack.config.js");
 const argv = yargs.argv;
@@ -20,10 +20,64 @@ const argv = yargs.argv;
 webpackConfig.mode = argv.production ? "production" : "development";
 webpackConfig.devtool = argv.production ? false : "source-map";
 
-const dest = argv.production ? './build' : './dist';
+const dest = argv.production ? './build/' : './dist/';
+const path = argv.all ? '**/' : argv.edit ? `templates/${argv.edit}/` : '';
 
-
+// [`${dest}/**/*.{html,css,js}`, `!${dest}/**/img`, `${dest}/**/img/favicons/*`]
 const paths = {
+  clean: {
+    dest: argv.clean && argv.edit ? `${dest}/${path}*`
+      : argv.clean ? `${dest}*`
+      : path ? [`${dest}${path}*.html`, `${dest}${path}js/*.js`, `${dest}${path}styles/*.css`]
+      : [`${dest}*.html`, `${dest}js/*.js`, `${dest}styles/*.css`]
+  },
+  favicon: {
+    src: `./src/${path}img/favicon/favicon.{jpg,jpeg,png,gif}`,
+    dest: `${dest}${path}img/favicons/`,
+    watch: `./src/${path}img/favicon/favicon.{jpg,jpeg,png,gif}`,
+  },
+  fonts: {
+    src: `./src/${path}fonts/**/*.{ttf,otf,woff,woff2}`,
+    dest: `${dest}${path}fonts/`,
+    watch: `./src/${path}fonts/**/*.{ttf,otf,woff,woff2}`
+  },
+  img: {
+    src: [
+      `./src/${path}img/**/*.{jpg,jpeg,png,gif,svg}`,
+      `!./src/${path}img/**/svg/*.svg`,
+      `!./src/${path}img/**/favicon.{jpg,jpeg,png,gif}`
+    ],
+    dest: `${dest}${path}img/`,
+    watch: [
+      `./src/${path}img/**/*.{jpg,jpeg,png,gif,svg}`,
+      `!./src/${path}img/**/svg/*.svg`,
+      `!./src/${path}img/**/favicon.{jpg,jpeg,png,gif}`
+    ],
+
+    svg: {
+      src: `./src/${path}img/svg/*.svg`,
+      watch: `./src/${path}img/svg/*.svg`,
+      dest: `${dest}${path}/img/sprites`
+    }
+  },
+  pug: {
+    src: `./src/${path}/*.pug`,
+    dest: `${dest}${path}`,
+    watch: [`./src/${path}*.pug`, `./src/${path}blocks/**/*.pug`]
+  },
+  sass: {
+    src: `./src/${path}styles/*.{sass,scss}`,
+    dest: `${dest}styles/`,
+    watch: [`./src/${path}styles/*.{sass,scss}`,`./src/${path}blocks/**/*.{sass,scss}`]
+  },
+  scripts: {
+    src: `./src/${path}js/index.js`,
+    dest: `${dest}${path}/js`,
+    watch: [`./src/${path}/js/*.js`, `./src/${path}/blocks/**/*.js`]
+  }
+}
+
+const oldpaths = {
   main: {
     
     clean: {
@@ -197,7 +251,8 @@ import taskScripts from './tasks/scripts';
 import taskStyles from './tasks/styles';
 import taskSvgsprites from './tasks/svgsprites';
 
-export const cleaner = () => taskCleaner(paths.main.clean.dest);
+export const cleaner = () => taskCleaner(paths.clean.dest);
+// export const cleaner = () => taskCleaner(paths.main.clean.dest);
 export const favs = () => taskFavs(paths.main.favicon.src, paths.main.favicon.dest, paths.templates, favsConfig);
 export const fonts = () => taskFonts(paths.main.fonts.src, paths.main.fonts.dest);
 export const graphics = () => taskGraphics(paths.main.img.src, paths.main.img.dest);
