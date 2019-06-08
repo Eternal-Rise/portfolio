@@ -1,12 +1,12 @@
 import gulp from 'gulp';
 import gulpIf from 'gulp-if';
 import rename from 'gulp-rename';
-// import webpackConfig from '../webpack.config';
 import webpackStream from 'webpack-stream';
 
 const scripts = (src, dest, production) => {
   return gulp.src(src)
     .pipe(webpackStream({
+      devtool: production ? false : 'source-map',
       mode: production ? 'production' : 'development',
       optimization: {
         minimize: production
