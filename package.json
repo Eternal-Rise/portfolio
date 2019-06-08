@@ -18,6 +18,11 @@
     "url": "https://github.com/Eternal-Rise/Portfolio/issues"
   },
   "homepage": "https://github.com/Eternal-Rise/Portfolio/",
+  
+  "keywords": [],
+  "browserslist": [
+    "defaults"
+  ],
   "dependencies": {
     "browser-sync": "^2.26.5",
     "gulp-concat": "^2.6.1",
@@ -51,14 +56,9 @@
     "imagemin-pngquant": "^7.0.0",
     "imagemin-webp": "^5.1.0",
     "imagemin-zopfli": "^6.0.0",
-    "regenerator-runtime": "^0.13.2",
     "tar": ">=4.4.2",
     "webpack": "^4.32.2",
     "webpack-stream": "^5.2.1",
     "yargs": "^13.2.4"
-  },
-  "keywords": [],
-  "browserslist": [
-    "defaults"
-  ]
+  }
 }
