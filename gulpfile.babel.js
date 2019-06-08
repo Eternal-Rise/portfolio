@@ -122,19 +122,19 @@ export const serve = () => {
     scrollRestoreTechnique: 'cookie'
   });
 
-  gulp.watch(paths.main.img.watch, gulp.series(graphics))
+  gulp.watch(paths.img.watch, gulp.series(graphics))
     .on('change', browserSync.reload);
-  gulp.watch(paths.main.favicon.watch, gulp.series(favs))
+  gulp.watch(paths.favicon.watch, gulp.series(favs))
     .on('change', browserSync.reload);
-  gulp.watch(paths.main.fonts.watch, gulp.series(fonts))
+  gulp.watch(paths.fonts.watch, gulp.series(fonts))
     .on('change', browserSync.reload);
-  gulp.watch(paths.main.pug.watch, gulp.series(markup))
+  gulp.watch(paths.pug.watch, gulp.series(markup))
     .on('change', browserSync.reload);
-  gulp.watch(paths.main.scripts.watch, gulp.series(scripts))
+  gulp.watch(paths.scripts.watch, gulp.series(scripts))
     .on('change', browserSync.reload);
-  gulp.watch(paths.main.sass.watch, gulp.series(styles))
+  gulp.watch(paths.sass.watch, gulp.series(styles))
     .on('change', browserSync.reload);
-  gulp.watch(paths.main.img.svg.watch, gulp.series(svgsprites))
+  gulp.watch(paths.img.svg.watch, gulp.series(svgsprites))
     .on('change', browserSync.reload);
 };
 
