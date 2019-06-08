@@ -16,11 +16,9 @@ import regeneratorRuntime from 'regenerator-runtime';
 
 const webpackConfig = require("./webpack.config.js");
 const argv = yargs.argv;
-const production = !!argv.production;
-const hardClean = !!argv.clean;
 
-webpackConfig.mode = production ? "production" : "development";
-webpackConfig.devtool = production ? false : "source-map";
+webpackConfig.mode = argv.production ? "production" : "development";
+webpackConfig.devtool = argv.production ? false : "source-map";
 
 const dest = argv.production ? './build' : './dist';
 
@@ -29,7 +27,7 @@ const paths = {
   main: {
     
     clean: {
-      dest: hardClean ? `${dest}/*` : [`${dest}/**/*.{html, css, js}`, `!${dest}/**/img`, `${dest}/**/img/favicons/*`]
+      dest: argv.clean ? `${dest}/*` : [`${dest}/**/*.{html,css,js}`, `!${dest}/**/img`, `${dest}/**/img/favicons/*`]
     },
     favicon: {
       src: './src/img/favicon/favicon.{jpg,jpeg,png,gif}',
@@ -162,15 +160,17 @@ const paths = {
 };
 
 const favsConfig = {
-  appleIcon: true,
-  favicons: true,
-  online: false,
-  appleStartup: false,
-  android: false,
-  firefox: false,
-  yandex: false,
-  windows: false,
-  coast: false
+  icons: {
+    appleIcon: true,
+    favicons: true,
+    online: false,
+    appleStartup: false,
+    android: false,
+    firefox: false,
+    yandex: false,
+    windows: false,
+    coast: false
+  }
 };
 
 const plugins = [
@@ -180,7 +180,7 @@ const plugins = [
       'default',
       {
         // production - true / false
-        normalizeWhitespace: production,
+        normalizeWhitespace: argv.production,
         cssDeclarationSorter: {
           order: 'smacss'}
       }
@@ -201,9 +201,9 @@ export const cleaner = () => taskCleaner(paths.main.clean.dest);
 export const favs = () => taskFavs(paths.main.favicon.src, paths.main.favicon.dest, paths.templates, favsConfig);
 export const fonts = () => taskFonts(paths.main.fonts.src, paths.main.fonts.dest);
 export const graphics = () => taskGraphics(paths.main.img.src, paths.main.img.dest);
-export const markup = () => taskMarkup(paths.main.pug.src, paths.main.pug.dest, production);
-export const scripts = () => taskScripts(paths.main.scripts.src, paths.main.scripts.dest, paths.templates, production);
-export const styles = () => taskStyles(paths.main.sass.src, paths.main.sass.dest, plugins, production);
+export const markup = () => taskMarkup(paths.main.pug.src, paths.main.pug.dest, argv.production);
+export const scripts = () => taskScripts(paths.main.scripts.src, paths.main.scripts.dest, paths.templates, argv.production);
+export const styles = () => taskStyles(paths.main.sass.src, paths.main.sass.dest, plugins, argv.production);
 export const svgsprites = () => taskSvgsprites(paths.main.img.svg.src, paths.main.img.svg.dest, paths.templates);
 
 
