@@ -11,9 +11,6 @@ import cssnano from 'cssnano';
 // Include live-reload
 import browserSync from 'browser-sync';
 
-// required to async await
-// import regeneratorRuntime from 'regenerator-runtime';
-
 const webpackConfig = require("./webpack.config.js");
 const argv = yargs.argv;
 
@@ -21,12 +18,11 @@ webpackConfig.mode = argv.production ? "production" : "development";
 webpackConfig.devtool = argv.production ? false : "source-map";
 
 const dest = argv.production ? './build/' : './dist/';
-const path = argv.all ? '**/' : argv.edit ? `templates/${argv.edit}/` : '';
+const path = argv.path ? `templates/${argv.path}/` : '';
 
-// [`${dest}/**/*.{html,css,js}`, `!${dest}/**/img`, `${dest}/**/img/favicons/*`]
 const paths = {
   clean: {
-    dest: argv.clean && argv.edit ? `${dest}/${path}*`
+    dest: argv.clean && argv.path ? `${dest}/${path}*`
       : argv.clean ? `${dest}*`
       : path ? [`${dest}${path}*.html`, `${dest}${path}js/*.js`, `${dest}${path}styles/*.css`]
       : [`${dest}*.html`, `${dest}js/*.js`, `${dest}styles/*.css`]
@@ -251,22 +247,30 @@ import taskScripts from './tasks/scripts';
 import taskStyles from './tasks/styles';
 import taskSvgsprites from './tasks/svgsprites';
 
-export const cleaner = () => taskCleaner(paths.clean.dest);
 // export const cleaner = () => taskCleaner(paths.main.clean.dest);
-export const favs = () => taskFavs(paths.main.favicon.src, paths.main.favicon.dest, paths.templates, favsConfig);
-export const fonts = () => taskFonts(paths.main.fonts.src, paths.main.fonts.dest);
-export const graphics = () => taskGraphics(paths.main.img.src, paths.main.img.dest);
-export const markup = () => taskMarkup(paths.main.pug.src, paths.main.pug.dest, argv.production);
-export const scripts = () => taskScripts(paths.main.scripts.src, paths.main.scripts.dest, paths.templates, argv.production);
-export const styles = () => taskStyles(paths.main.sass.src, paths.main.sass.dest, plugins, argv.production);
-export const svgsprites = () => taskSvgsprites(paths.main.img.svg.src, paths.main.img.svg.dest, paths.templates);
+// export const favs = () => taskFavs(paths.main.favicon.src, paths.main.favicon.dest, paths.templates, favsConfig);
+// export const fonts = () => taskFonts(paths.main.fonts.src, paths.main.fonts.dest);
+// export const graphics = () => taskGraphics(paths.main.img.src, paths.main.img.dest);
+// export const markup = () => taskMarkup(paths.main.pug.src, paths.main.pug.dest, argv.production);
+// export const scripts = () => taskScripts(paths.main.scripts.src, paths.main.scripts.dest, paths.templates, argv.production);
+// export const styles = () => taskStyles(paths.main.sass.src, paths.main.sass.dest, plugins, argv.production);
+// export const svgsprites = () => taskSvgsprites(paths.main.img.svg.src, paths.main.img.svg.dest, paths.templates);
+
+export const cleaner = () => taskCleaner(paths.clean.dest);
+export const favs = () => taskFavs(paths.favicon.src, paths.favicon.dest, favsConfig);
+export const fonts = () => taskFonts(paths.fonts.src, paths.fonts.dest);
+export const graphics = () => taskGraphics(paths.img.src, paths.img.dest);
+export const markup = () => taskMarkup(paths.pug.src, paths.pug.dest, argv.production);
+export const scripts = () => taskScripts(paths.scripts.src, paths.scripts.dest, argv.production);
+export const styles = () => taskStyles(paths.sass.src, paths.sass.dest, plugins, argv.production);
+export const svgsprites = () => taskSvgsprites(paths.img.svg.src, paths.img.svg.dest);
 
 
 
 export const serve = () => {
   browserSync.init({
     notify: false,
-    server: ['./dist', './build'],
+    server: `${dest}${path}`,
     scrollRestoreTechnique: 'cookie'
   });
 
@@ -287,11 +291,10 @@ export const serve = () => {
 };
 
 export const dev = gulp.series(
-  cleaner,
-  gulp.parallel(graphics, favs, fonts, markup, scripts, styles, svgsprites)
+  cleaner, favs, fonts, graphics, markup, scripts, styles, svgsprites
 );
 export const build = gulp.series(
-  cleaner, graphics, favs, fonts, markup,
-  scripts, styles, svgsprites);
+  cleaner, graphics, favs, fonts, markup, scripts, styles, svgsprites
+);
 
 export default dev;

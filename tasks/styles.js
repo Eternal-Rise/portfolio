@@ -10,23 +10,19 @@ import sass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
 
 const styles = (src, dest, plugins, production) => {
-  return new Promise((resolve, reject) => {
-    gulp.src(src)
-      .pipe(gulpIf(!production, sourcemaps.init()))
-      .pipe(sass({
-        outputStyle: 'expanded'
-      }))
-      .pipe(groupmedia())
-      .pipe(postcss(plugins))
+  return gulp.src(src)
+    .pipe(gulpIf(!production, sourcemaps.init()))
+    .pipe(sass({
+      outputStyle: 'expanded'
+    }))
+    .pipe(groupmedia())
+    .pipe(postcss(plugins))
 
-      .pipe(gulpIf(production, rename({suffix: '.min'})))
-      .pipe(gulpIf(!production, sourcemaps.write()))
+    .pipe(gulpIf(production, rename({suffix: '.min'})))
+    .pipe(gulpIf(!production, sourcemaps.write()))
 
-      .pipe(gulp.dest(dest))
-      .pipe(browserSync.stream());
-
-    resolve(console.log('CSS. CSS? CSS.'));
-  });
+    .pipe(gulp.dest(dest))
+    .pipe(browserSync.stream());
 }
 
 
