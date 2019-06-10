@@ -65,7 +65,8 @@ const paths = {
     src: `./src/${path}js/index.js`,
     dest: `${dest}${path}/js`,
     watch: [`./src/${path}/js/*.js`, `./src/${path}/blocks/**/*.js`]
-  }
+  },
+  smartgrid: `./src/${path}/styles/`
 }
 
 const favsConfig = {
@@ -81,6 +82,45 @@ const favsConfig = {
     coast: false
   }
 };
+
+// smartgrid
+const gridConfig = {
+  outputStyle: 'scss',
+  filename: '_grid',
+  columns: 12, // number of grid columns
+  offset: '30px', // gutter width
+  mobileFirst: true,
+  mixinNames: {
+    container: 'inner'
+  },
+  container: {
+    maxWidth: '1200px',
+    fields: '15px' // side fields
+  },
+  breakPoints: {
+    xs: {
+      width: '320px'
+    },
+    sm: {
+      width: '480px'
+    },
+    xsm: {
+      width: '640px'
+    },
+    md: {
+      width: '736px'
+    },
+    lg: {
+      width: '960px'
+    },
+    xl: {
+      width: '1200px'
+    },
+    xxl: {
+      width: '1600px'
+    }
+  }
+}
 
 const plugins = [
   autoprefixer({grid: false, remove: true}),
@@ -101,6 +141,7 @@ import taskCleaner from './tasks/cleaner';
 import taskFavs from './tasks/favs';
 import taskFonts from './tasks/fonts.js';
 import taskGraphics from './tasks/graphics';
+import taskGrid from './tasks/smartgrid';
 import taskMarkup from './tasks/markup';
 import taskScripts from './tasks/scripts';
 import taskStyles from './tasks/styles';
@@ -110,6 +151,7 @@ export const cleaner = () => taskCleaner(paths.clean.dest);
 export const favs = () => taskFavs(paths.favicon.src, paths.favicon.dest, favsConfig);
 export const fonts = () => taskFonts(paths.fonts.src, paths.fonts.dest);
 export const graphics = () => taskGraphics(paths.img.src, paths.img.dest);
+export const grid = () => taskGrid(paths.smartgrid, gridConfig);
 export const markup = () => taskMarkup(paths.pug.src, paths.pug.dest, argv.production);
 export const scripts = () => taskScripts(paths.scripts.src, paths.scripts.dest, argv.production);
 export const styles = () => taskStyles(paths.sass.src, paths.sass.dest, plugins, argv.production);
