@@ -2,7 +2,6 @@
   margin: 0 0 map-get($size, 'element-margin') 0
   padding-left: 1em
 
-
   &._alt
     list-style: none
     padding-left: 0
@@ -16,12 +15,45 @@
   &__item
     padding-left: 1em
 
+  
+
 .o-list
   margin: 0 0 map-get($size, 'element-margin') 0
   padding-left: 1em
 
+.socials
+  margin: 0 0 map-get($size, 'element-margin')
+  padding: 0
+  list-style-type: none
+
   &__item
-    // padding-left: .5em
+    display: inline-block
+
+    &:not(:last-child)
+      margin: 0 (map-get($size, 'element-margin') / 4) 0 0
+
+  &__link
+    @extend .hover
+    color: inherit
+
+    &._alt
+      display: flex
+      padding: .5em
+      
+      background-color: map-get($palette, 'fg')
+      border-radius: 50%
+      color: map-get($palette, 'bg')
+
+      &:hover
+        background-color: map-get($palette, 'highlight')
+
+  &__icon
+    width: 1em
+    height: 1em
+
+    &._alt
+      width: .9em
+      height: .9em
 
 .actions
   // @extend .alt

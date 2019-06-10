@@ -1,0 +1,46 @@
+section.elements__lists
+  h3.elements__lists-title lists
+  .elements__lists-wrap
+    h4 Unordered
+
+    +list('ul', 'list', '', [
+      'Dolor etiam magna etiam.',
+      'Sagittis lorem eleifend.',
+      'Felis dolore viverra.'
+    ])
+
+    h4 Alternate
+
+    +list('ul', 'list', '_alt', [
+      'Dolor etiam magna etiam.',
+      'Sagittis lorem eleifend.',
+      'Felis dolore viverra.'
+    ])
+  
+  .elements__lists-wrap
+    h4 Ordered
+
+    +list('ol', 'o-list', '', [
+      'Dolor etiam magna etiam.',
+      'Sagittis lorem eleifend.',
+      'Felis dolore viverra.',
+      'Dolor etiam magna etiam.',
+      'Sagittis lorem eleifend.',
+      'Felis dolore viverra.'
+    ])
+
+    h4 Icons
+
+    +list('ul', 'socials', '', [
+      '<a href="#" class="socials__link"><svg class="socials__icon"><use xlink:href="img/sprites/sprite.svg#twitter"></use></svg></a>',
+      '<a href="#" class="socials__link"><svg class="socials__icon"><use xlink:href="img/sprites/sprite.svg#facebook"></use></svg></a>',
+      '<a href="#" class="socials__link"><svg class="socials__icon"><use xlink:href="img/sprites/sprite.svg#instagram"></use></svg></a>',
+      '<a href="#" class="socials__link"><svg class="socials__icon"><use xlink:href="img/sprites/sprite.svg#github"></use></svg></a>',
+      '<a href="#" class="socials__link"><svg class="socials__icon"><use xlink:href="img/sprites/sprite.svg#dribbble"></use></svg></a>',
+      '<a href="#" class="socials__link"><svg class="socials__icon"><use xlink:href="img/sprites/sprite.svg#tumblr"></use></svg></a>',
+    ])
+    +list('ul', 'socials', '', [
+      '<a href="#" class="socials__link _alt"><svg class="socials__icon _alt"><use xlink:href="img/sprites/sprite.svg#twitter"></use></svg></a>',
+      '<a href="#" class="socials__link _alt"><svg class="socials__icon _alt"><use xlink:href="img/sprites/sprite.svg#facebook"></use></svg></a>',
+      '<a href="#" class="socials__link _alt"><svg class="socials__icon _alt"><use xlink:href="img/sprites/sprite.svg#instagram"></use></svg></a>',
+    ])
