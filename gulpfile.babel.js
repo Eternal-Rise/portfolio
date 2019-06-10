@@ -58,7 +58,7 @@ const paths = {
   },
   sass: {
     src: `./src/${path}styles/*.{sass,scss}`,
-    dest: `${dest}styles/`,
+    dest: `${dest}${path}styles/`,
     watch: [`./src/${path}styles/*.{sass,scss}`,`./src/${path}blocks/**/*.{sass,scss}`]
   },
   scripts: {
@@ -175,7 +175,6 @@ export const serve = () => {
   gulp.watch(paths.scripts.watch, gulp.series(scripts))
     .on('change', browserSync.reload);
   gulp.watch(paths.sass.watch, gulp.series(styles))
-    .on('change', browserSync.reload);
   gulp.watch(paths.img.svg.watch, gulp.series(svgsprites))
     .on('change', browserSync.reload);
 };

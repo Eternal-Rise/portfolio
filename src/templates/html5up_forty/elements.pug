@@ -1,48 +1,14 @@
 <!DOCTYPE html>
 html(lang="en")
   head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    
-    link(
-      rel='stylesheet'
-      href='https://use.fontawesome.com/releases/v5.2.0/css/all.css'
-      integrity='sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ'
-      crossorigin='anonymous'
-      )
-    link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic")
-    link(rel="stylesheet" href="styles/index.css")
-    
+    include blocks/_head
     title Elements
   body
-    .nav-overlay
-      .nav-overlay-icon
-        i#button-menu-close.fas.fa-times.fa-2x
-      nav
-        ul.alt
-          li
-            a(href="index.html") home
-          li
-            a(href="landing.html") landing
-          li
-            a(href="generic.html") generic
-          li
-            a.active elements
+    include blocks/nav/nav
+    include blocks/header/header
+
     
-        ul.actions
-          li
-            button.primary.fit get started
-          li
-            button.fit log in
-
-    header.header-bar.fixed
-      a.logo(href="index.html")
-        strong forty
-        span  by html5 up
-      nav
-        a#button-menu menu
-
-    #wrapper
+    //- #wrapper
       .inner.main
         header
           h1.major.unfit Elements
