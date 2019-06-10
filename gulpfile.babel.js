@@ -63,8 +63,8 @@ const paths = {
   },
   scripts: {
     src: `./src/${path}js/index.js`,
-    dest: `${dest}${path}/js`,
-    watch: [`./src/${path}/js/*.js`, `./src/${path}/blocks/**/*.js`]
+    dest: `${dest}${path}js`,
+    watch: [`./src/${path}js/*.js`, `./src/${path}blocks/**/*.js`]
   },
   smartgrid: `./src/${path}/styles/`
 }
@@ -128,8 +128,7 @@ const plugins = [
     preset: [
       'default',
       {
-        // production - true / false
-        normalizeWhitespace: argv.production,
+        normalizeWhitespace: argv.production ? true : false,
         cssDeclarationSorter: {
           order: 'smacss'}
       }

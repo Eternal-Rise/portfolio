@@ -1,0 +1,61 @@
+  
+h1, h2, h3, h4, h5, h6
+  color: map-get($palette, 'fg')
+  font-weight: map-get($font, 'weight-bold')
+  line-height: inherit
+  margin: 0 0 1em 0
+  text-transform: capitalize
+
+  &._major
+    margin-bottom: 0
+    text-transform: none
+
+    &::after
+      content: ''
+      background-color: map-get($palette, 'fg')
+      display: block
+      height: 2px
+      margin: 0 0 1em
+      width: 100%
+
+  &._unfit
+    display: inline-block
+
+    &::after
+      width: calc(100% + 0.5em)
+
+
+h1
+  font-size: 2em
+  +sm(font-size, 2.5em)
+
+h2 
+  font-size: 1.5em
+  +sm(font-size, 1.75em)
+
+h3
+  font-size: 1.25em
+  +sm(font-size, 1.35em)
+
+
+h4
+  font-size: 1.1em
+
+h5
+  font-size: 0.9em
+
+h6
+  font-size: 0.7em
+
+p
+  margin-bottom: map-get($size, 'element-margin')
+
+sub
+  font-size: 0.8em
+  position: relative
+  top: 0.5em
+
+sup
+  font-size: 0.8em
+  position: relative
+  top: -0.5em

@@ -1,0 +1,26 @@
+.logo
+  padding: 1em 1.5em
+  text-decoration: none
+  color: inherit
+
+  @media screen and (min-width: 481px)
+    padding: 1.5em 2.5em
+
+  @extend .hover
+
+  &:hover
+    .logo__main
+      background-color: map-get($palette, 'highlight')
+
+  &__main
+    margin-right: 0.4em
+    padding: .2em .2em .2em .4em
+    background-color: map-get($palette, 'fg')
+    color: map-get($palette, 'bg-alt')
+    transition: .4s
+
+  &__sub
+    display: none
+
+    @media screen and (min-width: 481px)
+      display: inline

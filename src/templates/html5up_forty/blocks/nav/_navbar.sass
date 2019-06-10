@@ -1,0 +1,54 @@
+.navbar
+  display: flex
+  justify-content: space-between
+  width: 100%
+  position: absolute
+  top: 0
+
+  background-color: transparent
+  font-size: .8em
+  font-weight: map-get($font, 'weight-bold')
+  letter-spacing: .25em
+  text-transform: uppercase
+  transition: .2s
+  z-index: 10
+
+  &._opacity
+    opacity: 0
+
+    @keyframes opacity
+      from
+        opacity: 0
+      to
+        opacity: 1
+
+  &._fixed
+    position: fixed
+    top: 0
+    background-color: map-get($palette, 'bg-alt')
+
+  &._hide
+    animation: hide-menu .6s forwards !important
+  &._show
+    animation: show-menu .6s forwards !important
+
+  
+
+  &__btn
+    display: flex
+    align-items: center
+    padding: 1em 1.5em
+    
+    @extend .hover
+
+    @media screen and (min-width: 481px)
+      padding: 1.5em 2.5em
+
+  &__btn-icon
+    width: 1em
+    height: 1em
+    transform: scaleX(2)
+    fill: #fff
+
+  &__btn-title
+    margin-right: 1em

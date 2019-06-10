@@ -31,31 +31,6 @@
   &.show
     animation: show-menu .6s forwards !important
 
-  .logo
-    padding: 1em 1.5em
-
-    @media screen and (min-width: 481px)
-        padding: 1.5em 2.5em
-
-    @extend .hover
-
-    &:hover
-      strong
-        background-color: map-get($palette, 'highlight')
-
-    strong
-      margin-right: 0.4em
-      padding: .2em .2em .2em .4em
-      background-color: map-get($palette, 'fg')
-      color: map-get($palette, 'bg-alt')
-      transition: .4s
-
-    span
-      display: none
-
-      @media screen and (min-width: 481px)
-        display: inline
-
   nav
     margin-left: auto
 

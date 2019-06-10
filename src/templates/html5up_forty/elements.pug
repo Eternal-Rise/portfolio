@@ -4,82 +4,88 @@ html(lang="en")
     include blocks/_head
     title Elements
   body
+    //- mixin
+    include blocks/+divider/divider
+    include blocks/+lists/list
+
     include blocks/nav/navbar
     include blocks/header/header
 
     include blocks/nav/nav
     
-    //- #wrapper
-      .inner.main
-        header
-          h1.major.unfit Elements
+    #wrapper
+      .inner._main
+
+        h1._major._unfit Elements
         
-        h2 sample content
-        p.
-          Praesent ac adipiscing ullamcorper semper ut amet ac risus. 
-          Lorem sapien ut odio odio nunc. Ac adipiscing nibh porttitor 
-          erat risus justo adipiscing adipiscing amet placerat accumsan. 
-          Vis. Faucibus odio magna tempus adipiscing a non. In mi primis 
-          arcu ut non accumsan vivamus ac blandit adipiscing adipiscing 
-          arcu metus praesent turpis eu ac lacinia nunc ac commodo gravida 
-          adipiscing eget accumsan ac nunc adipiscing adipiscing.
-        
-        .grid.gap
-          section.c-6-md
-            h3 Sem turpis amet semper
+        section.text
+          h2 sample content
+
+          .text__wrapper
             p.
-              Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida 
-              odio porttitor sem non mi integer non faucibus ornare mi ut ante 
-              amet placerat aliquet. Volutpat commodo eu sed ante lacinia. 
-              Sapien a lorem in integer ornare praesent commodo adipiscing 
-              arcu in massa commodo lorem accumsan at odio massa ac ac. 
-              Semper adipiscing varius montes viverra nibh in adipiscing 
-              blandit tempus accumsan.
+              Praesent ac adipiscing ullamcorper semper ut amet ac risus. 
+              Lorem sapien ut odio odio nunc. Ac adipiscing nibh porttitor 
+              erat risus justo adipiscing adipiscing amet placerat accumsan. 
+              Vis. Faucibus odio magna tempus adipiscing a non. In mi primis 
+              arcu ut non accumsan vivamus ac blandit adipiscing adipiscing 
+              arcu metus praesent turpis eu ac lacinia nunc ac commodo gravida 
+              adipiscing eget accumsan ac nunc adipiscing adipiscing.
+            
+            
+            .text__item
+              h3 Sem turpis amet semper
+              p.
+                Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida 
+                odio porttitor sem non mi integer non faucibus ornare mi ut ante 
+                amet placerat aliquet. Volutpat commodo eu sed ante lacinia. 
+                Sapien a lorem in integer ornare praesent commodo adipiscing 
+                arcu in massa commodo lorem accumsan at odio massa ac ac. 
+                Semper adipiscing varius montes viverra nibh in adipiscing 
+                blandit tempus accumsan.
 
-          section.c-6-md
-            h3 Magna odio tempus commodo
-            p.
-              In arcu accumsan arcu adipiscing accumsan orci ac. 
-              Felis id enim aliquet. Accumsan ac integer lobortis commodo 
-              ornare aliquet accumsan erat tempus amet porttitor. Ante commodo 
-              blandit adipiscing integer semper orci eget. Faucibus commodo 
-              adipiscing mi eu nullam accumsan morbi arcu ornare odio mi 
-              adipiscing nascetur lacus ac interdum morbi accumsan vis mi 
-              accumsan ac praesent.
+            .text__item
+              h3 Magna odio tempus commodo
+              p.
+                In arcu accumsan arcu adipiscing accumsan orci ac. 
+                Felis id enim aliquet. Accumsan ac integer lobortis commodo 
+                ornare aliquet accumsan erat tempus amet porttitor. Ante commodo 
+                blandit adipiscing integer semper orci eget. Faucibus commodo 
+                adipiscing mi eu nullam accumsan morbi arcu ornare odio mi 
+                adipiscing nascetur lacus ac interdum morbi accumsan vis mi 
+                accumsan ac praesent.
 
-          section.c-4-lg
-            h3 Interdum sapien gravida
-            p.
-              Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida 
-              odio porttitor sem non mi integer non faucibus ornare mi ut ante 
-              amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem 
-              accumsan varius montes viverra nibh in adipiscing blandit 
-              tempus accumsan
+            .text__item
+              h3 Interdum sapien gravida
+              p.
+                Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida 
+                odio porttitor sem non mi integer non faucibus ornare mi ut ante 
+                amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem 
+                accumsan varius montes viverra nibh in adipiscing blandit 
+                tempus accumsan
 
-          section.c-4-lg
-            h3 Faucibus consequat lorem
-            p.
-              Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida 
-              odio porttitor sem non mi integer non faucibus ornare mi ut ante 
-              amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem 
-              accumsan varius montes viverra nibh in adipiscing blandit 
-              tempus accumsan
+            .text__item
+              h3 Faucibus consequat lorem
+              p.
+                Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida 
+                odio porttitor sem non mi integer non faucibus ornare mi ut ante 
+                amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem 
+                accumsan varius montes viverra nibh in adipiscing blandit 
+                tempus accumsan
 
-          section.c-4-lg
-            h3 Accumsan montes viverra
-            p.
-              Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida 
-              odio porttitor sem non mi integer non faucibus ornare mi ut ante 
-              amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem 
-              accumsan varius montes viverra nibh in adipiscing blandit 
-              tempus accumsan
+            .text__item
+              h3 Accumsan montes viverra
+              p.
+                Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida 
+                odio porttitor sem non mi integer non faucibus ornare mi ut ante 
+                amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem 
+                accumsan varius montes viverra nibh in adipiscing blandit 
+                tempus accumsan
 
-        hr.major
-
+        +divider('_major')
         h2 elements
 
-        section.grid.gap-lg
-          .c-6-lg
+        main.elements
+          .elements__wrap
             h3 Text
 
             p
@@ -102,13 +108,13 @@ html(lang="en")
               |. Finally, this is a 
               a.link link
 
-            hr
+            +divider()
 
             h2 heading level 2
             h3 heading level 3
             h4 heading level 4
 
-            hr
+            +divider()
 
             p.
               Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida 
@@ -117,34 +123,36 @@ html(lang="en")
               accumsan varius montes viverra nibh in adipiscing blandit tempus 
               accumsan.
 
-            h3 lists
-
-            section.grid.gap
+            section.elements__lists
+              h3 lists
               .c-6-sm
                 h4 Unordered
 
-                ul
-                  li Dolor etiam magna etiam.
-                  li Sagittis lorem eleifend.
-                  li Felis dolore viverra.
+                +list('ul', 'list', '', [
+                  'Dolor etiam magna etiam.',
+                  'Sagittis lorem eleifend.',
+                  'Felis dolore viverra.'
+                ])
 
                 h4 Alternate
 
-                ul.alt
-                  li Dolor etiam magna etiam.
-                  li Sagittis lorem eleifend.
-                  li Felis feugiat viverra.
-                  
+                +list('ul', 'list', '_alt', [
+                  'Dolor etiam magna etiam.',
+                  'Sagittis lorem eleifend.',
+                  'Felis dolore viverra.'
+                ])
+              
               .c-6-sm
                 h4 Ordered
 
-                ol
-                  li Dolor etiam magna etiam.
-                  li Etiam vel lorem sed viverra.
-                  li Felis dolore viverra.
-                  li Dolor etiam magna etiam.
-                  li Etiam vel lorem sed viverra.
-                  li Felis dolore viverra.
+                +list('ol', 'o-list', '', [
+                  'Dolor etiam magna etiam.',
+                  'Sagittis lorem eleifend.',
+                  'Felis dolore viverra.',
+                  'Dolor etiam magna etiam.',
+                  'Sagittis lorem eleifend.',
+                  'Felis dolore viverra.'
+                ])
 
                 h4 Icons
 
@@ -337,7 +345,7 @@ html(lang="en")
                     td(colspan="2")
                     td 129.95
 
-          .c-6-lg
+          //- .elements__wrap
               section.grid.gap
                 h3.c-12 Buttons
                 
@@ -517,9 +525,10 @@ html(lang="en")
 
                   print 'It took ' + i + ' iterations to sort the deck.';
 
-      include blocks/_contact.pug
+      //- include blocks/_contact.pug
 
-      include blocks/_footer.pug
+      //- include blocks/_footer.pug
       
+    //- script(src="https://cdnjs.cloudflare.com/ajax/libs/svgxuse/1.2.6/svgxuse.js" defer)
     script(src="js/index.js")
 
