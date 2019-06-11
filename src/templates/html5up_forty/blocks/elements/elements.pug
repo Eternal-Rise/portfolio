@@ -3,267 +3,141 @@ main.elements
     include __typography
     include __lists
     include __definition
-    include __buttons
+    include __actions
     include __pagination
-    
+    include __blockquote
+    include __table
 
-    h3 bockquote
-    blockquote.
-      Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt 
-      felis sagittis eget tempus euismod. Vestibulum ante ipsum 
-      primis in faucibus vestibulum. Blandit adipiscing eu felis 
-      iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum 
-      ante ipsum primis in faucibus vestibulum. 
-      Blandit adipiscing eu felis.
+  .elements__wrap
+    include __buttons
 
-    h3 table
+    h3 Form
 
-    h4 Default
-    
-    .table-wrapper
-      table
-        thead
-          tr
-            td Name
-            td Description
-            td Price
-        tbody
-          tr
-            td Item 1
-            td Ante turpis integer aliquet porttitor.
-            td 29.99
-          tr
-            td Item 2
-            td Vis ac commodo adipiscing arcu aliquet.
-            td 19.99
-          tr
-            td Item 3
-            td Morbi faucibus arcu accumsan lorem.
-            td 29.99
-          tr
-            td Item 4
-            td Vitae integer tempus condimentum.
-            td 19.99
-          tr
-            td Item 5
-            td Ante turpis integer aliquet porttitor.
-            td 29.99
-        tfoot
-          tr
-            td(colspan="2")
-            td 129.95
+    form.grid.gap.gap-r(method="post" action="#")
+      input#demo-name.c-6-lg(
+        type="text", name="demo-name", placeholder="name" required
+        )
 
-    h4 alternate
+      input#demo-email.c-6-lg(
+        type="email", name="demo-email", placeholder="email" required
+        )
 
-    .table-wrapper
-      table.alt
-        thead
-          tr
-            td Name
-            td Description
-            td Price
-        tbody
-          tr
-            td Item 1
-            td Ante turpis integer aliquet porttitor.
-            td 29.99
-          tr
-            td Item 2
-            td Vis ac commodo adipiscing arcu aliquet.
-            td 19.99
-          tr
-            td Item 3
-            td Morbi faucibus arcu accumsan lorem.
-            td 29.99
-          tr
-            td Item 4
-            td Vitae integer tempus condimentum.
-            td 19.99
-          tr
-            td Item 5
-            td Ante turpis integer aliquet porttitor.
-            td 29.99
-        tfoot
-          tr
-            td(colspan="2")
-            td 129.95
+      select#demo-category.c-12(name='demo-category')
+        option(value='') - Category -
+        option(value='1') Manufacturing
+        option(value='1') Shipping
+        option(value='1') Administration
+        option(value='1') Human Resources
 
-  //- .elements__wrap
-      section.grid.gap
-        h3.c-12 Buttons
-        
-        ul.actions.line.c-12
-          li
-            button.primary Primary
-          li
-            button Default
+      input#demo-priority-low(
+        type='radio', name='demo-priority', checked=''
+        )
+      label.c-4-md(for='demo-priority-low') Low
 
-        ul.actions.c-6-xs
-          li
-            button.large large
-          li
-            button Default
-          li
-            button.small small
-        ul.actions.c-6-xs
-          li
-            button.large.primary large
-          li
-            button.primary Primary
-          li
-            button.primary.small small
+      input#demo-priority-normal(
+        type='radio', name='demo-priority'
+        )
+      label.c-4-md(for='demo-priority-normal') Normal
 
-        ul.actions.c-6-xs
-          li
-            button.primary.fit fit
-          li
-            button.primary.fit.small fit + small
-            
-        ul.actions.c-6-xs
-          li
-            button.fit fit
-          li
-            button.fit.small fit + small
+      input#demo-priority-high(
+        type='radio', name='demo-priority'
+        )
+      label.c-4-md(for='demo-priority-high') High
 
-        ul.actions.line.c-12
-          li
-            button.primary.icon.fas.fa-search icon
-          li
-            button.icon.fas.fa-download icon
+      input#demo-copy(type='checkbox', name='demo-copy')
+      label.c-6-md(for='demo-copy') Email me a copy
 
-        ul.actions.line.c-12
-          li
-            button.primary.disabled primary
-          li
-            button.disabled default
+      input#demo-human(
+        type='checkbox', name='demo-human', checked=''
+        )
+      label.c-6-md(for='demo-human') I am a human
 
-      h3 Form
+      textarea#demo-message.c-12(
+        name='demo-message', 
+        placeholder='Enter your message', 
+        minlength="100"
+        required
+        )
 
-      form.grid.gap.gap-r(method="post" action="#")
-        input#demo-name.c-6-lg(
-          type="text", name="demo-name", placeholder="name" required
-          )
+      ul.actions.line.c-12
+        li
+          input.primary(type='submit', value='Send Message')
+        li
+          input(type='reset', value='Reset')
 
-        input#demo-email.c-6-lg(
-          type="email", name="demo-email", placeholder="email" required
-          )
+    h3 Image
 
-        select#demo-category.c-12(name='demo-category')
-          option(value='') - Category -
-          option(value='1') Manufacturing
-          option(value='1') Shipping
-          option(value='1') Administration
-          option(value='1') Human Resources
+    h4 Fit
 
-        input#demo-priority-low(
-          type='radio', name='demo-priority', checked=''
-          )
-        label.c-4-md(for='demo-priority-low') Low
+    img.fit(src="img/pic03.jpg", alt="")
 
-        input#demo-priority-normal(
-          type='radio', name='demo-priority'
-          )
-        label.c-4-md(for='demo-priority-normal') Normal
+    .box.alt.grid.gap.gap-r
+      img.c-4(src="img/pic08.jpg", alt="")
+      img.c-4(src="img/pic09.jpg", alt="")
+      img.c-4(src="img/pic10.jpg", alt="")
+      img.c-4(src="img/pic08.jpg", alt="")
+      img.c-4(src="img/pic09.jpg", alt="")
+      img.c-4(src="img/pic10.jpg", alt="")
+      img.c-4(src="img/pic08.jpg", alt="")
+      img.c-4(src="img/pic09.jpg", alt="")
+      img.c-4(src="img/pic10.jpg", alt="")
 
-        input#demo-priority-high(
-          type='radio', name='demo-priority'
-          )
-        label.c-4-md(for='demo-priority-high') High
+    h4 Left &amp; Right
 
-        input#demo-copy(type='checkbox', name='demo-copy')
-        label.c-6-md(for='demo-copy') Email me a copy
-
-        input#demo-human(
-          type='checkbox', name='demo-human', checked=''
-          )
-        label.c-6-md(for='demo-human') I am a human
-
-        textarea#demo-message.c-12(
-          name='demo-message', 
-          placeholder='Enter your message', 
-          minlength="100"
-          required
-          )
-
-        ul.actions.line.c-12
-          li
-            input.primary(type='submit', value='Send Message')
-          li
-            input(type='reset', value='Reset')
-
-      h3 Image
-
-      h4 Fit
-
-      img.fit(src="img/pic03.jpg", alt="")
-
-      .box.alt.grid.gap.gap-r
-        img.c-4(src="img/pic08.jpg", alt="")
-        img.c-4(src="img/pic09.jpg", alt="")
-        img.c-4(src="img/pic10.jpg", alt="")
-        img.c-4(src="img/pic08.jpg", alt="")
-        img.c-4(src="img/pic09.jpg", alt="")
-        img.c-4(src="img/pic10.jpg", alt="")
-        img.c-4(src="img/pic08.jpg", alt="")
-        img.c-4(src="img/pic09.jpg", alt="")
-        img.c-4(src="img/pic10.jpg", alt="")
-
-      h4 Left &amp; Right
-
-      p
-        img.left(src="img/pic09.jpg", alt="")
-        .
-          Lorem ipsum dolor sit accumsan interdum nisi, 
-          quis tincidunt felis sagittis eget. tempus euismod. 
-          Vestibulum ante ipsum primis in faucibus vestibulum. 
-          Blandit adipiscing eu felis iaculis volutpat ac adipiscing 
-          accumsan eu faucibus. Integer ac pellentesque praesent 
-          tincidunt felis sagittis eget. tempus euismod. Vestibulum 
-          ante ipsum primis sagittis eget. tempus euismod. Vestibulum 
-          ante ipsum primis in faucibus vestibulum. Blandit 
-          adipiscing eu felis iaculis volutpat ac adipiscing 
-          accumsan eu faucibus. Integer ac pellentesque praesent 
-          tincidunt felis sagittis eget tempus vestibulum ante ipsum 
-          primis in faucibus magna blandit adipiscing eu felis iaculis.
-
-      p
-        img.right(src="img/pic09.jpg", alt="")
-        .
-          Lorem ipsum dolor sit accumsan interdum nisi, 
-          quis tincidunt felis sagittis eget. tempus euismod. 
-          Vestibulum ante ipsum primis in faucibus vestibulum. 
-          Blandit adipiscing eu felis iaculis volutpat ac adipiscing 
-          accumsan eu faucibus. Integer ac pellentesque praesent 
-          tincidunt felis sagittis eget. tempus euismod. Vestibulum 
-          ante ipsum primis sagittis eget. tempus euismod. Vestibulum 
-          ante ipsum primis in faucibus vestibulum. Blandit 
-          adipiscing eu felis iaculis volutpat ac adipiscing 
-          accumsan eu faucibus. Integer ac pellentesque praesent 
-          tincidunt felis sagittis eget tempus vestibulum ante ipsum 
-          primis in faucibus magna blandit adipiscing eu felis iaculis.
-
-      h3 Box
-
-      .box.
-        Felis sagittis eget tempus primis in faucibus vestibulum. 
+    p
+      img.left(src="img/pic09.jpg", alt="")
+      .
+        Lorem ipsum dolor sit accumsan interdum nisi, 
+        quis tincidunt felis sagittis eget. tempus euismod. 
+        Vestibulum ante ipsum primis in faucibus vestibulum. 
         Blandit adipiscing eu felis iaculis volutpat ac adipiscing 
         accumsan eu faucibus. Integer ac pellentesque praesent 
-        tincidunt felis sagittis eget. tempus euismod. Magna sed 
-        etiam ante ipsum primis in faucibus vestibulum. Blandit 
-        adipiscing eu ipsum primis in faucibus vestibulum. Blandit 
-        adipiscing eu felis iaculis volutpat ac adipiscing accumsan 
-        eu faucibus lorem ipsum.
+        tincidunt felis sagittis eget. tempus euismod. Vestibulum 
+        ante ipsum primis sagittis eget. tempus euismod. Vestibulum 
+        ante ipsum primis in faucibus vestibulum. Blandit 
+        adipiscing eu felis iaculis volutpat ac adipiscing 
+        accumsan eu faucibus. Integer ac pellentesque praesent 
+        tincidunt felis sagittis eget tempus vestibulum ante ipsum 
+        primis in faucibus magna blandit adipiscing eu felis iaculis.
 
-      h3 Preformatted
+    p
+      img.right(src="img/pic09.jpg", alt="")
+      .
+        Lorem ipsum dolor sit accumsan interdum nisi, 
+        quis tincidunt felis sagittis eget. tempus euismod. 
+        Vestibulum ante ipsum primis in faucibus vestibulum. 
+        Blandit adipiscing eu felis iaculis volutpat ac adipiscing 
+        accumsan eu faucibus. Integer ac pellentesque praesent 
+        tincidunt felis sagittis eget. tempus euismod. Vestibulum 
+        ante ipsum primis sagittis eget. tempus euismod. Vestibulum 
+        ante ipsum primis in faucibus vestibulum. Blandit 
+        adipiscing eu felis iaculis volutpat ac adipiscing 
+        accumsan eu faucibus. Integer ac pellentesque praesent 
+        tincidunt felis sagittis eget tempus vestibulum ante ipsum 
+        primis in faucibus magna blandit adipiscing eu felis iaculis.
 
-      pre
-        code.
-          i = 0;
+    h3 Box
 
-          while (!deck.isInOrder()) {
-              print 'Iteration ' + i;
-              deck.shuffle();
-              i++;
-          }
+    .box.
+      Felis sagittis eget tempus primis in faucibus vestibulum. 
+      Blandit adipiscing eu felis iaculis volutpat ac adipiscing 
+      accumsan eu faucibus. Integer ac pellentesque praesent 
+      tincidunt felis sagittis eget. tempus euismod. Magna sed 
+      etiam ante ipsum primis in faucibus vestibulum. Blandit 
+      adipiscing eu ipsum primis in faucibus vestibulum. Blandit 
+      adipiscing eu felis iaculis volutpat ac adipiscing accumsan 
+      eu faucibus lorem ipsum.
 
-          print 'It took ' + i + ' iterations to sort the deck.';
+    h3 Preformatted
+
+    pre
+      code.
+        i = 0;
+
+        while (!deck.isInOrder()) {
+            print 'Iteration ' + i;
+            deck.shuffle();
+            i++;
+        }
+
+        print 'It took ' + i + ' iterations to sort the deck.';

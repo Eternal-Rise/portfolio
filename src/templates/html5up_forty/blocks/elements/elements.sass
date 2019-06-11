@@ -1,11 +1,25 @@
 .elements
 
-  &__buttons
+  &__actions
   
-  &__buttons-list
+  &__actions-list
     margin: 0 0 map-get($size, 'element-margin') 0
     padding: 0
     list-style-type: none
+
+    &._inline
+      .elements__actions-item
+        display: inline-block
+        margin: 0 (map-get($size, 'element-margin') / 2) 0 0
+
+  &__actions-item
+    margin: 0 0 (map-get($size, 'element-margin') / 2) 0
+    border: none
+
+  &__buttons
+  
+  &__buttons-list
+    @extend .elements__actions-list
 
     &._inline
       .elements__buttons-item
@@ -13,5 +27,4 @@
         margin: 0 (map-get($size, 'element-margin') / 2) 0 0
 
   &__buttons-item
-    margin: 0 0 (map-get($size, 'element-margin') / 2) 0
-    border: none
+    @extend  .elements__actions-item
