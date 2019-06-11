@@ -55,18 +55,6 @@
       width: .9em
       height: .9em
 
-.actions
-  // @extend .alt
-  margin-bottom: map-get($size, 'element-margin')
-
-  li
-    border: none
-
-  &.line
-    li
-      display: inline-block
-      margin: 0 (map-get($size, 'element-margin') * 0.5) 0 0
-
 ul.pagination 
   cursor: default
   list-style: none
@@ -113,14 +101,14 @@ ul.pagination
     &:last-child 
       padding-left: 0.75em
 
-dl 
+.definition
   margin: 0 0 map-get($size, 'element-margin') 0
 
-  dt 
+  &__title 
     display: block
     font-weight: map-get($font, 'weight-bold')
-    margin: 0 0 (map-get($size, 'element-margin') * 0.5) 0
+    margin: 0 0 (map-get($size, 'element-margin') / 2) 0
   
-  dd 
+  &__text
     margin-left: map-get($size, 'element-margin')
   
