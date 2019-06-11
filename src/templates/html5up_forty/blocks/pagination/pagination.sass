@@ -1,0 +1,41 @@
+.pagination 
+  cursor: default
+  list-style: none
+  padding-left: 0
+
+  &__item
+    display: inline-block
+    margin-right: .125em
+
+    +sm-block()
+      display: inline-block
+
+    &:not(:first-child) &:not(:last-child)
+      display: none
+
+    &:first-child 
+      padding-right: 0.75em
+
+    &:last-child 
+      // minus __item margin-right
+      padding-left: 0.625em
+
+  &__link
+    display: inline-block
+    font-size: .8em
+    font-weight: map-get($font, 'weight-bold')
+    line-height: 1.5em
+    padding: 0 .6em
+    text-align: center
+    transition: .2s
+    cursor: pointer
+
+    &:hover 
+      color: map-get($palette, 'highlight')
+
+    &._active 
+      background-color: map-get($palette, 'fg')
+      color: map-get($palette, 'bg')
+
+      &:hover
+        background-color: map-get($palette, 'highlight')
