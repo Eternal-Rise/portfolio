@@ -10,60 +10,7 @@ main.elements
 
   .elements__wrap
     include __buttons
-
-    h3 Form
-
-    form.grid.gap.gap-r(method="post" action="#")
-      input#demo-name.c-6-lg(
-        type="text", name="demo-name", placeholder="name" required
-        )
-
-      input#demo-email.c-6-lg(
-        type="email", name="demo-email", placeholder="email" required
-        )
-
-      select#demo-category.c-12(name='demo-category')
-        option(value='') - Category -
-        option(value='1') Manufacturing
-        option(value='1') Shipping
-        option(value='1') Administration
-        option(value='1') Human Resources
-
-      input#demo-priority-low(
-        type='radio', name='demo-priority', checked=''
-        )
-      label.c-4-md(for='demo-priority-low') Low
-
-      input#demo-priority-normal(
-        type='radio', name='demo-priority'
-        )
-      label.c-4-md(for='demo-priority-normal') Normal
-
-      input#demo-priority-high(
-        type='radio', name='demo-priority'
-        )
-      label.c-4-md(for='demo-priority-high') High
-
-      input#demo-copy(type='checkbox', name='demo-copy')
-      label.c-6-md(for='demo-copy') Email me a copy
-
-      input#demo-human(
-        type='checkbox', name='demo-human', checked=''
-        )
-      label.c-6-md(for='demo-human') I am a human
-
-      textarea#demo-message.c-12(
-        name='demo-message', 
-        placeholder='Enter your message', 
-        minlength="100"
-        required
-        )
-
-      ul.actions.line.c-12
-        li
-          input.primary(type='submit', value='Send Message')
-        li
-          input(type='reset', value='Reset')
+    include __form
 
     h3 Image
 

@@ -1,0 +1,59 @@
+form.form(method="post" action="#")
+
+  input#demo-name.form__input(
+    type="text", name="demo-name", placeholder="name" required
+    )
+
+  input#demo-email.form__input(
+    type="email", name="demo-email", placeholder="email" required
+    )
+
+  select#demo-category.form__select(name='demo-category')
+    option(value) - Category -
+    option(value='1') Manufacturing
+    option(value='1') Shipping
+    option(value='1') Administration
+    option(value='1') Human Resources
+
+  .form__block
+    .form__block-item
+      input#demo-priority-low(
+        type='radio', name='demo-priority', checked=''
+        )
+      label.c-4-md(for='demo-priority-low') Low
+
+    .form__block-item
+      input#demo-priority-normal(
+        type='radio', name='demo-priority'
+        )
+      label.c-4-md(for='demo-priority-normal') Normal
+      
+    .form__block-item
+      input#demo-priority-high(
+        type='radio', name='demo-priority'
+        )
+      label.c-4-md(for='demo-priority-high') High
+
+  .form__block
+    .form__block-item
+      input#demo-copy(type='checkbox', name='demo-copy')
+      label.c-6-md(for='demo-copy') Email me a copy
+
+    .form__block-item
+      input#demo-human(
+        type='checkbox', name='demo-human', checked=''
+        )
+      label.c-6-md(for='demo-human') I am a human
+
+  textarea#demo-message.c-12(
+    name='demo-message', 
+    placeholder='Enter your message', 
+    minlength="100"
+    required
+    )
+
+  ul.actions.line.c-12
+    li
+      input.primary(type='submit', value='Send Message')
+    li
+      input(type='reset', value='Reset')
