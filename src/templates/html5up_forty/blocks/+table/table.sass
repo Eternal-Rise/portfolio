@@ -1,0 +1,49 @@
+.table 
+  min-width: 300px
+  width: calc(100% - 2px)
+  font-weight: map-get($font, 'weight')
+  font-size: .9em
+  border-collapse: collapse
+  box-sizing: border-box
+
+  &-wrapper
+    margin: 0 0 map-get($size, 'element-margin') 0
+    overflow: auto
+
+  &__body
+    .table__tr
+      border: solid 1px map-get($palette, 'border')
+      border-left: 0
+      border-right: 0
+
+      &:nth-child(2n + 1) 
+        background-color: map-get($palette, 'border-bg')
+
+  &__td
+    padding: 0.75em 0.75em
+
+  &__th 
+    color: map-get($palette, 'fg')
+    font-size: 0.9em
+    font-weight: map-get($font, 'weight-bold')
+    padding: 0 0.75em 0.75em 0.75em
+    text-align: left
+
+  &__head
+    border-bottom: solid 2px map-get($palette, 'border')
+    font-weight: map-get($font, 'weight-bold')
+  
+
+  &__foot 
+    border-top: solid 2px map-get($palette, 'border')
+
+  &._alt 
+
+    .table__body .table__td
+      border: 1px solid map-get($palette, 'border')
+
+    .table__head
+      border-bottom: 0
+    
+    .table__foot 
+      border-top: 0
