@@ -4,25 +4,10 @@ html(lang="zxx")
     include blocks/_head
     title Forty
   body
-    .nav-overlay
-      .nav-overlay-icon
-        i#button-menu-close.fas.fa-times.fa-2x
-      nav
-        ul.alt
-          li
-            a.active home
-          li
-            a(href="landing.html") landing
-          li
-            a(href="generic.html") generic
-          li
-            a(href="elements.html") elements
-    
-        ul.actions
-          li
-            button.primary.fit get started
-          li
-            button.fit log in
+    include blocks/+lists/lists
+
+    include blocks/nav/nav
+    include blocks/nav/navbar
 
     header.header-bar.opacity
       a.logo
@@ -92,12 +77,11 @@ html(lang="zxx")
             libero. Mauris aliquet magna magna sed nunc rhoncus amet 
             pharetra et feugiat tempus.
 
-          ul.actions.line
-            li              
-              a(href="landing.html").button.next get started
+          ul.actions._inline
+            li.actions__item
+              a(href="landing.html").btn._next get started
 
-      include blocks/_contact.pug
-
-      include blocks/_footer.pug
+      include blocks/contact/contact
+      include blocks/footer/footer
 
     script(src="js/index.js")
