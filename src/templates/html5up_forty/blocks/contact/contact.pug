@@ -25,11 +25,10 @@ section.contact
             required
             )
 
-      ul.list._inline
-        li.list__item
-          input.btn._primary(type='submit', value='Send Message')
-        li.list__item
-          input.btn(type='reset', value='Clear')
+      +list('ul', 'list', '_inline', [
+        '<input class="btn _primary" type="submit" value="Send Message" />',
+        '<input class="btn" type="reset" value="Clear" />'
+      ])
 
     .contact__block
       .contact__item

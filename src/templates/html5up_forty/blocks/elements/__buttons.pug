@@ -1,62 +1,49 @@
 section.elements__buttons
   h3.elements__buttons-title Buttons
-  
-  ul.elements__buttons-list._inline
-    li.elements__buttons-item
-      button.btn._primary Primary
-    li.elements__buttons-item
-      button.btn Default
 
-  ul.elements__buttons-list
-    li.elements__buttons-item
-      button.btn._large large
+  +list('ul', 'actions', '_inline', [
+    '<button class="btn _primary">Primary</button>',
+    '<button class="btn">Default</button>'
+  ])
 
-    li.elements__buttons-item
-      button.btn Default
+  +list('ul', 'actions', '', [
+    '<button class="btn _large">large</button>',
+    '<button class="btn">Default</button>',
+    '<button class="btn _small">small</button>'
+  ])
 
-    li.elements__buttons-item
-      button.btn._small small
+  +list('ul', 'actions', '', [
+    '<button class="btn _large _primary">large</button>',
+    '<button class="btn _primary">Primary</button>',
+    '<button class="btn _primary _small">small</button>'
+  ])
 
-  ul.elements__buttons-list
-    li.elements__buttons-item
-      button.btn._large._primary large
+  +list('ul', 'actions', '', [
+    '<button class="btn _primary _fit">fit</button>',
+    '<button class="btn _primary _fit _small">fit + small</button>'
+  ])
 
-    li.elements__buttons-item
-      button.btn._primary Primary
-      
-    li.elements__buttons-item
-      button.btn._primary._small small
+  +list('ul', 'actions', '', [
+    '<button class="btn _fit">fit</button>',
+    '<button class="btn _fit _small">fit + small</button>'
+  ])
 
-  ul.elements__buttons-list
-    li.elements__buttons-item
-      button.btn._primary._fit fit
+  +list('ul', 'actions', '_inline', [
+    `<button class="btn _primary _icon">
+      <svg class="btn__icon">
+        <use xlink:href="img/sprites/sprite.svg#search"></use>
+      </svg>
+      icon
+    </button>`,
+    `<button class="btn _icon">
+      <svg class="btn__icon">
+        <use xlink:href="img/sprites/sprite.svg#download"></use>
+      </svg>
+      icon
+    </button>`
+  ])
 
-    li.elements__buttons-item
-      button.btn._primary._fit._small fit + small
-      
-  ul.elements__buttons-list
-    li.elements__buttons-item
-      button.btn._fit fit
-
-    li.elements__buttons-item
-      button.btn._fit._small fit + small
-
-  ul.elements__buttons-list._inline
-    li.elements__buttons-item
-      button.btn._primary._icon
-        svg.btn__icon
-          use(xlink:href="img/sprites/sprite.svg#search")
-        |icon
-
-    li.elements__buttons-item
-      button.btn._icon
-        svg.btn__icon
-          use(xlink:href="img/sprites/sprite.svg#download")
-        |icon
-
-  ul.elements__buttons-list._inline
-    li.elements__buttons-item
-      button.btn._primary._disabled primary
-
-    li.elements__buttons-item
-      button.btn._disabled default
+  +list('ul', 'actions', '_inline', [
+    '<button class="btn _primary _disabled">primary</button>',
+    '<button class="btn _disabled">default</button>'
+  ])

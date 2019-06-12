@@ -26,30 +26,30 @@ form.form(method="post" action="#")
       input.visually-hidden.form__radio#demo-priority-low(
         type='radio', name='demo-priority', checked=''
       )
-      label.c-4-md(for='demo-priority-low') Low
+      label(for='demo-priority-low') Low
 
     .form__block-item
       input.visually-hidden.form__radio#demo-priority-normal(
         type='radio', name='demo-priority'
       )
-      label.c-4-md(for='demo-priority-normal') Normal
+      label(for='demo-priority-normal') Normal
       
     .form__block-item
       input.visually-hidden.form__radio#demo-priority-high(
         type='radio', name='demo-priority'
       )
-      label.c-4-md(for='demo-priority-high') High
+      label(for='demo-priority-high') High
 
   .form__block
     .form__block-item
       input.visually-hidden.form__checkbox#demo-copy(type='checkbox', name='demo-copy')
-      label.c-6-md(for='demo-copy') Email me a copy
+      label(for='demo-copy') Email me a copy
 
     .form__block-item
       input.visually-hidden.form__checkbox#demo-human(
         type='checkbox', name='demo-human', checked=''
       )
-      label.c-6-md(for='demo-human') I am a human
+      label(for='demo-human') I am a human
 
   .form__block
     .form__block-item
@@ -60,8 +60,7 @@ form.form(method="post" action="#")
         required
       )
 
-  ul.list._inline.form__list
-    li.list__item
-      input.btn._primary(type='submit', value='Send Message')
-    li.list__item
-      input.btn(type='reset', value='Reset')
+  +list('ul', 'list', '_inline form__list', [
+    '<input class="btn _primary" type="submit" value="Send Message" />',
+    '<input class="btn" type="reset" value="Reset" />'
+  ])

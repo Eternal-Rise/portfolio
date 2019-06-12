@@ -1,44 +1,32 @@
 section.elements__actions
   h3.elements__actions-title Actions
 
-  ul.elements__actions-list._inline
-    li.elements__actions-item
-      button.btn._primary Default
+  +list('ul', 'actions', '_inline', [
+    '<button class="btn _primary">Default</button>',
+    '<button class="btn">Default</button>'
+  ])
 
-    li.elements__actions-item
-      button.btn Default
+  +list('ul', 'actions', '_inline', [
+    '<button class="btn _primary _small">small</button>',
+    '<button class="btn _small">small</button>'
+  ])
 
-  ul.elements__actions-list._inline
-    li.elements__actions-item
-      button.btn._primary._small small
+  +list('ul', 'actions', '', [
+    '<button class="btn _primary">Default</button>',
+    '<button class="btn">Default</button>'
+  ])
 
-    li.elements__actions-item
-      button.btn._small small
+  +list('ul', 'actions', '', [
+    '<button class="btn _primary _small">small</button>',
+    '<button class="btn _small">small</button>'
+  ])
 
-  ul.elements__actions-list
-    li.elements__actions-item
-      button.btn._primary Default
+  +list('ul', 'actions', '', [
+    '<button class="btn _primary _fit">Default</button>',
+    '<button class="btn _fit">Default</button>'
+  ])
 
-    li.elements__actions-item
-      button.btn Default
-
-  ul.elements__actions-list
-    li.elements__actions-item
-      button.btn._primary._small small
-
-    li.elements__actions-item
-      button.btn._small small
-      
-  ul.elements__actions-list
-    li.elements__actions-item
-      button.btn._primary._fit Default
-
-    li.elements__actions-item
-      button.btn._fit Default
-
-  ul.elements__actions-list
-    li.elements__actions-item
-      button.btn._primary._fit._small small
-
-    li.elements__actions-item
-      button.btn._fit._small small
+  +list('ul', 'actions', '', [
+    '<button class="btn _primary _fit _small">small</button>',
+    '<button class="btn _fit _small">small</button>'
+  ])
