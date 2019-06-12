@@ -1,56 +1,58 @@
 section.contact
   .inner.contact__inner
-    form.form.contact__form
+    .contact__row    
+      .contact__col
+        form.form.contact__form
 
-      .form__block
-        .form__block-item
-          label.form__label(for="name") Name
-          input.form__input#name(
-            type="text", name="name" required
-          )
+          .form__row
+            .form__col._half
+              label.form__label(for="name") Name
+              input.form__input#name(
+                type="text", name="name" required
+              )
 
-        .form__block-item
-          label.form__label(for="email") Email
-          input.form__input#email(
-            type="email", name="email" required
-          )
+            .form__col._half
+              label.form__label(for="email") Email
+              input.form__input#email(
+                type="email", name="email" required
+              )
 
-      .form__block
-        .form__block-item
-          label.form__label(for="message") Message
-          textarea.form__textarea#message(
-            name='message'
-            rows='6'
-            minlength="100"
-            required
-            )
+          .form__row
+            .form__col
+              label.form__label(for="message") Message
+              textarea.form__textarea#message(
+                name='message'
+                rows='6'
+                minlength="100"
+                required
+                )
 
-      +list('ul', 'list', '_inline', [
-        '<input class="btn _primary" type="submit" value="Send Message" />',
-        '<input class="btn" type="reset" value="Clear" />'
-      ])
+          +list('ul', 'list', '_inline', [
+            '<input class="btn _primary" type="submit" value="Send Message" />',
+            '<input class="btn" type="reset" value="Clear" />'
+          ])
 
-    .contact__block
-      .contact__item
-        svg.contact__icon
-          use(xlink:href="img/sprites/sprite.svg#envelope")
-        h3 Email
-        a.contact__link(href="mailto:information@untitled.tld")
-          | information@untitled.tld
+      .contact__block
+        .contact__item
+          svg.contact__icon
+            use(xlink:href="img/sprites/sprite.svg#envelope")
+          h3 Email
+          a.contact__link(href="mailto:information@untitled.tld")
+            | information@untitled.tld
 
-      .contact__item
-        svg.contact__icon
-          use(xlink:href="img/sprites/sprite.svg#phone")
-        h3 Phone
-        span (000) 000-0000
+        .contact__item
+          svg.contact__icon
+            use(xlink:href="img/sprites/sprite.svg#phone")
+          h3 Phone
+          span (000) 000-0000
 
-      .contact__item
-        svg.contact__icon
-          use(xlink:href="img/sprites/sprite.svg#home")
-        h3 Address
-        span
-          | 1234 Somewhere Road #5432
-          br
-          | Nashville, TN 00000
-          br
-          | United States of America
+        .contact__item
+          svg.contact__icon
+            use(xlink:href="img/sprites/sprite.svg#home")
+          h3 Address
+          span
+            | 1234 Somewhere Road #5432
+            br
+            | Nashville, TN 00000
+            br
+            | United States of America

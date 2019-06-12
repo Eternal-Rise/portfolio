@@ -1,19 +1,18 @@
 form.form(method="post" action="#")
 
-  .form__block
-    .form__block-item
+  .form__row
+    .form__col._half
       input#demo-name.form__input(
         type="text", name="demo-name", placeholder="name" required
-        )
-
-  .form__block
-    .form__block-item
+      )
+      
+    .form__col._half
       input#demo-email.form__input(
         type="email", name="demo-email", placeholder="email" required
       )
 
-  .form__block
-    .form__block-item
+  .form__row
+    .form__col
       select#demo-category.form__select(name='demo-category')
         option(value) - Category -
         option(value='1') Manufacturing
@@ -21,38 +20,38 @@ form.form(method="post" action="#")
         option(value='1') Administration
         option(value='1') Human Resources
 
-  .form__block
-    .form__block-item
+  .form__row
+    .form__col._third
       input.visually-hidden.form__radio#demo-priority-low(
         type='radio', name='demo-priority', checked=''
       )
       label(for='demo-priority-low') Low
 
-    .form__block-item
+    .form__col._third
       input.visually-hidden.form__radio#demo-priority-normal(
         type='radio', name='demo-priority'
       )
       label(for='demo-priority-normal') Normal
       
-    .form__block-item
+    .form__col._third
       input.visually-hidden.form__radio#demo-priority-high(
         type='radio', name='demo-priority'
       )
       label(for='demo-priority-high') High
 
-  .form__block
-    .form__block-item
+  .form__row
+    .form__col._half
       input.visually-hidden.form__checkbox#demo-copy(type='checkbox', name='demo-copy')
       label(for='demo-copy') Email me a copy
 
-    .form__block-item
+    .form__col._half
       input.visually-hidden.form__checkbox#demo-human(
         type='checkbox', name='demo-human', checked=''
       )
       label(for='demo-human') I am a human
 
-  .form__block
-    .form__block-item
+  .form__row
+    .form__col
       textarea.form__textarea#demo-message(
         name='demo-message', 
         placeholder='Enter your message', 

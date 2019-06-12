@@ -1,15 +1,24 @@
 .form 
-  +row-flex()
-  +xs(justify-content, space-between)
+  // +row-flex()
+  // +xs(justify-content, space-between)
   margin: 0 0 map-get($size,'element-margin') 0
 
-  &__block
-    +u-row-flex(0)
-    +u-size(12, 12, 0)
+  &__row
+    +row-flex()
+    // +u-row-flex(0)
+    // +u-size(12, 12, 0)
 
-  &__block-item
-    +u-col(0)
-    +u-size(12, 12, 0)
+  &__col
+    +col()
+    // +u-col(0)
+    // +u-size(12, 12, 0)
+    +size(12)
+
+    &._half
+      +size-md(6)
+
+    &._third
+      +size-md(4)
 
   &__input, &__select, &__textarea
 
@@ -43,7 +52,6 @@
       text-transform: capitalize
 
   &__input
-    +size-xsm(6)
 
   &__select
     appearance: none

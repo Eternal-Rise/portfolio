@@ -1,8 +1,30 @@
 .elements
+  +row-flex()  
+  +lg(justify-content, space-between)
 
-  // &__actions
+  &__col
+    +col()
+    +size(12)
+    +size-lg(6)
 
-  // &__buttons
+    +lg-block()
+      +u-size(6, 12, 3em)
+
+  &__actions-row
+    +row-flex()
+
+  &__actions-col
+    +col()
+    +size(12)
+    +size-md(6)
+
+  &__buttons-row
+    +row-flex()
+
+  &__buttons-col
+    +col()
+    +size(12)
+    +size-sm(6)
 
   // &__image
 
@@ -18,3 +40,14 @@
     +u-size(4, 12, 10px)
     margin-bottom: 10px
 
+  &__lists
+    +row-flex()
+
+  &__lists-title
+    +col()
+    +size(12)
+
+  &__lists-col
+    +col()
+    +size(12)
+    +size-xsm(6)

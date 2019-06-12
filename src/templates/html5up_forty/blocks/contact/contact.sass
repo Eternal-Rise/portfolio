@@ -1,25 +1,54 @@
 .contact
+  overflow: hidden
   border-bottom: solid 1px map-get($palette, 'border')
   border-top: solid 1px map-get($palette, 'border')
-  overflow: hidden
 
   &__inner
     padding: 0
 
-  // form
-  //   border-right: 0
-  //   margin-bottom: 0
-  //   padding: 2em 0
+  &__row
+    +row-flex()
 
-  //   @media screen and (min-width: 981px)
-  //     border-right: solid 1px map-get($palette, 'border')
-  //     padding: map-get($size, "element-margin") * 2 map-get($size, "element-margin") * 1.5
-  //     padding-left: 0
+  &__col
+    +col()
+    +size(12)
+    +size-lg(7)
+    +lg(margin, 0)
 
+  &__form
+    padding: 4em 0 1em
+    +lg-block()
+      margin-bottom: 0
+      padding: 4em 2em 2em 1em
+      border-right: solid 1px map-get($palette, 'border')
+
+  &__block
+    +col()
+    +size(12)
+    +size-lg(5)
+    +lg(margin, 0)
+    display: flex
+    flex-direction: column
+    
   &__item
+    flex: 1
+    box-sizing: border-box
     padding: map-get($size, "element-margin") 0
     padding-left: map-get($size, "element-margin") * 1.5
     position: relative
+    width: 100%
+
+    +lg-block()
+      padding-left: map-get($size, "element-margin") * 2.5
+
+      &:first-child::before
+        border-top: 0
+
+      &::before
+        top: 0
+        left: 0
+        transform: translateX(0)
+        width: 50vw
 
     &::before
       border-top: 1px solid map-get($palette, 'border')
@@ -43,6 +72,9 @@
     background-color: map-get($palette, 'fg')
     border-radius: 50%
     color: map-get($palette, 'bg')
+
+    +lg-block()
+      left: 1.5em
 
   //   @media screen and (min-width: 481px)
   //     padding: map-get($size, "element-margin") * 1.5
