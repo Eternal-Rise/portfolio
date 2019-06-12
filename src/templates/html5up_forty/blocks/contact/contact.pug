@@ -1,6 +1,6 @@
 section.contact
   .inner.contact__inner
-    form.form
+    form.form.contact__form
 
       .form__block
         .form__block-item
@@ -31,20 +31,23 @@ section.contact
         li.list__item
           input.btn(type='reset', value='Clear')
 
-    .c-5-lg
-      .contact-method
-        span.icon.alt.fas.fa-envelope
+    .contact__block
+      .contact__item
+        svg.contact__icon
+          use(xlink:href="img/sprites/sprite.svg#envelope")
         h3 Email
-        a.link(href="mailto:information@untitled.tld")
+        a.contact__link(href="mailto:information@untitled.tld")
           | information@untitled.tld
 
-      .contact-method
-        span.icon.alt.fas.fa-phone
+      .contact__item
+        svg.contact__icon
+          use(xlink:href="img/sprites/sprite.svg#phone")
         h3 Phone
         span (000) 000-0000
 
-      .contact-method
-        span.icon.alt.fas.fa-home
+      .contact__item
+        svg.contact__icon
+          use(xlink:href="img/sprites/sprite.svg#home")
         h3 Address
         span
           | 1234 Somewhere Road #5432

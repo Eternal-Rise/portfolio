@@ -3,14 +3,21 @@
   +xs(justify-content, space-between)
   margin: 0 0 map-get($size,'element-margin') 0
 
-  &__input, &__select, &__textarea
-    +col()
-    +size(12)
-    width: 100%
-    margin: 0 0 (map-get($size,'element-margin') / 2)
+  &__block
+    +u-row-flex(0)
+    +u-size(12, 12, 0)
 
+  &__block-item
+    +u-col(0)
+    +u-size(12, 12, 0)
+
+  &__input, &__select, &__textarea
+
+    box-sizing: border-box
     display: block
+    margin: 0 0 (map-get($size,'element-margin') / 2)
     padding: 0 1em
+    width: 100%
     height: map-get($size,'element-height')
 
     background: map-get($palette, 'border-bg')
@@ -116,17 +123,9 @@
     &:focus
       box-shadow: 0 0 0 2px map-get($palette, 'highlight')
 
-  &__block
-    +row-flex()
-    +size(12)
-
-  &__block-item
-    +col()
-    +size(12)
-
   &__list
     +col()
-    +size(12)  
+    +size(12)
 
   &__label
     color: map-get($palette, 'fg')

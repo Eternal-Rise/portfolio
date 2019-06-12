@@ -1,7 +1,7 @@
 .contact
   border-bottom: solid 1px map-get($palette, 'border')
   border-top: solid 1px map-get($palette, 'border')
-  // overflow: hidden
+  overflow: hidden
 
   &__inner
     padding: 0
@@ -16,23 +16,33 @@
   //     padding: map-get($size, "element-margin") * 2 map-get($size, "element-margin") * 1.5
   //     padding-left: 0
 
-  // &-method
-  //   padding: map-get($size, "element-margin") 0
-  //   padding-left: map-get($size, "element-margin") * 1.5
-  //   position: relative
+  &__item
+    padding: map-get($size, "element-margin") 0
+    padding-left: map-get($size, "element-margin") * 1.5
+    position: relative
 
-  //   &::before
-  //     border-top: 1px solid map-get($palette, 'border')
-  //     content: ''
-  //     margin-left: -6em
-  //     position: absolute
-  //     top: 0
-  //     width: calc(100vw + 6em)
+    &::before
+      border-top: 1px solid map-get($palette, 'border')
+      content: ''
+      // margin-left: -6em
+      position: absolute
+      top: 0
+      left: 50%
+      transform: translateX(-50%)
+      transform-origin: center
+      width: 200vw
 
-  //   .icon
-  //     position: absolute
-  //     left: 0
-  //     top: 2em
+  &__icon
+    position: absolute
+    left: 0
+    top: 2em
+    padding: .5em
+    width: 1em
+    height: 1em
+    
+    background-color: map-get($palette, 'fg')
+    border-radius: 50%
+    color: map-get($palette, 'bg')
 
   //   @media screen and (min-width: 481px)
   //     padding: map-get($size, "element-margin") * 1.5
@@ -52,3 +62,12 @@
 
   //     .icon
   //       left: 2.5em
+
+  &__link
+    color: inherit
+    border-bottom: 1px dotted
+    text-decoration: none
+    @extend .hover
+
+    &:hover
+      border-color: transparent

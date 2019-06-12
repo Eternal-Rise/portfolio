@@ -1,19 +1,25 @@
 form.form(method="post" action="#")
 
-  input#demo-name.form__input(
-    type="text", name="demo-name", placeholder="name" required
-    )
+  .form__block
+    .form__block-item
+      input#demo-name.form__input(
+        type="text", name="demo-name", placeholder="name" required
+        )
 
-  input#demo-email.form__input(
-    type="email", name="demo-email", placeholder="email" required
-    )
+  .form__block
+    .form__block-item
+      input#demo-email.form__input(
+        type="email", name="demo-email", placeholder="email" required
+      )
 
-  select#demo-category.form__select(name='demo-category')
-    option(value) - Category -
-    option(value='1') Manufacturing
-    option(value='1') Shipping
-    option(value='1') Administration
-    option(value='1') Human Resources
+  .form__block
+    .form__block-item
+      select#demo-category.form__select(name='demo-category')
+        option(value) - Category -
+        option(value='1') Manufacturing
+        option(value='1') Shipping
+        option(value='1') Administration
+        option(value='1') Human Resources
 
   .form__block
     .form__block-item
@@ -45,12 +51,14 @@ form.form(method="post" action="#")
       )
       label.c-6-md(for='demo-human') I am a human
 
-  textarea.form__textarea#demo-message(
-    name='demo-message', 
-    placeholder='Enter your message', 
-    minlength="100"
-    required
-  )
+  .form__block
+    .form__block-item
+      textarea.form__textarea#demo-message(
+        name='demo-message', 
+        placeholder='Enter your message', 
+        minlength="100"
+        required
+      )
 
   ul.list._inline.form__list
     li.list__item
