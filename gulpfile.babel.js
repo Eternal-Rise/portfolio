@@ -160,7 +160,8 @@ export const serve = () => {
   browserSync.init({
     notify: false,
     server: `${dest}${path}`,
-    scrollRestoreTechnique: 'cookie'
+    scrollRestoreTechnique: 'cookie',
+    watch: true
   });
 
   gulp.watch(paths.img.watch, gulp.series(graphics))
@@ -169,13 +170,12 @@ export const serve = () => {
     .on('change', browserSync.reload);
   gulp.watch(paths.fonts.watch, gulp.series(fonts))
     .on('change', browserSync.reload);
-  gulp.watch(paths.pug.watch, gulp.series(markup))
-    .on('change', browserSync.reload);
-  gulp.watch(paths.scripts.watch, gulp.series(scripts))
-    .on('change', browserSync.reload);
-  gulp.watch(paths.sass.watch, gulp.series(styles))
   gulp.watch(paths.img.svg.watch, gulp.series(svgsprites))
     .on('change', browserSync.reload);
+
+  gulp.watch(paths.pug.watch, gulp.series(markup))
+  gulp.watch(paths.scripts.watch, gulp.series(scripts))
+  gulp.watch(paths.sass.watch, gulp.series(styles))
 };
 
 export const dev = gulp.series(
