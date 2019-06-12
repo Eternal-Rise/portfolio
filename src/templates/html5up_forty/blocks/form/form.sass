@@ -3,7 +3,7 @@
   +xs(justify-content, space-between)
   margin: 0 0 map-get($size,'element-margin') 0
 
-  &__input, &__select  
+  &__input, &__select, &__textarea
     +col()
     +size(12)
     width: 100%
@@ -56,103 +56,89 @@
       background-color: map-get($palette, 'bg')
       color: map-get($palette, 'fg')
 
-  &__label
-    color: map-get($palette, 'fg')
-    display: block
-    font-size: 0.8em
-    font-weight: map-get($font, 'weight-bold')
-    letter-spacing: map-get($font, 'letter-spacing-alt')
-    margin: 0 0 (map-get($size,'element-margin') * 0.5) 0
-    text-transform: uppercase
+  &__radio, &__checkbox
+    // display: none
 
-// input[type="text"],
-// input[type="password"],
-// input[type="email"],
-// input[type="tel"],
-// input[type="search"],
-// input[type="url"],
-// select,
-// textarea
-//   display: block
-//   outline: 0
-//   padding: 0 1em
-//   height: map-get($size,'element-height')
-//   // width: 100%
+    + label
+      display: inline-block
+      margin: 0 0 (map-get($size,'element-margin') * 0.5) 0
+      padding-left: (map-get($size,'element-height') * .6) + 1em
+      padding-right: 0.75em
+      position: relative
 
-//   background: map-get($palette, 'border-bg')
-//   border: none
-//   border-radius: 0
-//   color: inherit
-//   outline: none
-//   text-decoration: none
-//   transition: .2s
+      color: map-get($palette, 'fg')
+      font-size: 0.8em
+      font-weight: map-get($font, 'weight')
+      letter-spacing: map-get($font, 'letter-spacing-alt')
+      text-transform: uppercase
+      
+      cursor: pointer
+      transition: .2s
 
-//   &:invalid
-//     box-shadow: none
+      &::before
+        content: ''
+        display: inline-block
+        position: absolute
+        top: 0
+        left: 0
+        height: (map-get($size,'element-height') * .6)
+        width: (map-get($size,'element-height') * .6)
 
-//   &:focus
-//     box-shadow: 0 0 0 2px map-get($palette, 'highlight')
+        background: map-get($palette, 'border-bg')
+        letter-spacing: 0
+        line-height: (map-get($size,'element-height') * .6)
+        text-align: center
 
-// select
-//   appearance: none
-//   background-image: url("data:image/svg+xml;charset=utf-8, <svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'><path d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='#{map-get($palette, 'border')}' /></svg>")
-//   background-size: 1.25rem
-//   background-repeat: no-repeat
-//   background-position: calc(100% - 1em) center
-//   height: map-get($size,'element-height')
-//   padding-right: map-get($size,'element-height')
-//   text-overflow: ellipsis
+    &:checked + label
+      &::before
+        background-color: map-get($palette, 'fg')
+        background-image: url('../img/sprites/sprite.svg#check')
+        background-size: 50%
+        background-repeat: no-repeat
+        background-position: center
+        color: map-get($palette, 'bg')
+        font-weight: map-get($font, 'weight-bold')
 
-//   option
-//     color: map-get($palette, 'fg')
-//     background: map-get($palette, 'bg')
+    &:focus + label
+      &::before
+        box-shadow: 0 0 0 2px map-get($palette, 'highlight')
 
-// textarea
-//   height: 12em
-//   padding: 0.75em 1em
-//   resize: vertical
+  &__radio
+    + label
+      &::before
+        border-radius: 100%
 
-// input[type="checkbox"],
-// input[type="radio"],
-//   display: none
+  &__textarea
+    padding: 0.75em 1em
+    min-height: 12em
+    resize: vertical
 
-//   & + label
-//     color: map-get($palette, 'fg')
-//     cursor: pointer
-//     display: inline-block
-//     font-weight: map-get($font, 'weight')
-//     padding-left: (map-get($size,'element-height') * .6) + 1em
-//     padding-right: 0.75em
-//     position: relative
+    &:focus
+      box-shadow: 0 0 0 2px map-get($palette, 'highlight')
 
-//     &:before
-//       content: ''
-//       display: inline-block
-//       position: absolute
-//       top: 0
-//       left: 0
-//       height: (map-get($size,'element-height') * .6)
-//       width: (map-get($size,'element-height') * .6)
+  &__block
+    +row-flex()
+    +size(12)
 
-//       background: map-get($palette, 'border-bg')
-//       font-family: "Font Awesome 5 Free"
-//       letter-spacing: 0
-//       line-height: (map-get($size,'element-height') * .6)
-//       text-align: center
+  &__block-item
+    +col()
+    +size(12)
 
-//   &:checked + label
-//     &:before
-//       background: map-get($palette, 'fg')
-//       border-color: map-get($palette, 'highlight')
-//       content: '\f00c'
-//       color: map-get($palette, 'bg')
-//       font-weight: map-get($font, 'weight-bold')
+  &__list
+    +col()
+    +size(12)
 
-//   &:focus + label
-//     &:before
-//       box-shadow: 0 0 0 2px map-get($palette, 'highlight')
+    & .list__item
+      padding-left: 0
+      margin-right: 1em
 
-// input[type="radio"]
-//   & + label
-//     &:before
-//       border-radius: 100%
+  
+
+  // &__label
+  //   color: map-get($palette, 'fg')
+  //   display: block
+  //   font-size: 0.8em
+  //   font-weight: map-get($font, 'weight-bold')
+  //   letter-spacing: map-get($font, 'letter-spacing-alt')
+  //   margin: 0 0 (map-get($size,'element-margin') * 0.5) 0
+  //   text-transform: uppercase
