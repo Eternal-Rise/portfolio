@@ -6,15 +6,17 @@
   left: 0
   z-index: 10
 
-  // display: none
+  display: none
   align-items: center
-  display: flex
   flex-direction: column
   justify-content: center
 
-  background-color: rgba(map-get($palette, 'bg'),.9)
+  background-color: rgba(map-get($palette, 'bg'),.955)
   text-transform: uppercase
   overflow: auto
+
+  @supports (filter: blur())
+    background-color: rgba(map-get($palette, 'bg'),.9)
 
   &._show
     display: flex
@@ -67,6 +69,9 @@
     line-height: 3em
     text-decoration: none
     @extend .hover
+
+    &._active
+      color: map-get($palette, 'highlight')
 
 #wrapper
   &._on
