@@ -1,4 +1,4 @@
-.nav-overlay
+.nav
   position: fixed
   top: 0
   right: 0
@@ -6,19 +6,22 @@
   left: 0
   z-index: 10
 
-  display: none
-  grid-template-rows: auto 1fr
+  // display: none
+  align-items: center
+  display: flex
+  flex-direction: column
+  justify-content: center
 
   background-color: rgba(map-get($palette, 'bg'),.9)
   text-transform: uppercase
   overflow: auto
 
-  &.show
-    display: grid
+  &._show
+    display: flex
     animation: show-menu .6s forwards
 
-  &.hide
-    display: grid
+  &._hide
+    display: flex
     animation: hide-menu .6s forwards
 
   @keyframes show-menu
@@ -37,35 +40,39 @@
       opacity: 0
       z-index: -1
 
-  &-icon
-    text-align: right
+  &__btn
+    padding: 1em
+    position: absolute
+    top: 0
+    right: 0
 
-    #button-menu-close
-      padding: .5em 1em
-      @extend .hover
+    @extend .hover
 
-  nav
-    align-self: center
-    justify-self: center
+  &__btn-icon
+    width: 2em
+    height: 2em
+
+  &__list
     width: 18em
-    z-index: 100
+    text-align: center
+    letter-spacing: map-get($font, 'letter-spacing-alt')
 
-    ul
-      letter-spacing: map-get($font, 'letter-spacing-alt')
-      text-align: center
+  &__list-item
 
-      a:not(.button)
-        display: block
-        font-weight: map-get($font, 'weight-bold')
-        font-size: 0.8em
-        height: 3em
-        line-height: 3em
+  &__link
+    display: block
+    color: inherit
+    font-weight: map-get($font, 'weight-bold')
+    font-size: .8em
+    line-height: 3em
+    text-decoration: none
+    @extend .hover
 
 #wrapper
-  &.on
+  &._on
     animation: blur-on .2s ease-in-out forwards
 
-  &.off
+  &._off
     animation: blur-off .2s ease-in-out forwards
 
 @keyframes blur-on

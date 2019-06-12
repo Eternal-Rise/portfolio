@@ -1,20 +1,16 @@
-.nav-overlay
-  .nav-overlay-icon
-    svg#button-menu-close
+nav.nav
+  .nav__btn
+    svg.nav__btn-icon
       use(xlink:href="img/sprites/sprite.svg#times")
-  nav
-    ul.alt
-      li
-        a(href="index.html") home
-      li
-        a(href="landing.html") landing
-      li
-        a(href="generic.html") generic
-      li
-        a.active elements
 
-    ul.actions
-      li
-        button.primary.fit get started
-      li
-        button.fit log in
+  +list('ul', 'list', '_alt nav__list', [
+    '<a class="nav__link" href="index.html">home</a>',
+    '<a class="nav__link" href="landing.html">landing</a>',
+    '<a class="nav__link" href="generic.html">generic</a>',
+    '<a class="nav__link _active">elements</a>',
+  ])
+
+  +list('ul', 'actions', 'nav__list', [
+    '<button class="btn _primary _fit">get started</button>',
+    '<button class="btn _fit">log in</button>'
+  ])
