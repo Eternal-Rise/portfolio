@@ -1,6 +1,10 @@
+'use strict'
+
 import svgxuse from './svgxuse';
+import nav from '../blocks/nav/nav';
 
 svgxuse();
+nav();
 
 // window.addEventListener('load', () => {
 
