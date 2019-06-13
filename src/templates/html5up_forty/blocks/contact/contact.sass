@@ -31,7 +31,6 @@
     flex-direction: column
     
   &__item
-    flex: 1
     box-sizing: border-box
     padding: map-get($size, "element-margin") 0
     padding-left: map-get($size, "element-margin") * 1.5
@@ -39,6 +38,7 @@
     width: 100%
 
     +lg-block()
+      flex: 1
       padding-left: map-get($size, "element-margin") * 2.5
 
       &:first-child::before

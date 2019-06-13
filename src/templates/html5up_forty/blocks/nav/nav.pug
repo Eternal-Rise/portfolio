@@ -4,10 +4,10 @@ nav.nav
       use(xlink:href="img/sprites/sprite.svg#times")
 
   +list('ul', 'list', '_alt nav__list', [
-    '<a class="nav__link" href="index.html">home</a>',
-    '<a class="nav__link" href="landing.html">landing</a>',
-    '<a class="nav__link" href="generic.html">generic</a>',
-    '<a class="nav__link _active">elements</a>',
+    `<a class="nav__link${current === 'index' ? ' _active"' : '" href=\"index.html"'}>home</a>`,
+    `<a class="nav__link${current === 'landing' ? ' _active"' : '" href=\"landing.html"'}>landing</a>`,
+    `<a class="nav__link${current === 'generic' ? ' _active"' : '" href=\"generic.html"'}>generic</a>`,
+    `<a class="nav__link${current === 'elements' ? ' _active"' : '" href=\"elements.html"'}>elements</a>`
   ])
 
   +list('ul', 'actions', 'nav__list', [

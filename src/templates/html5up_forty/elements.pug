@@ -12,8 +12,6 @@ html(lang="en")
     include blocks/nav/navbar
     include blocks/header/header
 
-    include blocks/nav/nav
-    
     #wrapper
       .inner._main
 
@@ -28,6 +26,10 @@ html(lang="en")
 
       include blocks/contact/contact
       include blocks/footer/footer
-      
+    
+    //- current page for add ._active
+    -let current = 'elements'
+    include blocks/nav/nav
+    
     script(src="js/index.js")
 

@@ -6,7 +6,6 @@ html(lang="zxx")
   body
     include blocks/+lists/lists
 
-    include blocks/nav/nav
     include blocks/nav/navbar
 
     header.header-bar.opacity
@@ -84,4 +83,8 @@ html(lang="zxx")
       include blocks/contact/contact
       include blocks/footer/footer
 
+    //- current page for add ._active
+    -let current = 'index'
+    include blocks/nav/nav
+    
     script(src="js/index.js")
