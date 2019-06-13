@@ -19,13 +19,17 @@ const header = () => {
       .getPropertyValue("height"));
 
     const navbarScroll = () => {
+      
+      // hide navbar
       if (window.pageYOffset > navbarHeight) {
         navbar.classList.add('_hidden');
         
+        // fix navbar on top
         if (window.pageYOffset >= (offset - navbarHeight)) {
           navbar.classList.add('_fixed');
           navbar.classList.remove('_hidden');
         }
+        // return navbar to intitial
       } else {
         navbar.classList.remove('_fixed');
         navbar.classList.remove('_hidden');
@@ -41,9 +45,7 @@ const header = () => {
       navbarScroll()
     });
       
-    if (window.location.pathname.search(/index.html/) !== -1 || 
-      window.location.pathname === "https://eternal-rise.github.io/html5up_forty/") {
-
+    if (window.location.pathname.search(/index.html/) !== -1 ) {
       btnScroll.addEventListener('click', () => {
         window.scroll({
           top: offset - navbarHeight,
@@ -54,7 +56,6 @@ const header = () => {
     }
 
     // header animation
-
     window.addEventListener('load', () => {
       const header__inner = document.querySelector('.header__inner')
 
