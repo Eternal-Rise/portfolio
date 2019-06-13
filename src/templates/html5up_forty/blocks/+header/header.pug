@@ -1,0 +1,12 @@
+mixin header(mod, title, text, btn=false)
+  header.header._hiddenBackground(class=mod)
+    .inner.header__inner._hidden
+      h1._major.header__title= title
+      
+      .header__row
+        .header__col
+          p.header__text!= text
+
+        if (btn)  
+          .header__col
+            button.btn._next#scroll get started

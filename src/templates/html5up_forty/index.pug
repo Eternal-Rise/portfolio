@@ -6,13 +6,18 @@ html(lang="zxx")
   body
     //- mixin
     include blocks/+lists/lists
+    include blocks/+header/header
 
     #wrapper
       //- extra class for navbar
       -let navMods = '_opacity';
 
       include blocks/nav/navbar
-      include blocks/header/header
+
+      +header('_index', 'Hi, my name is Forty',
+        'A responsive site template designed by html5 up and released under the craetive commons.',
+        true)
+
       include blocks/tiles/tiles
 
       section.alt-bg

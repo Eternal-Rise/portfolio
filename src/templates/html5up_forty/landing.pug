@@ -7,6 +7,7 @@ html(lang="en")
 
     //- mixin
     include blocks/+lists/lists
+    include blocks/+header/header
 
     #wrapper
       //- extra class for navbar
@@ -14,17 +15,15 @@ html(lang="en")
 
       include blocks/nav/navbar
 
-      header.header._landing
-        .inner.header__inner
-          h1.major Landing
-          p.header__text
-            |Lorem ipsum dolor sit amet consectetur 
-            br
-            |adipisicing elit. Totam iste facilis numquam.
+      +header('_landing', 'Landing',
+        `Lorem ipsum dolor sit amet consectetur
+        <br/>
+        adipisicing elit. Totam iste facilis numquam.`
+      )
 
       section.alt-bg
         .inner
-          h2.major.unfit Sed amet aliquam
+          h2._major._unfit Sed amet aliquam
           p.
             Nullam et orci eu lorem consequat tincidunt vivamus et sagittis 
             magna sed nunc rhoncus condimentum sem. In efficitur ligula 

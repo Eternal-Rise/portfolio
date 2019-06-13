@@ -7,7 +7,7 @@ import svgxuse from './svgxuse';
 import nav from '../blocks/nav/nav';
 
 // scroll, parallax, enterence
-import header from '../blocks/header/header';
+import header from '../blocks/+header/header';
 
 // object-fit for IE
 import objectFitImages from 'object-fit-images';
