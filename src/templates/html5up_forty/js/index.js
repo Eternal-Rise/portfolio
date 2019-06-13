@@ -9,6 +9,10 @@ import nav from '../blocks/nav/nav';
 // scroll, parallax, enterence
 import header from '../blocks/header/header';
 
-svgxuse();
-nav();
+// object-fit for IE
+import objectFitImages from 'object-fit-images';
+
 header();
+nav();
+objectFitImages();
+svgxuse();

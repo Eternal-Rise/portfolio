@@ -1,0 +1,112 @@
+.tiles
+  +u-row-flex(0)
+
+  &__item
+    +u-col(0)
+    +u-size(12, 12, 0)
+
+    +md-block()
+      +u-size(6, 12, 0)
+
+    &._larger
+      +lg-block()
+        +u-size(7, 12, 0)
+    &._smaller
+      +lg-block()
+        +u-size(5, 12, 0)
+
+    height: 30vh
+    max-height: 30em
+    min-height: 20em
+    text-decoration: none
+    color: inherit
+    
+    // for tiles__cover, ::before
+    position: relative
+
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      transition: .4s
+
+    &:hover
+      &::before
+        opacity: 0
+
+
+    @for $i from 6 to 0
+      &:nth-child(#{$i})
+        &::before
+          background-color: rgba(map-get($palette, 'accent#{$i}'), .85)
+
+  &__cover
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+
+    align-items: flex-start
+    display: flex
+    flex-direction: column
+    justify-content: center
+    padding: 2em
+
+  &__text
+
+  &__title
+    width: 100%
+    text-transform: capitalize
+    &._major
+      &::after
+        margin-bottom: .5em
+
+  &__subtitle
+    margin: 0
+    font-size: .7em
+    font-weight: map-get($font, 'weight-bold')
+    letter-spacing: map-get($font, 'letter-spacing-alt')
+    text-transform: uppercase
+
+  &__picture
+    width: 100%
+    height: 100%
+
+  &__img
+    height: 100%
+    object-fit: cover
+    font-family: 'object-fit: cover;'
+   
+  // &.accent
+  //   .banner
+  //     height: 30vh
+  //     max-height: 30em
+  //     min-height: 20em
+
+  //     &:hover::before
+  //       opacity: 0
+  &.spotlights
+    .grid
+      grid-template-columns: 45% 55%
+
+      &.alt
+        grid-template-columns: 55% 45%
+
+        @media screen and (min-width: 981px)
+          .banner
+            grid-row: 1 / 2
+
+            &:first-child
+              grid-column: 2 / 3
+            &:last-child
+              grid-column: 1 / 2
+
+    .banner
+      grid-column: 1 / -1
+
+      @media screen and (min-width: 981px)
+        grid-column: span 1
