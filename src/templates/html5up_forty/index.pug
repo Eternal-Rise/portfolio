@@ -4,28 +4,15 @@ html(lang="zxx")
     include blocks/_head
     title Forty
   body
+    //- mixin
     include blocks/+lists/lists
 
-    include blocks/nav/navbar
-
-    header.header-bar.opacity
-      a.logo
-        strong forty
-        span  by html5 up
-      nav
-        a#button-menu menu
-
     #wrapper
-      header.banner#index
-        .inner
-          h1.major Hi, my name is Forty
-          .grid.gap
-            p.alt.c-5-md.
-              A responsive site template designed 
-              by html5 up and
-              released under the craetive commons.
+      //- extra class for navbar
+      -let navMods = '_opacity';
 
-            button.c-7-md.next#scroll get started
+      include blocks/nav/navbar
+      include blocks/header/header
 
       .tiles.accent.grid
         section.banner.c-6-sm.c-5-lg
@@ -86,5 +73,5 @@ html(lang="zxx")
     //- current page for add ._active
     -let current = 'index'
     include blocks/nav/nav
-    
+
     script(src="js/index.js")

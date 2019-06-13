@@ -55,6 +55,7 @@
     "imagemin-webp": "^5.1.0",
     "imagemin-zopfli": "^6.0.0",
     "smart-grid": "^2.1.2",
+    "smoothscroll-polyfill": "^0.4.4",
     "tar": ">=4.4.2",
     "webpack": "^4.32.2",
     "webpack-stream": "^5.2.1",

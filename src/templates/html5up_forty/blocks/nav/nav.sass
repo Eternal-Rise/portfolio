@@ -1,30 +1,34 @@
 .nav
+  display: flex
   position: fixed
   top: 0
   right: 0
   bottom: 0
   left: 0
-  z-index: 10
+  opacity: 0
+  z-index: -1
 
-  display: none
   align-items: center
   flex-direction: column
   justify-content: center
 
   background-color: rgba(map-get($palette, 'bg'),.955)
   text-transform: uppercase
+  transition-delay: z-index 0 opacity .2s
+  transition-duration: .4s
   overflow: auto
 
   @supports (filter: blur())
     background-color: rgba(map-get($palette, 'bg'),.9)
 
   &._show
-    display: flex
-    animation: show-menu .6s forwards
+    z-index: 10
+    opacity: 1
+    // animation: show-menu .6s forwards
 
-  &._hide
-    display: flex
-    animation: hide-menu .6s forwards
+  // &._hide
+  //   display: flex
+  //   animation: hide-menu .6s forwards
 
   @keyframes show-menu
     from
@@ -74,20 +78,6 @@
       color: map-get($palette, 'highlight')
 
 #wrapper
+  transition: .2s
   &._on
-    animation: blur-on .2s ease-in-out forwards
-
-  &._off
-    animation: blur-off .2s ease-in-out forwards
-
-@keyframes blur-on
-  from
-    filter: blur(0)
-  to
     filter: blur(.25em)
-
-@keyframes blur-off
-  from
-    filter: blur(.25em)
-  to
-    filter: blur(0)

@@ -1,42 +1,22 @@
 const nav = () => {
-  const menuShow = document.querySelector('.navbar__btn');
-  const menuHide = document.querySelector('.nav__btn');
+  const btnShow = document.querySelector('.navbar__btn');
+  const btnHide = document.querySelector('.nav__btn');
   const nav = document.querySelector('.nav');
-  const navbar = document.querySelector('.navbar');
   const blur = document.getElementById('wrapper');
 
-  menuShow.addEventListener('click', () => {
-    document.body.style.overflow = 'hidden';
-    
-    navbar.classList.remove('_show');
-    navbar.classList.add('_hide');
-
-    nav.classList.remove('_hide');
-    nav.classList.add('_show');
-
-    blur.classList.remove('_off')
-    blur.classList.add('_on')
-  });
-
-  menuHide.addEventListener('click', hideMenu);
+  btnShow.addEventListener('click', toggleMenu);
+  btnHide.addEventListener('click', toggleMenu);
 
   window.addEventListener('keydown', (e) => {
     if (e.keyCode === 27) {
-      hideMenu()
+      toggleMenu()
     }
   });
 
-  function hideMenu() {
-    document.body.style.overflow = '';
-
-    nav.classList.remove('_show');
-    nav.classList.add('_hide');
-
-    navbar.classList.remove('_hide');
-    navbar.classList.add('_show');
-
-    blur.classList.remove('_on')
-    blur.classList.add('_off')
+  function toggleMenu() {
+    document.body.classList.toggle('_overflow');
+    nav.classList.toggle('_show');
+    blur.classList.toggle('_on')
   }
 }
 

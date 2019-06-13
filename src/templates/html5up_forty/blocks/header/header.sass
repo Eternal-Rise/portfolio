@@ -1,55 +1,72 @@
-.header-bar
+.header
   display: flex
-  width: 100%
-  position: absolute
-  top: 0
+  align-items: center
+  background-position: center 0 
+  background-repeat: no-repeat
+  position: relative
+  transitiion: 4s
 
-  background-color: transparent
-  font-size: .8em
-  font-weight:  map-get($font, 'weight-bold')
-  letter-spacing: .25em
-  text-transform: uppercase
-  transition: .2s
-  z-index: 10
+  &._index
+    background-image: url('../img/banner.jpg')
+    max-height: 50em
+
+    @supports (background-image: url('img.webp'))
+      background-image: url('../img/banner.webp')
+
+    +lg-block()
+      height: 75vh
+      min-height: 30em
+
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      transition: 8s
+      background-color: rgba(map-get($palette, 'bg'), .85)
+
+  &._hiddenBackground
+    &::before
+      background-color: rgba(map-get($palette, 'bg'), 1)
+
+  &._landing
+    background-image: url('../img/pic07.jpg')
+    height: 60vh
+    max-height: 32em
+    min-height: 22em
+
+    &::before
+      background-color: map-get($palette, 'accent2')
+      opacity: 1
+
+  &__inner
+    opacity: 1
+    transform: translateX(0)
+    transition: 2s
+
+    &._hidden
+      opacity: 0
+      transform: translateX(-1em)
 
   &.opacity
-    opacity: 0
+    &::before
+      opacity: .75
+      transition: 8s
 
-    @keyframes opacity
-      from
-        opacity: 0
-      to
-        opacity: 1
+  &__title
+    +lg(font-size, 3.25em)
 
-  &.fixed
-    position: fixed
-    top: 0
-    background-color: map-get($palette, 'bg-alt')
-
-  &.hide
-    animation: hide-menu .6s forwards !important
-  &.show
-    animation: show-menu .6s forwards !important
-
-  nav
-    margin-left: auto
-
-    #button-menu
-      display: inline-block
-      padding: 1em 1.5em
-
-      svg use
-        fill: #fff
-      
-      @extend .hover
-
+    &._major
       &::after
-        display: inline-block
-        margin-left: 1.5em
-        content: '\f0c9'
-        font-family: "Font Awesome 5 Free"
-        font-weight: map-get($font, 'weight-bold')
-        transform: scale3d(2, 1.2, 1)
+        margin: 0.325em 0 .5em
 
-      @media screen and (min-width: 481px)
-        padding: 1.5em 2.5em
+  &__text
+    font-size: .7em
+    font-weight: map-get($font, 'weight-bold')
+    letter-spacing: map-get($font, 'letter-spacing-alt')
+    text-transform: uppercase
+
+  &__row
+    margin-bottom: 1em
