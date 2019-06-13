@@ -4,38 +4,20 @@ html(lang="en")
     include blocks/_head
     title Elements
   body
-    .nav-overlay
-      .nav-overlay-icon
-        i#button-menu-close.fas.fa-times.fa-2x
-      nav
-        ul.alt
-          li
-            a(href="index.html") home
-          li
-            a.active landing
-          li
-            a(href="generic.html") generic
-          li
-            a(href="elements.html") elements
-    
-        ul.actions
-          li
-            button.primary.fit get started
-          li
-            button.fit log in
 
-    header.header-bar.opacity
-      a.logo(href="index.html")
-        strong forty
-        span  by html5 up
-      nav
-        a#button-menu menu
+    //- mixin
+    include blocks/+lists/lists
 
     #wrapper
-      header.banner#landing
-        .inner
+      //- extra class for navbar
+      -let navMods = '_opacity';
+
+      include blocks/nav/navbar
+
+      header.header._landing
+        .inner.header__inner
           h1.major Landing
-          p.alt
+          p.header__text
             |Lorem ipsum dolor sit amet consectetur 
             br
             |adipisicing elit. Totam iste facilis numquam.
@@ -126,8 +108,11 @@ html(lang="en")
             li
               a(href="generic.html").button.next get started
 
-      include blocks/_contact.pug
+      include blocks/contact/contact
+      include blocks/footer/footer
 
-      include blocks/_footer.pug
+    //- current page for add ._active
+    -let current = 'landing'
+    include blocks/nav/nav
 
     script(src="js/index.js")

@@ -50,11 +50,6 @@
       opacity: 0
       transform: translateX(-1em)
 
-  &.opacity
-    &::before
-      opacity: .75
-      transition: 4s
-
   &__title
     +lg(font-size, 3.25em)
 
@@ -67,6 +62,14 @@
     font-weight: map-get($font, 'weight-bold')
     letter-spacing: map-get($font, 'letter-spacing-alt')
     text-transform: uppercase
+    +md(margin, 0)
 
   &__row
+    +row-flex()
+    align-items: center
     margin-bottom: 1em
+
+  &__col
+    +col()
+    +size(12)
+    +size-md(6)
