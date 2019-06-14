@@ -12,23 +12,18 @@
   flex-direction: column
   justify-content: center
 
-  background-color: rgba(map-get($palette, 'bg'),.955)
+  background-color: rgba($bg, .955)
   text-transform: uppercase
   transition-delay: z-index 0 opacity .2s
   transition-duration: .4s
   overflow: auto
 
   @supports (filter: blur())
-    background-color: rgba(map-get($palette, 'bg'),.9)
+    background-color: rgba($bg,.9)
 
   &._show
     z-index: 10
     opacity: 1
-    // animation: show-menu .6s forwards
-
-  // &._hide
-  //   display: flex
-  //   animation: hide-menu .6s forwards
 
   @keyframes show-menu
     from
@@ -47,7 +42,7 @@
       z-index: -1
 
   &__btn
-    padding: 1em
+    padding: 1rem
     position: absolute
     top: 0
     right: 0
@@ -55,29 +50,29 @@
     @extend .hover
 
   &__btn-icon
-    width: 2em
-    height: 2em
+    width: 2rem
+    height: 2rem
 
   &__list
-    width: 18em
+    width: 18rem
     text-align: center
-    letter-spacing: map-get($font, 'letter-spacing-alt')
+    letter-spacing: $ls-alt
 
   &__list-item
 
   &__link
     display: block
     color: inherit
-    font-weight: map-get($font, 'weight-bold')
-    font-size: .8em
-    line-height: 3em
+    font-weight: $wb
+    font-size: .8rem
+    line-height: 3rem
     text-decoration: none
     @extend .hover
 
     &._active
-      color: map-get($palette, 'highlight')
+      color: $highlight
 
 #wrapper
   transition: .2s
   &._on
-    filter: blur(.25em)
+    filter: blur(.25rem)

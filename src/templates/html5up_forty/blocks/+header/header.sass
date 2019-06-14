@@ -17,37 +17,37 @@
   &._hiddenBackground
     &._index
       &::before
-        background-color: rgba(map-get($palette, 'bg'), 1)
+        background-color: rgba($bg, 1)
     &._landing
       &::before
-        background-color: rgba(map-get($palette, 'accent2'), 1)
+        background-color: rgba($accent2, 1)
 
   &._index
     background-image: url('../img/banner.jpg')
-    max-height: 50em
+    max-height: 50rem
 
     @supports (background-image: url('img.webp'))
       background-image: url('../img/banner.webp')
 
     +md-block()
       height: 75vh
-      min-height: 30em
+      min-height: 30rem
 
     &::before
-      background-color: rgba(map-get($palette, 'bg'), .85)
+      background-color: rgba($bg, .85)
 
  
   &._landing
     background-image: url('../img/pic07.jpg')
     height: 60vh
-    max-height: 32em
-    min-height: 22em
+    max-height: 32rem
+    min-height: 22rem
 
     @supports (background-image: url('img.webp'))
       background-image: url('../img/pic07.webp')
 
     &::before
-      background-color: rgba(map-get($palette, 'accent2'), .85)
+      background-color: rgba($accent2, .85)
 
   &__inner
     opacity: 1
@@ -56,26 +56,26 @@
 
     &._hidden
       opacity: 0
-      transform: translateX(-1em)
+      transform: translateX(-1rem)
 
   &__title
-    +lg(font-size, 3.25em)
+    +lg(font-size, 3.25rem)
 
     &._major
       &::after
-        margin: 0.325em 0 .5em
+        margin: 0.325rem 0 .5rem
 
   &__text
-    font-size: .7em
-    font-weight: map-get($font, 'weight-bold')
-    letter-spacing: map-get($font, 'letter-spacing-alt')
+    font-size: .7rem
+    font-weight: $wb
+    letter-spacing: $ls-alt
     text-transform: uppercase
     +md(margin, 0)
 
   &__row
     +row-flex()
     align-items: center
-    margin-bottom: 1em
+    margin-bottom: 1rem
 
   &__col
     +col()

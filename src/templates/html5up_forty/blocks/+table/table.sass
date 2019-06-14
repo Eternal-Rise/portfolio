@@ -1,46 +1,46 @@
 .table 
   min-width: 300px
   width: calc(100% - 2px)
-  font-weight: map-get($font, 'weight')
-  font-size: .9em
+  font-weight: $wr
+  font-size: .9rem
   border-collapse: collapse
   box-sizing: border-box
 
   &-wrapper
-    margin: 0 0 map-get($size, 'element-margin') 0
+    margin: 0 0 $margin 0
     overflow: auto
 
   &__body
     .table__tr
-      border: solid 1px map-get($palette, 'border')
+      border: solid 1px $border
       border-left: 0
       border-right: 0
 
       &:nth-child(2n + 1) 
-        background-color: map-get($palette, 'border-bg')
+        background-color: $border-bg
 
   &__td
-    padding: 0.75em 0.75em
+    padding: 0.75rem 0.75rem
 
   &__th 
-    color: map-get($palette, 'fg')
-    font-size: 0.9em
-    font-weight: map-get($font, 'weight-bold')
-    padding: 0 0.75em 0.75em 0.75em
+    color: $fg
+    font-size: 0.9rem
+    font-weight: $wb
+    padding: 0 0.75rem 0.75rem 0.75rem
     text-align: left
 
   &__head
-    border-bottom: solid 2px map-get($palette, 'border')
-    font-weight: map-get($font, 'weight-bold')
+    border-bottom: solid 2px $border
+    font-weight: $wb
   
 
   &__foot 
-    border-top: solid 2px map-get($palette, 'border')
+    border-top: solid 2px $border
 
   &._alt 
 
     .table__body .table__td
-      border: 1px solid map-get($palette, 'border')
+      border: 1px solid $border
 
     .table__head
       border-bottom: 0

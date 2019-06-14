@@ -1,17 +1,11 @@
 .form 
-  // +row-flex()
-  // +xs(justify-content, space-between)
-  margin: 0 0 map-get($size,'element-margin') 0
+  margin: 0 0 $margin 0
 
   &__row
     +row-flex()
-    // +u-row-flex(0)
-    // +u-size(12, 12, 0)
 
   &__col
     +col()
-    // +u-col(0)
-    // +u-size(12, 12, 0)
     +size(12)
 
     &._half
@@ -24,12 +18,12 @@
 
     box-sizing: border-box
     display: block
-    margin: 0 0 (map-get($size,'element-margin') / 2)
-    padding: 0 1em
+    margin: 0 0 ($margin / 2)
+    padding: 0 1rem
     width: 100%
-    height: map-get($size,'element-height')
+    height: $height
 
-    background: map-get($palette, 'border-bg')
+    background: $border-bg
     border: none
     border-radius: 0
     color: inherit
@@ -41,12 +35,12 @@
       box-shadow: none
 
     &:focus
-      box-shadow: 0 0 0 2px map-get($palette, 'highlight')
+      box-shadow: 0 0 0 2px $highlight
 
     
     &::placeholder
       // IE fix color
-      color: map-get($palette, 'fg')
+      color: $fg
       opacity: .5
 
       text-transform: capitalize
@@ -58,7 +52,7 @@
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(212, 212, 255, 0.1)' /%3E%3C/svg%3E")
     background-size: 1.25rem
     background-repeat: no-repeat
-    background-position: calc(100% - 1em) center
+    background-position: calc(100% - 1rem) center
     text-overflow: ellipsis
 
     // remove default arrow in IE
@@ -68,23 +62,23 @@
     &:focus
 
     option
-      background-color: map-get($palette, 'bg')
-      color: map-get($palette, 'fg')
+      background-color: $bg
+      color: $fg
 
   &__radio, &__checkbox
     // display: none
 
     + label
       display: inline-block
-      margin: 0 0 (map-get($size,'element-margin') * 0.5) 0
-      padding-left: (map-get($size,'element-height') * .6) + 1em
-      padding-right: 0.75em
+      margin: 0 0 ($margin * 0.5) 0
+      padding-left: ($height * .6) + 1rem
+      padding-right: 0.75rem
       position: relative
 
-      color: map-get($palette, 'fg')
-      font-size: 0.8em
-      font-weight: map-get($font, 'weight')
-      letter-spacing: map-get($font, 'letter-spacing-alt')
+      color: $fg
+      font-size: 0.8rem
+      font-weight: $wr
+      letter-spacing: $ls-alt
       text-transform: uppercase
       
       cursor: pointer
@@ -96,27 +90,27 @@
         position: absolute
         top: 0
         left: 0
-        height: (map-get($size,'element-height') * .6)
-        width: (map-get($size,'element-height') * .6)
+        height: ($height * .6)
+        width: ($height * .6)
 
-        background: map-get($palette, 'border-bg')
+        background: $border-bg
         letter-spacing: 0
-        line-height: (map-get($size,'element-height') * .6)
+        line-height: ($height * .6)
         text-align: center
 
     &:checked + label
       &::before
-        background-color: map-get($palette, 'fg')
+        background-color: $fg
         background-image: url('../img/sprites/sprite.svg#check')
         background-size: 50%
         background-repeat: no-repeat
         background-position: center
-        color: map-get($palette, 'bg')
-        font-weight: map-get($font, 'weight-bold')
+        color: $bg
+        font-weight: $wb
 
     &:focus + label
       &::before
-        box-shadow: 0 0 0 2px map-get($palette, 'highlight')
+        box-shadow: 0 0 0 2px $highlight
 
   &__radio
     + label
@@ -124,22 +118,22 @@
         border-radius: 100%
 
   &__textarea
-    padding: 0.75em 1em
-    min-height: 12em
+    padding: 0.75rem 1rem
+    min-height: 12rem
     resize: vertical
 
     &:focus
-      box-shadow: 0 0 0 2px map-get($palette, 'highlight')
+      box-shadow: 0 0 0 2px $highlight
 
   &__list
     +col()
     +size(12)
 
   &__label
-    color: map-get($palette, 'fg')
+    color: $fg
     display: block
-    font-size: 0.8em
-    font-weight: map-get($font, 'weight-bold')
-    letter-spacing: map-get($font, 'letter-spacing-alt')
-    margin: 0 0 (map-get($size,'element-margin') * 0.5) 0
+    font-size: 0.8rem
+    font-weight: $wb
+    letter-spacing: $ls-alt
+    margin: 0 0 ($margin * 0.5) 0
     text-transform: uppercase

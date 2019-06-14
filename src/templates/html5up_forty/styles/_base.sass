@@ -1,6 +1,6 @@
 body
   margin: 0
-  background-color: map-get($palette, 'bg')
+  background-color: $bg
 
   &._overflow
     overflow: hidden
@@ -10,37 +10,34 @@ body
   transition: .4s
 
   &:hover
-    color: map-get($palette, 'highlight')
+    color: $highlight
     cursor: pointer
 
 body, input, select, textarea
-  color: map-get($palette, 'fg')
-  font-family: map-get($font, 'family')
+  color: $fg
+  font-family: $ff
   font-size: 14px
   line-height: 1.65
 
-  @media screen and (min-width: 361px)
-    font-size: 16px
-  @media screen and (min-width: 1281px)
-    font-size: 18px
-  @media screen and (min-width: 1681px)
-    font-size: 22px
+  +sm(font-size, 16px)
+  +xl(font-size, 18px)
+  +xxl(font-size, 22px)    
 
 code
-  background: map-get($palette, 'bg-alt')
-  font-family: map-get($font, 'family-fixed')
-  font-size: 0.9em
-  margin: 0 0.25em
-  padding: 0.25em 0.65em
+  background: $bg-alt
+  font-family: $ff-fix
+  font-size: 0.9rem
+  margin: 0 0.25rem
+  padding: 0.25rem 0.65rem
 
 pre
-  font-size: 0.9em
-  margin: 0 0 map-get($size, 'element-margin') 0
+  font-size: 0.9rem
+  margin: 0 0 $margin 0
 
   code
     display: block
     line-height: 1.75
-    padding: 1em 1.5em
+    padding: 1rem 1.5rem
     overflow-x: auto
 
 img
@@ -48,21 +45,21 @@ img
 
   &._left
     float: left
-    margin: 0 1.5em 1.25em 0
+    margin: 0 1.5rem 1.25rem 0
     width: 30%
 
   &._right
     float: right
-    margin: 0 0 1.25em 1.5em
+    margin: 0 0 1.25rem 1.5rem
     width: 30%
 
 .alt-bg
-  background-color: map-get($palette, 'bg-alt')
+  background-color: $bg-alt
 
 .box
-  border: solid 1px map-get($palette, 'border')
-  margin-bottom: map-get($size, 'element-margin')
-  padding: 1.5em
+  border: solid 1px $border
+  margin-bottom: $margin
+  padding: 1.5rem
   
   &._alt
     border: 0
@@ -70,16 +67,16 @@ img
     padding: 0
 
 .inner
-  +lg(padding, 4em 2em)
+  +lg(padding, 4rem 2rem)
   box-sizing: border-box
-  padding: 4em 0 2em 0
+  padding: 4rem 0 2rem 0
   margin: 0 auto
-  max-width: 65em
-  width: calc(100% - 3em)
+  max-width: 65rem
+  width: calc(100% - 3rem)
 
   &._main
-    +lg(padding, 8em 4em 0)
-    padding: 8em 0 2em 0
+    +lg(padding, 8rem 4rem 0)
+    padding: 8rem 0 2rem 0
 
 .preview
   +md(max-height, 20rem)

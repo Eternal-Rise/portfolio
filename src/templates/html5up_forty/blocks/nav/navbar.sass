@@ -6,9 +6,9 @@
   top: 0
 
   background-color: transparent
-  font-size: .8em
-  font-weight: map-get($font, 'weight-bold')
-  letter-spacing: .25em
+  font-size: .8rem
+  font-weight: $wb
+  letter-spacing: .25rem
   text-transform: uppercase
   transition: all .4s, background-color 0s, opacity 1s 1s
   z-index: 5
@@ -17,7 +17,7 @@
   &._fixed
     position: fixed
     top: 0
-    background-color: map-get($palette, 'bg-alt')
+    background-color: $bg-alt
     
   &._hidden
     transform: translateY(-100%)
@@ -30,18 +30,17 @@
   &__btn
     display: flex
     align-items: center
-    padding: 1em 1.5em
+    padding: 1rem 1.5rem
     
     @extend .hover
 
-    @media screen and (min-width: 481px)
-      padding: 1.5em 2.5em
+    +sm(padding, 1.5rem 2.5rem)
 
   &__btn-icon
-    width: 1em
-    height: 1em
+    width: 1rem
+    height: 1rem
     transform: scaleX(2)
     fill: #fff
 
   &__btn-title
-    margin-right: 1em
+    margin-right: 1rem

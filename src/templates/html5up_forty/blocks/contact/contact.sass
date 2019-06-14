@@ -1,7 +1,7 @@
 .contact
   overflow: hidden
-  border-bottom: solid 1px map-get($palette, 'border')
-  border-top: solid 1px map-get($palette, 'border')
+  border-bottom: solid 1px $border
+  border-top: solid 1px $border
 
   &__inner
     padding: 0
@@ -16,11 +16,11 @@
     +lg(margin, 0)
 
   &__form
-    padding: 4em 0 1em
+    padding: 4rem 0 2rem
     +lg-block()
       margin-bottom: 0
-      padding: 4em 2em 2em 1em
-      border-right: solid 1px map-get($palette, 'border')
+      padding: 4rem 2rem 2rem 1rem
+      border-right: solid 1px $border
 
   &__block
     +col()
@@ -32,14 +32,14 @@
     
   &__item
     box-sizing: border-box
-    padding: map-get($size, "element-margin") 0
-    padding-left: map-get($size, "element-margin") * 1.5
+    padding: $margin 0
+    padding-left: $margin * 1.5
     position: relative
     width: 100%
 
     +lg-block()
       flex: 1
-      padding-left: map-get($size, "element-margin") * 2.5
+      padding-left: $margin * 2.5
 
       &:first-child::before
         border-top: 0
@@ -51,9 +51,8 @@
         width: 50vw
 
     &::before
-      border-top: 1px solid map-get($palette, 'border')
+      border-top: 1px solid $border
       content: ''
-      // margin-left: -6em
       position: absolute
       top: 0
       left: 50%
@@ -64,36 +63,17 @@
   &__icon
     position: absolute
     left: 0
-    top: 2em
-    padding: .5em
-    width: 1em
-    height: 1em
+    top: 2rem
+    padding: .5rem
+    width: 1rem
+    height: 1rem
     
-    background-color: map-get($palette, 'fg')
+    background-color: $fg
     border-radius: 50%
-    color: map-get($palette, 'bg')
+    color: $bg
 
     +lg-block()
-      left: 1.5em
-
-  //   @media screen and (min-width: 481px)
-  //     padding: map-get($size, "element-margin") * 1.5
-  //     padding-right: 0
-
-  //     .icon
-  //       top: 3em
-
-  //   @media screen and (min-width: 981px)
-  //     padding-left: map-get($size, "element-margin") * 2.8
-
-  //     &::before
-  //       margin-left: -5.6em
-
-  //     &:first-child::before
-  //       border-top: 0
-
-  //     .icon
-  //       left: 2.5em
+      left: 1.5rem
 
   &__link
     color: inherit

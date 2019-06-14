@@ -1,7 +1,7 @@
 .footer
   &__list 
-    color: map-get($palette, 'fg-light')
-    font-size: 0.8em
+    color: $fg-light
+    font-size: 0.8rem
     list-style: none
     padding-left: 0
 
@@ -13,11 +13,11 @@
     line-height: inherit
 
     +sm-block()
-      border-left: solid 1px map-get($palette, 'border')
+      border-left: solid 1px $border
       display: inline-block
       line-height: 1
-      margin-left: 1em
-      padding-left: 1em
+      margin-left: 1rem
+      padding-left: 1rem
       
       &:first-child 
         border-left: 0

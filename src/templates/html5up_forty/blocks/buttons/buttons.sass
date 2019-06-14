@@ -1,18 +1,18 @@
 .btn
   display: inline-block
-  height: 3.5em
-  padding: 0 1.75em
+  height: 3.5rem
+  padding: 0 1.75rem
 
   background-color: transparent
   border: 0
   border-radius: 0
-  box-shadow: inset 0 0 0 2px map-get($palette, 'fg')
-  color: map-get($palette, 'fg')
+  box-shadow: inset 0 0 0 2px $fg
+  color: $fg
   cursor: pointer
-  font-size: 0.8em
-  font-weight: map-get($font, 'weight-bold')
-  letter-spacing: map-get($font, 'letter-spacing-alt')
-  line-height: 3.5em
+  font-size: 0.8rem
+  font-weight: $wb
+  letter-spacing: $ls-alt
+  line-height: 3.5rem
 
   text-align: center
   text-decoration: none
@@ -26,27 +26,27 @@
     border: 0
 
   &:hover
-    box-shadow: inset 0 0 0 2px map-get($palette, 'highlight')
-    color: map-get($palette, 'highlight')
+    box-shadow: inset 0 0 0 2px $highlight
+    color: $highlight
   
   &:active 
-    background-color: transparentize(map-get($palette, 'highlight'), 0.9)
-    box-shadow: inset 0 0 0 2px desaturate(darken(map-get($palette, 'highlight'), 15), 5)
+    background-color: transparentize($highlight, 0.9)
+    box-shadow: inset 0 0 0 2px desaturate(darken($highlight, 15), 5)
     outline: none
 
   &._fit 
     width: 100%
   
   &._small 
-    font-size: 0.6em
+    font-size: 0.6rem
   
   &._large 
-    font-size: 1.25em
-    height: 3em
-    line-height: 3em
+    font-size: 1.25rem
+    height: 3rem
+    line-height: 3rem
 
   &._next 
-    padding-right: 5em
+    padding-right: 5rem
     position: relative
 
     &:before, &:after
@@ -56,7 +56,7 @@
       content: ''
       height: 100%
       position: absolute
-      right: 1.5em
+      right: 1.5rem
       transition: .4s
       width: 36px
     
@@ -73,16 +73,16 @@
         opacity: 1
 
   &._primary 
-    background-color: map-get($palette, 'fg')
+    background-color: $fg
     box-shadow: none
-    color: map-get($palette, 'bg')
+    color: $bg
 
     &:hover, &:active 
-      background-color: map-get($palette, 'highlight')
-      color: map-get($palette, 'bg')
+      background-color: $highlight
+      color: $bg
     
     &:active 
-      background-color: desaturate(darken(map-get($palette, 'highlight'), 15), 5)
+      background-color: desaturate(darken($highlight, 15), 5)
 
   &._disabled,
   &:disabled
@@ -94,6 +94,6 @@
     align-items: center
 
   &__icon
-    width: 1em
-    height: 1em
-    margin-right: 1em
+    width: 1rem
+    height: 1rem
+    margin-right: 1rem

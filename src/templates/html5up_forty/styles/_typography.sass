@@ -1,9 +1,9 @@
   
 h1, h2, h3, h4, h5, h6
-  color: map-get($palette, 'fg')
-  font-weight: map-get($font, 'weight-bold')
+  color: $fg
+  font-weight: $wb
   line-height: inherit
-  margin: 0 0 1em 0
+  margin: 0 0 1rem 0
   text-transform: capitalize
 
   &._major
@@ -11,56 +11,56 @@ h1, h2, h3, h4, h5, h6
 
     &::after
       content: ''
-      background-color: map-get($palette, 'fg')
+      background-color: $fg
       display: block
       height: 2px
-      margin: 0 0 1em
+      margin: 0 0 1rem
       width: 100%
 
   &._unfit
     display: inline-block
 
     &::after
-      width: calc(100% + 0.5em)
+      width: calc(100% + 0.5rem)
 
 
 h1
-  font-size: 2em
-  +sm(font-size, 2.5em)
+  font-size: 2rem
+  +sm(font-size, 2.5rem)
 
 h2 
-  font-size: 1.5em
-  +sm(font-size, 1.75em)
+  font-size: 1.5rem
+  +sm(font-size, 1.75rem)
 
 h3
-  font-size: 1.25em
-  +sm(font-size, 1.35em)
+  font-size: 1.25rem
+  +sm(font-size, 1.35rem)
 
 
 h4
-  font-size: 1.1em
+  font-size: 1.1rem
 
 h5
-  font-size: 0.9em
+  font-size: 0.9rem
 
 h6
-  font-size: 0.7em
+  font-size: 0.7rem
 
 p
-  margin-bottom: map-get($size, 'element-margin')
+  margin-bottom: $margin
 
 sub
-  font-size: 0.8em
+  font-size: 0.8rem
   position: relative
-  top: 0.5em
+  top: 0.5rem
 
 sup
-  font-size: 0.8em
+  font-size: 0.8rem
   position: relative
-  top: -0.5em
+  top: -0.5rem
 
 blockquote
-  border-left: solid 4px map-get($palette, 'border')
+  border-left: solid 4px $border
   font-style: italic
-  margin: 0 0 map-get($size, 'element-margin') 0
-  padding: (map-get($size, 'element-margin') / 4) 0 (map-get($size, 'element-margin') / 4) map-get($size, 'element-margin')
+  margin: 0 0 $margin 0
+  padding: ($margin / 4) 0 ($margin / 4) $margin
