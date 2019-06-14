@@ -70,12 +70,15 @@ img
     padding: 0
 
 .inner
+  +lg(padding, 4em 2em)
+  box-sizing: border-box
   padding: 4em 0 2em 0
   margin: 0 auto
   max-width: 65em
   width: calc(100% - 3em)
 
   &._main
+    +lg(padding, 8em 4em 0)
     padding: 8em 0 2em 0
 
 .visually-hidden 
