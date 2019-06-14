@@ -33,63 +33,7 @@ html(lang="en")
             tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum 
             sem. In efficitur ligula tate urna.
 
-      .tiles.spotlights
-        .grid
-          .banner
-            a(href="generic.html")
-            img(src="img/pic08.jpg", alt="")
-          
-          section.banner
-            .inner
-              h3.major.unfit Orci maecenas
-              p.
-                Nullam et orci eu lorem consequat tincidunt vivamus et sagittis 
-                magna sed nunc rhoncus condimentum sem. In efficitur ligula tate 
-                urna. Maecenas massa sed magna lacinia magna pellentesque lorem 
-                ipsum dolor. Nullam et orci eu lorem consequat tincidunt. 
-                Vivamus et sagittis tempus.
-
-              ul.actions.line
-                li
-                  a.button(href="generic.html") learn more
-        
-        .grid.alt
-          .banner
-            a(href="generic.html")
-            img(src="img/pic09.jpg", alt="")
-
-          section.alt-bg.banner
-            .inner
-              h3.major.unfit Rhoncus magna
-              p.
-                Nullam et orci eu lorem consequat tincidunt vivamus et sagittis 
-                magna sed nunc rhoncus condimentum sem. In efficitur ligula tate 
-                urna. Maecenas massa sed magna lacinia magna pellentesque lorem 
-                ipsum dolor. Nullam et orci eu lorem consequat tincidunt. 
-                Vivamus et sagittis tempus.
-
-              ul.actions.line
-                li
-                  a.button(href="generic.html") learn more
-
-        .grid
-          .banner
-            a(href="generic.html")
-            img(src="img/pic10.jpg", alt="")
-          
-          section.banner
-            .inner
-              h3.major.unfit Sed nunc ligula
-              p.
-                Nullam et orci eu lorem consequat tincidunt vivamus et sagittis 
-                magna sed nunc rhoncus condimentum sem. In efficitur ligula tate 
-                urna. Maecenas massa sed magna lacinia magna pellentesque lorem 
-                ipsum dolor. Nullam et orci eu lorem consequat tincidunt. 
-                Vivamus et sagittis tempus.
-
-              ul.actions.line
-                li
-                  a.button(href="generic.html") learn more
+      include blocks/spotlights/spotlights
 
       section.alt-bg
         .inner
@@ -103,9 +47,9 @@ html(lang="en")
             libero. Mauris aliquet magna magna sed nunc rhoncus amet 
             pharetra et feugiat tempus.
 
-          ul.actions.line
-            li
-              a(href="generic.html").button.next get started
+          +list('ul', 'actions', '_inline', [
+            '<a class="btn _next" href="generic.html">get started</a>'
+          ])
 
       include blocks/contact/contact
       include blocks/footer/footer

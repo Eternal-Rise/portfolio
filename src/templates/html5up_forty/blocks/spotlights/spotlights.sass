@@ -1,0 +1,43 @@
+.spotlights
+
+  &__block
+    +u-row-flex(0)
+
+    &._reverse
+      +lg(flex-direction, row-reverse)
+
+  &__item
+    +u-col(0)
+    +u-size(12, 12, 0)
+
+    &._larger
+      +lg-block()
+        +u-size(7, 12, 0)
+    &._smaller
+      +lg-block()
+        +u-size(5, 12, 0)
+
+  &__text
+    +u-row-flex(0)
+    align-items: center
+    height: 100%
+
+  &__text-wrap
+    +u-col(0)
+    +size(12)
+    padding: 4em 2em
+    +lg(padding, 4em 3em)
+
+  &__title
+    &._major
+      &::after
+        margin-bottom: .5em
+
+  &__picture
+    width: 100%
+    height: 100%
+
+  &__img
+    height: 100%
+    object-fit: cover
+    font-family: 'object-fit: cover;'

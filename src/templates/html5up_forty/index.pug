@@ -32,9 +32,9 @@ html(lang="zxx")
             libero. Mauris aliquet magna magna sed nunc rhoncus amet 
             pharetra et feugiat tempus.
 
-          ul.actions._inline
-            li.actions__item
-              a(href="landing.html").btn._next get started
+          +list('ul', 'actions', '_inline', [
+            '<a class="btn _next" href="landing.html">get started</a>'
+          ])
 
       include blocks/contact/contact
       include blocks/footer/footer
