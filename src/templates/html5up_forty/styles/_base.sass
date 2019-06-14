@@ -81,6 +81,18 @@ img
     +lg(padding, 8em 4em 0)
     padding: 8em 0 2em 0
 
+.preview
+  +md(max-height, 20rem)
+  display: block
+  height: 50vh
+  max-height: 10rem
+
+  &__img
+    display: block
+    height: 100%
+    object-fit: cover
+    font-family: 'object-fit: cover;'
+
 .visually-hidden 
   position: absolute
   clip: rect(1px 1px 1px 1px) // IE6, IE7
