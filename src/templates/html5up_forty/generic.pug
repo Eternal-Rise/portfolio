@@ -1,42 +1,23 @@
 <!DOCTYPE html>
-html(lang="en")
+html(lang="zxx")
   head
     include blocks/_head
     title Elements
   body
-    .nav-overlay
-      .nav-overlay-icon
-        img(src="img/sprites/sprite.svg#hamburger", alt="menu bars")#button-menu-close
-      nav
-        ul.alt
-          li
-            a(href="index.html") home
-          li
-            a(href="landing.html") landing
-          li
-            a.active generic
-          li
-            a(href="elements.html") elements
-    
-        ul.actions
-          li
-            button.primary.fit get started
-          li
-            button.fit log in
-
-    header.header-bar.fixed
-      a.logo(href="index.html")
-        strong forty
-        span  by html5 up
-      nav
-        a#button-menu menu
+    //- mixin
+    include blocks/+lists/lists
 
     #wrapper
-      .inner.main
-        header
-          h1.major.unfit Generic
+      //- extra class for navbar
+      -let navMods = '_fixed';
 
-        p
+      include blocks/nav/navbar
+
+      .inner._main
+        h1._major._unfit Generic
+
+        picture
+          source(type="image/webp" srcset="img/pic11.webp")
           img(src="img/pic11.jpg", alt="")
 
         p.
@@ -63,15 +44,18 @@ html(lang="en")
           maximus risus, vel sed vehicula.
           
         p.
-          nterdum et malesuada fames ac ante ipsum primis in faucibus. 
+          Interdum et malesuada fames ac ante ipsum primis in faucibus. 
           Pellentesque venenatis dolor imperdiet dolor mattis sagittis. 
           Praesent rutrum sem diam, vitae egestas enim auctor sit amet. 
           Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien 
           risus, commodo eget turpis at, elementum convallis elit. Pellentesque 
           enim turpis, hendrerit tristique lorem ipsum dolor.
 
-      include blocks/_contact.pug
+      include blocks/contact/contact
+      include blocks/footer/footer
 
-      include blocks/_footer.pug
+    //- current page for add ._active
+    -let current = 'generic'
+    include blocks/nav/nav
 
     script(src="js/index.js")
