@@ -14,11 +14,12 @@
 
   background-color: rgba($bg, .955)
   text-transform: uppercase
-  transition-delay: z-index 0 opacity .2s
-  transition-duration: .4s
+  // transition-delay: z-index 0 opacity .2s
+  // transition-duration: .4s
+  transition: z-index .4s 0s, opacity .4s .2s
   overflow: auto
 
-  @supports (filter: blur())
+  @supports (filter: blur(1em))
     background-color: rgba($bg,.9)
 
   &._show
