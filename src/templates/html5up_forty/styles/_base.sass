@@ -5,6 +5,9 @@ body
   &._overflow
     overflow: hidden
 
+*:focus
+  outline: 4px solid $accent2
+
 // Extending class
 .hover
   transition: .4s
@@ -71,12 +74,13 @@ img
   box-sizing: border-box
   padding: 4rem 0 2rem 0
   margin: 0 auto
-  max-width: 65rem
+  max-width: 65em
   width: calc(100% - 3rem)
 
   &._main
+    +xsm(padding, 8rem 2rem 2rem)
     +lg(padding, 8rem 4rem 0)
-    padding: 8rem 0 2rem 0
+    padding: 8rem 0 2rem
 
 .preview
   +md(max-height, 20rem)

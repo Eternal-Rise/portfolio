@@ -1,3 +1,7 @@
 a.logo(href="index.html")
-  strong.logo__main forty
+  if logoMod
+    strong.logo__main(class=logoMod) forty
+  else
+    strong.logo__main forty
+
   span.logo__sub  by html5 up

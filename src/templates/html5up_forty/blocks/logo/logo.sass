@@ -1,8 +1,7 @@
 .logo
-  padding: 1rem 1.5rem
+  padding: 1rem
   text-decoration: none
   color: inherit
-  +sm(padding, 1.5rem 2.5rem)
 
   @extend .hover
 
@@ -16,6 +15,9 @@
     background-color: $fg
     color: $bg-alt
     transition: .4s
+
+    &._alt
+      color: $accent2
 
   &__sub
     display: none
