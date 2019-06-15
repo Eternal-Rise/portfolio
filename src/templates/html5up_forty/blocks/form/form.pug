@@ -2,17 +2,20 @@ form.form(method="post" action="#")
 
   .form__row
     .form__col._half
+      label.visually-hidden(for="demo-name") Name
       input#demo-name.form__input(
         type="text", name="demo-name", placeholder="name" required
       )
       
     .form__col._half
+      label.visually-hidden(for="demo-email") Email
       input#demo-email.form__input(
         type="email", name="demo-email", placeholder="email" required
       )
 
   .form__row
     .form__col
+      label.visually-hidden(for="demo-category") Email
       select#demo-category.form__select(name='demo-category')
         option(value) - Category -
         option(value='1') Manufacturing
