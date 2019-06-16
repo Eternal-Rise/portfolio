@@ -7,8 +7,17 @@ const nav = () => {
   btnShow.addEventListener('click', toggleMenu);
   btnHide.addEventListener('click', toggleMenu);
 
+  btnShow.addEventListener('click', () => {
+    btnHide.focus();
+  });
+
+  btnHide.addEventListener('click', () => {
+    btnShow.focus();
+  });
+
+  // hide nav by pressing "Escape"
   window.addEventListener('keydown', (e) => {
-    if (e.keyCode === 27) {
+    if (nav.classList.contains('_show') && e.keyCode === 27) {
       toggleMenu()
     }
   });
