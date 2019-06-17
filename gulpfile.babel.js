@@ -178,11 +178,9 @@ export const serve = () => {
   gulp.watch(paths.sass.watch, gulp.series(styles))
 };
 
-export const dev = gulp.series(
-  cleaner, favs, fonts, graphics, markup, scripts, styles, svgsprites
-);
+
 export const build = gulp.series(
   cleaner, graphics, favs, fonts, markup, scripts, styles, svgsprites
 );
 
-export default dev;
+export default build;
