@@ -32,7 +32,12 @@
     background-color: transparent
     border: none
     color: inherit
-    font-size: 1rem
+    font-family: $ff
+    font-size: 1.2em
+    font-weight: $wb
+    letter-spacing: $ls
+    text-transform: uppercase
+
     @extend .hover
 
   &__btn-icon
@@ -40,7 +45,9 @@
     height: 1rem
     transform: scaleX(2)
     transform-origin: right
-    fill: #fff
 
   &__btn-title
     margin-right: 1.5rem
+    
+    // align with icon
+    margin-bottom: 0.1rem
