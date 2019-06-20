@@ -47,8 +47,15 @@
     transition: $dur;
 
     &:hover {
-      color: $alt;
-      border-bottom: 1px solid $alt;
+      color: $main;
+      border-bottom: 1px solid $main;
+    }
+
+    @include bp($md) {
+      &:hover {
+        color: $alt;
+        border-bottom: 1px solid $alt;
+      }
     }
   }
 
