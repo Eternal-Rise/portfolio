@@ -17,15 +17,13 @@ const path = argv.path ? `templates/${argv.path}/` : '';
 
 const paths = {
   clean: {
-    dest: argv.clean && argv.path ? `${dest}/${path}*`
-      : argv.clean ? `${dest}*`
-      : path ? [`${dest}${path}*.html`, `${dest}${path}js/*.js`, `${dest}${path}styles/*.css`]
-      : [`${dest}*.html`, `${dest}js/*.js`, `${dest}styles/*.css`]
+    dest: argv.clean ? `${dest}${path}*`
+          : [`${dest}${path}*.html`, `${dest}${path}js/*.js`, `${dest}${path}styles/*.css`]
   },
   favicon: {
-    src: `./src/${path}img/favicon/favicon.{jpg,jpeg,png,gif}`,
+    src: `./src/${path}img/favicon/favicon.*`,
     dest: `${dest}${path}img/favicons/`,
-    watch: `./src/${path}img/favicon/favicon.{jpg,jpeg,png,gif}`,
+    watch: `./src/${path}img/favicon/favicon.*`,
   },
   fonts: {
     src: `./src/${path}fonts/**/*.{ttf,otf,woff,woff2}`,
@@ -34,15 +32,13 @@ const paths = {
   },
   img: {
     src: [
-      `./src/${path}img/**/*.{jpg,jpeg,png,gif,svg}`,
-      `!./src/${path}img/**/svg/*.svg`,
-      `!./src/${path}img/**/favicon.{jpg,jpeg,png,gif}`
+      `./src/${path}img/**/*.{jpg,jpeg,png,gif}`,
+      `!./src/${path}img/favicon/*.*`
     ],
     dest: `${dest}${path}img/`,
     watch: [
-      `./src/${path}img/**/*.{jpg,jpeg,png,gif,svg}`,
-      `!./src/${path}img/**/svg/*.svg`,
-      `!./src/${path}img/**/favicon.{jpg,jpeg,png,gif}`
+      `./src/${path}img/**/*.{jpg,jpeg,png,gif}`,
+      `!./src/${path}img/favicon/*.*`
     ],
 
     svg: {
