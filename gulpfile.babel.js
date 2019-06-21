@@ -183,7 +183,7 @@ export const serve = () => {
   gulp.watch(paths.fonts.watch, gulp.series(fonts))
     .on('change', browserSync.reload);
 
-  gulp.watch(paths.img.svg.watch, gulp.series(sprite))
+  gulp.watch(paths.sprite.watch, gulp.series(sprite))
     .on('change', browserSync.reload);
 
   gulp.watch(paths.pug.watch, gulp.series(markup))
