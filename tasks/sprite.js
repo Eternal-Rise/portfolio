@@ -3,18 +3,9 @@
 import gulp from 'gulp';
 import svg from 'gulp-svg-sprite';
 
-const svgsprites = (src, dest) => {
+const svgsprites = (src, dest, config) => {
   return gulp.src(src)
-    .pipe(svg({
-      shape: {
-        dest: "intermediate-svg"
-      },
-      mode: {
-        stack: {
-          sprite: "../sprite.svg"
-        }
-      }
-    }))
+    .pipe(svg(config))
     .pipe(gulp.dest(dest));
 }
 
