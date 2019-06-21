@@ -1,0 +1,29 @@
+main.elements
+  .elements__col
+    include __typography
+    include __lists
+    include __definition
+    include __actions
+    include __pagination
+    include __blockquote
+    include __table
+
+  .elements__col
+    include __buttons
+    include __form
+    include __image
+    include __box
+
+    h3 Preformatted
+
+    pre
+      code.
+        i = 0;
+
+        while (!deck.isInOrder()) {
+            print 'Iteration ' + i;
+            deck.shuffle();
+            i++;
+        }
+
+        print 'It took ' + i + ' iterations to sort the deck.';

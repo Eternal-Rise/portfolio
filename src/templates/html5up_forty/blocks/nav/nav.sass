@@ -1,0 +1,81 @@
+.nav
+  display: flex
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  opacity: 0
+  z-index: -1
+
+  align-items: center
+  flex-direction: column
+  justify-content: center
+
+  background-color: rgba($bg, .955)
+  text-transform: uppercase
+  // transition-delay: z-index 0 opacity .2s
+  // transition-duration: .4s
+  transition: z-index .4s 0s, opacity .4s .2s
+  overflow: auto
+
+  @supports (filter: blur(1em))
+    background-color: rgba($bg,.9)
+
+  &._show
+    z-index: 10
+    opacity: 1
+
+  @keyframes show-menu
+    from
+      opacity: 0
+      z-index: -1
+    to
+      opacity: 1
+      z-index: 10
+
+  @keyframes hide-menu
+    from
+      opacity: 1
+      z-index: 10
+    to
+      opacity: 0
+      z-index: -1
+
+  &__btn
+    padding: 1rem
+    position: absolute
+    top: 0
+    right: 0
+    background-color: transparent
+    border: none
+    color: inherit
+    @extend .hover
+
+  &__btn-icon
+    width: 2rem
+    height: 2rem
+
+  &__list
+    width: 18rem
+    text-align: center
+    letter-spacing: $ls-alt
+
+  &__list-item
+
+  &__link
+    display: block
+    color: inherit
+    font-weight: $wb
+    font-size: .8em
+    line-height: 3rem
+    text-decoration: none
+    @extend .hover
+
+    &._active
+      color: $highlight
+
+#wrapper
+  transition: .2s
+  &._on
+    filter: blur(.25rem)

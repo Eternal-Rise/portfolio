@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+html(lang="zxx")
+  head
+    include blocks/_head
+    title Forty
+  body
+    //- mixin
+    include blocks/+lists/lists
+    include blocks/+header/header
+
+    #wrapper
+      //- extra class for navbar
+      -let navMods = '_opacity';
+
+      include blocks/nav/navbar
+
+      +header('_index', 'Hi, my name is Forty',
+        'A responsive site template designed by html5 up and released under the craetive commons.',
+        true)
+
+      include blocks/tiles/tiles
+
+      section.alt-bg
+        .inner
+          h2._major._unfit Massa libero
+          p.
+            Nullam et orci eu lorem consequat tincidunt vivamus et sagittis 
+            libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. 
+            Pellentesque condimentum sem. In efficitur ligula tate urna. 
+            Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. 
+            Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis 
+            libero. Mauris aliquet magna magna sed nunc rhoncus amet 
+            pharetra et feugiat tempus.
+
+          +list('ul', 'actions', '_inline', [
+            '<a class="btn _next" href="landing.html">get started</a>'
+          ])
+
+      include blocks/contact/contact
+      include blocks/footer/footer
+
+    //- current page for add ._active
+    -let current = 'index'
+    include blocks/nav/nav
+
+    script(src="js/index.js")

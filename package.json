@@ -1,25 +1,65 @@
 {
-  "name": "gulp_newbie",
+  "name": "portfolio",
   "version": "1.0.0",
-  "description": "",
-  "main": "gulpfile.js",
+  "description": "Junior Templates",
+  "main": "gulpfile.babel.js",
+  "scripts": {
+    "build": "gulp build --production",
+    "dev": "gulp",
+    "deploy": "gh-pages -d build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eternal-Rise/Portfolio.git"
+  },
+  "author": "Saliuk Bogdan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eternal-Rise/Portfolio/issues"
+  },
+  "homepage": "https://github.com/Eternal-Rise/Portfolio/",
+  "keywords": [],
+  "browserslist": [
+    "defaults"
+  ],
   "dependencies": {
     "browser-sync": "^2.26.5",
-    "gulp-autoprefixer": "^6.1.0",
-    "gulp-clean": "^0.4.0",
-    "gulp-concat": "^2.6.1",
+    "gulp-group-css-media-queries": "^1.2.2",
     "gulp-pug": "^4.0.1",
     "gulp-sass": "^4.0.2",
-    "jshint": "^2.10.2"
+    "object-fit-images": "^3.2.4"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
+    "autoprefixer": "^9.6.0",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.6",
+    "cssnano": "^4.1.10",
+    "del": "^4.1.1",
+    "gh-pages": "^2.0.1",
     "gulp": "^4.0.2",
-    "tar": ">=4.4.2"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+    "gulp-favicons": "^2.3.1",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^6.0.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-svg-sprite": "^1.5.0",
+    "gulp-webp": "^4.0.1",
+    "imagemin-giflossy": "^5.1.10",
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-pngquant": "^7.0.0",
+    "imagemin-webp": "^5.1.0",
+    "imagemin-zopfli": "^6.0.0",
+    "smart-grid": "^2.1.2",
+    "smoothscroll-polyfill": "^0.4.4",
+    "tar": ">=4.4.2",
+    "webpack": "^4.32.2",
+    "webpack-stream": "^5.2.1",
+    "yargs": "^13.2.4"
+  }
 }

@@ -1,0 +1,49 @@
+.table 
+  min-width: 22rem
+  width: calc(100% - 2px)
+  font-weight: $wr
+  font-size: .9em
+  border-collapse: collapse
+  box-sizing: border-box
+
+  &-wrapper
+    margin: 0 0 $margin 0
+    overflow: auto
+
+  &__body
+    .table__tr
+      border: solid 1px $border
+      border-left: 0
+      border-right: 0
+
+      &:nth-child(2n + 1) 
+        background-color: $border-bg
+
+  &__td
+    padding: 0.75rem 0.75rem
+
+  &__th 
+    color: $fg
+    font-size: 0.9em
+    font-weight: $wb
+    padding: 0 0.75rem 0.75rem 0.75rem
+    text-align: left
+
+  &__head
+    border-bottom: solid 2px $border
+    font-weight: $wb
+  
+
+  &__foot 
+    border-top: solid 2px $border
+
+  &._alt 
+
+    .table__body .table__td
+      border: 1px solid $border
+
+    .table__head
+      border-bottom: 0
+    
+    .table__foot 
+      border-top: 0

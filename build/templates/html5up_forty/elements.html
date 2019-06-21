@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <meta name="description" content="Bogdan Saliuk, HTML-coder portfolio"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="theme-color" content="#c9e0e0"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <link rel="shortcut icon" href="./img/favicons/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="./img/favicons/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="./img/favicons/apple-touch-icon-57x57.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="./img/favicons/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="76x76" href="./img/favicons/apple-touch-icon-76x76.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="./img/favicons/apple-touch-icon-114x114.png"/>
+    <link rel="apple-touch-icon" sizes="120x120" href="./img/favicons/apple-touch-icon-120x120.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="./img/favicons/apple-touch-icon-144x144.png"/>
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/favicons/apple-touch-icon-152x152.png"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-touch-icon-180x180.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600,600i&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="styles/index.min.css"/>
+    <title>Elements</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div class="navbar"><a class="logo" href="index.html"><strong class="logo__main">forty</strong><span class="logo__sub"> by html5 up</span></a>
+        <button class="navbar__btn"><span class="navbar__btn-title">menu</span>
+          <svg class="navbar__btn-icon">
+            <use xlink:href="img/sprites/sprite.svg#hamburger"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="inner _main">
+        <h1 class="_major _unfit">Elements</h1>
+        <section class="text">
+          <h2>sample content</h2>
+          <div class="text__row">
+            <div class="text__col">
+              <p>
+                Praesent ac adipiscing ullamcorper semper ut amet ac risus. 
+                Lorem sapien ut odio odio nunc. Ac adipiscing nibh porttitor 
+                erat risus justo adipiscing adipiscing amet placerat accumsan. 
+                Vis. Faucibus odio magna tempus adipiscing a non. In mi primis 
+                arcu ut non accumsan vivamus ac blandit adipiscing adipiscing 
+                arcu metus praesent turpis eu ac lacinia nunc ac commodo gravida 
+                adipiscing eget accumsan ac nunc adipiscing adipiscing.
+                
+                
+              </p>
+            </div>
+            <div class="text__col _half">
+              <h3>Sem turpis amet semper</h3>
+              <p>
+                Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida 
+                odio porttitor sem non mi integer non faucibus ornare mi ut ante 
+                amet placerat aliquet. Volutpat commodo eu sed ante lacinia. 
+                Sapien a lorem in integer ornare praesent commodo adipiscing 
+                arcu in massa commodo lorem accumsan at odio massa ac ac. 
+                Semper adipiscing varius montes viverra nibh in adipiscing 
+                blandit tempus accumsan.
+                
+              </p>
+            </div>
+            <div class="text__col _half">
+              <h3>Magna odio tempus commodo</h3>
+              <p>
+                In arcu accumsan arcu adipiscing accumsan orci ac. 
+                Felis id enim aliquet. Accumsan ac integer lobortis commodo 
+                ornare aliquet accumsan erat tempus amet porttitor. Ante commodo 
+                blandit adipiscing integer semper orci eget. Faucibus commodo 
+                adipiscing mi eu nullam accumsan morbi arcu ornare odio mi 
+                adipiscing nascetur lacus ac interdum morbi accumsan vis mi 
+                accumsan ac praesent.
+                
+              </p>
+            </div>
+            <div class="text__col _third">
+              <h3>Interdum sapien gravida</h3>
+              <p>
+                Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida 
+                odio porttitor sem non mi integer non faucibus ornare mi ut ante 
+                amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem 
+                accumsan varius montes viverra nibh in adipiscing blandit 
+                tempus accumsan
+                
+              </p>
+            </div>
+            <div class="text__col _third">
+              <h3>Faucibus consequat lorem</h3>
+              <p>
+                Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida 
+                odio porttitor sem non mi integer non faucibus ornare mi ut ante 
+                amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem 
+                accumsan varius montes viverra nibh in adipiscing blandit 
+                tempus accumsan
+                
+              </p>
+            </div>
+            <div class="text__col _third">
+              <h3>Accumsan montes viverra</h3>
+              <p>
+                Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida 
+                odio porttitor sem non mi integer non faucibus ornare mi ut ante 
+                amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem 
+                accumsan varius montes viverra nibh in adipiscing blandit 
+                tempus accumsan
+              </p>
+            </div>
+          </div>
+        </section>
+            <hr class="divider _major"/>
+        <h2>elements</h2>
+        <main class="elements">
+          <div class="elements__col">
+            <section class="elements__typography">
+              <h3>Text</h3>
+              <p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>. This is <sup>superscript</sup> text and this is <sub>subscript</sub> text. This is 
+                <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, this is a <a class="link">link</a>
+              </p>
+                  <hr class="divider"/>
+              <h2>heading level 2</h2>
+              <h3>heading level 3</h3>
+              <h4>heading level 4</h4>
+                  <hr class="divider"/>
+              <p>
+                Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida 
+                odio porttitor sem non mi integer non faucibus ornare mi ut ante 
+                amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem 
+                accumsan varius montes viverra nibh in adipiscing blandit tempus 
+                accumsan.
+              </p>
+            </section>
+            <section class="elements__lists">
+              <h3 class="elements__lists-title">lists</h3>
+              <div class="elements__lists-col">
+                <h4>Unordered</h4>
+                    <ul class="list">
+                      <li class="list__item">Dolor etiam magna etiam.</li>
+                      <li class="list__item">Sagittis lorem eleifend.</li>
+                      <li class="list__item">Felis dolore viverra.</li>
+                    </ul>
+                <h4>Alternate</h4>
+                    <ul class="list _alt">
+                      <li class="list__item">Dolor etiam magna etiam.</li>
+                      <li class="list__item">Sagittis lorem eleifend.</li>
+                      <li class="list__item">Felis dolore viverra.</li>
+                    </ul>
+              </div>
+              <div class="elements__lists-col">
+                <h4>Ordered</h4>
+                    <ol class="o-list">
+                      <li class="o-list__item">Dolor etiam magna etiam.</li>
+                      <li class="o-list__item">Sagittis lorem eleifend.</li>
+                      <li class="o-list__item">Felis dolore viverra.</li>
+                      <li class="o-list__item">Dolor etiam magna etiam.</li>
+                      <li class="o-list__item">Sagittis lorem eleifend.</li>
+                      <li class="o-list__item">Felis dolore viverra.</li>
+                    </ol>
+                <h4>Icons</h4>
+                    <ul class="socials">
+                      <li class="socials__item"><a href="#" class="socials__link" aria-label="Twitter">
+        <svg class="socials__icon"><use xlink:href="img/sprites/sprite.svg#twitter"></use></svg>
+      </a></li>
+                      <li class="socials__item"><a href="#" class="socials__link" aria-label="Facebook">
+        <svg class="socials__icon"><use xlink:href="img/sprites/sprite.svg#facebook"></use></svg>
+      </a></li>
+                      <li class="socials__item"><a href="#" class="socials__link" aria-label="Instagram">
+        <svg class="socials__icon"><use xlink:href="img/sprites/sprite.svg#instagram"></use></svg>
+      </a></li>
+                      <li class="socials__item"><a href="#" class="socials__link" aria-label="Githib">
+        <svg class="socials__icon"><use xlink:href="img/sprites/sprite.svg#github"></use></svg>
+      </a></li>
+                      <li class="socials__item"><a href="#" class="socials__link" aria-label="Driible">
+        <svg class="socials__icon"><use xlink:href="img/sprites/sprite.svg#dribbble"></use></svg>
+      </a></li>
+                      <li class="socials__item"><a href="#" class="socials__link" aria-label="Tumblr">
+        <svg class="socials__icon"><use xlink:href="img/sprites/sprite.svg#tumblr"></use></svg>
+      </a></li>
+                    </ul>
+                    <ul class="socials">
+                      <li class="socials__item"><a href="#" class="socials__link _alt">
+        <label class="visually-hidden">twitter</label>
+        <svg class="socials__icon _alt"><use xlink:href="img/sprites/sprite.svg#twitter"></use></svg>
+      </a></li>
+                      <li class="socials__item"><a href="#" class="socials__link _alt">
+        <label class="visually-hidden">facebook</label>
+        <svg class="socials__icon _alt"><use xlink:href="img/sprites/sprite.svg#facebook"></use></svg>
+      </a></li>
+                      <li class="socials__item"><a href="#" class="socials__link _alt">
+        <label class="visually-hidden">instagram</label>
+        <svg class="socials__icon _alt"><use xlink:href="img/sprites/sprite.svg#instagram"></use></svg>
+      </a></li>
+                    </ul>
+              </div>
+            </section>
+            <section class="elements__definition">
+              <h4 class="elements__definition-title">Definition</h4>
+              <dl class="definition">
+                <dt class="definition__title">Item 1</dt>
+                <dd class="definition__text">
+                  Lorem ipsum dolor vestibulum ante ipsum primis 
+                  in faucibus vestibulum. Blandit adipiscing eu felis 
+                  iaculis volutpat ac adipiscing accumsan eu faucibus. 
+                  Integer ac pellentesque praesent. Lorem ipsum dolor.
+                  
+                </dd>
+                <dt class="definition__title">Item 2</dt>
+                <dd class="definition__text">
+                  Lorem ipsum dolor vestibulum ante ipsum primis 
+                  in faucibus vestibulum. Blandit adipiscing eu felis 
+                  iaculis volutpat ac adipiscing accumsan eu faucibus. 
+                  Integer ac pellentesque praesent. Lorem ipsum dolor.
+                  
+                </dd>
+                <dt class="definition__title">Item 3</dt>
+                <dd class="definition__text">
+                  Lorem ipsum dolor vestibulum ante ipsum primis 
+                  in faucibus vestibulum. Blandit adipiscing eu felis 
+                  iaculis volutpat ac adipiscing accumsan eu faucibus. 
+                  Integer ac pellentesque praesent. Lorem ipsum dolor.
+                </dd>
+              </dl>
+            </section>
+            <section class="elements__actions">
+              <h3 class="elements__actions-title">Actions</h3>
+                  <ul class="actions _inline">
+                    <li class="actions__item"><button class="btn _primary">Default</button></li>
+                    <li class="actions__item"><button class="btn">Default</button></li>
+                  </ul>
+                  <ul class="actions _inline">
+                    <li class="actions__item"><button class="btn _primary _small">small</button></li>
+                    <li class="actions__item"><button class="btn _small">small</button></li>
+                  </ul>
+              <div class="elements__actions-row">
+                <div class="elements__actions-col">
+                      <ul class="actions">
+                        <li class="actions__item"><button class="btn _primary">Default</button></li>
+                        <li class="actions__item"><button class="btn">Default</button></li>
+                      </ul>
+                </div>
+                <div class="elements__actions-col">
+                      <ul class="actions">
+                        <li class="actions__item"><button class="btn _primary _small">small</button></li>
+                        <li class="actions__item"><button class="btn _small">small</button></li>
+                      </ul>
+                </div>
+              </div>
+              <div class="elements__actions-row">
+                <div class="elements__actions-col">
+                      <ul class="actions">
+                        <li class="actions__item"><button class="btn _primary _fit">Default</button></li>
+                        <li class="actions__item"><button class="btn _fit">Default</button></li>
+                      </ul>
+                </div>
+                <div class="elements__actions-col">
+                      <ul class="actions">
+                        <li class="actions__item"><button class="btn _primary _fit _small">small</button></li>
+                        <li class="actions__item"><button class="btn _fit _small">small</button></li>
+                      </ul>
+                </div>
+              </div>
+            </section>
+            <section class="elements__pagination">
+              <h3>Pagination</h3>
+              <ul class="pagination">
+                <li class="pagination__item">
+                  <button class="btn _small _disabled">prev</button>
+                </li>
+                <li class="pagination__item"><a class="pagination__link _active">1</a></li>
+                <li class="pagination__item"><a class="pagination__link">2</a></li>
+                <li class="pagination__item"><a class="pagination__link">3</a></li>
+                <li class="pagination__item"><span>. . .</span></li>
+                <li class="pagination__item"><a class="pagination__link">8</a></li>
+                <li class="pagination__item"><a class="pagination__link">9</a></li>
+                <li class="pagination__item"><a class="pagination__link">10</a></li>
+                <li class="pagination__item">
+                  <button class="btn _small">next</button>
+                </li>
+              </ul>
+            </section>
+            <section class="elements__blockqute">
+              <h3>blockquote</h3>
+              <blockquote>
+                Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt 
+                felis sagittis eget tempus euismod. Vestibulum ante ipsum 
+                primis in faucibus vestibulum. Blandit adipiscing eu felis 
+                iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum 
+                ante ipsum primis in faucibus vestibulum. 
+                Blandit adipiscing eu felis.
+              </blockquote>
+            </section>
+            <section class="elements__table">
+              <h3>table</h3>
+              <h4>Default</h4>
+                  <div class="table-wrapper">
+                    <table class="table">
+                      <thead class="table__head">
+                        <tr class="table__tr">
+                          <td class="table__td">Name</td>
+                          <td class="table__td">Description</td>
+                          <td class="table__td">Price</td>
+                        </tr>
+                      </thead>
+                      <tbody class="table__body">
+                        <tr class="table__tr">
+                          <td class="table__td">Item 1</td>
+                          <td class="table__td">Ante turpis integer aliquet porttitor.</td>
+                          <td class="table__td">29.99</td>
+                        </tr>
+                        <tr class="table__tr">
+                          <td class="table__td">Item 2</td>
+                          <td class="table__td">Vis ac commodo adipiscing arcu aliquet.</td>
+                          <td class="table__td">19.99</td>
+                        </tr>
+                        <tr class="table__tr">
+                          <td class="table__td">Item 3</td>
+                          <td class="table__td">Morbi faucibus arcu accumsan lorem.</td>
+                          <td class="table__td">29.99</td>
+                        </tr>
+                        <tr class="table__tr">
+                          <td class="table__td">Item 4</td>
+                          <td class="table__td">Vitae integer tempus condimentum.</td>
+                          <td class="table__td">19.99</td>
+                        </tr>
+                        <tr class="table__tr">
+                          <td class="table__td">Item 5</td>
+                          <td class="table__td">Ante turpis integer aliquet porttitor.</td>
+                          <td class="table__td">29.99</td>
+                        </tr>
+                      </tbody>
+                      <tfoot class="table__foot">
+                        <tr class="table__tr">
+                          <td class="table__td" colspan="2"></td>
+                          <td class="table__td">129.95</td>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+              <h4>alternate</h4>
+                  <div class="table-wrapper">
+                    <table class="table _alt">
+                      <thead class="table__head">
+                        <tr class="table__tr">
+                          <td class="table__td">Name</td>
+                          <td class="table__td">Description</td>
+                          <td class="table__td">Price</td>
+                        </tr>
+                      </thead>
+                      <tbody class="table__body">
+                        <tr class="table__tr">
+                          <td class="table__td">Item 1</td>
+                          <td class="table__td">Ante turpis integer aliquet porttitor.</td>
+                          <td class="table__td">29.99</td>
+                        </tr>
+                        <tr class="table__tr">
+                          <td class="table__td">Item 2</td>
+                          <td class="table__td">Vis ac commodo adipiscing arcu aliquet.</td>
+                          <td class="table__td">19.99</td>
+                        </tr>
+                        <tr class="table__tr">
+                          <td class="table__td">Item 3</td>
+                          <td class="table__td">Morbi faucibus arcu accumsan lorem.</td>
+                          <td class="table__td">29.99</td>
+                        </tr>
+                        <tr class="table__tr">
+                          <td class="table__td">Item 4</td>
+                          <td class="table__td">Vitae integer tempus condimentum.</td>
+                          <td class="table__td">19.99</td>
+                        </tr>
+                        <tr class="table__tr">
+                          <td class="table__td">Item 5</td>
+                          <td class="table__td">Ante turpis integer aliquet porttitor.</td>
+                          <td class="table__td">29.99</td>
+                        </tr>
+                      </tbody>
+                      <tfoot class="table__foot">
+                        <tr class="table__tr">
+                          <td class="table__td" colspan="2"></td>
+                          <td class="table__td">129.95</td>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+            </section>
+          </div>
+          <div class="elements__col">
+            <section class="elements__buttons">
+              <h3 class="elements__buttons-title">Buttons</h3>
+                  <ul class="actions _inline">
+                    <li class="actions__item"><button class="btn _primary">Primary</button></li>
+                    <li class="actions__item"><button class="btn">Default</button></li>
+                  </ul>
+              <div class="elements__buttons-row">
+                <div class="elements__buttons-col">
+                      <ul class="actions">
+                        <li class="actions__item"><button class="btn _large">large</button></li>
+                        <li class="actions__item"><button class="btn">Default</button></li>
+                        <li class="actions__item"><button class="btn _small">small</button></li>
+                      </ul>
+                </div>
+                <div class="elements__buttons-col">
+                      <ul class="actions">
+                        <li class="actions__item"><button class="btn _large _primary">large</button></li>
+                        <li class="actions__item"><button class="btn _primary">Primary</button></li>
+                        <li class="actions__item"><button class="btn _primary _small">small</button></li>
+                      </ul>
+                </div>
+              </div>
+              <div class="elements__buttons-row">
+                <div class="elements__buttons-col">
+                      <ul class="actions">
+                        <li class="actions__item"><button class="btn _primary _fit">fit</button></li>
+                        <li class="actions__item"><button class="btn _primary _fit _small">fit + small</button></li>
+                      </ul>
+                </div>
+                <div class="elements__buttons-col">
+                      <ul class="actions">
+                        <li class="actions__item"><button class="btn _fit">fit</button></li>
+                        <li class="actions__item"><button class="btn _fit _small">fit + small</button></li>
+                      </ul>
+                </div>
+              </div>
+                  <ul class="actions _inline">
+                    <li class="actions__item"><button class="btn _primary _icon">
+      <svg class="btn__icon">
+        <use xlink:href="img/sprites/sprite.svg#search"></use>
+      </svg>
+      icon
+    </button></li>
+                    <li class="actions__item"><button class="btn _icon">
+      <svg class="btn__icon">
+        <use xlink:href="img/sprites/sprite.svg#download"></use>
+      </svg>
+      icon
+    </button></li>
+                  </ul>
+                  <ul class="actions _inline">
+                    <li class="actions__item"><button class="btn _primary _disabled">primary</button></li>
+                    <li class="actions__item"><button class="btn _disabled">default</button></li>
+                  </ul>
+            </section>
+            <section class="elements__form">
+              <h3>Form</h3>
+              <form class="form" method="post" action="#">
+                <div class="form__row">
+                  <div class="form__col _half">
+                    <label class="visually-hidden" for="demo-name">Name</label>
+                    <input class="form__input" id="demo-name" type="text" name="demo-name" placeholder="name" required="required"/>
+                  </div>
+                  <div class="form__col _half">
+                    <label class="visually-hidden" for="demo-email">Email</label>
+                    <input class="form__input" id="demo-email" type="email" name="demo-email" placeholder="email" required="required"/>
+                  </div>
+                </div>
+                <div class="form__row">
+                  <div class="form__col">
+                    <label class="visually-hidden" for="demo-category">Category</label>
+                    <select class="form__select" id="demo-category" name="demo-category">
+                      <option value="value">- Category -</option>
+                      <option value="1">Manufacturing</option>
+                      <option value="1">Shipping</option>
+                      <option value="1">Administration</option>
+                      <option value="1">Human Resources</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form__row">
+                  <div class="form__col _third">
+                    <input class="visually-hidden form__radio" id="demo-priority-low" type="radio" name="demo-priority" checked=""/>
+                    <label for="demo-priority-low">Low</label>
+                  </div>
+                  <div class="form__col _third">
+                    <input class="visually-hidden form__radio" id="demo-priority-normal" type="radio" name="demo-priority"/>
+                    <label for="demo-priority-normal">Normal</label>
+                  </div>
+                  <div class="form__col _third">
+                    <input class="visually-hidden form__radio" id="demo-priority-high" type="radio" name="demo-priority"/>
+                    <label for="demo-priority-high">High</label>
+                  </div>
+                </div>
+                <div class="form__row">
+                  <div class="form__col _half">
+                    <input class="visually-hidden form__checkbox" id="demo-copy" type="checkbox" name="demo-copy"/>
+                    <label for="demo-copy">Email me a copy</label>
+                  </div>
+                  <div class="form__col _half">
+                    <input class="visually-hidden form__checkbox" id="demo-human" type="checkbox" name="demo-human" checked=""/>
+                    <label for="demo-human">I am a human</label>
+                  </div>
+                </div>
+                <div class="form__row">
+                  <div class="form__col">
+                    <label class="visually-hidden" for="demo-message"></label>
+                    <textarea class="form__textarea" id="demo-message" name="demo-message" placeholder="Enter your message" minlength="100" required="required"></textarea>
+                  </div>
+                </div>
+                    <ul class="list _inline form__list">
+                      <li class="list__item"><input class="btn _primary" type="submit" value="Send Message" /></li>
+                      <li class="list__item"><input class="btn" type="reset" value="Reset" /></li>
+                    </ul>
+              </form>
+            </section>
+            <section class="elements__image">
+              <h3 class="elements__image-title">Image</h3>
+              <h4 class="elements__image-subtitle">Fit</h4>
+              <picture>
+                <source type="image/webp" srcset="img/pic03.webp"/><img class="elements__image-img" src="img/pic03.jpg" alt=""/>
+              </picture>
+              <div class="elements__image-block">
+                <picture class="elements__image-item">
+                  <source type="image/webp" srcset="img/pic08.webp"/><img src="img/pic08.jpg" alt=""/>
+                </picture>
+                <picture class="elements__image-item">
+                  <source type="image/webp" srcset="img/pic09.webp"/><img src="img/pic09.jpg" alt=""/>
+                </picture>
+                <picture class="elements__image-item">
+                  <source type="image/webp" srcset="img/pic10.webp"/><img src="img/pic10.jpg" alt=""/>
+                </picture>
+                <picture class="elements__image-item">
+                  <source type="image/webp" srcset="img/pic08.webp"/><img src="img/pic08.jpg" alt=""/>
+                </picture>
+                <picture class="elements__image-item">
+                  <source type="image/webp" srcset="img/pic09.webp"/><img src="img/pic09.jpg" alt=""/>
+                </picture>
+                <picture class="elements__image-item">
+                  <source type="image/webp" srcset="img/pic10.webp"/><img src="img/pic10.jpg" alt=""/>
+                </picture>
+                <picture class="elements__image-item">
+                  <source type="image/webp" srcset="img/pic08.webp"/><img src="img/pic08.jpg" alt=""/>
+                </picture>
+                <picture class="elements__image-item">
+                  <source type="image/webp" srcset="img/pic09.webp"/><img src="img/pic09.jpg" alt=""/>
+                </picture>
+                <picture class="elements__image-item">
+                  <source type="image/webp" srcset="img/pic10.webp"/><img src="img/pic10.jpg" alt=""/>
+                </picture>
+              </div>
+              <h4>Left &amp; Right</h4>
+              <p><img class="img _left" src="img/pic09.jpg" alt=""/>Lorem ipsum dolor sit accumsan interdum nisi, 
+  quis tincidunt felis sagittis eget. tempus euismod. 
+  Vestibulum ante ipsum primis in faucibus vestibulum. 
+  Blandit adipiscing eu felis iaculis volutpat ac adipiscing 
+  accumsan eu faucibus. Integer ac pellentesque praesent 
+  tincidunt felis sagittis eget. tempus euismod. Vestibulum 
+  ante ipsum primis sagittis eget. tempus euismod. Vestibulum 
+  ante ipsum primis in faucibus vestibulum. Blandit 
+  adipiscing eu felis iaculis volutpat ac adipiscing 
+  accumsan eu faucibus. Integer ac pellentesque praesent 
+  tincidunt felis sagittis eget tempus vestibulum ante ipsum 
+  primis in faucibus magna blandit adipiscing eu felis iaculis.
+              </p>
+              <p><img class="img _right" src="img/pic09.jpg" alt=""/>Lorem ipsum dolor sit accumsan interdum nisi, 
+  quis tincidunt felis sagittis eget. tempus euismod. 
+  Vestibulum ante ipsum primis in faucibus vestibulum. 
+  Blandit adipiscing eu felis iaculis volutpat ac adipiscing 
+  accumsan eu faucibus. Integer ac pellentesque praesent 
+  tincidunt felis sagittis eget. tempus euismod. Vestibulum 
+  ante ipsum primis sagittis eget. tempus euismod. Vestibulum 
+  ante ipsum primis in faucibus vestibulum. Blandit 
+  adipiscing eu felis iaculis volutpat ac adipiscing 
+  accumsan eu faucibus. Integer ac pellentesque praesent 
+  tincidunt felis sagittis eget tempus vestibulum ante ipsum 
+  primis in faucibus magna blandit adipiscing eu felis iaculis.
+              </p>
+            </section>
+            <h3>Box</h3>
+            <div class="box">
+              Felis sagittis eget tempus primis in faucibus vestibulum. 
+              Blandit adipiscing eu felis iaculis volutpat ac adipiscing 
+              accumsan eu faucibus. Integer ac pellentesque praesent 
+              tincidunt felis sagittis eget. tempus euismod. Magna sed 
+              etiam ante ipsum primis in faucibus vestibulum. Blandit 
+              adipiscing eu ipsum primis in faucibus vestibulum. Blandit 
+              adipiscing eu felis iaculis volutpat ac adipiscing accumsan 
+              eu faucibus lorem ipsum.
+            </div>
+            <h3>Preformatted</h3>
+            <pre><code>i = 0;
+
+while (!deck.isInOrder()) {
+    print 'Iteration ' + i;
+    deck.shuffle();
+    i++;
+}
+
+print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
+          </div>
+        </main>
+      </div>
+      <section class="contact">
+        <div class="inner contact__inner">
+          <div class="contact__row">   
+            <div class="contact__col">
+              <form class="form contact__form">
+                <div class="form__row">
+                  <div class="form__col _half">
+                    <label class="form__label" for="name">Name</label>
+                    <input class="form__input" id="name" type="text" name="name" required="required"/>
+                  </div>
+                  <div class="form__col _half">
+                    <label class="form__label" for="email">Email</label>
+                    <input class="form__input" id="email" type="email" name="email" required="required"/>
+                  </div>
+                </div>
+                <div class="form__row">
+                  <div class="form__col">
+                    <label class="form__label" for="message">Message</label>
+                    <textarea class="form__textarea" id="message" name="message" rows="6" minlength="100" required="required"></textarea>
+                  </div>
+                </div>
+                    <ul class="list _inline">
+                      <li class="list__item"><input class="btn _primary" type="submit" value="Send Message" /></li>
+                      <li class="list__item"><input class="btn" type="reset" value="Clear" /></li>
+                    </ul>
+              </form>
+            </div>
+            <div class="contact__block">
+              <div class="contact__item">
+                <svg class="contact__icon">
+                  <use xlink:href="img/sprites/sprite.svg#envelope"></use>
+                </svg>
+                <h3>Email</h3><a class="contact__link" href="mailto:information@untitled.tld">information@untitled.tld</a>
+              </div>
+              <div class="contact__item">
+                <svg class="contact__icon">
+                  <use xlink:href="img/sprites/sprite.svg#phone"></use>
+                </svg>
+                <h3>Phone</h3><span>(000) 000-0000</span>
+              </div>
+              <div class="contact__item">
+                <svg class="contact__icon">
+                  <use xlink:href="img/sprites/sprite.svg#home"></use>
+                </svg>
+                <h3>Address</h3><span>1234 Somewhere Road #5432<br/>Nashville, TN 00000<br/>United States of America</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="footer inner">
+            <ul class="socials">
+              <li class="socials__item"><a href="#" class="socials__link _alt" aria-label="Twitter">
+        <svg class="socials__icon _alt"><use xlink:href="img/sprites/sprite.svg#twitter"></use></svg>
+      </a></li>
+              <li class="socials__item"><a href="#" class="socials__link _alt" aria-label="Facebook">
+        <svg class="socials__icon _alt"><use xlink:href="img/sprites/sprite.svg#facebook"></use></svg>
+      </a></li>
+              <li class="socials__item"><a href="#" class="socials__link _alt" aria-label="Instagram">
+        <svg class="socials__icon _alt"><use xlink:href="img/sprites/sprite.svg#instagram"></use></svg>
+      </a></li>
+              <li class="socials__item"><a href="#" class="socials__link _alt" aria-label="Github">
+        <svg class="socials__icon _alt"><use xlink:href="img/sprites/sprite.svg#github"></use></svg>
+      </a></li>
+              <li class="socials__item"><a href="#" class="socials__link _alt" aria-label="Linkedin">
+        <svg class="socials__icon _alt"><use xlink:href="img/sprites/sprite.svg#linkedin"></use></svg>
+      </a></li>
+            </ul>
+        <ul class="footer__list">
+          <li class="footer__list-item">© Untitled</li>
+          <li class="footer__list-item">Design: <a class="footer__list-link" href="https://html5up.net">HTML5 UP</a></li>
+          <li class="footer__list-item">Demo Images: <a class="footer__list-link" href="https://unsplash.com/">Unsplash</a></li>
+        </ul>
+      </footer>
+    </div>
+    <nav class="nav">
+      <button class="nav__btn" aria-label="close menu">
+        <svg class="nav__btn-icon">
+          <use xlink:href="img/sprites/sprite.svg#times"></use>
+        </svg>
+      </button>
+          <ul class="list _alt nav__list">
+            <li class="list__item"><a class="nav__link" href="index.html">home</a></li>
+            <li class="list__item"><a class="nav__link" href="landing.html">landing</a></li>
+            <li class="list__item"><a class="nav__link" href="generic.html">generic</a></li>
+            <li class="list__item"><a class="nav__link _active">elements</a></li>
+          </ul>
+          <ul class="actions nav__list">
+            <li class="actions__item"><button class="btn _primary _fit">get started</button></li>
+            <li class="actions__item"><button class="btn _fit">log in</button></li>
+          </ul>
+    </nav>
+    <script src="js/index.min.js"></script>
+  </body>
+</html>

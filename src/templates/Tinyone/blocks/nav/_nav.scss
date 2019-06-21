@@ -41,14 +41,21 @@
   &__link {
     border-bottom: 1px solid transparent;
     color: $main;
-    font-size: 1.375rem;
+    font-size: 1.375em;
     font-weight: $fw-b;
     text-decoration: none;
     transition: $dur;
 
     &:hover {
-      color: $alt;
-      border-bottom: 1px solid $alt;
+      color: $main;
+      border-bottom: 1px solid $main;
+    }
+
+    @include bp($md) {
+      &:hover {
+        color: $alt;
+        border-bottom: 1px solid $alt;
+      }
     }
   }
 

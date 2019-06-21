@@ -1,0 +1,142 @@
+.form 
+  margin: 0 0 $margin 0
+
+  &__row
+    +row-flex()
+
+  &__col
+    +col()
+    +size(12)
+
+    &._half
+      +size-md(6)
+
+    &._third
+      +size-md(4)
+
+  &__input, &__select, &__textarea
+
+    box-sizing: border-box
+    display: block
+    margin: 0 0 ($margin / 2)
+    padding: 0 1rem
+    width: 100%
+    height: $height
+
+    background: $border-bg
+    border: none
+    border-radius: 0
+    color: inherit
+    font-family: inherit
+    font-size: inherit
+
+    outline: none
+    text-decoration: none
+    transition: box-shadow .2s
+
+    &:invalid
+      box-shadow: none
+
+    &:focus
+      box-shadow: 0 0 0 2px $highlight
+
+    
+    &::placeholder
+      // IE fix color
+      color: $fg
+      opacity: .5
+
+      text-transform: capitalize
+
+  &__input
+
+  &__select
+    appearance: none
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(212, 212, 255, 0.1)' /%3E%3C/svg%3E")
+    background-size: 1.25rem
+    background-repeat: no-repeat
+    background-position: calc(100% - 1rem) center
+    text-overflow: ellipsis
+
+    // remove default arrow in IE
+    &::-ms-expand
+      display: none
+
+    &:focus
+
+    option
+      background-color: $bg
+      color: $fg
+
+  &__radio, &__checkbox
+    // display: none
+
+    + label
+      display: inline-block
+      margin: 0 0 ($margin * 0.5) 0
+      padding-left: ($height * .6) + 1rem
+      padding-right: 0.75rem
+      position: relative
+
+      color: $fg
+      font-size: 0.8em
+      font-weight: $wr
+      letter-spacing: $ls-alt
+      text-transform: uppercase
+      
+      cursor: pointer
+      transition: .2s
+
+      &::before
+        content: ''
+        display: inline-block
+        position: absolute
+        top: 0
+        left: 0
+        height: ($height * .6)
+        width: ($height * .6)
+
+        background: $border-bg
+        letter-spacing: 0
+        line-height: ($height * .6)
+        text-align: center
+
+    &:checked + label
+      &::before
+        background-color: $fg
+        background-image: url('../img/sprites/sprite.svg#check')
+        background-size: 50%
+        background-repeat: no-repeat
+        background-position: center
+        color: $bg
+        font-weight: $wb
+
+    &:focus + label
+      &::before
+        box-shadow: 0 0 0 2px $highlight
+
+  &__radio
+    + label
+      &::before
+        border-radius: 100%
+
+  &__textarea
+    padding: 0.75rem 1rem
+    min-height: 12rem
+    resize: vertical
+
+    &:focus
+      box-shadow: 0 0 0 2px $highlight
+
+  &__list
+    +col()
+    +size(12)
+
+  &__label
+    color: $fg
+    display: block
+    font-size: 0.8em
+    font-weight: $wb
+    letter-spacing: $ls-alt
+    margin: 0 0 ($margin * 0.5) 0
+    text-transform: uppercase

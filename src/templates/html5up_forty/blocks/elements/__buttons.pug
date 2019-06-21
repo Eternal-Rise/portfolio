@@ -1,0 +1,53 @@
+section.elements__buttons
+  h3.elements__buttons-title Buttons
+
+  +list('ul', 'actions', '_inline', [
+    '<button class="btn _primary">Primary</button>',
+    '<button class="btn">Default</button>'
+  ])
+
+  .elements__buttons-row
+    .elements__buttons-col
+      +list('ul', 'actions', '', [
+        '<button class="btn _large">large</button>',
+        '<button class="btn">Default</button>',
+        '<button class="btn _small">small</button>'
+      ])
+    .elements__buttons-col
+      +list('ul', 'actions', '', [
+        '<button class="btn _large _primary">large</button>',
+        '<button class="btn _primary">Primary</button>',
+        '<button class="btn _primary _small">small</button>'
+      ])
+
+  .elements__buttons-row
+    .elements__buttons-col
+      +list('ul', 'actions', '', [
+        '<button class="btn _primary _fit">fit</button>',
+        '<button class="btn _primary _fit _small">fit + small</button>'
+      ])
+    .elements__buttons-col
+      +list('ul', 'actions', '', [
+        '<button class="btn _fit">fit</button>',
+        '<button class="btn _fit _small">fit + small</button>'
+      ])
+
+  +list('ul', 'actions', '_inline', [
+    `<button class="btn _primary _icon">
+      <svg class="btn__icon">
+        <use xlink:href="img/sprites/sprite.svg#search"></use>
+      </svg>
+      icon
+    </button>`,
+    `<button class="btn _icon">
+      <svg class="btn__icon">
+        <use xlink:href="img/sprites/sprite.svg#download"></use>
+      </svg>
+      icon
+    </button>`
+  ])
+
+  +list('ul', 'actions', '_inline', [
+    '<button class="btn _primary _disabled">primary</button>',
+    '<button class="btn _disabled">default</button>'
+  ])

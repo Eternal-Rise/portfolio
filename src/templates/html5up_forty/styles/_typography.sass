@@ -1,0 +1,60 @@
+  
+h1, h2, h3, h4, h5, h6
+  color: $fg
+  font-weight: $wb
+  line-height: inherit
+  margin: 0 0 1rem 0
+  text-transform: capitalize
+
+  &._major
+    margin-bottom: 0
+
+    &::after
+      content: ''
+      background-color: $fg
+      display: block
+      height: 2px
+      margin: 0 0 1rem
+      width: 100%
+
+  &._unfit
+    display: inline-block
+
+    &::after
+      width: calc(100% + 0.5rem)
+
+
+h1
+  font-size: 2em
+  +sm(font-size, 2.5em)
+
+h2 
+  font-size: 1.5em
+  +sm(font-size, 1.75em)
+
+h3
+  font-size: 1.25em
+  +sm(font-size, 1.35em)
+
+
+h4
+  font-size: 1.1em
+
+p
+  margin-bottom: $margin
+
+sub
+  font-size: 0.8em
+  position: relative
+  top: 0.5rem
+
+sup
+  font-size: 0.8em
+  position: relative
+  top: -0.5rem
+
+blockquote
+  border-left: solid 4px $border
+  font-style: italic
+  margin: 0 0 $margin 0
+  padding: ($margin / 4) 0 ($margin / 4) $margin

@@ -1,6 +1,6 @@
 // breakpoints
 $xs: 320px;
-$sm: 460px;
+$sm: 480px;
 $xsm: 640px;
 $md: 736px;
 $lg: 960px;
@@ -12,6 +12,11 @@ $xxl: 1600px;
 $fw-l: 300;
 $fw-r: 400;
 $fw-b: 700;
+
+// pallete
+$main: #fff;
+$alt: #345;
+$accent: lighten(rgba(green, .7), 35%);
 
 // transitions
 $dur: .2s;

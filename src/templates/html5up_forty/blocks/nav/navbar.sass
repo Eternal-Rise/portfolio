@@ -1,0 +1,53 @@
+.navbar
+  display: flex
+  justify-content: space-between
+  width: 100%
+  position: absolute
+  top: 0
+
+  background-color: transparent
+  font-size: .8em
+  font-weight: $wb
+  letter-spacing: .25rem
+  text-transform: uppercase
+  transition: all .4s, background-color 0s, opacity 1s 1s
+  z-index: 5
+  opacity: 1
+
+  &._fixed
+    position: fixed
+    top: 0
+    background-color: $bg-alt
+    
+  &._hidden
+    transform: translateY(-100%)
+
+  &._opacity
+    opacity: 0
+
+  &__btn
+    display: flex
+    align-items: center
+    padding: 1rem
+    background-color: transparent
+    border: none
+    color: inherit
+    font-family: $ff
+    font-size: 1.2em
+    font-weight: $wb
+    letter-spacing: $ls
+    text-transform: uppercase
+
+    @extend .hover
+
+  &__btn-icon
+    width: 1rem
+    height: 1rem
+    transform: scaleX(2)
+    transform-origin: right
+
+  &__btn-title
+    margin-right: 1.5rem
+    
+    // align with icon
+    margin-bottom: 0.1rem

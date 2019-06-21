@@ -1,0 +1,39 @@
+.pagination 
+  cursor: default
+  list-style: none
+  padding-left: 0
+
+  &__item
+    +sm(display, inline-block)
+    display: none
+    margin-right: .125em
+
+    &:first-child, &:last-child
+      display: inline-block
+
+    &:first-child
+      +sm(padding-right, 0.75em)      
+
+    &:last-child 
+      // minus __item margin-right
+      +sm(padding-left, 0.625em)
+
+  &__link
+    display: inline-block
+    font-size: .8em
+    font-weight: $wb
+    line-height: 1.5em
+    padding: 0 .6em
+    text-align: center
+    transition: .2s
+    cursor: pointer
+
+    &:hover 
+      color: $highlight
+
+    &._active 
+      background-color: $fg
+      color: $bg
+
+      &:hover
+        background-color: $highlight

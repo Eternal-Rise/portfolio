@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+html(lang="zxx")
+  head
+    include blocks/_head
+    title Elements
+  body
+    //- mixin
+    include blocks/+divider/divider
+    include blocks/+lists/lists
+    include blocks/+table/table
+
+    #wrapper
+      include blocks/nav/navbar
+      .inner._main
+
+        h1._major._unfit Elements
+        
+        include blocks/text/text
+
+        +divider('_major')
+        h2 elements
+
+        include blocks/elements/elements
+
+      include blocks/contact/contact
+      include blocks/footer/footer
+    
+    //- current page for add ._active
+    -let current = 'elements'
+    include blocks/nav/nav
+    
+    script(src="js/index.js")
+

@@ -1,0 +1,4 @@
+mixin list(type, prefix='', mod='', items = [])
+  #{type}(class=`${prefix}${mod ? ' ' + mod : ''}`)
+    each item in items
+      li(class=`${prefix}__item`)!= item

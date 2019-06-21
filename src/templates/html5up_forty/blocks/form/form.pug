@@ -1,0 +1,69 @@
+form.form(method="post" action="#")
+
+  .form__row
+    .form__col._half
+      label.visually-hidden(for="demo-name") Name
+      input#demo-name.form__input(
+        type="text", name="demo-name", placeholder="name" required
+      )
+      
+    .form__col._half
+      label.visually-hidden(for="demo-email") Email
+      input#demo-email.form__input(
+        type="email", name="demo-email", placeholder="email" required
+      )
+
+  .form__row
+    .form__col
+      label.visually-hidden(for="demo-category") Category
+      select#demo-category.form__select(name='demo-category')
+        option(value) - Category -
+        option(value='1') Manufacturing
+        option(value='1') Shipping
+        option(value='1') Administration
+        option(value='1') Human Resources
+
+  .form__row
+    .form__col._third
+      input.visually-hidden.form__radio#demo-priority-low(
+        type='radio', name='demo-priority', checked=''
+      )
+      label(for='demo-priority-low') Low
+
+    .form__col._third
+      input.visually-hidden.form__radio#demo-priority-normal(
+        type='radio', name='demo-priority'
+      )
+      label(for='demo-priority-normal') Normal
+      
+    .form__col._third
+      input.visually-hidden.form__radio#demo-priority-high(
+        type='radio', name='demo-priority'
+      )
+      label(for='demo-priority-high') High
+
+  .form__row
+    .form__col._half
+      input.visually-hidden.form__checkbox#demo-copy(type='checkbox', name='demo-copy')
+      label(for='demo-copy') Email me a copy
+
+    .form__col._half
+      input.visually-hidden.form__checkbox#demo-human(
+        type='checkbox', name='demo-human', checked=''
+      )
+      label(for='demo-human') I am a human
+
+  .form__row
+    .form__col
+      label.visually-hidden(for="demo-message")
+      textarea.form__textarea#demo-message(
+        name='demo-message', 
+        placeholder='Enter your message', 
+        minlength="100"
+        required
+      )
+
+  +list('ul', 'list', '_inline form__list', [
+    '<input class="btn _primary" type="submit" value="Send Message" />',
+    '<input class="btn" type="reset" value="Reset" />'
+  ])

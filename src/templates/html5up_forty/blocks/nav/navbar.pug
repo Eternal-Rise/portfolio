@@ -1,0 +1,7 @@
+.navbar(class=`${navMods ? navMods : ''}`)
+  include ../logo/logo
+  
+  button.navbar__btn
+    span.navbar__btn-title menu
+    svg.navbar__btn-icon
+      use(xlink:href="img/sprites/sprite.svg#hamburger")

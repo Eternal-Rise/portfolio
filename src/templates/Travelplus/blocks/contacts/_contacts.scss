@@ -1,0 +1,10 @@
+.contacts {
+  font-style: normal;
+  font-size: 1.2em;
+  font-weight: $fw-b;
+  line-height: 1.5;
+
+  @include bp($md) {
+    font-size: 1.5em;
+  }
+}

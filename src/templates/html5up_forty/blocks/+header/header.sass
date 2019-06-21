@@ -1,0 +1,84 @@
+.header
+  display: flex
+  align-items: center
+  background-position: center 0 
+  background-repeat: no-repeat
+  background-size: cover
+  position: relative
+
+  &::before    
+    content: ''
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    transition: 4s
+
+  &._hiddenBackground
+    &._index
+      &::before
+        background-color: rgba($bg, 1)
+    &._landing
+      &::before
+        background-color: rgba($accent2, 1)
+
+  &._index
+    background-image: url('../img/banner.jpg')
+    max-height: 50rem
+
+    @supports (background-image: url('img.webp'))
+      background-image: url('../img/banner.webp')
+
+    +md-block()
+      height: 75vh
+      min-height: 30rem
+
+    &::before
+      background-color: rgba($bg, .85)
+ 
+  &._landing
+    background-image: url('../img/pic07.jpg')
+    height: 60vh
+    max-height: 32rem
+    min-height: 22rem
+
+    @supports (background-image: url('img.webp'))
+      background-image: url('../img/pic07.webp')
+
+    &::before
+      background-color: rgba($accent2, .85)
+
+  &__inner
+    opacity: 1
+    transform: translateX(0)
+    transition: 2s
+
+    &._hidden
+      opacity: 0
+      transform: translateX(-1rem)
+
+  &__title
+    +lg(font-size, 3.25em)
+
+    &._major
+      text-transform: none
+      &::after
+        margin: 0.325rem 0 2rem
+
+  &__text
+    font-size: .8em
+    font-weight: $wb
+    letter-spacing: $ls-alt
+    text-transform: uppercase
+    +md(margin, 0)
+
+  &__row
+    +row-flex()
+    align-items: center
+    margin-bottom: 1rem
+
+  &__col
+    +col()
+    +size(12)
+    +size-md(6)

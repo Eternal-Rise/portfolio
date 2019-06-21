@@ -1,0 +1,87 @@
+.contact
+  overflow: hidden
+  border-bottom: solid 1px $border
+  border-top: solid 1px $border
+
+  &__inner
+    padding: 0
+    +xsm(padding, 0 2rem)
+    +lg(padding, 0 4rem)
+
+  &__row
+    +row-flex()
+
+  &__col
+    +col()
+    +size(12)
+    +size-lg(7)
+    +lg(margin, 0)
+
+  &__form
+    padding: 4rem 0 2rem
+    +lg-block()
+      margin-bottom: 0
+      padding: 4rem 2rem 2rem 1rem
+      border-right: solid 1px $border
+
+  &__block
+    +col()
+    +size(12)
+    +size-lg(5)
+    +lg(margin, 0)
+    display: flex
+    flex-direction: column
+    
+  &__item
+    box-sizing: border-box
+    padding: $margin 0
+    padding-left: $margin * 1.5
+    position: relative
+    width: 100%
+
+    +lg-block()
+      flex: 1
+      padding-left: $margin * 2.5
+
+      &:first-child::before
+        border-top: 0
+
+      &::before
+        top: 0
+        left: 0
+        transform: translateX(0)
+        width: 50vw
+
+    &::before
+      border-top: 1px solid $border
+      content: ''
+      position: absolute
+      top: 0
+      left: 50%
+      transform: translateX(-50%)
+      transform-origin: center
+      width: 200vw
+
+  &__icon
+    position: absolute
+    left: 0
+    top: 2rem
+    padding: .5rem
+    width: 1rem
+    height: 1rem
+    
+    background-color: $fg
+    border-radius: 50%
+    color: $bg
+
+    +lg-block()
+      left: 1.5rem
+
+  &__link
+    color: inherit
+    border-bottom: 1px dotted
+    text-decoration: none
+    @extend .hover
+
+    &:hover
+      border-color: transparent

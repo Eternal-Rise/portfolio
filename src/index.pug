@@ -2,15 +2,55 @@
 html(lang="en")
   head
     meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    link(rel="stylesheet", href="styles/index.css")
-    title Document
-  body
-    h1 It's alive!!!
+    meta(name="description" content="Bogdan Saliuk, HTML-coder portfolio")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(name="theme-color" content="#c9e0e04d")
+    meta(name="apple-mobile-web-app-status-bar-style" content="black-translucent")
 
-    ul
-      li
-        a.link(href="templates/Tinyone/index-1.html") Tinyone 1
-      li
-        a.link(href="templates/Tinyone/index-2.html") Tinyone 2
+    link(rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon")
+    link(rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png")
+    link(rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png")
+    link(rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png")
+    link(rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png")
+    link(rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png")
+    link(rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png")
+    link(rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png")
+    link(rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png")
+    link(rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png")
+
+    link(rel="stylesheet", href="styles/index.css")
+    title Bogdan Saliuk
+  body
+    .container
+      h1.visually-hidden Portfolio
+
+      ul.list
+        //- li.list__item
+          a.list__link(href="templates/Barbershop/index.html") Barbershop
+          a.list__link(href="https://github.com/Eternal-Rise/Portfolio/tree/master/src/templates/Barbershop") Source
+        
+        li.list__item
+          a.list__link(href="templates/html5up_forty/index.html") Forty
+          a.list__link(href="https://github.com/Eternal-Rise/Portfolio/tree/master/src/templates/thml5up_forty") Source
+        
+        li.list__item
+          a.list__link(href="templates/html5up_multiverse/index.html") Multiverse
+          a.list__link(href="https://github.com/Eternal-Rise/Portfolio/tree/master/src/templates/html5up_multiverse") Source
+        
+        li.list__item
+          a.list__link(href="templates/Tinyone/index.html") Tinyone
+          a.list__link(href="https://github.com/Eternal-Rise/Portfolio/tree/master/src/templates/Tinyone") Source
+        
+        li.list__item
+          a.list__link(href="templates/Travelplus/index.html") Travelplus
+          a.list__link(href="https://eternal-rise.github.io/vue__web-studio-landing/index.html") Source
+        
+        li.list__item
+          a.list__link(href="https://eternal-rise.github.io/vue__web-studio-landing/index.html") Web Studio
+          a.list__link(href="https://github.com/Eternal-Rise/vue__web-studio-landing") Source
+
+      .contacts Hire me in 
+        a.contacts__link(href="https://t.me/Eternal_Rise") telegram
+
+

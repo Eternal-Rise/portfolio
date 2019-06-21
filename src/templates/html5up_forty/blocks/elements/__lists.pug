@@ -1,0 +1,67 @@
+section.elements__lists
+  h3.elements__lists-title lists
+  .elements__lists-col
+    h4 Unordered
+
+    +list('ul', 'list', '', [
+      'Dolor etiam magna etiam.',
+      'Sagittis lorem eleifend.',
+      'Felis dolore viverra.'
+    ])
+
+    h4 Alternate
+
+    +list('ul', 'list', '_alt', [
+      'Dolor etiam magna etiam.',
+      'Sagittis lorem eleifend.',
+      'Felis dolore viverra.'
+    ])
+  
+  .elements__lists-col
+    h4 Ordered
+
+    +list('ol', 'o-list', '', [
+      'Dolor etiam magna etiam.',
+      'Sagittis lorem eleifend.',
+      'Felis dolore viverra.',
+      'Dolor etiam magna etiam.',
+      'Sagittis lorem eleifend.',
+      'Felis dolore viverra.'
+    ])
+
+    h4 Icons
+
+    +list('ul', 'socials', '', [
+      `<a href="#" class="socials__link" aria-label="Twitter">
+        <svg class="socials__icon"><use xlink:href="img/sprites/sprite.svg#twitter"></use></svg>
+      </a>`,
+      `<a href="#" class="socials__link" aria-label="Facebook">
+        <svg class="socials__icon"><use xlink:href="img/sprites/sprite.svg#facebook"></use></svg>
+      </a>`,
+      `<a href="#" class="socials__link" aria-label="Instagram">
+        <svg class="socials__icon"><use xlink:href="img/sprites/sprite.svg#instagram"></use></svg>
+      </a>`,
+      `<a href="#" class="socials__link" aria-label="Githib">
+        <svg class="socials__icon"><use xlink:href="img/sprites/sprite.svg#github"></use></svg>
+      </a>`,
+      `<a href="#" class="socials__link" aria-label="Driible">
+        <svg class="socials__icon"><use xlink:href="img/sprites/sprite.svg#dribbble"></use></svg>
+      </a>`,
+      `<a href="#" class="socials__link" aria-label="Tumblr">
+        <svg class="socials__icon"><use xlink:href="img/sprites/sprite.svg#tumblr"></use></svg>
+      </a>`,
+    ])
+    +list('ul', 'socials', '', [
+      `<a href="#" class="socials__link _alt">
+        <label class="visually-hidden">twitter</label>
+        <svg class="socials__icon _alt"><use xlink:href="img/sprites/sprite.svg#twitter"></use></svg>
+      </a>`,
+      `<a href="#" class="socials__link _alt">
+        <label class="visually-hidden">facebook</label>
+        <svg class="socials__icon _alt"><use xlink:href="img/sprites/sprite.svg#facebook"></use></svg>
+      </a>`,
+      `<a href="#" class="socials__link _alt">
+        <label class="visually-hidden">instagram</label>
+        <svg class="socials__icon _alt"><use xlink:href="img/sprites/sprite.svg#instagram"></use></svg>
+      </a>`,
+    ])

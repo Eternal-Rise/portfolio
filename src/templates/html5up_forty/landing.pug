@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+html(lang="zxx")
+  head
+    include blocks/_head
+    title Landing
+  body
+
+    //- mixin
+    include blocks/+lists/lists
+    include blocks/+header/header
+
+    #wrapper
+      //- extra class for navbar & logo
+      -let navMods = '_opacity';
+      -let logoMod = '_alt'
+
+      include blocks/nav/navbar
+
+      +header('_landing', 'Landing',
+        `Lorem ipsum dolor sit amet consectetur
+        <br/>
+        adipisicing elit. Totam iste facilis numquam.`
+      )
+
+      section.alt-bg
+        .inner
+          h2._major._unfit Sed amet aliquam
+          p.
+            Nullam et orci eu lorem consequat tincidunt vivamus et sagittis 
+            magna sed nunc rhoncus condimentum sem. In efficitur ligula 
+            tate urna. Maecenas massa vel lacinia pellentesque lorem 
+            ipsum dolor. Nullam et orci eu lorem consequat tincidunt. 
+            Vivamus et sagittis libero. Nullam et orci eu lorem consequat 
+            tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum 
+            sem. In efficitur ligula tate urna.
+
+      include blocks/spotlights/spotlights
+
+      section.alt-bg
+        .inner
+          h2.major.unfit Massa libero
+          p.
+            Nullam et orci eu lorem consequat tincidunt vivamus et sagittis 
+            libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. 
+            Pellentesque condimentum sem. In efficitur ligula tate urna. 
+            Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. 
+            Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis 
+            libero. Mauris aliquet magna magna sed nunc rhoncus amet 
+            pharetra et feugiat tempus.
+
+          +list('ul', 'actions', '_inline', [
+            '<a class="btn _next" href="generic.html">get started</a>'
+          ])
+
+      include blocks/contact/contact
+      include blocks/footer/footer
+
+    //- current page for add ._active
+    -let current = 'landing'
+    include blocks/nav/nav
+
+    script(src="js/index.js")

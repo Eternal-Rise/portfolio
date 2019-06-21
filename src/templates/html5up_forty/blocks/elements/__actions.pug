@@ -1,0 +1,35 @@
+section.elements__actions
+  h3.elements__actions-title Actions
+
+  +list('ul', 'actions', '_inline', [
+    '<button class="btn _primary">Default</button>',
+    '<button class="btn">Default</button>'
+  ])
+
+  +list('ul', 'actions', '_inline', [
+    '<button class="btn _primary _small">small</button>',
+    '<button class="btn _small">small</button>'
+  ])
+
+  .elements__actions-row
+    .elements__actions-col
+      +list('ul', 'actions', '', [
+        '<button class="btn _primary">Default</button>',
+        '<button class="btn">Default</button>'
+      ])
+    .elements__actions-col
+      +list('ul', 'actions', '', [
+        '<button class="btn _primary _small">small</button>',
+        '<button class="btn _small">small</button>'
+      ])
+  .elements__actions-row
+    .elements__actions-col
+      +list('ul', 'actions', '', [
+        '<button class="btn _primary _fit">Default</button>',
+        '<button class="btn _fit">Default</button>'
+      ])
+    .elements__actions-col
+      +list('ul', 'actions', '', [
+        '<button class="btn _primary _fit _small">small</button>',
+        '<button class="btn _fit _small">small</button>'
+      ])

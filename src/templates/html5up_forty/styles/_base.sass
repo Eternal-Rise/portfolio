@@ -1,0 +1,106 @@
+body
+  margin: 0
+  background-color: $bg
+
+  &._overflow
+    overflow: hidden
+
+*:focus
+  outline: 4px solid $accent2
+
+// Extending class
+.hover
+  transition: .4s
+
+  &:hover
+    color: $highlight
+    cursor: pointer
+
+body
+  color: $fg
+  font-family: $ff
+  font-size: 14px
+  line-height: 1.65
+
+  +sm(font-size, 16px)
+  +xl(font-size, 18px)
+  +xxl(font-size, 22px)    
+
+code
+  background: $bg-alt
+  font-family: $ff-fix
+  font-size: 0.9em
+  margin: 0 0.25rem
+  padding: 0.25rem 0.65rem
+
+pre
+  font-size: 0.9em
+  margin: 0 0 $margin 0
+
+  code
+    display: block
+    line-height: 1.75
+    padding: 1rem 1.5rem
+    overflow-x: auto
+
+img
+  width: 100%
+
+  &._left
+    float: left
+    margin: 0 1.5rem 1.25rem 0
+    width: 30%
+
+  &._right
+    float: right
+    margin: 0 0 1.25rem 1.5rem
+    width: 30%
+
+.alt-bg
+  background-color: $bg-alt
+
+.box
+  border: solid 1px $border
+  margin-bottom: $margin
+  padding: 1.5rem
+  
+  &._alt
+    border: 0
+    border-radius: 0
+    padding: 0
+
+.inner
+  +xsm(padding, 4rem 2rem 2rem)
+  +lg(padding, 4rem 4rem 2rem)
+  box-sizing: border-box
+  padding: 4rem 0 2rem 0
+  margin: 0 auto
+  max-width: 65em
+  width: calc(100% - 3rem)
+
+  &._main
+    +xsm(padding, 8rem 2rem 2rem)
+    +lg(padding, 8rem 4rem 0)
+    padding: 8rem 0 2rem
+
+.preview
+  +md(max-height, 20rem)
+  display: block
+  height: 50vh
+  max-height: 10rem
+
+  &__img
+    display: block
+    height: 100%
+    object-fit: cover
+    font-family: 'object-fit: cover;'
+
+.visually-hidden 
+  position: absolute
+  clip: rect(1px 1px 1px 1px) // IE6, IE7
+  clip: rect(0,0,0,0)
+  padding: 0
+  border: 0
+  height: 1px
+  width: 1px
+  overflow: hidden
