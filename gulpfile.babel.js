@@ -59,15 +59,15 @@ const paths = {
   },
   scripts: {
     src: `./src/${path}js/index.js`,
-    dest: `${dest}${path}/js`,
-    watch: [`./src/${path}/js/*.js`, `./src/${path}/blocks/**/*.js`],
+    dest: `${dest}${path}js`,
+    watch: [`./src/${path}js/*.js`, `./src/${path}blocks/**/*.js`],
   },
   smartgrid: `./src/${path}styles/`,
 
   sprite: {
     src: `./src/${path}img/sprite/*.svg`,
     watch: `./src/${path}img/sprite/*.svg`,
-    dest: `${dest}${path}/img/sprite/`,
+    dest: `${dest}${path}img/sprite/`,
   },
 }
 
