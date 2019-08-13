@@ -4,4 +4,11 @@ block title
   title= "New Project"
   
 block markup
-  h1 It's alive!!!
+  form#form
+    textarea#note(name="note", cols="30", rows="10")
+    button#submit save
+
+  #notes
+  
+  template#t-note
+    p
