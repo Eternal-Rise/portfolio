@@ -4,8 +4,21 @@ block title
   title= "New Project"
   
 block markup
-  form#form
-    textarea#note(name="note", cols="30", rows="10")
+  .container
+    form.form
+      input#type-note.hidden(type="radio", name="type-note")
+      label.form__type(for="type-note") note
+      input#type-list.hidden(type="radio", name="type-note")
+      label.form__type(for="type-list") list
+      input#type-checklist.hidden(type="radio", name="type-note")
+      label.form__type(for="type-checklist") checklist
+
+      textarea.form__note
+      ul.list
+        li(contenteditable="true").list__item._level-1
+
+  //- form#form
+    input#note(name="note" type="text")
     button#submit save
 
   #notes
