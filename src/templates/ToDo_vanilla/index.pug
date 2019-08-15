@@ -9,19 +9,23 @@ block markup
       input#type-note.hidden(type="radio", name="type-note")
       label.form__type(for="type-note") note
       input#type-list.hidden(type="radio", name="type-note")
-      label.form__type(for="type-list") list
+      label.form__type._active(for="type-list") list
       input#type-checklist.hidden(type="radio", name="type-note")
       label.form__type(for="type-checklist") checklist
 
-      textarea.form__note
-      ul.list
-        li(contenteditable="true").list__item._level-1
+      .form__fields
+        textarea.form__note
+        ol.list
+          li(contenteditable="true").list__item._level-1
+
+      .form__controls
+        button.form__submit save
 
   //- form#form
     input#note(name="note" type="text")
     button#submit save
 
-  #notes
+  .output
   
   template#t-note
     p
