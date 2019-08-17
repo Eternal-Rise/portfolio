@@ -9,18 +9,50 @@
     margin-bottom: 1rem;
   }
 
-  &__type {
+  &__radio {
+
+    // slide control
+    &#note:checked ~ .form__slide {
+      .form__slide-thumb {
+        transform: translateX(-100%);
+      }
+    }
+    &#checklist:checked ~ .form__slide {
+      .form__slide-thumb {
+        transform: translateX(100%);
+      }
+    }
+
+    // input display
+    &#checklist:checked ~ .form__fields .checklist,
+    &#list:checked ~ .form__fields .list,
+    &#note:checked ~ .form__fields .note {
+      display: block;
+    }
+  }
+
+  &__label {
     border-bottom: 4px solid transparent;
     box-sizing: border-box;
     padding: 1rem;
     text-align: center;
     text-transform: uppercase;
     width: 33.33%;
-    margin-bottom: 2rem;
+    transition: .2s;
+  }
 
-    &._active {
-      border-color: rgba($main, .75);
-    }
+  &__slide {
+    display: flex;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+
+  &__slide-thumb {
+    background-color: rgba($main, .75);
+    height: 4px;
+    margin: auto;
+    transition: .2s;
+    width: 33.33%;
   }
 
   &__controls {

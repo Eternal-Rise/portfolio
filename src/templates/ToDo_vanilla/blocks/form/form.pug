@@ -1,14 +1,20 @@
 form.form
-  input#type-note.hidden(type="radio", name="type-note")
-  label.form__type(for="type-note") note
-  input#type-list.hidden(type="radio", name="type-note")
-  label.form__type._active(for="type-list") list
-  input#type-checklist.hidden(type="radio", name="type-note")
-  label.form__type(for="type-checklist") checklist
+  input#note.form__radio.hidden( type="radio", name="note" value="note" )
+  label.form__label( for="note") note
 
+  input#list.form__radio.hidden( type="radio", name="note" value="list" )
+  label.form__label( for="list" ) list
+
+  input#checklist.form__radio.hidden( type="radio", name="note" value="checklist" checked)
+  label.form__label( for="checklist" ) checklist
+  .form__slide
+    .form__slide-thumb
+
+  include ../+list/list
   .form__fields
-    include ../note/note
-    include ../list/list
+    +list( "note" )
+    +list( "list" )
+    +list( "checklist", true )
 
   .form__controls
     button.form__submit save

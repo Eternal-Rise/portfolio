@@ -16,6 +16,11 @@ body {
 
 .output {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 1rem;
+  grid-template-columns: repeat( auto-fit, minmax(300px, calc(33.33% - 1rem)) );
+  grid-gap: 1.5rem;
+  grid-auto-flow: dense;
+
+  ol {
+    display: block;
+  }
 }
