@@ -15,12 +15,19 @@ body {
 }
 
 .output {
-  display: grid;
-  grid-template-columns: repeat( auto-fit, minmax(300px, calc(33.33% - 1rem)) );
-  grid-gap: 1.5rem;
-  grid-auto-flow: dense;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
 
-  ol {
+  &__col {
+    width: 32%;
+  }
+
+  &__block {
+    margin-bottom: 1rem;
+  }
+
+  ol, ul {
     display: block;
   }
 }

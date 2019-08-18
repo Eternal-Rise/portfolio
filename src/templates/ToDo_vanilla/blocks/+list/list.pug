@@ -1,7 +1,2 @@
-mixin list( key, checklist = false )
-  ol( class= key, data-key= key )
-    li( class=`${key}__item _level-1` contenteditable="true" )
-
-      if ( checklist )
-        input#id.checklist__checkbox.hidden( type="checkbox" )
-        label.checklist__label( for="id" contenteditable="false")
+mixin list( key )
+  ul( class= key, data-key= key )

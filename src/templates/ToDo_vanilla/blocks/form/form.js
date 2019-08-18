@@ -3,10 +3,11 @@
 import { createItem, createNewList } from '../+list/list';
 
 const data = JSON.parse(localStorage.getItem('data')) || {};
-const output = document.querySelector( '.output' );
 const submit = document.querySelector( '.form__submit' );
+const template = document.querySelector('#output-block')
+.content.querySelector('.output__block');
 
-const radios = [ ...document.querySelectorAll( 'input[type="radio"' ) ];
+const radios = [ ...document.querySelectorAll( 'input[type="radio"]' ) ];
 let type;
 
 for ( const radio of radios ) {
@@ -17,6 +18,14 @@ for ( const radio of radios ) {
   radio.addEventListener('change', () => { type = radio.value; });
 }
 
+const outputCols = [ ...document.querySelectorAll('.output__col') ];
+
+const output = list => {
+  outputCols.sort( ( a, b ) => a.scrollHeight < b.scrollHeight ? -1 : 1);
+  outputCols[0].insertBefore( list, outputCols[0].firstElementChild );
+}
+
+
 const saveToLocalStorage = ( list ) => {
   const key = list.dataset.key;
   const items = [ ...list.querySelectorAll( `.${key}__item` ) ];
@@ -25,7 +34,6 @@ const saveToLocalStorage = ( list ) => {
   if ( !data[ key ] ) { data[ key ] = []; };
   
   const buffer = {
-    classList: list.classList.value.split(' '),
     date,
     id: `list-${(+date).toString(16)}`,
     items: [],
@@ -56,11 +64,17 @@ const saveToLocalStorage = ( list ) => {
 
 submit.addEventListener( 'click', e => {
   e.preventDefault();
-
+  
+  const block = template.cloneNode( true );
+  const tempList = block.querySelector( 'ul' );
   const list =  document.querySelector( `.${type}` );
   
+  block.replaceChild( list, tempList );
+
+  // TODO
+  // Винести отримання data сюди, щоби передавати в output айдішник
   // move list to board
-  output.insertBefore( list, output.firstElementChild );
+  output( block );
   
   // save to local storage
   saveToLocalStorage( list );
@@ -72,11 +86,13 @@ submit.addEventListener( 'click', e => {
 // initial output
 const keys = Object.keys(data)
 if ( keys.length ) {
-  
+
   for (const key of keys ) {
     for ( const lists of data[ key ] ) {
-      const list = document.createElement( 'ol' );
-      list.classList.add( ...lists.classList );
+      const block = template.cloneNode( true );
+      const list = block.querySelector( 'ul' );
+
+      list.classList.add( lists.type );
   
       for ( const listItem of lists.items) {
         const item = createItem( lists.type, list, listItem.classList );
@@ -88,7 +104,7 @@ if ( keys.length ) {
         item.appendChild( text );
         list.appendChild( item );
       }
-      output.insertBefore( list, output.firstElementChild );
+      output( block )
     }
   }
 };

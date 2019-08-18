@@ -43,7 +43,6 @@ export const createItem = ( type, list, classList ) => {
     item.appendChild( label );
   }
 
-  console.log(item);
   return item;
 };
 
@@ -113,7 +112,7 @@ const shiftItemRight = ( e, num, numPrev ) =>
 
 export const createNewList = ( type ) => {
   const formFileds = document.querySelector( '.form__fields' );
-  const list = document.createElement( 'ol' );
+  const list = document.createElement( 'ul' );
   const item = createItem( type, list );
 
   formFileds.appendChild( list );
