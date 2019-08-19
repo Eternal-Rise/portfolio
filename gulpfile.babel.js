@@ -169,8 +169,9 @@ export const styles = () => taskStyles(paths.sass.src, paths.sass.dest, configs.
 export const serve = () => {
   browserSync.init({
     notify: false,
-    server: `${dest}${path}`,
+    open: false,
     scrollRestoreTechnique: 'cookie',
+    server: `${dest}${path}`,
     watch: true,
   });
 
