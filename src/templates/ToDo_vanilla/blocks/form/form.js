@@ -1,11 +1,11 @@
 ;'use strict';
 
 import { createItem, createNewList } from '../+list/list';
+import { default as data } from '../../js/data';
 
-const data = JSON.parse(localStorage.getItem('data')) || {};
 const submit = document.querySelector( '.form__submit' );
 const template = document.querySelector('#output-block')
-.content.querySelector('.output__block');
+  .content.querySelector('.output__block');
 
 const radios = [ ...document.querySelectorAll( 'input[type="radio"]' ) ];
 let type;
@@ -13,98 +13,76 @@ let type;
 for ( const radio of radios ) {
 
   // initial value for type
-  if (radio.checked) type = radio.value;
+  if ( radio.checked ) type = radio.value;
 
-  radio.addEventListener('change', () => { type = radio.value; });
+  radio.addEventListener( 'change', () => { type = radio.value; } );
 }
 
-const outputCols = [ ...document.querySelectorAll('.output__col') ];
+const outputCols = [ ...document.querySelectorAll( '.output__col' ) ];
 
-const output = list => {
+const output = ( block ) => {
   outputCols.sort( ( a, b ) => a.scrollHeight < b.scrollHeight ? -1 : 1);
-  outputCols[0].insertBefore( list, outputCols[0].firstElementChild );
-}
-
-
-const saveToLocalStorage = ( list ) => {
-  const key = list.dataset.key;
-  const items = [ ...list.querySelectorAll( `.${key}__item` ) ];
-  const date = new Date();
-  
-  if ( !data[ key ] ) { data[ key ] = []; };
-  
-  const buffer = {
-    date,
-    id: `list-${(+date).toString(16)}`,
-    items: [],
-    type,
-  };
-
-  if (type === 'checklist') {
-    for (const item of items) {
-      const checkbox = item.querySelector('.checklist__checkbox');
-
-      buffer.items.push({
-        classList: item.classList.value.split(' '),
-        status: checkbox.checked,
-        text: item.textContent,
-      });
-    }
-  } else {
-    for (const item of items) {
-      buffer.items.push({
-        classList: item.classList.value.split(' '),
-        text: item.textContent,
-      });
-    }
-  }
-  data[ key ].push( buffer );
-  localStorage.setItem( 'data', JSON.stringify( data ) );
+  outputCols[0].insertBefore( block, outputCols[0].firstElementChild );
 }
 
 submit.addEventListener( 'click', e => {
   e.preventDefault();
   
-  const block = template.cloneNode( true );
-  const tempList = block.querySelector( 'ul' );
   const list =  document.querySelector( `.${type}` );
+  const localData = data.read();
+
+  const block = template.cloneNode( true );
+  const btnRemove = block.querySelector( '.output__remove' );
+  const btnSave = block.querySelector( '.output__save' );
+  const tempList = block.querySelector( 'ul' );
   
   block.replaceChild( list, tempList );
+  
+  // get data from list
+  const inputData = data.getInput( list, type );
 
-  // TODO
-  // Винести отримання data сюди, щоби передавати в output айдішник
+  // id to block for delete / update block | data
+  block.id = inputData.id;
+  
   // move list to board
   output( block );
   
+  // hang event handlers
+  btnRemove.addEventListener( 'click', data.remove.bind( null, block, type ) );
+  btnSave.addEventListener( 'click', data.update.bind( null, block, type ) );
+  
   // save to local storage
-  saveToLocalStorage( list );
+  data.push( localData, inputData );
 
   // create new list
   createNewList( type );
 });
 
 // initial output
-const keys = Object.keys(data)
-if ( keys.length ) {
+const localData = data.read();
+if ( localData.length ) {
+  for ( const lists of localData ) {
+    const block = template.cloneNode( true );
+    const btnRemove = block.querySelector( '.output__remove' );
+    const btnSave = block.querySelector( '.output__save' );
+    const list = block.querySelector( 'ul' );
 
-  for (const key of keys ) {
-    for ( const lists of data[ key ] ) {
-      const block = template.cloneNode( true );
-      const list = block.querySelector( 'ul' );
+    block.id = lists.id;
+    list.classList.add( lists.type );
 
-      list.classList.add( lists.type );
-  
-      for ( const listItem of lists.items) {
-        const item = createItem( lists.type, list, listItem.classList );
-        const checkbox = item.querySelector('.checklist__checkbox');
-        const text = document.createTextNode(listItem.text);
-        
-        if ( checkbox ) checkbox.checked = listItem.status;
-        
-        item.appendChild( text );
-        list.appendChild( item );
-      }
-      output( block )
+    for ( const listItem of lists.items) {
+      const item = createItem( lists.type, list, listItem.classList );
+      const checkbox = item.querySelector('.checklist__checkbox');
+      const text = document.createTextNode(listItem.text);
+      
+      if ( checkbox ) checkbox.checked = listItem.status;
+      
+      item.appendChild( text );
+      list.appendChild( item );
     }
+    output( block );
+
+    btnRemove.addEventListener( 'click', data.remove.bind( null, block, lists.type ) );
+    btnSave.addEventListener( 'click', data.update.bind( null, block, lists.type ) );
   }
 };

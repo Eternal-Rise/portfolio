@@ -16,7 +16,7 @@ body {
 
 .output {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   justify-content: space-between;
 
   &__col {
