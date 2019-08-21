@@ -29,10 +29,33 @@ body {
   }
 
   &__block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     margin-bottom: 1rem;
+    width: 100%;
+  }
+
+  &__remove, &__save {
+    background-color: transparent;
+    box-sizing: border-box;
+    display: block;
+    padding: 0.25rem;
+    width: calc(50% - .25rem);
+  }
+
+  &__remove {
+    border: 2px solid $danger;
+    color: lighten($danger, 5%);
+  }
+
+  &__save {
+    border: 2px solid $main;
+    color: $main;
   }
 
   ol, ul {
     display: block;
+    margin-bottom: .5rem;
   }
 }

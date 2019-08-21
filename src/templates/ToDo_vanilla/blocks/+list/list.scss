@@ -107,8 +107,12 @@
     height: 1.5rem;
     left: 0.25rem;
     position: absolute;
-    top: 0.25rem;
+    top: 0.15rem;
     width: 1.5rem;
+
+    @include bp($lg) {
+      top: 0.25rem;
+    }
   }
 }
 

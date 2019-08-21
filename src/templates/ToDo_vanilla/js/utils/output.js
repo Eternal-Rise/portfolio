@@ -1,7 +1,7 @@
 ;'use strict';
 
 import { default as data } from './data';
-import { createItem } from '../blocks/+list/list';
+import { createItem } from '../../blocks/+list/list';
 
 const TABLET_SCREEN_WIDTH = 960;
 
@@ -50,20 +50,7 @@ export const initialOutput = () => {
   };
 }
 
-const debounce = ( fn, ms ) => {
-  let isCooldown = false;
-
-  return function() {
-    if (isCooldown) return;
-
-    fn.apply( this, arguments );
-    isCooldown = true;
-    setTimeout( () => isCooldown = false, ms );
-  };
-}
-
 let initialWidth = window.innerWidth;
-let counter = 0;
 
 const resizeRender = () => {
 

@@ -1,8 +1,8 @@
 ;'use strict';
 
 import { createNewList } from '../+list/list';
-import { default as data } from '../../js/data';
-import { output } from '../../js/output';
+import { default as data } from '../../js/utils/data';
+import { output } from '../../js/utils/output';
 
 const submit = document.querySelector( '.form__submit' );
 const template = document.querySelector('#output-block')

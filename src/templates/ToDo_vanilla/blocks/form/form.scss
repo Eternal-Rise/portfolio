@@ -62,7 +62,7 @@
   }
 
   &__controls {
-    width: 55%;
+    width: 100%;
     display: flex;
   }
 
@@ -70,6 +70,7 @@
     background-color: transparent;
     border: 2px solid $main;
     color: $main;
+    display: block;
     font: inherit;
     font-size: .8em;
     margin: auto;

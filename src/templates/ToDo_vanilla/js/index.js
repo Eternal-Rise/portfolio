@@ -3,7 +3,8 @@
 console.log("i'm running");
 import { createItem } from '../blocks/+list/list';
 import '../blocks/form/form';
-import { initialOutput, setWindowResizeRender } from './output';
+import { initialOutput, setWindowResizeRender } from './utils/output';
+import './utils/slideControlType';
 
 const initList = ( type ) => {
   const list = document.querySelector( `.${type}` );
