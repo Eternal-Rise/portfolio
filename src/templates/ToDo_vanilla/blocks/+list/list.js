@@ -28,7 +28,7 @@ export const createItem = ( type, list, classList ) => {
   item.contentEditable = 'true';
 
   if (type === 'checklist') {
-    const id = `f${(+new Date).toString(16)}`;
+    const id = `c-${Math.random().toString(36).substr(2, 9)}`;
     const checkbox = document.createElement('input');
     const label = document.createElement('label');
 
@@ -41,6 +41,8 @@ export const createItem = ( type, list, classList ) => {
 
     item.appendChild( checkbox );
     item.appendChild( label );
+
+    checkbox.addEventListener( 'change', toggleChecked.bind( null, item, checkbox ) );
   }
 
   return item;
@@ -122,4 +124,26 @@ export const createNewList = ( type ) => {
   item.focus();
 }
 
-export default { createItem, createNextItem, deleteItem, findLevel, pasteText, shiftItem };
+export const toggleChecked = ( item, checkbox ) => {
+  let start = item;
+  let current = start;
+  let next = current.nextElementSibling;
+
+  if ( next ) {
+    let startLevel = +findLevel( start ).slice(-1);
+    let currentLevel = startLevel;
+    let nextLevel = +findLevel( current.nextElementSibling ).slice(-1);
+
+    while ( next && nextLevel > startLevel ) {
+      next.querySelector( '.checklist__checkbox' ).checked = checkbox.checked;
+
+      current = next;
+      currentLevel = nextLevel;
+      next = current.nextElementSibling;
+
+      if ( next ) nextLevel = +findLevel( next ).slice(-1);
+    }
+  }
+}
+
+export default { createItem, createNextItem, deleteItem, findLevel, pasteText, shiftItem, toggleChecked };

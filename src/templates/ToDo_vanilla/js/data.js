@@ -52,7 +52,6 @@ export const update = ( block, type ) => {
   const inputData = getInput( list, type, block.id );
   const index = getIndex( data, block.id );
 
-  // TODO Deep cloning
   data[ index ] = cloneDeep( inputData );
   save( data );
 }

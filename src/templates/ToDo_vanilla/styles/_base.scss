@@ -15,12 +15,17 @@ body {
 }
 
 .output {
-  display: flex;
   align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 
   &__col {
-    width: 32%;
+    width: 100%;
+
+    @include bp($lg) {
+      width: 32%;
+    }
   }
 
   &__block {
