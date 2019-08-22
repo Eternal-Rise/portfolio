@@ -60,7 +60,7 @@ const paths = {
   scripts: {
     src: `./src/${path}js/index.js`,
     dest: `${dest}${path}js`,
-    watch: [`./src/${path}js/*.js`, `./src/${path}blocks/**/*.js`],
+    watch: [`./src/${path}js/**/*.js`, `./src/${path}blocks/**/*.js`],
   },
   smartgrid: `./src/${path}styles/`,
 

@@ -1,10 +1,11 @@
 ;'use strict';
 
-console.log("i'm running");
+console.log('i\'m running');
+
 import { createItem } from '../blocks/+list/list';
 import '../blocks/form/form';
+import './utils/swipeControl';
 import { initialOutput, setWindowResizeRender } from './utils/output';
-import './utils/slideControlType';
 
 const initList = ( type ) => {
   const list = document.querySelector( `.${type}` );

@@ -10,7 +10,7 @@ export const getInput = ( list, type, id ) => {
 
   const input = {
     date,
-    id: id ? id : `list-${Math.random().toString(36).substr(2, 9)}`,
+    id: id ? id : `list-${ Math.random().toString(36).substr(2, 9) }`,
     items: [],
     type,
   };
@@ -34,7 +34,7 @@ export const getInput = ( list, type, id ) => {
 }
 
 export const getIndex = ( data, id ) => {
-  return data.findIndex( item => ( console.log(item.id === id), item.id === id ) );
+  return data.findIndex( item => ( item.id === id ) );
 }
 
 export const push = ( data, buffer ) => {

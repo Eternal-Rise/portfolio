@@ -1,4 +1,4 @@
-;'use strict';
+import { swipeConstructor } from '../../js/utils/swipeControl';
 
 const KEY_CODE = {
   ENTER: 13,
@@ -19,7 +19,8 @@ export const createItem = ( type, list, classList ) => {
   if ( type !== 'note' ) {
     item.addEventListener( 'keydown', createNextItem.bind(null, type, list) );
     item.addEventListener( 'keydown', deleteItem );
-    item.addEventListener( 'keydown', shiftItem );
+    item.addEventListener( 'keydown', shiftItemByKeyboard );
+    shiftItemByTouch( item );
   }
 
   item.addEventListener( 'paste', pasteText );
@@ -60,7 +61,7 @@ export const createNextItem = ( type, list, e ) => {
   }
 };
 
-export const deleteItem = e => {
+export const deleteItem = (e) => {
   if (
     e.keyCode === KEY_CODE.BACKSPACE
     || e.keyCode === KEY_CODE.DELETE
@@ -77,27 +78,32 @@ export const deleteItem = e => {
 
 export const findLevel = item => item.classList.value.match(/_level-[1-9]/)[0];
 
-export const pasteText = e => {
+export const pasteText = (e) => {
   const paste = (e.clipboardData || window.clipboardData).getData('text');
   e.preventDefault();
   e.target.ownerDocument.execCommand("insertText", false, paste);
 };
 
-export const shiftItem = e => {
+const shiftItem = ( left, right, ctrlKey = true, e ) => {
   const previous = e.target.previousElementSibling;
+  const next = e.target.nextElementSibling;
 
-  if (
-    previous && e.ctrlKey
-    && ( e.keyCode === KEY_CODE[ '[' ] || e.keyCode === KEY_CODE[ ']' ] )
-  ) {
+  if ( !previous ) return;
 
-    const level = findLevel(e.target);
-    const levelPrev = findLevel(previous);
-    const numPrev = +levelPrev.slice(-1);
+  // const left = e.keyCode === KEY_CODE[ '[' ];
+  // const right = e.keyCode === KEY_CODE[ ']' ]
+  
+  if ( ctrlKey && ( left || right ) ) {
+
+    const level = findLevel( e.target );
+    const levelPrev = findLevel( previous );
+
     let num = +level.slice(-1);
+    const numNext = next ? +findLevel( next ).slice(-1) : num;
+    const numPrev = +levelPrev.slice(-1);
 
-    if ( e.keyCode === KEY_CODE[ '[' ] ) num = shiftItemLeft( e, num );
-    else num = shiftItemRight( e, num, numPrev );
+    if ( left ) num = shiftItemLeft( num, numNext );
+    else num = shiftItemRight( num, numPrev );
 
     e.target.classList.replace(level, `${level.slice(0, -1)}${num}`);
 
@@ -106,11 +112,25 @@ export const shiftItem = e => {
   }
 };
 
-const shiftItemLeft = ( e, num ) =>
-  ( e.keyCode === KEY_CODE[ '[' ] && num > 1 ? --num : num );
+const shiftItemLeft = ( num, numNext ) => 
+( num > 1 && numNext - num < 1 ? --num : num );
 
-const shiftItemRight = ( e, num, numPrev ) =>
-  ( e.keyCode === KEY_CODE[ ']' ] && num < 9 && num - numPrev <= 0 ? ++num : num );
+const shiftItemRight = ( num, numPrev ) =>
+  ( num < 9 && num - numPrev <= 0 ? ++num : num );
+
+export const shiftItemByKeyboard = ( e ) => {
+  const left = e.keyCode === KEY_CODE[ '[' ];
+  const right = e.keyCode === KEY_CODE[ ']' ];
+
+  shiftItem( left, right, e.ctrlKey, e );
+}
+
+export const shiftItemByTouch = ( target ) => swipeConstructor( target, ( delta, SLIDE_RANGE, e ) => {
+  const left = delta < -SLIDE_RANGE ;
+  const right = delta > SLIDE_RANGE;
+
+  shiftItem( left, right, true, e );
+});
 
 export const createNewList = ( type ) => {
   const formFileds = document.querySelector( '.form__fields' );
@@ -146,4 +166,5 @@ export const toggleChecked = ( item, checkbox ) => {
   }
 }
 
-export default { createItem, createNextItem, deleteItem, findLevel, pasteText, shiftItem, toggleChecked };
+export default { createItem, createNextItem, deleteItem, findLevel, pasteText, 
+  shiftItemByKeyboard, shiftItemByTouch, toggleChecked };
