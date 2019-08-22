@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="theme-color" content="#456"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <link rel="shortcut icon" href="./img/favicons/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="./img/favicons/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" href="./img/favicons/apple-touch-icon-57x57.png" sizes="57x57"/>
+    <link rel="apple-touch-icon" href="./img/favicons/apple-touch-icon-72x72.png" sizes="72x72"/>
+    <link rel="apple-touch-icon" href="./img/favicons/apple-touch-icon-76x76.png" sizes="76x76"/>
+    <link rel="apple-touch-icon" href="./img/favicons/apple-touch-icon-114x114.png" sizes="114x114"/>
+    <link rel="apple-touch-icon" href="./img/favicons/apple-touch-icon-120x120.png" sizes="120x120"/>
+    <link rel="apple-touch-icon" href="./img/favicons/apple-touch-icon-144x144.png" sizes="144x144"/>
+    <link rel="apple-touch-icon" href="./img/favicons/apple-touch-icon-152x152.png" sizes="152x152"/>
+    <link rel="apple-touch-icon" href="./img/favicons/apple-touch-icon-180x180.png" sizes="180x180"/>
+    <link rel="stylesheet" href="./styles/index.min.css"/>
+    <title>New Project</title>
+  </head>
+  <body>
+    <div class="container">
+      <form class="form">
+        <input class="form__radio hidden" id="note" type="radio" name="note" value="note"/>
+        <label class="form__label" for="note">note</label>
+        <input class="form__radio hidden" id="list" type="radio" name="note" value="list" checked="checked"/>
+        <label class="form__label" for="list">list</label>
+        <input class="form__radio hidden" id="checklist" type="radio" name="note" value="checklist"/>
+        <label class="form__label" for="checklist">checklist</label>
+        <div class="form__slide">
+          <div class="form__slide-thumb"></div>
+        </div>
+        <div class="form__fields">
+                  <ul class="note" data-key="note"></ul>
+                  <ul class="list" data-key="list"></ul>
+                  <ul class="checklist" data-key="checklist"></ul>
+        </div>
+        <div class="form__controls">
+          <button class="form__submit">save</button>
+        </div>
+      </form>
+    </div>
+    <div class="output">
+      <div class="output__col"></div>
+      <div class="output__col"></div>
+      <div class="output__col"></div>
+    </div>
+    <template id="output-block">
+      <div class="output__block">
+        <ul></ul>
+        <button class="output__remove">Delete</button>
+        <button class="output__save">Save</button>
+      </div>
+    </template>
+    <script src="./js/index.min.js"></script>
+  </body>
+</html>
