@@ -25,7 +25,7 @@
   "dependencies": {
     "browser-sync": "^2.26.7",
     "clone-deep": "^4.0.1",
-    "gulp-group-css-media-queries": "^1.2.2",
+    "eslint": "^6.2.1",
     "gulp-pug": "^4.0.1",
     "gulp-sass": "^4.0.2",
     "object-fit-images": "^3.2.4"

@@ -1,14 +1,15 @@
 ;'use strict';
 
-console.log('i\'m running');
+console.log( 'i\'m running' );
 
-import { createItem } from '../blocks/+list/list';
 import '../blocks/form/form';
+import '../blocks/info/info';
 import './utils/swipeControl';
-import { initialOutput, setWindowResizeRender } from './utils/output';
+import { createItem } from '../blocks/+list/list';
+import { initialOutput, setWindowResizeRender } from '../blocks/output/output';
 
 const initList = ( type ) => {
-  const list = document.querySelector( `.${type}` );
+  const list = document.querySelector( `.${ type }` );
   const item = createItem( type, list );
 
   list.appendChild( item );

@@ -11,13 +11,12 @@ const KEY_CODE = {
 
 export const createItem = ( type, list, classList ) => {
   const item = document.createElement( 'li' );
-
-  let checkClassList = classList ? classList : [ `${type}__item`, '_level-1' ];
+  const checkClassList = classList ? classList : [ `${ type }__item`, '_level-1' ];
 
   item.classList.add( ...checkClassList );
 
   if ( type !== 'note' ) {
-    item.addEventListener( 'keydown', createNextItem.bind(null, type, list) );
+    item.addEventListener( 'keydown', createNextItem.bind( null, type, list ) );
     item.addEventListener( 'keydown', deleteItem );
     item.addEventListener( 'keydown', shiftItemByKeyboard );
     shiftItemByTouch( item );
@@ -28,16 +27,16 @@ export const createItem = ( type, list, classList ) => {
   // idk. wanna string
   item.contentEditable = 'true';
 
-  if (type === 'checklist') {
-    const id = `c-${Math.random().toString(36).substr(2, 9)}`;
-    const checkbox = document.createElement('input');
-    const label = document.createElement('label');
+  if ( type === 'checklist' ) {
+    const id = `c-${ Math.random().toString( 36 ).substr( 2, 9 ) }`;
+    const checkbox = document.createElement( 'input' );
+    const label = document.createElement( 'label' );
 
-    checkbox.classList.add('checklist__checkbox', 'hidden');
+    checkbox.classList.add( 'checklist__checkbox', 'hidden' );
     checkbox.id = id;
     checkbox.type = 'checkbox';
 
-    label.classList.add('checklist__label');
+    label.classList.add( 'checklist__label' );
     label.htmlFor = id;
 
     item.appendChild( checkbox );
@@ -54,14 +53,14 @@ export const createNextItem = ( type, list, e ) => {
     e.preventDefault();
 
     const level = findLevel( e.target );
-    const item = createItem( type, list, [ `${type}__item`, level ] );
+    const item = createItem( type, list, [ `${ type }__item`, level ] );
 
     list.insertBefore( item, e.target.nextElementSibling );
     item.focus();
   }
 };
 
-export const deleteItem = (e) => {
+export const deleteItem = ( e ) => {
   if (
     e.keyCode === KEY_CODE.BACKSPACE
     || e.keyCode === KEY_CODE.DELETE
@@ -76,39 +75,36 @@ export const deleteItem = (e) => {
   }
 };
 
-export const findLevel = item => item.classList.value.match(/_level-[1-9]/)[0];
+export const findLevel = item => item.classList.value.match( /_level-[1-9]/ )[0];
 
-export const pasteText = (e) => {
-  const paste = (e.clipboardData || window.clipboardData).getData('text');
+export const pasteText = ( e ) => {
+  const paste = ( e.clipboardData || window.clipboardData ).getData( 'text' );
   e.preventDefault();
-  e.target.ownerDocument.execCommand("insertText", false, paste);
+  e.target.ownerDocument.execCommand( "insertText", false, paste );
 };
 
-const shiftItem = ( left, right, ctrlKey = true, e ) => {
+const shiftItem = ( e, left, right, ctrlKey = true ) => {
   const previous = e.target.previousElementSibling;
   const next = e.target.nextElementSibling;
 
   if ( !previous ) return;
-
-  // const left = e.keyCode === KEY_CODE[ '[' ];
-  // const right = e.keyCode === KEY_CODE[ ']' ]
   
   if ( ctrlKey && ( left || right ) ) {
 
     const level = findLevel( e.target );
     const levelPrev = findLevel( previous );
 
-    let num = +level.slice(-1);
-    const numNext = next ? +findLevel( next ).slice(-1) : num;
-    const numPrev = +levelPrev.slice(-1);
+    let num = +level.slice( -1 );
+    const numNext = next ? +findLevel( next ).slice( -1 ) : num;
+    const numPrev = +levelPrev.slice( -1 );
 
     if ( left ) num = shiftItemLeft( num, numNext );
     else num = shiftItemRight( num, numPrev );
 
-    e.target.classList.replace(level, `${level.slice(0, -1)}${num}`);
+    e.target.classList.replace( level, `${ level.slice( 0, -1 ) }${ num }` );
 
-    num - numPrev > 0 ? e.target.classList.add('_reset')
-    : e.target.classList.remove('_reset');
+    num - numPrev > 0 ? e.target.classList.add( '_reset' )
+    : e.target.classList.remove( '_reset' );
   }
 };
 
@@ -122,14 +118,15 @@ export const shiftItemByKeyboard = ( e ) => {
   const left = e.keyCode === KEY_CODE[ '[' ];
   const right = e.keyCode === KEY_CODE[ ']' ];
 
-  shiftItem( left, right, e.ctrlKey, e );
+  shiftItem( e, left, right, e.ctrlKey );
 }
 
-export const shiftItemByTouch = ( target ) => swipeConstructor( target, ( delta, SLIDE_RANGE, e ) => {
-  const left = delta < -SLIDE_RANGE ;
-  const right = delta > SLIDE_RANGE;
+export const shiftItemByTouch = ( target ) => 
+  swipeConstructor( target, ( delta, SLIDE_RANGE, e ) => {
+    const left = delta < -SLIDE_RANGE ;
+    const right = delta > SLIDE_RANGE;
 
-  shiftItem( left, right, true, e );
+    shiftItem( e, left, right );
 });
 
 export const createNewList = ( type ) => {
@@ -150,18 +147,16 @@ export const toggleChecked = ( item, checkbox ) => {
   let next = current.nextElementSibling;
 
   if ( next ) {
-    let startLevel = +findLevel( start ).slice(-1);
-    let currentLevel = startLevel;
-    let nextLevel = +findLevel( current.nextElementSibling ).slice(-1);
+    let startLevel = +findLevel( start ).slice( -1 );
+    let nextLevel = +findLevel( current.nextElementSibling ).slice( -1 );
 
     while ( next && nextLevel > startLevel ) {
       next.querySelector( '.checklist__checkbox' ).checked = checkbox.checked;
 
       current = next;
-      currentLevel = nextLevel;
       next = current.nextElementSibling;
 
-      if ( next ) nextLevel = +findLevel( next ).slice(-1);
+      if ( next ) nextLevel = +findLevel( next ).slice( -1 );
     }
   }
 }

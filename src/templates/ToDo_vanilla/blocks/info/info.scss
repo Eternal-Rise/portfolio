@@ -1,0 +1,54 @@
+.info {
+  border-radius: 50%;
+  border: 2px solid $main;
+  bottom: 1rem;
+  color: $main;
+  font-size: 1.4em;
+  height: 1.5em;
+  line-height: 0;
+  padding: 0;
+  position: fixed;
+  right: 1rem;
+  width: 1.5em;
+}
+
+.info-popup {
+  background-color: rgba($bg, .75);
+  bottom: 0;
+  display: flex;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transform: translate(0, -100%);
+  transition: $dur;
+  z-index: 100;
+
+  &._active {
+    transform: translate(0, 0);
+    transition: $dur;
+  }
+
+  &__container {
+    border: 2px solid $main;
+    margin: auto;
+    max-width: $xsm;
+    width: 100%;
+  }
+
+  &__hide {
+    background-color: $bg;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" viewBox="0 0 224.512 224.512" xml:space="preserve"><path fill="#{$main}" d="M224.507 6.997L217.521 0 112.256 105.258 6.998 0 .005 6.997l105.258 105.257L.005 217.512l6.993 7L112.256 119.24l105.265 105.272 6.986-7-105.258-105.258z"/></svg>');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 65%;
+    border: 1px solid $main;
+    box-sizing: border-box;
+    height: 2.2em;
+    padding: 0;
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    width: 2.2em;
+  }
+}
