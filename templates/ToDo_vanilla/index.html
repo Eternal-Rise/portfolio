@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="theme-color" content="#456"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="description" content="Simple note, list or checklist for people"/>
     <link rel="shortcut icon" href="./img/favicons/favicon.ico" type="image/x-icon"/>
     <link rel="apple-touch-icon" href="./img/favicons/apple-touch-icon.png"/>
     <link rel="apple-touch-icon" href="./img/favicons/apple-touch-icon-57x57.png" sizes="57x57"/>
@@ -17,7 +18,7 @@
     <link rel="apple-touch-icon" href="./img/favicons/apple-touch-icon-152x152.png" sizes="152x152"/>
     <link rel="apple-touch-icon" href="./img/favicons/apple-touch-icon-180x180.png" sizes="180x180"/>
     <link rel="stylesheet" href="./styles/index.min.css"/>
-    <title>New Project</title>
+    <title>ToDo vanilla</title>
   </head>
   <body>
     <div class="container">
@@ -40,11 +41,23 @@
           <button class="form__submit">save</button>
         </div>
       </form>
-    </div>
-    <div class="output">
-      <div class="output__col"></div>
-      <div class="output__col"></div>
-      <div class="output__col"></div>
+      <button class="info">?</button>
+      <div class="info-popup">
+        <btn class="info-popup__hide" aria-label="hide info popup"></btn>
+        <div class="info-popup__container">
+          <ul>
+            <li>ctrl + [ - decrease nesting</li>
+            <li>ctrl + ] - increase nesting</li>
+            <li>Aslo you can do it by swiping left and right</li>
+            <li>All data that you save will keeping in your local storage</li>
+          </ul>
+        </div>
+      </div>
+      <div class="output">
+        <div class="output__col"></div>
+        <div class="output__col"></div>
+        <div class="output__col"></div>
+      </div>
     </div>
     <template id="output-block">
       <div class="output__block">
