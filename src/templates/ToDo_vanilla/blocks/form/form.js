@@ -1,12 +1,12 @@
 ;'use strict';
 
 import { createNewList } from '../+list/list';
+import { output } from '../output/output';
 import { default as data } from '../../js/utils/data';
-import { output } from '../../js/utils/output';
 
 const submit = document.querySelector( '.form__submit' );
-const template = document.querySelector('#output-block')
-  .content.querySelector('.output__block');
+const template = document.querySelector( '#output-block' )
+  .content.querySelector( '.output__block' );
 
 const radios = [ ...document.querySelectorAll( 'input[type="radio"]' ) ];
 let type;
@@ -19,10 +19,10 @@ for ( const radio of radios ) {
   radio.addEventListener( 'change', () => { type = radio.value; } );
 }
 
-submit.addEventListener( 'click', e => {
+submit.addEventListener( 'click', ( e ) => {
   e.preventDefault();
   
-  const list =  document.querySelector( `.${type}` );
+  const list =  document.querySelector( `.${ type }` );
   const localData = data.read();
 
   const block = template.cloneNode( true );

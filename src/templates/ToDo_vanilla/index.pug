@@ -1,20 +1,13 @@
 extend ./blocks/_base/template
 
 block title
-  title= "New Project"
+  title= "ToDo vanilla"
   
 block markup
   .container
     include ./blocks/form/form
-
-  //- form#form
-    input#note(name="note" type="text")
-    button#submit save
-
-  .output
-    .output__col
-    .output__col
-    .output__col
+    include ./blocks/info/info
+    include ./blocks/output/output
 
   template#output-block
     .output__block

@@ -1,17 +1,17 @@
 ;'use strict';
 
-import { default as data } from './data';
-import { createItem } from '../../blocks/+list/list';
+import { default as data } from '../../js/utils/data';
+import { createItem } from '../+list/list';
 
 const TABLET_SCREEN_WIDTH = 960;
 
 const outputCols = [ ...document.querySelectorAll( '.output__col' ) ];
-const template = document.querySelector('#output-block')
-  .content.querySelector('.output__block');
+const template = document.querySelector( '#output-block' )
+  .content.querySelector( '.output__block' );
 
 export const output = ( block ) => {
-  if ( window.innerWidth > TABLET_SCREEN_WIDTH) {
-    outputCols.sort( ( a, b ) => a.scrollHeight < b.scrollHeight ? -1 : 1);
+  if ( window.innerWidth > TABLET_SCREEN_WIDTH ) {
+    outputCols.sort( ( a, b ) => a.scrollHeight < b.scrollHeight ? -1 : 1 );
   }
 
   outputCols[0].insertBefore( block, outputCols[0].firstElementChild );
@@ -32,10 +32,10 @@ export const initialOutput = () => {
       block.id = lists.id;
       list.classList.add( lists.type );
 
-      for ( const listItem of lists.items) {
+      for ( const listItem of lists.items ) {
         const item = createItem( lists.type, list, listItem.classList );
-        const checkbox = item.querySelector('.checklist__checkbox');
-        const text = document.createTextNode(listItem.text);
+        const checkbox = item.querySelector( '.checklist__checkbox' );
+        const text = document.createTextNode( listItem.text );
         
         if ( checkbox ) checkbox.checked = listItem.status;
         
@@ -72,6 +72,6 @@ export const setWindowResizeRender = () => {
   window.addEventListener( 'resize', () => {
     clearTimeout( timeout );
 
-    timeout = setTimeout( resizeRender, DELAY);
+    timeout = setTimeout( resizeRender, DELAY );
   });
 }

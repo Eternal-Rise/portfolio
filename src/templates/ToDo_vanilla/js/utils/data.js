@@ -2,15 +2,15 @@
 
 import cloneDeep from 'clone-deep';
 
-export const read = () => ( JSON.parse(localStorage.getItem('data')) || [] );
+export const read = () => ( JSON.parse( localStorage.getItem( 'data' ) ) || [] );
 
 export const getInput = ( list, type, id ) => {
   const date = new Date();
-  const items = [ ...list.querySelectorAll( `.${type}__item` ) ];
+  const items = [ ...list.querySelectorAll( `.${ type }__item` ) ];
 
   const input = {
     date,
-    id: id ? id : `list-${ Math.random().toString(36).substr(2, 9) }`,
+    id: id ? id : `list-${ Math.random().toString(36).substr( 2, 9 ) }`,
     items: [],
     type,
   };
@@ -58,9 +58,9 @@ export const update = ( block, type ) => {
 
 export const remove = ( block ) => {
   const data = read();
-  const index = getIndex( data, block.id);
+  const index = getIndex( data, block.id );
 
-  if ( index >= 0) { 
+  if ( index >= 0 ) { 
     block.remove();
     data.splice( index, 1 );
     save( data );
