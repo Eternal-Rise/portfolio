@@ -1,7 +1,9 @@
 .info {
+  background-color: $bg;
   border-radius: 50%;
   border: 2px solid $main;
   bottom: 1rem;
+  box-shadow: 0 0 .5rem .25rem $bg;
   color: $main;
   font-size: 1.4em;
   height: 1.5em;

@@ -10,11 +10,10 @@ form.form
   .form__slide
     .form__slide-thumb
 
-  include ../+list/list
   .form__fields
-    +list( "note" )
-    +list( "list" )
-    +list( "checklist", true )
+    ul.note
+    ul.list
+    ul.checklist
 
   .form__controls
     button.form__submit save
