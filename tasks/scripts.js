@@ -1,17 +1,15 @@
-'use strict';
-
 import gulp from 'gulp';
 import gulpIf from 'gulp-if';
 import rename from 'gulp-rename';
 import webpackStream from 'webpack-stream';
 
-const scripts = (src, dest, production) => {
-  return gulp.src(src)
+const scripts = (src, dest, production) =>
+  gulp.src(src)
     .pipe(webpackStream({
       devtool: production ? false : 'source-map',
       mode: production ? 'production' : 'development',
       optimization: {
-        minimize: production
+        minimize: production,
       },
       entry: {
         index: src,
@@ -19,9 +17,15 @@ const scripts = (src, dest, production) => {
       output: {
         filename: '[name].js',
       },
-    
+
       module: {
         rules: [
+          {
+            enforce: 'pre',
+            test: /\.js$/,
+            exclude: /node_modules/,
+            loader: 'eslint-loader',
+          },
           {
             test: /\.js$/,
             exclude: /node_modules/,
@@ -37,8 +41,7 @@ const scripts = (src, dest, production) => {
         ]
       },
     }))
-    .pipe(gulpIf(production, rename({suffix: '.min'})))
+    .pipe(gulpIf(production, rename({ suffix: '.min' })))
     .pipe(gulp.dest(dest));
-}
 
 export default scripts;
