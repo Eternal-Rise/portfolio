@@ -1,5 +1,3 @@
-'use strict';
-
 import del from 'del';
 
 const cleaner = dest => del(dest);

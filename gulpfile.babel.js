@@ -1,5 +1,3 @@
-'use strict';
-
 // Include core
 import gulp from 'gulp';
 import yargs from 'yargs';
@@ -16,16 +14,20 @@ const dest = argv.production ? './build/' : './dist/';
 const path = argv.path ? `templates/${argv.path}/` : '';
 
 // smartgrid container width
-const width = argv.width || '1280px'
+const width = argv.width || '1280px';
 
 const paths = {
   clean: {
     // if clean - delete all, else - delete just html, css, js
-    dest: argv.clean ? `${dest}${path}*`
-          : [`${dest}${path}*.html`, `${dest}${path}js/*.js`, `${dest}${path}styles/*.css`],
+    dest: argv.clean ? `${dest}${path}*` :
+      [
+        `${dest}${path}*.html`,
+        `${dest}${path}js/*.js`,
+        `${dest}${path}styles/*.css`
+      ],
   },
   favicon: {
-    src: `./src/${path}img/favicon/favicon.{jpg,jpeg,png,gif}`,
+    src: './src/${path}img/favicon/favicon.{jpg,jpeg,png,gif}',
     dest: `${dest}${path}img/favicons/`,
     watch: `./src/${path}img/favicon/favicon.{jpg,jpeg,png,gif}`,
   },
@@ -55,7 +57,10 @@ const paths = {
   sass: {
     src: `./src/${path}styles/*.{sass,scss}`,
     dest: `${dest}${path}styles/`,
-    watch: [`./src/${path}styles/*.{sass,scss}`,`./src/${path}blocks/**/*.{sass,scss}`],
+    watch: [
+      `./src/${path}styles/*.{sass,scss}`,
+      `./src/${path}blocks/**/*.{sass,scss}`,
+    ],
   },
   scripts: {
     src: `./src/${path}js/index.js`,
@@ -69,7 +74,7 @@ const paths = {
     watch: `./src/${path}img/sprite/*.svg`,
     dest: `${dest}${path}img/sprite/`,
   },
-}
+};
 
 const configs = {
   favs: {
@@ -125,18 +130,18 @@ const configs = {
   sprite: {
     mode: {
       stack: {
-        sprite: "../sprite.svg",
+        sprite: '../sprite.svg',
       },
     },
   },
   plugins: [
-    autoprefixer({grid: false, remove: true}),
+    autoprefixer({ grid: false, remove: true }),
     cssnano({
       preset: [
         'default',
         {
           // minimize if production
-          normalizeWhitespace: argv.production ? true : false,
+          normalizeWhitespace: !!argv.production,
           cssDeclarationSorter: {
             order: 'smacss',
           },
@@ -144,7 +149,7 @@ const configs = {
       ],
     }),
   ],
-}
+};
 
 import taskCleaner from './tasks/cleaner';
 import taskFavs from './tasks/favs';
@@ -157,14 +162,19 @@ import taskStyles from './tasks/styles';
 import taskSprite from './tasks/sprite';
 
 export const cleaner = () => taskCleaner(paths.clean.dest);
-export const favs = () => taskFavs(paths.favicon.src, paths.favicon.dest, configs.favs);
+export const favs = () =>
+  taskFavs(paths.favicon.src, paths.favicon.dest, configs.favs);
 export const fonts = () => taskFonts(paths.fonts.src, paths.fonts.dest);
 export const graphics = () => taskGraphics(paths.img.src, paths.img.dest);
 export const grid = () => taskGrid(paths.smartgrid, configs.grid);
-export const markup = () => taskMarkup(paths.pug.src, paths.pug.dest, argv.production);
-export const scripts = () => taskScripts(paths.scripts.src, paths.scripts.dest, argv.production);
-export const sprite = () => taskSprite(paths.sprite.src, paths.sprite.dest, configs.sprite);
-export const styles = () => taskStyles(paths.sass.src, paths.sass.dest, configs.plugins, argv.production);
+export const markup = () =>
+  taskMarkup(paths.pug.src, paths.pug.dest, argv.production);
+export const scripts = () =>
+  taskScripts(paths.scripts.src, paths.scripts.dest, argv.production);
+export const sprite = () =>
+  taskSprite(paths.sprite.src, paths.sprite.dest, configs.sprite);
+export const styles = () =>
+  taskStyles(paths.sass.src, paths.sass.dest, configs.plugins, argv.production);
 
 export const serve = () => {
   browserSync.init({
@@ -187,13 +197,13 @@ export const serve = () => {
   gulp.watch(paths.sprite.watch, gulp.series(sprite))
     .on('change', browserSync.reload);
 
-  gulp.watch(paths.pug.watch, gulp.series(markup))
-  gulp.watch(paths.scripts.watch, gulp.series(scripts))
+  gulp.watch(paths.pug.watch, gulp.series(markup));
+  gulp.watch(paths.scripts.watch, gulp.series(scripts));
   gulp.watch(paths.sass.watch, gulp.series(styles));
 };
 
 export const dev = gulp.series(
-  cleaner, favs, fonts, graphics, markup, scripts, sprite, styles 
+  cleaner, favs, fonts, graphics, markup, scripts, sprite, styles
 );
 
 export default dev;

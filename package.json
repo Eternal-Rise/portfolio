@@ -6,7 +6,8 @@
   "scripts": {
     "build": "gulp build --production",
     "dev": "gulp",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "eslint": "./node_modules/.bin/eslint"
   },
   "repository": {
     "type": "git",

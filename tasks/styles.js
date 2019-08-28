@@ -1,5 +1,3 @@
-'use strict';
-
 import browserSync from 'browser-sync';
 import gulp from 'gulp';
 import gulpIf from 'gulp-if';
@@ -9,20 +7,19 @@ import rename from 'gulp-rename';
 import sass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
 
-const styles = (src, dest, plugins, production) => {
-  return gulp.src(src)
+const styles = (src, dest, plugins, production) =>
+  gulp.src(src)
     .pipe(gulpIf(!production, sourcemaps.init()))
     .pipe(sass({
-      outputStyle: 'expanded'
+      outputStyle: 'expanded',
     }))
     .pipe(groupmedia())
     .pipe(postcss(plugins))
 
-    .pipe(gulpIf(production, rename({suffix: '.min'})))
+    .pipe(gulpIf(production, rename({ suffix: '.min' })))
     .pipe(gulpIf(!production, sourcemaps.write()))
 
     .pipe(gulp.dest(dest))
     .pipe(browserSync.stream());
-}
 
 export default styles;
