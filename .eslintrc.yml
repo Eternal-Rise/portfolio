@@ -109,7 +109,7 @@ rules:
     - never
   space-in-parens:
     - error
-    - never
+    - always
   space-infix-ops:
     - error
   space-unary-ops:
