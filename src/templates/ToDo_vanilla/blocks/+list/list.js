@@ -11,12 +11,12 @@ const KEY_CODE = {
 
 export const createItem = ( type, list, classList ) => {
   const item = document.createElement( 'li' );
-  const checkClassList = classList ? classList : [ `${ type }__item`, '_level-1' ];
+  const checkClassList = classList ? classList : [`${type}__item`, '_level-1'];
 
   item.classList.add( ...checkClassList );
 
   if ( type !== 'note' ) {
-    item.addEventListener( 'keydown', createNextItem.bind( null, type, list ) );
+    item.addEventListener( 'keydown', createNextItem.bind( null, type, list ));
     item.addEventListener( 'keydown', deleteItem );
     item.addEventListener( 'keydown', shiftItemByKeyboard );
     shiftItemByTouch( item );
@@ -28,7 +28,7 @@ export const createItem = ( type, list, classList ) => {
   item.contentEditable = 'true';
 
   if ( type === 'checklist' ) {
-    const id = `c-${ Math.random().toString( 36 ).substr( 2, 9 ) }`;
+    const id = `c-${Math.random().toString( 36 ).substr( 2, 9 )}`;
     const checkbox = document.createElement( 'input' );
     const label = document.createElement( 'label' );
 
@@ -42,7 +42,8 @@ export const createItem = ( type, list, classList ) => {
     item.appendChild( checkbox );
     item.appendChild( label );
 
-    checkbox.addEventListener( 'change', toggleChecked.bind( null, item, checkbox ) );
+    checkbox.addEventListener( 'change',
+      toggleChecked.bind( null, item, checkbox ));
   }
 
   return item;
@@ -53,7 +54,7 @@ export const createNextItem = ( type, list, e ) => {
     e.preventDefault();
 
     const level = findLevel( e.target );
-    const item = createItem( type, list, [ `${ type }__item`, level ] );
+    const item = createItem( type, list, [ `${type}__item`, level ]);
 
     list.insertBefore( item, e.target.nextElementSibling );
     item.focus();
@@ -62,9 +63,9 @@ export const createNextItem = ( type, list, e ) => {
 
 export const deleteItem = ( e ) => {
   if (
-    e.keyCode === KEY_CODE.BACKSPACE
-    || e.keyCode === KEY_CODE.DELETE
-    || ( e.shiftKey && e.keyCode === KEY_CODE.NUM_DEL )
+    e.keyCode === KEY_CODE.BACKSPACE ||
+    e.keyCode === KEY_CODE.DELETE ||
+    ( e.shiftKey && e.keyCode === KEY_CODE.NUM_DEL )
   ) {
     const previous = e.target.previousElementSibling;
 
@@ -75,12 +76,12 @@ export const deleteItem = ( e ) => {
   }
 };
 
-export const findLevel = item => item.classList.value.match( /_level-[1-9]/ )[0];
+export const findLevel = item => item.classList.value.match(/_level-[1-9]/)[0];
 
 export const pasteText = ( e ) => {
   const paste = ( e.clipboardData || window.clipboardData ).getData( 'text' );
   e.preventDefault();
-  e.target.ownerDocument.execCommand( "insertText", false, paste );
+  e.target.ownerDocument.execCommand( 'insertText', false, paste );
 };
 
 const shiftItem = ( e, left, right, ctrlKey = true ) => {
@@ -88,7 +89,7 @@ const shiftItem = ( e, left, right, ctrlKey = true ) => {
   const next = e.target.nextElementSibling;
 
   if ( !previous ) return;
-  
+
   if ( ctrlKey && ( left || right ) ) {
 
     const level = findLevel( e.target );
@@ -101,15 +102,15 @@ const shiftItem = ( e, left, right, ctrlKey = true ) => {
     if ( left ) num = shiftItemLeft( num, numNext );
     else num = shiftItemRight( num, numPrev );
 
-    e.target.classList.replace( level, `${ level.slice( 0, -1 ) }${ num }` );
+    e.target.classList.replace( level, `${level.slice( 0, -1 )}${num}` );
 
-    num - numPrev > 0 ? e.target.classList.add( '_reset' )
-    : e.target.classList.remove( '_reset' );
+    num - numPrev > 0 ? e.target.classList.add( '_reset' ) :
+      e.target.classList.remove( '_reset' );
   }
 };
 
-const shiftItemLeft = ( num, numNext ) => 
-( num > 1 && numNext - num < 1 ? --num : num );
+const shiftItemLeft = ( num, numNext ) =>
+  ( num > 1 && numNext - num < 1 ? --num : num );
 
 const shiftItemRight = ( num, numPrev ) =>
   ( num < 9 && num - numPrev <= 0 ? ++num : num );
@@ -119,15 +120,15 @@ export const shiftItemByKeyboard = ( e ) => {
   const right = e.keyCode === KEY_CODE[ ']' ];
 
   shiftItem( e, left, right, e.ctrlKey );
-}
+};
 
-export const shiftItemByTouch = ( target ) => 
+export const shiftItemByTouch = ( target ) =>
   swipeConstructor( target, ( delta, SLIDE_RANGE, e ) => {
-    const left = delta < -SLIDE_RANGE ;
+    const left = delta < -SLIDE_RANGE;
     const right = delta > SLIDE_RANGE;
 
     shiftItem( e, left, right );
-});
+  });
 
 export const createNewList = ( type ) => {
   const formFileds = document.querySelector( '.form__fields' );
@@ -139,15 +140,15 @@ export const createNewList = ( type ) => {
   list.classList.add( type );
   list.dataset.key = type;
   item.focus();
-}
+};
 
 export const toggleChecked = ( item, checkbox ) => {
-  let start = item;
+  const start = item;
   let current = start;
   let next = current.nextElementSibling;
 
   if ( next ) {
-    let startLevel = +findLevel( start ).slice( -1 );
+    const startLevel = +findLevel( start ).slice( -1 );
     let nextLevel = +findLevel( current.nextElementSibling ).slice( -1 );
 
     while ( next && nextLevel > startLevel ) {
@@ -159,7 +160,7 @@ export const toggleChecked = ( item, checkbox ) => {
       if ( next ) nextLevel = +findLevel( next ).slice( -1 );
     }
   }
-}
+};
 
-export default { createItem, createNextItem, deleteItem, findLevel, pasteText, 
+export default { createItem, createNextItem, deleteItem, findLevel, pasteText,
   shiftItemByKeyboard, shiftItemByTouch, toggleChecked };

@@ -1,4 +1,5 @@
 env:
+  browser: true
   es6: true
   node: true
 extends: 'eslint:recommended'
@@ -107,9 +108,6 @@ rules:
   space-before-function-paren:
     - error
     - never
-  space-in-parens:
-    - error
-    - always
   space-infix-ops:
     - error
   space-unary-ops:
@@ -137,9 +135,6 @@ rules:
     - error
   no-shadow-restricted-names:
     - error
-  no-use-before-define:
-    - error
-    - functions: false
   arrow-body-style:
     - error
     - as-needed
