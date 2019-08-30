@@ -30,9 +30,10 @@ export const createItem = ( type, list, classList ) => {
   item.appendChild( inputField );
 
   if ( type !== 'note' ) {
-    item.addEventListener( 'keydown', createNextItem.bind( null, type, list ));
-    item.addEventListener( 'keydown', deleteItem.bind( null, type ));
-    item.addEventListener( 'keydown', shiftItemByKeyboard );
+    inputField.addEventListener( 'keydown',
+      createNextItem.bind( null, type, list ));
+    inputField.addEventListener( 'keydown', deleteItem);
+    inputField.addEventListener( 'keydown', shiftItemByKeyboard );
     shiftItemByTouch( item );
   }
 
@@ -84,8 +85,22 @@ const deleteItem = ( e ) => {
     const previous = item.previousElementSibling;
 
     if ( previous && e.target.textContent === '' ) {
-      previous.querySelector( '.inputField' ).focus();
+      const input = previous.querySelector( '.inputField' );
+      const range = document.createRange();
+      const selection =  window.getSelection();
+
+      // to prevent deleting last character
+      input.textContent += ' ';
+
+      // move caret to last character
+      range.setStart( input.lastChild, input.lastChild.length );
+      // range.collapse( true );
+      selection.removeAllRanges();
+      selection.addRange(range);
+
+      input.focus();
       item.remove();
+
     }
   }
 };
