@@ -185,14 +185,16 @@ const toggleChecked = ( item, checkbox ) => {
     while ( prev ) {
       if ( count === 1 ) break;
       if ( prevLevel === 1 ) count++;
-      if ( prevLevel < currentLevel ) parent = true;
+      if ( prevLevel < currentLevel ) {
+        currentLevel = prevLevel;
+        parent = true;
+      }
       if ( parent ) {
         prev.querySelector( '.checklist__checkbox' ).checked = false;
         parent = false;
       }
 
       current = prev;
-      currentLevel = prevLevel;
       prev = current.previousElementSibling;
       if ( prev ) prevLevel = +findLevel( prev ).slice( -1 ); // '_level-x' => x
     }
@@ -228,7 +230,10 @@ const toggleChecked = ( item, checkbox ) => {
 
     while ( prev && count === 0 ) {
       if ( prevLevel === 1 ) count++;
-      if ( prevLevel < currentLevel ) parent = true;
+      if ( prevLevel < currentLevel ) {
+        currentLevel = prevLevel;
+        parent = true;
+      }
       if ( parent ) {
         prev.querySelector( '.checklist__checkbox' ).checked = true;
         parent = false;
@@ -236,7 +241,6 @@ const toggleChecked = ( item, checkbox ) => {
       if ( !prev.querySelector( '.checklist__checkbox' ).checked ) break;
 
       current = prev;
-      currentLevel = prevLevel;
       prev = current.previousElementSibling;
       if ( prev ) prevLevel = +findLevel( prev ).slice( -1 ); // '_level-x' => x
     }
