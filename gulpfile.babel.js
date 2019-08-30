@@ -27,7 +27,7 @@ const paths = {
       ],
   },
   favicon: {
-    src: './src/${path}img/favicon/favicon.{jpg,jpeg,png,gif}',
+    src: `./src/${path}img/favicon/favicon.{jpg,jpeg,png,gif}`,
     dest: `${dest}${path}img/favicons/`,
     watch: `./src/${path}img/favicon/favicon.{jpg,jpeg,png,gif}`,
   },
