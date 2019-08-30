@@ -36,7 +36,7 @@ export const initialOutput = () => {
 
         if ( checkbox ) checkbox.checked = listItem.status;
 
-        item.appendChild( text );
+        item.querySelector( '.inputField' ).appendChild( text );
         list.appendChild( item );
       }
       output( block );

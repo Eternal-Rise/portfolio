@@ -19,7 +19,7 @@ const radios = [ ...document.querySelectorAll( 'input[type="radio"]' )];
   const index = radios.findIndex( radio => radio.checked );
   const target = e.target.tagName.toLowerCase();
 
-  if ( target === 'li' ) return;
+  if ( target === 'ul' || target === 'li' || target === 'span' ) return;
 
   if ( !radios[0].checked && delta > SLIDE_RANGE ) {
     radios[ index - 1 ].checked = true;
