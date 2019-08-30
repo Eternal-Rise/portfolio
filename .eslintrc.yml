@@ -71,6 +71,7 @@ rules:
     - error
     - code: 80
       ignoreUrls: true
+      ignoreComments: true
   max-nested-callbacks:
     - error
     - max: 7

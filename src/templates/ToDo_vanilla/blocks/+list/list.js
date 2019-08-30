@@ -159,18 +159,23 @@ export const createNewList = ( type ) => {
 
 const toggleChecked = ( item, checkbox ) => {
   const targetLevel = +findLevel( item ).slice( -1 ); // '_level-x' => x
+  const isNotChecked = new Set();
 
   let current = item;
-  let currentLevel = +findLevel( item ).slice( -1 ); // '_level-x' => x
   let next = item.nextElementSibling;
   let prev = item.previousElementSibling;
-  let parent = false;
 
   if ( next ) {
+    let child = true;
     let nextLevel = +findLevel( next ).slice( -1 ); // '_level-x' => x
 
-    while ( next && nextLevel > targetLevel ) {
-      next.querySelector( '.checklist__checkbox' ).checked = checkbox.checked;
+    while ( next && nextLevel !== 1 ) {
+      const nextCheckbox = next.querySelector( '.checklist__checkbox' );
+
+      if ( nextLevel === targetLevel ) child = false;
+      if ( child && nextLevel > targetLevel ) {
+        nextCheckbox.checked = checkbox.checked;
+      } else if ( !nextCheckbox.checked ) isNotChecked.add( nextLevel );
 
       current = next;
       next = current.nextElementSibling;
@@ -178,67 +183,22 @@ const toggleChecked = ( item, checkbox ) => {
     }
   }
 
-  if ( prev && !checkbox.checked ) {
+  if ( prev ) {
     let count = 0;
-    let prevLevel = +findLevel( prev ).slice( -1 );
-
-    while ( prev ) {
-      if ( count === 1 ) break;
-      if ( prevLevel === 1 ) count++;
-      if ( prevLevel < currentLevel ) {
-        currentLevel = prevLevel;
-        parent = true;
-      }
-      if ( parent ) {
-        prev.querySelector( '.checklist__checkbox' ).checked = false;
-        parent = false;
-      }
-
-      current = prev;
-      prev = current.previousElementSibling;
-      if ( prev ) prevLevel = +findLevel( prev ).slice( -1 ); // '_level-x' => x
-    }
-  }
-
-  if ( prev && checkbox.checked ) {
-
-    // reset values
-    current = item;
-    currentLevel = +findLevel( item ).slice( -1 ); // '_level-x' => x
-    next = current.nextElementSibling;
-    parent = false;
-
-    let count = 0;
+    let currentLevel = +findLevel( item ).slice( -1 ); // '_level-x' => x
     let prevLevel = +findLevel( prev ).slice( -1 ); // '_level-x' => x
 
-    if ( next ) {
-      let nextLevel = +findLevel( next ).slice( -1 ); // '_level-x' => x
-
-      while ( next && count === 0 ) {
-        if ( !next.querySelector( '.checklist__checkbox' ).checked ) return;
-
-        current = next;
-        next = current.nextElementSibling;
-
-        if ( next ) nextLevel = +findLevel( next ).slice( -1 );
-        if ( nextLevel === 1 ) count++;
-      }
-    }
-
-    // reset counter
-    count = 0;
-
     while ( prev && count === 0 ) {
+      const prevCheckbox = prev.querySelector( '.checklist__checkbox' );
+
       if ( prevLevel === 1 ) count++;
       if ( prevLevel < currentLevel ) {
         currentLevel = prevLevel;
-        parent = true;
+
+        // + 1 cause we have childs set and toggle parents
+        if ( isNotChecked.has( prevLevel + 1 ) ) prevCheckbox.checked = false;
+        else prevCheckbox.checked = checkbox.checked;
       }
-      if ( parent ) {
-        prev.querySelector( '.checklist__checkbox' ).checked = true;
-        parent = false;
-      }
-      if ( !prev.querySelector( '.checklist__checkbox' ).checked ) break;
 
       current = prev;
       prev = current.previousElementSibling;
