@@ -210,7 +210,6 @@ const toggleChecked = ( item, checkbox ) => {
 
     while ( prev && count === 0 ) {
       const prevCheckbox = prev.querySelector( '.checklist__checkbox' );
-
       if ( prevLevel === 1 ) count++;
       if ( prevLevel < currentLevel ) {
         currentLevel = prevLevel;
@@ -218,7 +217,8 @@ const toggleChecked = ( item, checkbox ) => {
         // + 1 cause we have childs set and toggle parents
         if ( isNotChecked.has( prevLevel + 1 ) ) prevCheckbox.checked = false;
         else prevCheckbox.checked = checkbox.checked;
-      }
+
+      } else if ( !prevCheckbox.checked ) isNotChecked.add( prevLevel );
 
       current = prev;
       prev = current.previousElementSibling;
