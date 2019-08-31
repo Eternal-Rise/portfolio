@@ -14,18 +14,15 @@ export const getInput = ( list, type, id ) => {
     type,
   };
 
-  let checkbox;
-
   for ( const item of items ) {
-
-    if ( type === 'checklist' ) {
-      checkbox = item.querySelector( '.checklist__checkbox' );
-    }
+    const checkbox = item.querySelector( '.checklist__checkbox' );
+    const inputField = item.querySelector( '.inputField' );
 
     input.items.push({
       classList: item.classList.value.split(' '),
+      content: [...inputField.childNodes].map( i => ( i.nodeName === '#text' ?
+        i = i.textContent : i = 'br' )),
       status: checkbox ? checkbox.checked : undefined,
-      text: item.textContent,
     });
   }
   return input;

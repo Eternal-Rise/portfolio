@@ -15,7 +15,6 @@ export const output = ( block ) => {
 };
 
 // initial output
-
 export const initialOutput = () => {
   const localData = data.read();
 
@@ -32,11 +31,18 @@ export const initialOutput = () => {
       for ( const listItem of lists.items ) {
         const item = createItem( lists.type, list, listItem.classList );
         const checkbox = item.querySelector( '.checklist__checkbox' );
-        const text = document.createTextNode( listItem.text );
-
+        const inputField = item.querySelector( '.inputField' );
         if ( checkbox ) checkbox.checked = listItem.status;
 
-        item.querySelector( '.inputField' ).appendChild( text );
+        for ( const content of listItem.content ) {
+          if ( content === 'br' ) {
+            const br = document.createElement( 'br' );
+            inputField.appendChild( br );
+          } else {
+            const text = document.createTextNode( content );
+            inputField.appendChild( text );
+          }
+        }
         list.appendChild( item );
       }
       output( block );

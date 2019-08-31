@@ -24,8 +24,9 @@ export const createItem = ( type, list, classList ) => {
   const inputField = document.createElement( 'span' );
   inputField.classList.add( 'inputField' );
   inputField.contentEditable = 'true';
-  inputField.addEventListener( 'focus', inputFocus );
+
   inputField.addEventListener( 'blur', inputBlur );
+  inputField.addEventListener( 'focus', inputFocus );
 
   item.appendChild( inputField );
 
@@ -75,6 +76,18 @@ const createNextItem = ( type, list, e ) => {
   }
 };
 
+export const createNewList = ( type ) => {
+  const formFileds = document.querySelector( '.form__fields' );
+  const list = document.createElement( 'ul' );
+  const item = createItem( type, list );
+
+  formFileds.appendChild( list );
+  list.appendChild( item );
+  list.classList.add( type );
+  list.dataset.key = type;
+  item.querySelector( '.inputField' ).focus();
+};
+
 const deleteItem = ( e ) => {
   if (
     e.keyCode === KEY_CODE.BACKSPACE ||
@@ -86,18 +99,8 @@ const deleteItem = ( e ) => {
 
     if ( previous && e.target.textContent === '' ) {
       const input = previous.querySelector( '.inputField' );
-      const range = document.createRange();
-      const selection =  window.getSelection();
 
-      // to prevent deleting last character
-      input.textContent += ' ';
-
-      // move caret to last character
-      range.setStart( input.lastChild, input.lastChild.length );
-      // range.collapse( true );
-      selection.removeAllRanges();
-      selection.addRange(range);
-
+      moveCaret( input );
       input.focus();
       item.remove();
 
@@ -106,6 +109,20 @@ const deleteItem = ( e ) => {
 };
 
 const findLevel = item => item.classList.value.match(/_level-[1-9]/)[0];
+
+const moveCaret = ( input ) => {
+  const range = document.createRange();
+  const selection =  window.getSelection();
+
+  // to prevent deleting last character. This is &nbsp;
+  input.innerHTML += ' ';
+
+  // move caret to last character
+  range.setStart( input.lastChild, input.lastChild.length );
+  range.collapse( true );
+  selection.removeAllRanges();
+  selection.addRange(range);
+};
 
 const pasteText = ( e ) => {
   const paste = ( e.clipboardData || window.clipboardData ).getData( 'text' );
@@ -159,18 +176,6 @@ const shiftItemByTouch = ( target ) =>
 
     shiftItem( e, left, right );
   });
-
-export const createNewList = ( type ) => {
-  const formFileds = document.querySelector( '.form__fields' );
-  const list = document.createElement( 'ul' );
-  const item = createItem( type, list );
-
-  formFileds.appendChild( list );
-  list.appendChild( item );
-  list.classList.add( type );
-  list.dataset.key = type;
-  item.querySelector( '.inputField' ).focus();
-};
 
 const toggleChecked = ( item, checkbox ) => {
   const targetLevel = +findLevel( item ).slice( -1 ); // '_level-x' => x
