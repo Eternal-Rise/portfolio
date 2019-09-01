@@ -31,9 +31,14 @@ const scripts = (src, dest, production) =>
             exclude: /node_modules/,
             use: {
               loader: 'babel-loader',
-              query: {
+              options: {
                 presets: [
-                  ['@babel/preset-env', { modules: false }]
+                  ['@babel/preset-env', { modules: false }],
+                  {
+                    plugins: [
+                      '@babel/plugin-proposal-class-properties',
+                    ],
+                  },
                 ]
               }
             }

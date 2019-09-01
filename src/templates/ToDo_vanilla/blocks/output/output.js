@@ -1,5 +1,7 @@
 import { default as data } from '../../js/utils/data';
-import { createItem } from '../+list/list';
+import { note } from '../+list/note';
+import { list } from '../+list/list';
+import { checklist } from '../+list/checklist';
 
 const TABLET_SCREEN_WIDTH = 960;
 
@@ -14,6 +16,28 @@ export const output = ( block ) => {
   outputCols[0].insertBefore( block, outputCols[0].firstElementChild );
 };
 
+const render = ( constructor, list, items, type ) => {
+  for ( const item of items ) {
+    const { item: newItem } = constructor
+      .createItem( type, list, item.classList );
+
+    const checkbox = newItem.querySelector( '.checklist__checkbox' );
+    const inputField =  newItem.querySelector( '.inputField' );
+    if ( checkbox ) checkbox.checked = item.status;
+
+    for ( const content of item.content ) {
+      if ( content === 'br' ) {
+        const br = document.createElement( 'br' );
+        inputField.appendChild( br );
+      } else {
+        const text = document.createTextNode( content );
+        inputField.appendChild( text );
+      }
+    }
+    list.appendChild( newItem );
+  }
+};
+
 // initial output
 export const initialOutput = () => {
   const localData = data.read();
@@ -23,28 +47,14 @@ export const initialOutput = () => {
       const block = template.cloneNode( true );
       const btnRemove = block.querySelector( '.output__remove' );
       const btnSave = block.querySelector( '.output__save' );
-      const list = block.querySelector( 'ul' );
+      const newList = block.querySelector( 'ul' );
+      const constructor = lists.type === 'note' ? note :
+        lists.type === 'list' ? list : checklist;
 
       block.id = lists.id;
-      list.classList.add( lists.type );
+      newList.classList.add( lists.type );
 
-      for ( const listItem of lists.items ) {
-        const item = createItem( lists.type, list, listItem.classList );
-        const checkbox = item.querySelector( '.checklist__checkbox' );
-        const inputField = item.querySelector( '.inputField' );
-        if ( checkbox ) checkbox.checked = listItem.status;
-
-        for ( const content of listItem.content ) {
-          if ( content === 'br' ) {
-            const br = document.createElement( 'br' );
-            inputField.appendChild( br );
-          } else {
-            const text = document.createTextNode( content );
-            inputField.appendChild( text );
-          }
-        }
-        list.appendChild( item );
-      }
+      render( constructor, newList, lists.items, lists.type );
       output( block );
 
       btnRemove.addEventListener( 'click',

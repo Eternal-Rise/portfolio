@@ -1,4 +1,6 @@
-import { createNewList } from '../+list/list';
+import { note } from '../+list/note';
+import { list } from '../+list/list';
+import { checklist } from '../+list/checklist';
 import { output } from '../output/output';
 import { default as data } from '../../js/utils/data';
 
@@ -22,7 +24,7 @@ for ( const radio of radios ) {
 submit.addEventListener( 'click', ( e ) => {
   e.preventDefault();
 
-  const list =  document.querySelector( `.${type}` );
+  const currentList =  document.querySelector( `.${type}` );
   const localData = data.read();
 
   const block = template.cloneNode( true );
@@ -30,10 +32,10 @@ submit.addEventListener( 'click', ( e ) => {
   const btnSave = block.querySelector( '.output__save' );
   const tempList = block.querySelector( 'ul' );
 
-  block.replaceChild( list, tempList );
+  block.replaceChild( currentList, tempList );
 
   // get data from list
-  const inputData = data.getInput( list, type );
+  const inputData = data.getInput( currentList, type );
 
   // id to block for delete / update block | data
   block.id = inputData.id;
@@ -48,6 +50,11 @@ submit.addEventListener( 'click', ( e ) => {
   // save to local storage
   data.push( localData, inputData );
 
+  const constructor = type === 'note' ? note :
+    type === 'list' ? list : checklist;
+
   // create new list
-  createNewList( type );
+  const newList = constructor.createNewList( type );
+  const { item: newItem } = constructor.createItem( type );
+  newList.appendChild( newItem );
 });

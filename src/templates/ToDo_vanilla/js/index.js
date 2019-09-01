@@ -3,19 +3,24 @@ console.log( 'i\'m running' );
 import '../blocks/form/form';
 import '../blocks/info/info';
 import './utils/swipeControl';
-import { createItem } from '../blocks/+list/list';
+import { note } from '../blocks/+list/note';
+import { list } from '../blocks/+list/list';
+import { checklist } from '../blocks/+list/checklist';
 import { initialOutput, setWindowResizeRender } from '../blocks/output/output';
 
 const initList = ( type ) => {
-  const list = document.querySelector( `.${type}` );
-  const item = createItem( type, list );
+  const constructor = type === 'note' ? note :
+    type === 'list' ? list : checklist;
 
-  list.appendChild( item );
+  const newList = constructor.createNewList( type );
+  const { item: newItem } = type === 'note' ? constructor.createItem( type ) :
+    constructor.createItem( type, newList );
+
+  newList.appendChild( newItem );
 };
 
-initList( 'checklist' );
-initList( 'list' );
 initList( 'note' );
-
+initList( 'list' );
+initList( 'checklist' );
 initialOutput();
 setWindowResizeRender();
