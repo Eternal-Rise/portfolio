@@ -4,6 +4,7 @@ import { checklist } from '../+list/checklist';
 import { output } from '../output/output';
 import { default as data } from '../../js/utils/data';
 
+const formFields = document.querySelector( '.form__fields' );
 const submit = document.querySelector( '.form__submit' );
 const template = document.querySelector( '#output-block' )
   .content.querySelector( '.output__block' );
@@ -31,8 +32,17 @@ submit.addEventListener( 'click', ( e ) => {
   const btnRemove = block.querySelector( '.output__remove' );
   const btnSave = block.querySelector( '.output__save' );
   const tempList = block.querySelector( 'ul' );
-
   block.replaceChild( currentList, tempList );
+
+  // create and insert new list
+  const constructor = type === 'note' ? note :
+    type === 'list' ? list : checklist;
+  const newList = constructor.createNewList( type );
+  const { item: newItem } = constructor.createItem( type );
+  newList.classList.add( `${type}` );
+  newList.appendChild( newItem );
+
+  formFields.appendChild( newList );
 
   // get data from list
   const inputData = data.getInput( currentList, type );
@@ -50,11 +60,9 @@ submit.addEventListener( 'click', ( e ) => {
   // save to local storage
   data.push( localData, inputData );
 
-  const constructor = type === 'note' ? note :
-    type === 'list' ? list : checklist;
-
   // create new list
-  const newList = constructor.createNewList( type );
-  const { item: newItem } = constructor.createItem( type );
-  newList.appendChild( newItem );
+  // const newList = constructor.createNewList( type );
+  // const { item: newItem } = constructor.createItem( type );
+  // newList.appendChild( newItem );
 });
+
