@@ -31,17 +31,14 @@ submit.addEventListener( 'click', ( e ) => {
   const block = template.cloneNode( true );
   const btnRemove = block.querySelector( '.output__remove' );
   const btnSave = block.querySelector( '.output__save' );
-  const tempList = block.querySelector( 'ul' );
-  block.replaceChild( currentList, tempList );
+  const newList = block.replaceChild( currentList, block.querySelector( 'ul' ));
 
-  // create and insert new list
   const constructor = type === 'note' ? note :
     type === 'list' ? list : checklist;
-  const newList = constructor.createNewList( type );
   const { item: newItem } = constructor.createItem( type );
+
   newList.classList.add( `${type}` );
   newList.appendChild( newItem );
-
   formFields.appendChild( newList );
 
   // get data from list
