@@ -1,0 +1,25 @@
+.lang {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 4rem 0 0;
+  text-transform: uppercase;
+
+  &__item {
+    line-height: 1.25;
+
+    &:first-child {
+      display: flex;
+      align-items: center;
+
+      &::after {
+        content: '';
+        margin: 0 0 1px 0.5rem;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: .3rem .3rem 0 .3rem;
+        border-color: $main transparent transparent transparent;
+      }
+    }
+  }
+}

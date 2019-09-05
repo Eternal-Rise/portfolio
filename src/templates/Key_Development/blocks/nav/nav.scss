@@ -1,0 +1,57 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  // margin-bottom: .4rem;
+
+  @include bp($xsm) {
+    align-items: center;
+    flex-direction: row;
+  }
+
+  &__btn {
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    font: $ff;
+    padding: 0;
+    text-transform: uppercase;
+    display: flex;
+    align-items: stretch;
+    letter-spacing: .1rem;
+  }
+
+  &__btn-wrap {
+    display: flex;
+    padding: .2rem 0;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 0.5rem;
+  }
+
+  &__btn-bar {
+    width: 2rem;
+    height: 2px;
+    background-color: $main;
+  }
+
+  &__link {
+    color: inherit;
+    font-weight: $fw-b;
+    margin-right: 2rem;
+    text-decoration: none;
+
+    @include bp($md) {
+      margin-right: 4rem;
+    }
+
+    &._margin {
+      margin-right: 4rem;
+
+      @include bp($xsm) {
+        margin-right: 27.45%;
+      }
+    }
+  }
+}

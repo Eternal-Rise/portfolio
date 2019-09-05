@@ -1,0 +1,11 @@
+.screen-counter {
+  display: flex;
+  margin-right: 6rem;
+  letter-spacing: .1rem;
+
+  &__current {
+    font-size: 3em;
+    margin-right: 1rem;
+    line-height: 1;
+  }
+}

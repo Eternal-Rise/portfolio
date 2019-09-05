@@ -1,0 +1,69 @@
+.hero {
+  display: grid;
+  align-items: center;
+
+  &__aside {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  &__inner {
+    display: flex;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    justify-content: space-between;
+
+    // from .screen
+    margin-bottom: 112px;
+
+    // oferflow .slider & .overlay
+    z-index: 10;
+  }
+
+  &__slider {
+    align-self: stretch;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+
+  &__lead {
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: $fw-ub;
+    line-height: 1.25;
+    letter-spacing: 0.15rem;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 120px;
+      height: 50px;
+      background-image: url(../img/hero-lead-decoration.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      transform: translate(-50%, 5%);
+      z-index: -1;
+
+      @include bp($xxl) {
+        width: 200px;
+        height: 75px;
+      }
+    }
+  }
+
+  &__text {
+    margin-left: 4rem;
+  }
+
+  &__title {
+    transform: scale(1, 1.2);
+    font-weight: $fw-l;
+  }
+
+}

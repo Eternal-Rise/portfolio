@@ -1,0 +1,15 @@
+.header {
+  align-items: flex-end;
+  background-color: $bg;
+  box-sizing: border-box;
+  display: flex;
+  padding: 2rem 1rem 3rem;
+  width: 100%;
+
+  // overflow screens
+  z-index: 100;
+
+  @include bp($xxl) {
+    padding: 2rem 7rem;
+  }
+}

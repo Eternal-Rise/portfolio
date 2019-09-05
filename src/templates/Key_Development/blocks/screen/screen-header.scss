@@ -1,0 +1,98 @@
+.screen-header {
+  padding: 2rem 1rem 2rem;
+  background-color: $main;
+  transform: translateX(100%);
+
+  &._slide-in {
+    animation: slide-in 1.5s cubic-bezier(.56,.97,.86,.9) 2s forwards;
+  }
+
+  @keyframes slide-in {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(5rem);
+    }
+  }
+
+  &._active {
+    animation: active .5s ease-in forwards;
+  }
+
+  @keyframes active {
+    from {
+      transform: translateX(5rem);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+
+    > * {
+      opacity: 0;
+    }
+  }
+
+  &__title {
+    align-self: flex-start;
+    text-transform: uppercase;
+    font-size: 1em;
+    margin: .25rem 4rem 0;
+    transform: translateX(-45%);
+  }
+
+  &__text {
+    display: block;
+    color: $text-alt;
+    font-weight: $fw-r;
+    max-width: 180px;
+    margin: 0 4rem;
+
+    &:nth-child(2) {
+      transform: translateX(-35%);
+    }
+    &:nth-child(3) {
+      transform: translateX(-25%);
+    }
+  }
+
+  &__btn-scroll {
+
+  }
+
+  .fade-in {
+    $i: 1;
+    @while $i < 5 {
+      &:nth-child(#{$i}) {
+        animation: fade-in 1s cubic-bezier(.56,.97,.86,.9) #{3.5 + $i / 5}s forwards;
+      }
+    }
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    // transform: translateX(-15%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+    // transform: translateX(-15%);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(15%);
+  }
+}

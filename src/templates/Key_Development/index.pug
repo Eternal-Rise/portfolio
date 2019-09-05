@@ -4,17 +4,11 @@ block title
   title= "New Project"
 
 block markup
-  header.header
-    a.logo(href="./index.html")
-      img.logo__img(src="./img/logo.png" alt="logo")
-    .inner
-      nav.nav
-        a.nav__link(href="#") О компании
-        a.nav__link._margin(href="#") Контакты
-        button.nav__btn
-          .nav__btn-wrap
-            .nav__btn-bar
-            .nav__btn-bar
-          |меню
-    ul.lang
-      li.lang__item ru
+  .container
+    include ./blocks/header/header
+
+    .wrapper
+      main.main
+        include ./blocks/hero/hero
+        include ./blocks/screen/screen
+      include ./blocks/aside/aside

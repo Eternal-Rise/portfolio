@@ -1,0 +1,10 @@
+.logo {
+  margin-left: 4rem;
+
+  @include bp($xxl) {
+    margin-left: 4rem;
+  }
+  &__img {
+    display: block;
+  }
+}

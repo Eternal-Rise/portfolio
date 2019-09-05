@@ -1,0 +1,23 @@
+.slider {
+  display: flex;
+  align-items: stretch;
+  // height: 100%;
+
+  &__item {
+    display: flex;
+    align-items: stretch;
+  }
+
+  &__pic {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  &__img {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    opacity: .35;
+  }
+}
