@@ -1,0 +1,21 @@
+@mixin bp($point) {
+  @media screen and (min-width: $point) { @content; }
+}
+
+@mixin bp-max($point) {
+  @media screen and (max-width: $point) { @content; }
+}
+
+@mixin bp-minmax($min, $max) {
+  @media screen and (min-width: $min) and (max-width: $max) { @content; }
+}
+
+@mixin hidden() {
+  position: absolute;
+	clip: rect(1px, 1px, 1px, 1px);
+	padding:0;
+	border:0;
+	height: 1px; 
+	width: 1px; 
+	overflow: hidden;
+}
