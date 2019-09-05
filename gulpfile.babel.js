@@ -40,13 +40,13 @@ const paths = {
     src: [
       `./src/${path}img/**/*.{jpg,jpeg,png,gif,svg}`,
       `!./src/${path}img/favicon/**/*`,
-      `!./src/${path}img/sprites/**/*`,
+      `!./src/${path}img/sprite/**/*`,
     ],
     dest: `${dest}${path}img/`,
     watch: [
       `./src/${path}img/**/*.{jpg,jpeg,png,gif,svg}`,
       `!./src/${path}img/favicon/**/*`,
-      `!./src/${path}img/sprites/**/*`,
+      `!./src/${path}img/sprite/**/*`,
     ],
   },
   pug: {
