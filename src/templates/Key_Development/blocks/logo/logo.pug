@@ -1,2 +1,6 @@
 a.logo(href="./index.html")
-  img.logo__img(src="./img/logo.png" alt="logo")
+  svg.logo__img
+    use(xlink:href="./img/sprite/sprite.svg#logo-icon")
+    use(xlink:href="./img/sprite/sprite.svg#logo")
+  //- img.logo__img(src="./img/logo.png" alt="logo")
+  //- img.logo__img(style="display: none;" src="./img/logo-alt.png" alt="logo")

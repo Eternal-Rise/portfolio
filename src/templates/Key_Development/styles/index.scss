@@ -3,6 +3,7 @@
 @import './fonts';
 
 @import './base';
+@import './keyframes';
 
 @import '../blocks/aside/aside';
 @import '../blocks/buttons/btn-scroll';
@@ -11,9 +12,11 @@
 @import '../blocks/lang/lang';
 @import '../blocks/logo/logo';
 @import '../blocks/nav/nav';
+@import '../blocks/overlay/overlay';
 @import '../blocks/screen-counter/screen-counter';
 @import '../blocks/screen/screen';
 @import '../blocks/screen/screen-header';
+@import '../blocks/screen/screen__content';
 @import '../blocks/slider/slider';
 @import '../blocks/slider/slider-nav';
 @import '../blocks/socials/socials';

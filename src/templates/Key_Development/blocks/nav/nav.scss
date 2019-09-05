@@ -11,29 +11,31 @@
   }
 
   &__btn {
+    align-items: stretch;
     background-color: transparent;
     border: none;
     color: inherit;
-    font: $ff;
+    display: flex;
+    font-family: $ff;
+    font-size: 1em;
+    font-weight: $fw-b;
+    letter-spacing: .1rem;
     padding: 0;
     text-transform: uppercase;
-    display: flex;
-    align-items: stretch;
-    letter-spacing: .1rem;
   }
 
   &__btn-wrap {
     display: flex;
-    padding: .2rem 0;
     flex-direction: column;
     justify-content: space-between;
     margin-right: 0.5rem;
+    padding: .3rem 0;
   }
 
   &__btn-bar {
-    width: 2rem;
-    height: 2px;
     background-color: $main;
+    height: 2px;
+    width: 2rem;
   }
 
   &__link {

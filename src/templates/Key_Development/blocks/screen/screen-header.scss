@@ -1,26 +1,43 @@
 .screen-header {
-  padding: 2rem 1rem 2rem;
   background-color: $main;
+  box-sizing: border-box;
+  padding: 2rem 1rem 2rem;
   transform: translateX(100%);
+  width: 100%;
+  max-height: 112px;
 
   &._slide-in {
-    animation: slide-in 1.5s cubic-bezier(.56,.97,.86,.9) 2s forwards;
+    animation: screen-header_slide-in 1s cubic-bezier(.56,.97,.86,.9) forwards;
   }
 
-  @keyframes slide-in {
+  &._active {
+    transform: translateX(5rem);
+    animation: screen-header_active .25s ease-in 1.3s forwards;
+  }
+
+
+@keyframes screen-header_slide-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(5rem);
+  }
+}
+
+@include bp($xxl) {
+  @keyframes screen-header_slide-in {
     from {
       transform: translateX(100%);
     }
     to {
+      // change
       transform: translateX(5rem);
     }
   }
+}
 
-  &._active {
-    animation: active .5s ease-in forwards;
-  }
-
-  @keyframes active {
+  @keyframes screen-header_active {
     from {
       transform: translateX(5rem);
     }
@@ -62,37 +79,30 @@
   }
 
   &__btn-scroll {
-
   }
 
   .fade-in {
     $i: 1;
     @while $i < 5 {
       &:nth-child(#{$i}) {
-        animation: fade-in 1s cubic-bezier(.56,.97,.86,.9) #{3.5 + $i / 5}s forwards;
+        animation: fade-in 1s cubic-bezier(.56,.97,.86,.9) #{1 + $i / 5}s forwards;
       }
+      $i: $i + 1;
     }
   }
-}
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    // transform: translateX(-15%);
-  }
-  to {
+  .fade-out {
     opacity: 1;
     transform: translateX(0);
-  }
-}
 
-@keyframes fade-out {
-  from {
-    opacity: 1;
-    // transform: translateX(-15%);
-  }
-  to {
-    opacity: 0;
-    transform: translateX(15%);
+    $i: 1;
+    $j: 4;
+    @while $i < 5 {
+      &:nth-child(#{$i}) {
+        animation: fade-out .5s ease-out #{$j / 5}s forwards;
+      }
+      $i: $i + 1;
+      $j: $j - 1;
+    }
   }
 }

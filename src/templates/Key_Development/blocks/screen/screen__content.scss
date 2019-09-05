@@ -1,0 +1,40 @@
+.screen__content {
+  display: flex;
+
+  > * {
+    opacity: 0;
+    transform: translateY(25%);
+  }
+
+  .fade-in {
+    $i: 1;
+    @while $i < 3 {
+      &:nth-child(#{$i}) {
+        animation: fade-in 1s cubic-bezier(.56,.97,.86,.9) #{$i / 5}s forwards;
+      }
+      $i: $i + 1;
+    }
+  }
+
+  &-wrapper {
+    display: flex;
+  }
+
+  &-preview {
+    margin-right: 4rem;
+    max-width: $sm;
+  }
+
+  &-img {
+    width: 100%;
+  }
+
+  &-about {
+    max-width: 300px;
+  }
+
+  &-date {
+    display: block;
+    margin: 2rem 0 4rem;
+  }
+}

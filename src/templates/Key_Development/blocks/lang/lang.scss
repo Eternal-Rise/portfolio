@@ -5,7 +5,7 @@
   text-transform: uppercase;
 
   &__item {
-    line-height: 1.25;
+    line-height: 1.4;
 
     &:first-child {
       display: flex;
@@ -18,7 +18,7 @@
         height: 0;
         border-style: solid;
         border-width: .3rem .3rem 0 .3rem;
-        border-color: $main transparent transparent transparent;
+        border-color: currentColor transparent transparent transparent;
       }
     }
   }

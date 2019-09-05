@@ -5,11 +5,30 @@
   display: flex;
   padding: 2rem 1rem 3rem;
   width: 100%;
-
-  // overflow screens
-  z-index: 100;
+  z-index: 10;
 
   @include bp($xxl) {
     padding: 2rem 7rem;
+  }
+
+  &._active {
+    // overflow screens
+    z-index: 100;
+  }
+
+  &._alt {
+    background-color: transparent;
+    color: $text;
+    transition: background-color 0s, color .5s;
+
+    // .logo {
+    //   transition: .5s;
+    //   background-image: url(../img/logo-alt.png);
+    // }
+
+    .nav__btn-bar {
+      transition: .5s;
+      background-color: $text;
+    }
   }
 }
