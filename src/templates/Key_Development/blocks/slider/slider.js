@@ -18,7 +18,6 @@ changeSlideBtn.addEventListener('click', () => {
     i++;
     if (i === slides.length - 1) {
       isForwardDirection = false;
-      changeSlideBtn.classList.remove('_next');
       changeSlideBtn.classList.add('_prev');
     }
   } else {
@@ -29,7 +28,6 @@ changeSlideBtn.addEventListener('click', () => {
     if (i === 0) {
       isForwardDirection = true;
       changeSlideBtn.classList.remove('_prev');
-      changeSlideBtn.classList.add('_next');
     }
   }
 });

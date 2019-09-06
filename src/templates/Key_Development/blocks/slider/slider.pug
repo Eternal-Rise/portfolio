@@ -1,12 +1,19 @@
 //- .slider.hero__slider
 .slider.container__slider
-  - let i = 1;
+  .slider__item(class="_active")
+    picture.slider__pic
+      source(media="(min-width: 960px)", srcset='./img/slider/slide-1.webp', type="image/webp")
+      source(media="(min-width: 960px)", srcset='./img/slider/slide-1.jpg', type="image/jpg")
+      source(srcset='./img/slider/slide-1@0,5x.webp', type="image/webp")
+      img.slider__img(src='./img/slider/slide-1@0,5x.jpg', alt="photo")
+
+  - let i = 2;
   while i < 10
-    .slider__item(class=`${i === 1 ? '_active' : ''}`)
+    .slider__item
       picture.slider__pic
-        source(media="(min-width: 960px)", srcset=`./img/slider/slide-${i}.webp`, type="image/wepb")
-        source(media="(min-width: 960px)", srcset=`./img/slider/slide-${i}.jpg`, type="image/jpg")
-        source(srcset=`./img/slider/slide-${i}@0,5x.webp`, type="image/wepb")
-        img.slider__img(src=`./img/slider/slide-${i}@0,5x.jpg`, alt="photo")
+        source(media="(min-width: 960px)", data-srcset=`./img/slider/slide-${i}.webp`, type="image/webp")
+        source(media="(min-width: 960px)", data-srcset=`./img/slider/slide-${i}.jpg`, type="image/jpg")
+        source(data-srcset=`./img/slider/slide-${i}@0,5x.webp`, type="image/webp")
+        img.slider__img._loading(data-src=`./img/slider/slide-${i}@0,5x.jpg`, src="./img/preloader.svg" alt="photo")
 
         - i++;

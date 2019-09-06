@@ -59,15 +59,7 @@
     }
 
     &._prev {
-      display: none;
       transform: scale(-1, 1);
-    }
-    &._next {
-      display: none;
-    }
-
-    &._active {
-      display: block;
     }
   }
 
