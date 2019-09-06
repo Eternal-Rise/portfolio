@@ -6,6 +6,7 @@
   &__value {
     background-color: $accent;
     height: 2px;
+    transition: $dur;
     width: 0;
   }
 }

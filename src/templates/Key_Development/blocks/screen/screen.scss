@@ -12,7 +12,7 @@
   flex-wrap: wrap;
 
   @include bp($xsm) {
-    transform: translateY(calc(100% - 112px));
+    transform: translateY(calc(100% - 116px));
   }
 
   @include bp($xl) {
@@ -40,13 +40,13 @@
 
   @include bp($xsm) {
     @keyframes screen_active {
-      from { transform: translateY(calc(100% - 112px)); }
+      from { transform: translateY(calc(100% - 116px)); }
       to { transform: translateY(0); }
     }
 
     @keyframes screen_hidden {
       from { transform: translateY(0); }
-      to { transform: translateY(calc(100% - 112px)); }
+      to { transform: translateY(calc(100% - 116px)); }
     }
   }
 
