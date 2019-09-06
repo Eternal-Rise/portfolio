@@ -20,6 +20,7 @@
     position: absolute;
     top: 0;
     width: 50vw;
+    z-index: -1;
   }
 
   &::after {
@@ -49,6 +50,14 @@
     &::before {
       transform: translateX(-80%);
       animation: screen-header_initial .5s ease-out forwards;
+    }
+  }
+
+  &._transparent {
+    background-color: transparent;
+
+    &::before, &::after {
+      background-color: transparent;
     }
   }
 

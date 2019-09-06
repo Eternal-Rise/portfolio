@@ -11,12 +11,13 @@
 
   $this: &;
   &._alt {
+    background-color: $main;
     #{$this}__inner {
       background-image: linear-gradient(to right, rgba($bg, .1) 1px, transparent 1px, transparent);
     }
 
-    // overflow .screen
-    z-index: 30;
+    // overlay .hero
+    z-index: 10;
   }
 
   &__inner {

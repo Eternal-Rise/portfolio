@@ -60,18 +60,6 @@
   }
 
   &__progress {
-    display: block;
-    height: 2px;
-    width: 4rem;
     margin: 0 1.25rem;
-    -webkit-appearance: none;
   }
-}
-
-::-webkit-progress-bar {
-  background-color: $main;
-}
-
-::-webkit-progress-value {
-  background-color: $accent;
 }

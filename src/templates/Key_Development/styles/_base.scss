@@ -8,18 +8,36 @@ body {
 }
 
 .container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 120px auto;
   height: 100vh;
   min-height: 100vh;
   width: 100%;
-  // width: 1920px;
-  // height: 1080px;
-  align-items: flex-start;
   overflow: hidden;
 
   // for screens
   position: relative;
+
+  &__header {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+  }
+
+  &__slider {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+  }
+
+  &__main {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+  }
+
+  &__aside {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
 }
 
 .inner {
@@ -32,13 +50,5 @@ body {
 
 .main {
   display: flex;
-  width: 100%;
-}
-
-.wrapper {
-  align-self: stretch;
-  display: flex;
-  // minus header height
-  height: calc(100% - 120px);
   width: 100%;
 }

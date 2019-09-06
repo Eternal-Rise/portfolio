@@ -1,0 +1,11 @@
+.progress {
+  display: block;
+  width: 4rem;
+  background-color: $main;
+
+  &__value {
+    background-color: $accent;
+    height: 2px;
+    width: 80%;
+  }
+}

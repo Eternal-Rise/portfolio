@@ -6,12 +6,12 @@ block title
 block markup
   .container
     include ./blocks/header/header
+    include ./blocks/slider/slider
 
-    .wrapper
-      main.main
-        include ./blocks/hero/hero
-        include ./blocks/screen/screen
-        include ./blocks/aside/aside
+    main.main.container__main
+      include ./blocks/hero/hero
+      include ./blocks/screen/screen
 
+    include ./blocks/aside/aside
     .overlay
       .inner.overlay__inner

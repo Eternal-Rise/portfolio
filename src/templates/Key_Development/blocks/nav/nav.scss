@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: flex-end;
   max-height: 4rem;
 
   @include bp($sm) {
@@ -12,6 +11,7 @@
 
   @include bp($xsm) {
     align-items: center;
+    justify-content: flex-end;
     flex-direction: row;
     margin-left: 0;
   }
@@ -67,12 +67,17 @@
     font-weight: $fw-b;
     margin-right: 2rem;
     text-decoration: none;
+    transition: $dur;
 
     &:first-child {
       margin-bottom: 1rem;
       @include bp($xsm) {
         margin-bottom: 0;
       }
+    }
+
+    &:hover {
+      color: $accent;
     }
 
 

@@ -1,12 +1,13 @@
 .aside {
   align-items: center;
   background-color: $bg;
-  bottom: 0;
+  // bottom: 0;
   display: flex;
   padding: 0 1rem;
-  position: absolute;
-  right: 0;
-  top: 120px;
+  // position: absolute;
+  // right: 0;
+  // top: 120px;
+  z-index: 0;
 
   @include bp($lg) {
     padding: 0 2rem;

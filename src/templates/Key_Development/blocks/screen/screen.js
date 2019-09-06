@@ -1,5 +1,8 @@
+import { swipeConstructor } from '../../js/utils/swipeConstructor';
+
 const header = document.querySelector('.header');
 const screen = document.querySelector('.screen');
+const screenContainer = screen.querySelector('.screen__container');
 const screenHeader = screen.querySelector('.screen-header');
 const screenHeaderChilds = [...screenHeader.querySelector('.inner').children];
 const btnScroll = screenHeader.querySelector('.btn-scroll');
@@ -36,6 +39,8 @@ const showScreen = () => {
 
   const changeContent = setTimeout(() => {
     screenContentChilds.forEach(child => child.classList.add('fade-in'));
+    screenContainer.style.backgroundColor = 'transparent';
+    screenHeader.classList.add('_transparent');
     isScreenShown = true;
     clearTimeout(changeContent);
   }, DELAY + 500);
@@ -44,6 +49,8 @@ const showScreen = () => {
 };
 
 const hideScreen = () => {
+  screenContainer.style.backgroundColor = '#fff';
+  screenHeader.classList.remove('_transparent');
   header.classList.remove('_active');
   header.classList.remove('_alt');
   overlay.classList.remove('_alt');
@@ -78,7 +85,7 @@ window.addEventListener('load', () => {
 
   setTimeout(() => {
     window.addEventListener('wheel', (e) => {
-      const isScrollDown = e.wheelDelta < 100;
+      const isScrollDown = e.deltaY > 0;
 
       if (isScrollDown && isScreenHidden) showScreen();
     });
@@ -86,7 +93,11 @@ window.addEventListener('load', () => {
 });
 
 window.addEventListener('wheel', (e) => {
-  const isScrollUp = e.wheelDelta > 100;
+  const isScrollUp = e.deltaY < 0;
   if (isScrollUp && isScreenShown) hideScreen();
 });
 
+(() => swipeConstructor(window, (delta, SLIDE_RANGE) => {
+  if (delta > SLIDE_RANGE && isScreenShown) hideScreen();
+  else if (delta < -SLIDE_RANGE && isScreenHidden) showScreen();
+}))();
