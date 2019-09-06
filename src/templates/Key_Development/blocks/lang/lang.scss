@@ -22,7 +22,6 @@
   &__item {
     cursor: default;
     line-height: 1.4;
-    width: 100%;
 
     &:hover {
       color: $accent;
@@ -52,8 +51,9 @@
 
   &__wrapper {
     display: none;
-    position: absolute;
     left: 0;
+    position: absolute;
+    width: 100%;
 
     &:hover {
       display: block;
