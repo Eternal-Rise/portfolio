@@ -1,8 +1,24 @@
 .lang {
   list-style-type: none;
+  margin: 0;
   padding: 0;
-  margin: 0 4rem 0 0;
+  position: absolute;
+  right: 3.25rem;
   text-transform: uppercase;
+  top: 58%;
+
+  @include bp($xsm) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  @include bp($lg) {
+    right: 5.25rem;
+  }
+
+  @include bp($xxl) {
+    margin-right: 0;
+  }
 
   &__item {
     line-height: 1.4;

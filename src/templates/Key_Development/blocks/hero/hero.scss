@@ -1,24 +1,52 @@
 .hero {
   display: grid;
-  align-items: center;
+  width: 100%;
+
+  @include bp($xsm) {
+    align-items: center;
+  }
 
   &__aside {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 3rem 0 0;
+
+    @include bp($sm) {
+      padding: 0 3rem 0 1.5rem;
+    }
+
+    @include bp($xsm) {
+      align-items: flex-end;
+      flex-direction: column;
+      margin: 0 6rem 0 0;
+      padding: 0;
+      width: initial;
+    }
   }
 
   &__inner {
     display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
     grid-column: 1 / 2;
     grid-row: 1 / 2;
-    justify-content: space-between;
+    height: calc(100% - 144px);
 
     // from .screen
-    margin-bottom: 112px;
+    // margin-bottom: 112px;
 
     // oferflow .slider & .overlay
     z-index: 10;
+
+    @include bp($xsm) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      height: initial;
+      justify-content: space-between;
+    }
   }
 
   &__slider {
@@ -29,26 +57,66 @@
 
 
   &__lead {
-    font-size: 3rem;
-    text-transform: uppercase;
+    font-size: 1.5rem;
     font-weight: $fw-ub;
-    line-height: 1.25;
     letter-spacing: 0.15rem;
+    line-height: 1.25;
+    margin-bottom: auto;
     position: relative;
+    text-transform: uppercase;
+    padding: 0 2.2rem 0 0;;
+
+    @include bp($sm) {
+      font-size: 1.8rem;
+      padding: 0 0 0 1.5rem;;
+    }
+
+    @include bp($xsm) {
+      margin-bottom: 0;
+    }
+
+    @include bp($lg) {
+      font-size: 2.5rem;
+      padding: 0 0 0 2.85rem;
+    }
+
+    @include bp($xl) {
+      padding: 0 0 0 3.4rem;
+      font-size: 3rem;
+    }
+
+    @include bp($xxl) {
+      padding: 0 0 0 4rem;
+      font-size: 3.5rem;
+    }
 
     &::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
-      width: 120px;
-      height: 50px;
+      width: 80px;
+      height: 30px;
       background-image: url(../img/hero-lead-decoration.png);
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
       transform: translate(-50%, 5%);
       z-index: -1;
+
+      @include bp($sm) {
+        transform: translate(0, 5%);
+      }
+
+      @include bp($lg) {
+        width: 100px;
+        height: 38px;
+      }
+
+      @include bp($xl) {
+        width: 120px;
+        height: 45px;
+      }
 
       @include bp($xxl) {
         width: 200px;
@@ -57,13 +125,31 @@
     }
   }
 
-  &__text {
-    margin-left: 4rem;
-  }
-
   &__title {
+    font-weight: $fw-r;
+    margin: auto 0 1rem;
     transform: scale(1, 1.2);
-    font-weight: $fw-l;
-  }
+    width: 100%;
 
+    @include bp($sm) {
+      padding-left: 1.5rem;
+    }
+
+    @include bp($xsm) {
+      margin: 0 0 1rem;
+    }
+
+    @include bp($lg) {
+      padding-left: 2.85rem;
+    }
+
+    @include bp($xl) {
+      margin-bottom: 2rem;
+      padding-left: 3.4rem;
+    }
+
+    @include bp($xxl) {
+      padding-left: 4rem;
+    }
+  }
 }

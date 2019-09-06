@@ -1,25 +1,64 @@
 .screen {
+
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   z-index: 20;
-  transform: translateY(calc(100% - 112px));
+  transform: translateY(calc(100% - 144px));
   color: $text;
   display: flex;
   flex-wrap: wrap;
+
+  @include bp($xsm) {
+    transform: translateY(calc(100% - 112px));
+  }
+
+  @include bp($xl) {
+    transform: translateY(calc(100% - 128px));
+  }
 
   &._active {
     animation: screen_active .75s ease-out 1.55s forwards;
   }
 
+  &._hidden {
+    transform: translateY(0);
+    animation: screen_hidden .75s ease-out forwards;
+  }
+
   @keyframes screen_active {
-    from {
-      transform: translateY(calc(100% - 112px));
+    from { transform: translateY(calc(100% - 144px)); }
+    to { transform: translateY(0); }
+  }
+
+  @keyframes screen_hidden {
+    from { transform: translateY(0); }
+    to { transform: translateY(calc(100% - 144px)); }
+  }
+
+  @include bp($xsm) {
+    @keyframes screen_active {
+      from { transform: translateY(calc(100% - 112px)); }
+      to { transform: translateY(0); }
     }
-    to {
-      transform: translateY(0);
+
+    @keyframes screen_hidden {
+      from { transform: translateY(0); }
+      to { transform: translateY(calc(100% - 112px)); }
+    }
+  }
+
+  @include bp($xl) {
+    @keyframes screen_active {
+      from { transform: translateY(calc(100% - 128px)); }
+      to { transform: translateY(0); }
+    }
+
+    @keyframes screen_hidden {
+      from { transform: translateY(0); }
+      to { transform: translateY(calc(100% - 128px)); }
     }
   }
 

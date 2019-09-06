@@ -9,10 +9,15 @@ const screenInfoChilds = [...screen.querySelector('.screen__info').children];
 const screenContentChilds = [...screen.querySelector('.screen__content')
   .children];
 
-let isScreenChanges = false;
+let isScreenHidden = true;
+let isScreenShown = false;
 
-const changeScreen = () => {
+const showScreen = () => {
+  screen.classList.remove('_hidden');
+
   screenHeaderChilds.forEach(child => child.classList.add('fade-out'));
+  screenHeader.classList.remove('_initial');
+  screenHeader.classList.remove('slide-in');
   screenHeader.classList.add('_active');
   screen.classList.add('_active');
 
@@ -31,25 +36,57 @@ const changeScreen = () => {
 
   const changeContent = setTimeout(() => {
     screenContentChilds.forEach(child => child.classList.add('fade-in'));
+    isScreenShown = true;
     clearTimeout(changeContent);
   }, DELAY + 500);
 
-  isScreenChanges = true;
+  isScreenHidden = false;
 };
 
+const hideScreen = () => {
+  header.classList.remove('_active');
+  header.classList.remove('_alt');
+  overlay.classList.remove('_alt');
+  screen.classList.remove('_active');
+  screen.classList.add('_hidden');
 
-btnScroll.addEventListener('click', changeScreen);
+  const changeScreenHeader = setTimeout(() => {
+    screenHeader.classList.remove('_active');
+    screenHeader.classList.add('_initial');
+
+    screenHeaderChilds.forEach(child => {
+      child.classList.remove('first-fade-in');
+      child.classList.remove('fade-out');
+      child.classList.add('fade-in');
+    });
+    clearTimeout(changeScreenHeader);
+
+    isScreenHidden = true;
+  }, 750);
+
+
+
+  isScreenShown = false;
+};
+
+btnScroll.addEventListener('click', showScreen);
 window.addEventListener('load', () => {
-  screenHeader.classList.add('_slide-in');
-
-  screenHeaderChilds.forEach(child => child.classList.add('fade-in'));
-
   const DELAY = 2800; // time for initial animation
+
+  screenHeader.classList.add('_slide-in');
+  screenHeaderChilds.forEach(child => child.classList.add('first-fade-in'));
+
   setTimeout(() => {
     window.addEventListener('wheel', (e) => {
       const isScrollDown = e.wheelDelta < 100;
 
-      if (isScrollDown && !isScreenChanges) changeScreen();
+      if (isScrollDown && isScreenHidden) showScreen();
     });
   }, DELAY);
 });
+
+window.addEventListener('wheel', (e) => {
+  const isScrollUp = e.wheelDelta > 100;
+  if (isScrollUp && isScreenShown) hideScreen();
+});
+

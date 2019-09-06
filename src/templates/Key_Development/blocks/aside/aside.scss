@@ -1,6 +1,25 @@
 .aside {
-  margin-bottom: 112px;
-  padding: 0 2rem;
-  display: flex;
   align-items: center;
+  background-color: $bg;
+  bottom: 0;
+  display: flex;
+  padding: 0 1rem;
+  position: absolute;
+  right: 0;
+  top: 120px;
+
+  @include bp($lg) {
+    padding: 0 2rem;
+  }
+
+  &__socials {
+    margin: 0 0 144px;
+
+    // overlay .hero__inner
+    z-index: 10;
+
+    @include bp($xl) {
+      margin: 0 0 128px;
+    }
+  }
 }

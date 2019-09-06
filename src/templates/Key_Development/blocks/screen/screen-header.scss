@@ -1,54 +1,144 @@
 .screen-header {
   background-color: $main;
   box-sizing: border-box;
-  padding: 2rem 1rem 2rem;
-  transform: translateX(100%);
+  // 1px for fix artefact
+  margin: 1px auto 0;
+  max-width: 1440px;
+  padding: 2rem 1rem;
+  position: relative;
+  transform: translateX(150%);
   width: 100%;
-  max-height: 112px;
+
+  @include bp($xl) {
+    padding: 3rem 1rem 2rem;
+  }
+
+  &::after, &::before {
+    background-color: $main;
+    bottom: 0;
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 50vw;
+  }
+
+  &::after {
+    right: 1px;
+    transform: translateX(100%);
+  }
+
+  &::before {
+    left: 1px;
+    z-index: -1;
+    transform: translateX(0);
+  }
 
   &._slide-in {
-    animation: screen-header_slide-in 1s cubic-bezier(.56,.97,.86,.9) forwards;
+    animation: screen-header_slide-in 1s cubic-bezier(.56,.97,.86,.9) 1s forwards;
   }
 
   &._active {
-    transform: translateX(5rem);
-    animation: screen-header_active .25s ease-in 1.3s forwards;
+
+    &::before {
+      transform: translateX(0);
+      animation: screen-header_active .25s ease-in 1.3s forwards;
+    }
   }
 
-
-@keyframes screen-header_slide-in {
-  from {
-    transform: translateX(100%);
+  &._initial {
+    &::before {
+      transform: translateX(-80%);
+      animation: screen-header_initial .5s ease-out forwards;
+    }
   }
-  to {
-    transform: translateX(5rem);
-  }
-}
 
-@include bp($xxl) {
+  // aling with .hero titles
+  @keyframes screen-header_initial {
+    to { transform: translateX(0); }
+  }
+
   @keyframes screen-header_slide-in {
-    from {
-      transform: translateX(100%);
+    from { transform: translateX(150%); }
+    to { transform: translateX(0); }
+  }
+
+  @include bp($xsm) {
+    @keyframes screen-header_initial {
+      to { transform: translateX(2.5rem); }
     }
-    to {
-      // change
-      transform: translateX(5rem);
+    @keyframes screen-header_slide-in {
+      from { transform: translateX(150%); }
+      to { transform: translateX(2.5rem); }
     }
   }
-}
+
+  @include bp($lg) {
+    @keyframes screen-header_initial {
+      to { transform: translateX(3.85rem); }
+    }
+    @keyframes screen-header_slide-in {
+      from { transform: translateX(150%);
+      }
+      to { transform: translateX(3.85rem); }
+    }
+  }
+  @include bp($xl) {
+    @keyframes screen-header_initial {
+      to { transform: translateX(4.4rem); }
+    }
+    @keyframes screen-header_slide-in {
+      from { transform: translateX(150%);
+      }
+      to { transform: translateX(4.4rem); }
+    }
+  }
+
+  @include bp($xxl) {
+    @keyframes screen-header_initial {
+      to { transform: translateX(6.5rem); }
+    }
+    @keyframes screen-header_slide-in {
+      from { transform: translateX(150%);
+      }
+      to { transform: translateX(6.5rem); }
+    }
+  }
 
   @keyframes screen-header_active {
     from {
-      transform: translateX(5rem);
+      transform: translateX(0);
     }
     to {
-      transform: translateX(0);
+      transform: translateX(-80%);
     }
   }
 
   &__inner {
     display: flex;
-    align-items: center;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    max-height: 80px;
+    flex-wrap: wrap;
+
+    @include bp($sm) {
+      width: calc(100% - 5rem);
+    }
+
+    @include bp($xsm) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    @include bp($md) {
+      padding: 0 2rem;
+    }
+
+    @include bp($xl) {
+      padding: 0;
+      justify-content: initial;
+    }
 
     > * {
       opacity: 0;
@@ -59,16 +149,47 @@
     align-self: flex-start;
     text-transform: uppercase;
     font-size: 1em;
-    margin: .25rem 4rem 0;
+    margin: .25rem 0 0;
     transform: translateX(-45%);
+    writing-mode: vertical-lr;
+
+    @include bp($xsm) {
+      writing-mode: initial;
+    }
+
+    @include bp($xl) {
+      margin: .25rem 4rem 0 2rem;
+    }
+
+    @include bp($xxl) {
+      margin: .25rem 5.5rem 0;
+    }
   }
 
   &__text {
-    display: block;
     color: $text-alt;
+    display: block;
     font-weight: $fw-r;
     max-width: 180px;
-    margin: 0 4rem;
+    margin: 0 1rem;
+
+    // @include bp($sm) {
+    //   max-width: initial;
+    //   margin: .25rem 1rem 0;
+    // }
+
+    @include bp($xsm) {
+      margin: 0;
+      // max-width: 180px;
+    }
+
+    @include bp($xl) {
+      margin: 0 4rem;
+    }
+
+    @include bp($xxl) {
+      margin: 0 6rem;
+    }
 
     &:nth-child(2) {
       transform: translateX(-35%);
@@ -79,13 +200,34 @@
   }
 
   &__btn-scroll {
+    margin: 1rem 0 0;
+
+    @include bp($xsm) {
+      margin: 0;
+    }
+    @include bp($xl) {
+      margin-left: 2rem;
+    }
+    @include bp($xxl) {
+      margin-left: 5.5rem;
+    }
+  }
+
+  .first-fade-in {
+    $i: 1;
+    @while $i < 5 {
+      &:nth-child(#{$i}) {
+        animation: fade-in .5s cubic-bezier(.56,.97,.86,.9) #{2 + $i / 5}s forwards;
+      }
+      $i: $i + 1;
+    }
   }
 
   .fade-in {
     $i: 1;
     @while $i < 5 {
       &:nth-child(#{$i}) {
-        animation: fade-in 1s cubic-bezier(.56,.97,.86,.9) #{1 + $i / 5}s forwards;
+        animation: fade-in .5s cubic-bezier(.56,.97,.86,.9) #{.25 + $i / 5}s forwards;
       }
       $i: $i + 1;
     }
@@ -99,7 +241,7 @@
     $j: 4;
     @while $i < 5 {
       &:nth-child(#{$i}) {
-        animation: fade-out .5s ease-out #{$j / 5}s forwards;
+        animation: fade-out .25s ease-out #{$j / 5}s forwards;
       }
       $i: $i + 1;
       $j: $j - 1;

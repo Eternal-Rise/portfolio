@@ -1,27 +1,29 @@
 .overlay {
-  background-image: linear-gradient(to right, rgba($main, .1) 1px, transparent 1px, transparent);
-  background-origin: content-box;
-  background-repeat: repeat;
-  background-size: 476px 1px;
+  display: flex;
   bottom: 0;
   box-sizing: border-box;
-  left: calc(50% + 1.3rem);
-  max-width: $inner;
-  padding: 0 1rem;
   position: absolute;
   top: 0;
-  transform: translateX(-50%);
-  width: 100%;
+  left: 0;
+  right: 0;
+  transition: z-index .2s .1s;
+  pointer-events: none;
 
-  // @include bp($xxl) {
-  //   background-size: 476px 1px;
-  // }
-
+  $this: &;
   &._alt {
-    // background-color: $main;
-    background-image: linear-gradient(to right, rgba($bg, .1) 1px, transparent 1px, transparent);
+    #{$this}__inner {
+      background-image: linear-gradient(to right, rgba($bg, .1) 1px, transparent 1px, transparent);
+    }
 
     // overflow .screen
     z-index: 30;
+  }
+
+  &__inner {
+    flex: 1;
+    background-image: linear-gradient(to right, rgba($main, .1) 1px, transparent 1px, transparent);
+    background-origin: content-box;
+    background-repeat: repeat;
+    background-size: 33.33% 1px;
   }
 }

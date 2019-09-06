@@ -1,17 +1,24 @@
 .nav {
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: flex-end;
-  // margin-bottom: .4rem;
+  max-height: 4rem;
+
+  @include bp($sm) {
+    margin-left: 2rem;
+  }
 
   @include bp($xsm) {
     align-items: center;
     flex-direction: row;
+    margin-left: 0;
   }
 
   &__btn {
-    align-items: stretch;
+    align-items: center;
+    align-self: flex-end;
     background-color: transparent;
     border: none;
     color: inherit;
@@ -20,16 +27,25 @@
     font-size: 1em;
     font-weight: $fw-b;
     letter-spacing: .1rem;
+    margin: 5px 0 0;
     padding: 0;
     text-transform: uppercase;
+
+    @include bp($xsm) {
+      margin: 0;
+    }
+
+    @include bp($lg) {
+      margin: 0 1rem 0 0;
+    }
   }
 
   &__btn-wrap {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-right: 0.5rem;
-    padding: .3rem 0;
+    margin: 0 0.5rem 2px 0;
+    height: 10px
   }
 
   &__btn-bar {
@@ -38,21 +54,35 @@
     width: 2rem;
   }
 
+  &__btn-text {
+    display: none;
+
+    @include bp($xsm) {
+      display: block;
+    }
+  }
+
   &__link {
     color: inherit;
     font-weight: $fw-b;
     margin-right: 2rem;
     text-decoration: none;
 
+    &:first-child {
+      margin-bottom: 1rem;
+      @include bp($xsm) {
+        margin-bottom: 0;
+      }
+    }
+
+
     @include bp($md) {
       margin-right: 4rem;
     }
 
     &._margin {
-      margin-right: 4rem;
-
       @include bp($xsm) {
-        margin-right: 27.45%;
+        margin-right: 26.7%;
       }
     }
   }

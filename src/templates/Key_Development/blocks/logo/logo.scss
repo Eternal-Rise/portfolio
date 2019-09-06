@@ -1,15 +1,33 @@
 .logo {
-  display: flex;
-  width: 7rem;
-  height: 2.8rem;
   background-repeat: no-repeat;
   background-size: contain;
   color: inherit;
-  margin-left: 4rem;
+  display: flex;
+  height: 2rem;
+  left: 1rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5rem;
+
+  @include bp($sm) {
+    left: 2.5rem;
+  }
+
+  @include bp($lg) {
+    height: 2.8rem;
+    width: 7rem;
+    left: 3.85rem;
+  }
+
+  @include bp($xl) {
+    left: 4.4rem;
+  }
 
   @include bp($xxl) {
-    margin-left: 4rem;
+    left: 6.5rem;
   }
+
   &__img {
   }
 }
