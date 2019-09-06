@@ -1,5 +1,6 @@
 .slider {
   display: flex;
+  flex-wrap: nowrap;
   width: 100%;
 
   // minus .header height
@@ -8,8 +9,14 @@
   &__item {
     display: flex;
     align-items: stretch;
-    width: 100%;
+    width: 0;
     height: 100%;
+    transition: width $dur * 2;
+
+    &._active {
+      z-index: 1;
+      width: 100%;
+    }
   }
 
   &__pic {

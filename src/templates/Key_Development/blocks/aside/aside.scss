@@ -7,7 +7,7 @@
   // position: absolute;
   // right: 0;
   // top: 120px;
-  z-index: 0;
+  z-index: 10;
 
   @include bp($lg) {
     padding: 0 2rem;

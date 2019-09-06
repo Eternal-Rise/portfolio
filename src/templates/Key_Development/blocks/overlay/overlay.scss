@@ -8,6 +8,7 @@
   right: 0;
   transition: z-index .2s .1s;
   pointer-events: none;
+  z-index: 10;
 
   $this: &;
   &._alt {
@@ -15,9 +16,6 @@
     #{$this}__inner {
       background-image: linear-gradient(to right, rgba($bg, .1) 1px, transparent 1px, transparent);
     }
-
-    // overlay .hero
-    z-index: 10;
   }
 
   &__inner {

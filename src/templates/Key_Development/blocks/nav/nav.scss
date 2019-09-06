@@ -22,6 +22,7 @@
     background-color: transparent;
     border: none;
     color: inherit;
+    cursor: pointer;
     display: flex;
     font-family: $ff;
     font-size: 1em;
@@ -30,6 +31,7 @@
     margin: 5px 0 0;
     padding: 0;
     text-transform: uppercase;
+    transition: $dur;
 
     @include bp($xsm) {
       margin: 0;
@@ -37,6 +39,15 @@
 
     @include bp($lg) {
       margin: 0 1rem 0 0;
+    }
+
+    $this: &;
+    &:hover {
+      color: $accent;
+
+      #{$this}-bar {
+        background-color: $accent;
+      }
     }
   }
 
@@ -51,6 +62,7 @@
   &__btn-bar {
     background-color: $main;
     height: 2px;
+    transition: $dur;
     width: 2rem;
   }
 

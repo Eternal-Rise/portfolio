@@ -1,7 +1,6 @@
 .lang {
+  $this: &;
   list-style-type: none;
-  margin: 0;
-  padding: 0;
   position: absolute;
   right: 3.25rem;
   text-transform: uppercase;
@@ -21,11 +20,23 @@
   }
 
   &__item {
+    cursor: default;
     line-height: 1.4;
+    width: 100%;
 
-    &:first-child {
+    &:hover {
+      color: $accent;
+    }
+
+    &._active {
       display: flex;
       align-items: center;
+
+      &:hover {
+        + #{$this}__wrapper {
+          display: block;
+        }
+      }
 
       &::after {
         content: '';
@@ -36,6 +47,16 @@
         border-width: .3rem .3rem 0 .3rem;
         border-color: currentColor transparent transparent transparent;
       }
+    }
+  }
+
+  &__wrapper {
+    display: none;
+    position: absolute;
+    left: 0;
+
+    &:hover {
+      display: block;
     }
   }
 }

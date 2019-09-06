@@ -15,15 +15,25 @@
   &__btn {
     background-color: transparent;
     border: none;
+    cursor: pointer;
     height: 1.2rem;
     padding: 0;
     position: relative;
+    transition: $dur;
     width: 1.5rem;
+
+    &:hover {
+      &::before {
+        background-color: $accent;
+      }
+      &::after {
+        border-color: $accent;
+      }
+    }
 
     &::before, &::after {
       content: '';
       position: absolute;
-
     }
 
     &::before {
@@ -33,6 +43,7 @@
       top: 50%;
       left: 0;
       transform: translateY(-50%);
+      transition: $dur;
     }
 
     &::after {
@@ -44,6 +55,7 @@
       top: 50%;
       right: 0;
       transform: translateY(-50%) rotate(-45deg);
+      transition: $dur + .2;
     }
 
     &._prev {

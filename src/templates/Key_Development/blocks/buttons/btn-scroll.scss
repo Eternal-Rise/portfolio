@@ -2,15 +2,29 @@
   background-color: $accent;
   border-radius: 50%;
   border: none;
-  width: 3rem;
+  cursor: pointer;
   height: 3rem;
   padding: 0;
   position: relative;
+  transition: background-color $dur, box-shadow $dur;
+  width: 3rem;
+
+  &:hover {
+    background-color: $main;
+    box-shadow: 0 0 1px 1px $accent;
+
+    &::before {
+      background-color: $accent;
+    }
+
+    &::after {
+      border-color: $accent;
+    }
+  }
 
   &::before, &::after {
     content: '';
     position: absolute;
-
   }
 
   &::before {
@@ -19,6 +33,7 @@
     height: 40%;
     top: 50%;
     left: 50%;
+    transition: background-color $dur;
     transform: translate(-50%, -50%);
   }
 
@@ -30,6 +45,7 @@
     border-style: solid;
     top: 50%;
     left: 50%;
+    transition: border-color $dur;
     transform: translate(-50%, -18%) rotate(45deg);
   }
 }

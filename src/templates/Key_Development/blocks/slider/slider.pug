@@ -1,8 +1,12 @@
 //- .slider.hero__slider
 .slider.container__slider
-  .slider__item
-    picture.slider__pic
-      source(media="(min-width: 960px)", srcset="./img/slider/kiev-maidan-nezalezhnosti.webp", type="image/wepb")
-      source(media="(min-width: 960px)", srcset="./img/slider/kiev-maidan-nezalezhnosti.jpg", type="image/jpg")
-      source(srcset="./img/slider/kiev-maidan-nezalezhnosti@0,5x.webp", type="image/wepb")
-      img.slider__img(src="./img/slider/kiev-maidan-nezalezhnosti@0,5x.jpg", alt="Киев, Майдан Незалежности")
+  - let i = 1;
+  while i < 10
+    .slider__item(class=`${i === 1 ? '_active' : ''}`)
+      picture.slider__pic
+        source(media="(min-width: 960px)", srcset=`./img/slider/slide-${i}.webp`, type="image/wepb")
+        source(media="(min-width: 960px)", srcset=`./img/slider/slide-${i}.jpg`, type="image/jpg")
+        source(srcset=`./img/slider/slide-${i}@0,5x.webp`, type="image/wepb")
+        img.slider__img(src=`./img/slider/slide-${i}@0,5x.jpg`, alt="photo")
+
+        - i++;
