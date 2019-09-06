@@ -6,36 +6,36 @@
   font-weight: normal;
 }
 
-@font-face {
-  font-family: Circle;
-  font-display: swap;
-  src: url('../fonts/CRC25.woff2') format('woff2'),
-    url('../fonts/CRC25.woff') format('woff');
-  font-weight: 250;
-}
+// @font-face {
+//   font-family: Circle;
+//   font-display: swap;
+//   src: url('../fonts/CRC25.woff2') format('woff2'),
+//     url('../fonts/CRC25.woff') format('woff');
+//   font-weight: 200;
+// }
 
-@font-face {
-  font-family: Circle;
-  font-display: swap;
-  src: url('../fonts/CRC35.woff2') format('woff2'),
-    url('../fonts/CRC35.woff') format('woff');
-  font-weight: 350;
-}
+// @font-face {
+//   font-family: Circle;
+//   font-display: swap;
+//   src: url('../fonts/CRC35.woff2') format('woff2'),
+//     url('../fonts/CRC35.woff') format('woff');
+//   font-weight: 300;
+// }
 
-@font-face {
-  font-family: Circle;
-  font-display: swap;
-  src: url('../fonts/CRC55.woff2') format('woff2'),
-    url('../fonts/CRC55.woff') format('woff');
-  font-weight: 550;
-}
+// @font-face {
+//   font-family: Circle;
+//   font-display: swap;
+//   src: url('../fonts/CRC55.woff2') format('woff2'),
+//     url('../fonts/CRC55.woff') format('woff');
+//   font-weight: 500;
+// }
 
 @font-face {
   font-family: Circle;
   font-display: swap;
   src: url('../fonts/CRC65.woff2') format('woff2'),
     url('../fonts/CRC65.woff') format('woff');
-  font-weight: 650;
+  font-weight: 600;
 }
 
 @font-face {
@@ -43,5 +43,5 @@
   font-display: swap;
   src: url('../fonts/CRC75.woff2') format('woff2'),
     url('../fonts/CRC75.woff') format('woff');
-  font-weight: 750;
+  font-weight: 700;
 }
