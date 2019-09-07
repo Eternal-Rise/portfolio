@@ -6,7 +6,12 @@
   &__value {
     background-color: $accent;
     height: 2px;
-    transition: $dur;
     width: 0;
+    transition: 0;
+
+    &._loading {
+      transition: $SLIDE_DURATION linear;
+      width: 100%;
+    }
   }
 }
