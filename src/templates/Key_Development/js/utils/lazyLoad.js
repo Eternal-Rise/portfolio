@@ -2,9 +2,6 @@
 window.addEventListener('load', () => {
   const slidesPic = [...document.querySelectorAll('.slider__pic')];
 
-  // first picture loading with page
-  slidesPic.shift();
-
   const loader = i => {
     if (i === slidesPic.length) return;
     const sources = slidesPic[i].querySelectorAll('source');
@@ -20,6 +17,7 @@ window.addEventListener('load', () => {
     });
   };
 
-  const i = 0;
+  // first picture will loading with page
+  const i = 1;
   loader(i);
 });
