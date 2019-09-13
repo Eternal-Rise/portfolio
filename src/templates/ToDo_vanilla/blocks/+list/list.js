@@ -29,11 +29,13 @@ export class List extends Note {
       e.preventDefault();
 
       const item = e.target.parentNode;
+      const nextItem = item.nextElementSibling;
       const level = this.findLevel( item );
       const { item: newItem } = this.createItem(
         type, list, [ `${type}__item`, level ] );
 
-      list.insertBefore( newItem, item.nextElementSibling );
+      nextItem ? list.insertBefore( newItem, nextItem ) :
+        list.appendChild( newItem );
       newItem.querySelector( '.inputField' ).focus();
     }
   }
