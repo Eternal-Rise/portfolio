@@ -5,7 +5,7 @@
   padding: 0;
   width: 100%;
  }
- 
+
 .list {
   @include list();
 
@@ -18,7 +18,7 @@
     user-select: text;
     word-break: break-all;
     word-wrap: break-word;
-    
+
     // fix firefox
     min-height: 2rem;
 
@@ -130,7 +130,7 @@
     display: flex;
     hyphens: auto;
     padding: 0 1rem;
-    
+
     // fix firefox
     min-height: 2rem;
 
@@ -147,4 +147,5 @@
   word-break: break-all;
   word-wrap: break-word;
   outline: none;
+  white-space: pre-wrap;
 }

@@ -35,7 +35,9 @@ submit.addEventListener( 'click', ( e ) => {
 
   const constructor = type === 'note' ? note :
     type === 'list' ? list : checklist;
-  const { item: newItem } = constructor.createItem( type, newList );
+
+  const { item: newItem } = type === 'note' ? constructor.createItem({ type }) :
+    constructor.createItem( type, newList );
 
   newList.classList.add( `${type}` );
   newList.appendChild( newItem );

@@ -18,8 +18,9 @@ export const output = ( block ) => {
 
 const render = ( constructor, list, items, type ) => {
   for ( const item of items ) {
-    const { item: newItem } = constructor
-      .createItem( type, list, item.classList );
+    const { item: newItem } = type === 'note' ?
+      constructor.createItem({ type, classList: item.classList }) :
+      constructor.createItem( type, list, item.classList );
 
     const checkbox = newItem.querySelector( '.checklist__checkbox' );
     const inputField =  newItem.querySelector( '.inputField' );

@@ -1,9 +1,12 @@
 export class Note {
-  createItem( type, classList ) {
+  createItem( args ) {
     const inputField = document.createElement( 'span' );
     const item = document.createElement( 'li' );
 
-    classList = classList ? classList : [ `${type}__item`, '_level-1' ];
+    const { type } = args;
+    const classList = args.classList ? args.classList :
+      [ `${type}__item`, '_level-1' ];
+
     inputField.classList.add( 'inputField' );
     inputField.contentEditable = 'true';
     inputField.addEventListener( 'blur', this.inputBlur );
@@ -38,7 +41,15 @@ export class Note {
   pasteText( e ) {
     const paste = ( e.clipboardData || window.clipboardData ).getData( 'text' );
     e.preventDefault();
-    e.target.ownerDocument.execCommand( 'insertText', false, paste );
+    e.target.ownerDocument.execCommand( 'insertHTML', false, paste );
+  }
+
+  createNewLine( e ) {
+    if (e.keyCode === 13) {
+      e.preventDefault();
+      // insert 2 br tags (if only one br tag is inserted the cursor won't go to the next line)
+      document.execCommand('insertHTML', false, '<br><br>');
+    }
   }
 }
 

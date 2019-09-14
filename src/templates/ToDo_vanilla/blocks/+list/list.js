@@ -12,7 +12,7 @@ const KEY_CODE = {
 
 export class List extends Note {
   createItem( type, list, classList ) {
-    const { item, inputField } = super.createItem( type, classList );
+    const { item, inputField } = super.createItem({ type, classList });
 
     inputField.addEventListener( 'keydown',
       this.createNextItem.bind( this, type, list ));

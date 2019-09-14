@@ -9,12 +9,19 @@ import { checklist } from '../blocks/+list/checklist';
 import { initialOutput, setWindowResizeRender } from '../blocks/output/output';
 
 const initList = ( type ) => {
+
   const constructor = type === 'note' ? note :
     type === 'list' ? list : checklist;
 
   const newList = constructor.createNewList( type );
-  const { item: newItem } = type === 'note' ? constructor.createItem( type ) :
+  const { item: newItem, inputField } = type === 'note' ?
+    constructor.createItem({ type }) :
     constructor.createItem( type, newList );
+
+  if ( type === 'note' ) {
+    inputField.addEventListener( 'keydown', constructor.createNewLine );
+    inputField.addEventListener( 'keydown', e => console.log(e.keyCode) );
+  }
 
   newList.appendChild( newItem );
 };
